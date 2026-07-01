@@ -12,8 +12,14 @@ public class UISwap : MonoBehaviour
 
     public UISwap()
     {
-        focusEffect = new LinearEffect(this, new UnionEffect(new LogStrengthEffect(), new BackgroundColorEffect(new Color(0, 150 / 255.0f, 130 / 255.0f))));
+        focusEffect = new LinearEffect(this, new UnionEffect(new LogStrengthEffect(), new VignetteEffect()));
     }
+
+    /// public UISwap()
+    ///{
+    ///    focusEffect = new LinearEffect(this, new UnionEffect(new LogStrengthEffect(), new BackgroundColorEffect(new Color(0, 150 / 255.0f, 130 / 255.0f))));
+    ///}
+
 
     public void LooksAtScreen()
     {
