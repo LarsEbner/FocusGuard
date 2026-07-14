@@ -1,0 +1,7805 @@
+﻿#include "pch-cpp.hpp"
+
+
+
+
+
+template <typename T1>
+struct VirtualActionInvoker1
+{
+	typedef void (*Action)(void*, T1, const RuntimeMethod*);
+
+	static inline void Invoke (Il2CppMethodSlot slot, RuntimeObject* obj, T1 p1)
+	{
+		const VirtualInvokeData& invokeData = il2cpp_codegen_get_virtual_invoke_data(slot, obj);
+		((Action)invokeData.methodPtr)(obj, p1, invokeData.method);
+	}
+};
+template <typename R>
+struct VirtualFuncInvoker0
+{
+	typedef R (*Func)(void*, const RuntimeMethod*);
+
+	static inline R Invoke (Il2CppMethodSlot slot, RuntimeObject* obj)
+	{
+		const VirtualInvokeData& invokeData = il2cpp_codegen_get_virtual_invoke_data(slot, obj);
+		return ((Func)invokeData.methodPtr)(obj, invokeData.method);
+	}
+};
+
+struct Dictionary_2_t58FF2960674CDBD30BBD769A90885AA455A4C9D1;
+struct Dictionary_2_t26FF6C13ECDF31E16CD6A81D365162BFA276F0AD;
+struct Dictionary_2_tEFB54AC11E68C0931DB23876EB2884AB4634F89E;
+struct List_1_t2CDCA768E7F493F5EDEBC75AEB200FD621354E35;
+struct List_1_tD5AC9F392427318E81BE224E7E394A720E64463C;
+struct List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73;
+struct List_1_t013BD468667855A72551AF73ADFEE8012C9A129C;
+struct List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D;
+struct List_1_tEDD08FEF5AE49977928854D26F4746C0654A234F;
+struct List_1_t89B39292AD45371F7FDCB295AAE956D33588BC6E;
+struct TweenRunner_1_t5BB0582F926E75E2FE795492679A6CF55A4B4BC4;
+struct TweenRunner_1_t830EC096236A3CEC7189DFA6E0B2E74C5C97780B;
+struct CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB;
+struct DebugRotationU5BU5D_tEC9AFD1D34B7247E98AD86E6F0194E3C6DFC2765;
+struct DefineTrackerLocationU5BU5D_tDC47EFDCF672CAC17C5E34770113030715C2851A;
+struct DelegateU5BU5D_tC5AB7E8F745616680F337909D3A8E6C722CDF771;
+struct IntPtrU5BU5D_tFD177F8C806A6921AD7150264CCC62FA00CAD832;
+struct JointU5BU5D_t0CB1B689C73764217DFA94CBFA349EFA35C1B4B5;
+struct ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918;
+struct SelectableU5BU5D_t4160E135F02A40F75A63F787D36F31FEC6FE91A9;
+struct StackTraceU5BU5D_t32FBCB20930EAF5BAE3F450FF75228E5450DA0DF;
+struct StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248;
+struct TrackerLocationU5BU5D_t16F0FC298A9885E4128AC22616039C00740C26D3;
+struct UIVertexU5BU5D_tBC532486B45D071A520751A90E819C77BA4E3D2F;
+struct Vector2U5BU5D_tFEBBC94BCC6C9C88277BA04047D2B3FDB6ED7FDA;
+struct Vector3U5BU5D_tFF1859CCE176131B909E2044F76443064254679C;
+struct RoleDataU5BU5D_tAE170CE87BD69B76C263BFA6952A187CB41A9ECA;
+struct TrackerIndexBaseU5BU5D_tFB2B0143DB0A1A68AC66F7AA265AC95C0F98CB8D;
+struct TrackerTypeBaseU5BU5D_tEB7DF4D71E5E20B49B61068EF62E69A6663F2C39;
+struct AnimationTriggers_tA0DC06F89C5280C6DD972F6F4C8A56D7F4F79074;
+struct AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C;
+struct AvatarCoordinateProducer_t2FF600FF1B24092FFFBB955A8A77D30A18652BCD;
+struct Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728;
+struct BodyAvatar_tD225D5E1511C8FED0CEE3C112BC10C39F03A1B4F;
+struct BodyManager_tC2F2528B290757CB0FB5804C9FDA9DB22C5C1828;
+struct BodyPose_t072C0E965396565F97CA661AEA5FC98372980479;
+struct BodyRedirectives_t2DF349B1391893E09117107F21F9652CE6918119;
+struct BodyRoleData_tB3E30ECEB3632C49D288739F6240594BC9BFB264;
+struct Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098;
+struct CalibrationStatusDelegate_t7456FF3FDFC24533E36DAEC05FE3ADD6EA1DCD41;
+struct CancellationTokenSource_tAAE1E0033BCFC233801F8CB4CED5C852B350CB7B;
+struct Canvas_t2DB4CEFDFF732884866C83F11ABF75F5AE8FFB26;
+struct CanvasRenderer_tAB9A55A976C4E3B2B37D0CE5616E5685A8B43860;
+struct Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3;
+struct ConfigTrackerIndexType_t2A8BBD79DD1FBDD186BB68AED89643929C14CF2A;
+struct Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B;
+struct DebugRotation_t7937DC12D85BF51C2C66BAAF2B6CAB5C8CD88CBA;
+struct DebugRotationMaster_tF3C5F0F48BDDF1C25AD290F4978F267D1F7E5559;
+struct DefineTrackerLocation_t4651548465C3999F63C2CADE3D9EFF6C45428A53;
+struct DelegateData_t9B286B493293CD2D23A5B2B5EF0E5B1324C2B77E;
+struct DrawBone_t6582AB9FC985CD515CDB7CA6C0E9A8C3E537374B;
+struct Dropdown_t54C0BDC1441E058BE37E796F68886671C270EF89;
+struct Enum_t2A1A94B24E3B776EEF4E5E485E290BB9D4D072E2;
+struct EventWaitHandle_t18F2EB0161747B0646A9A406015A61A214A1EB7E;
+struct Exception_t;
+struct FontData_tB8E562846C6CB59C43260F69AE346B9BF3157224;
+struct GameObject_t76FEDD663AB33C991A9C9A23129337651094216F;
+struct Graphic_tCBFCA4585A19E2B75465AECFEAC43F4016BF7931;
+struct HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A;
+struct HumanoidTracking_t3FE172B07552D5F70DCD9385CFDB6C03DF3AF979;
+struct HumanoidTrackingMenu_tD8404766E39651BA25654BA0ED62D79B35AEFD35;
+struct HumanoidTrackingTeleport_t637C40B292957465BD7B97425070E2CD56D3ABB0;
+struct IAsyncResult_t7B9B5A0ECB35DCEC31B8A8122C37D687369253B5;
+struct IDictionary_t6D03155AF1FA9083817AA5B6AD7DEEACC26AB220;
+struct IEnumerator_t7B609C2FFA6EB5167D9C62A0C32A21DE2F666DAA;
+struct Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E;
+struct LineRenderer_tEFEF960672DB69CB14B6D181FAE6292F0CF8B63D;
+struct Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3;
+struct Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4;
+struct MeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE;
+struct MethodInfo_t;
+struct MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71;
+struct NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A;
+struct Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C;
+struct ProfilerLogger_t09D8B7A85E0B2DBD04B95B5D98FB1AAFD7EF38B0;
+struct ReaderWriterCount_tD7361BF31DEB70DC7319519D215F400357543333;
+struct ReaderWriterLockSlim_t3BF29C18C9FC0EE07209EDD54D938EA473FB3906;
+struct RectMask2D_tACF92BE999C791A665BD1ADEABF5BCEB82846670;
+struct RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5;
+struct Renderer_t320575F223BCB177A982E5DDB5DB19FAA89E7FBF;
+struct RolePoseController_tB9995F8D6E87F30D3370EDAC7E2C8967E1A5B435;
+struct RolePoseHand_t9BF17648CB20C8861A803D7638BC20A9747E0EA4;
+struct RolePoseHead_tFE04F25A0BAC3CB6492AB8AF8689D13943726919;
+struct SafeSerializationManager_tCBB85B95DFD1634237140CD892E82D06ECB3F5E6;
+struct Selectable_t3251808068A17B8E92FB33590A4C2FA66D456712;
+struct Shader_tADC867D36B7876EE22427FAA2CE485105F4EE692;
+struct Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99;
+struct String_t;
+struct StringBuilder_t;
+struct Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62;
+struct TextGenerator_t85D00417640A53953556C01F9D4E7DDE1ABD8FEC;
+struct Texture2D_tE6505BC111DD8A424A9DBE8E05D7D09E11FFFCF4;
+struct TrackerExtrinsic_t0F1387F0EF1080045C7BDF6ECF55A6EB0A2EEF6A;
+struct TrackerUpdater_t82756B23EA06F498F3945B6B863F235BF408B6AE;
+struct Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1;
+struct UnityAction_t11A1F3B953B365C072A5DCC32677EE1796A962A7;
+struct VertexHelper_tB905FCB02AE67CBEE5F265FE37A5938FC5D136FE;
+struct Void_t4861ACF8F4594C3437BB48B6E56783494B843915;
+struct WaitForEndOfFrame_tE38D80923E3F8380069B423968C25ABE50A46663;
+struct TrackerIndexBase_t2B04E837E04D1B082E9C3DA619849C2749AAC94D;
+struct TrackerTypeBase_tF3E0753AAE99ECC8DADF5023B84C3DD40B30B85C;
+struct ButtonClickedEvent_t8EA72E90B3BD1392FB3B3EF167D5121C23569E4C;
+struct DropdownEvent_t8A008B010A742724CFC93576D6976E474BB13059;
+struct OptionData_t68DC820D58A3ABBAE844326B15A7F14D48FAE55F;
+struct OptionDataList_t53255477D0A9C6980AB48693A520EFBC94DFFB96;
+struct U3CStartBodyTrackingU3Ed__49_tD8F0E0671C60F27C0468C023E23885C6761FCC8C;
+struct CullStateChangedEvent_t6073CD0D951EC1256BF74B8F9107D68FC89B99B8;
+struct U3CUpdatePoseU3Ed__5_t0BBB54F06F339003CA1E8589E45A24B7CD1A2888;
+
+IL2CPP_EXTERN_C RuntimeClass* Application_tDB03BE91CDF0ACA614A5E0B67CFB77C44EB19B21_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* BodyManager_tC2F2528B290757CB0FB5804C9FDA9DB22C5C1828_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* BodyTrackingUtils_t5FCC0E4F696D7C3AA52BF543CA81592CBAAC490C_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* CalibrationStatusDelegate_t7456FF3FDFC24533E36DAEC05FE3ADD6EA1DCD41_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* Exception_t_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* Path_t8A38A801D0219E8209C1B1D90D82D4D755D998BC_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* ReaderWriterLockSlim_t3BF29C18C9FC0EE07209EDD54D938EA473FB3906_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* StringBuilder_t_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* Tracker_t127766830CF66C34BAB8282F55B0C0C02C596F30_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* TrackingMode_t4E4B212AEF9299DEBDCBBB6694F8C40D264FD2C3_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* TrackingStatus_tE51A748537DC609C4F25CA49C197F2624272426B_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* U3CStartBodyTrackingU3Ed__49_tD8F0E0671C60F27C0468C023E23885C6761FCC8C_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* U3CUpdatePoseU3Ed__5_t0BBB54F06F339003CA1E8589E45A24B7CD1A2888_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* WaitForEndOfFrame_tE38D80923E3F8380069B423968C25ABE50A46663_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C String_t* _stringLiteral06A589F5065EA97BDF1E93AFFBE9135C8733EAC9;
+IL2CPP_EXTERN_C String_t* _stringLiteral08A809AE3B6353FBA0B954B3E9CED3C73E66D352;
+IL2CPP_EXTERN_C String_t* _stringLiteral12B42E3755A3A673EB22E95E3E390BA13CA9483C;
+IL2CPP_EXTERN_C String_t* _stringLiteral157A71014B374913FB1A7E367187C0C8CA55C44A;
+IL2CPP_EXTERN_C String_t* _stringLiteral1D42CADF6CAAB1179EEA6FF8E6BEBF3893129A00;
+IL2CPP_EXTERN_C String_t* _stringLiteral221547242E067F98F093F2EE57C29BB9DEC34F99;
+IL2CPP_EXTERN_C String_t* _stringLiteral2B936D842006246E8EBF84A002EDB281EE1E4F57;
+IL2CPP_EXTERN_C String_t* _stringLiteral2BA0A5FC5480FE9917E00A23283E02B76EBCB997;
+IL2CPP_EXTERN_C String_t* _stringLiteral2FB7AA8BBF5BD690367F5418DE81DF2D900EA3E9;
+IL2CPP_EXTERN_C String_t* _stringLiteral32C3C4AE250B0499299A9ECB7523690CEBFE8C80;
+IL2CPP_EXTERN_C String_t* _stringLiteral34D93BFDB064722883F4297523126AABAEA47E8E;
+IL2CPP_EXTERN_C String_t* _stringLiteral3A6926D5AB1CE09ED545EFAB43BA4835EFB4D6C7;
+IL2CPP_EXTERN_C String_t* _stringLiteral42E3CEFC75FEDC65FDCB5FE388AFAB158E6AB804;
+IL2CPP_EXTERN_C String_t* _stringLiteral47B898568F99C9632E73054262D0501E0B9876AC;
+IL2CPP_EXTERN_C String_t* _stringLiteral51D99A8DAB988B0C2AEAD0425E45B21A792FB412;
+IL2CPP_EXTERN_C String_t* _stringLiteral536EE7EC962721792F5B244FDC6F1CC925161129;
+IL2CPP_EXTERN_C String_t* _stringLiteral549B9D496B9C9EDE7280BA216D09059C895E4ECB;
+IL2CPP_EXTERN_C String_t* _stringLiteral5EFE4646979B4FE226DD9281CBB33148DDB09D66;
+IL2CPP_EXTERN_C String_t* _stringLiteral631DCCC7D86B3019E03AB183FDDAF679518F901D;
+IL2CPP_EXTERN_C String_t* _stringLiteral6A59B8CAD62C9BABFB834CE4DBBE357011C504AC;
+IL2CPP_EXTERN_C String_t* _stringLiteral758733BDBED83CBFF4F635AC26CA92AAE477F75D;
+IL2CPP_EXTERN_C String_t* _stringLiteral76D6BE1C6DCE46870C1F6DAAB0C1B31559BC90A6;
+IL2CPP_EXTERN_C String_t* _stringLiteral7A7D7D6A8625012B7D69B80F5F456DB3EA53431F;
+IL2CPP_EXTERN_C String_t* _stringLiteral7DBBD6DA91C2A6AD4D81FAAFE1E95F2CF265AB2E;
+IL2CPP_EXTERN_C String_t* _stringLiteral7E8B89610436A439C6F07796571F5BE4CEC41D0E;
+IL2CPP_EXTERN_C String_t* _stringLiteral84C893E7A175253E3154243B593B16AE55A95BDA;
+IL2CPP_EXTERN_C String_t* _stringLiteral84C9981C9F4C4B52CD123317C7901E63EDAE05C1;
+IL2CPP_EXTERN_C String_t* _stringLiteral91865F645BC7327F72AF3162CF5882EC9F3DF502;
+IL2CPP_EXTERN_C String_t* _stringLiteral91C96449EEF5884973CD053AEC3084EF3F706954;
+IL2CPP_EXTERN_C String_t* _stringLiteral986DB1C107584803CF898B4AF1677C90E8620BE7;
+IL2CPP_EXTERN_C String_t* _stringLiteralAE2CA2EC1CFA1DF2DC752BF01356C619F57D38DA;
+IL2CPP_EXTERN_C String_t* _stringLiteralAF3D249DEA0CB88949E4A6E926A37B4C54FD84CB;
+IL2CPP_EXTERN_C String_t* _stringLiteralB3F14BF976EFD974E34846B742502C802FABAE9D;
+IL2CPP_EXTERN_C String_t* _stringLiteralB590C33CB1F77314369BCE108CD827DCFCAC5963;
+IL2CPP_EXTERN_C String_t* _stringLiteralBC87A8CABB18BBA2DA5E7B48B4DF40BF53ECDB5D;
+IL2CPP_EXTERN_C String_t* _stringLiteralBF1FB54A3EE2EF0B2548FC1B6CDCBD078A4135CD;
+IL2CPP_EXTERN_C String_t* _stringLiteralC048BBCEBFF1E9895CFFF62411491F30B811E922;
+IL2CPP_EXTERN_C String_t* _stringLiteralC6E949F53CD6A3F6391F0421E2B7AD43C2A96064;
+IL2CPP_EXTERN_C String_t* _stringLiteralCC988E3F8B22A03CDF4C42C272A0AEC293448233;
+IL2CPP_EXTERN_C String_t* _stringLiteralD2F2BB2B5FA73624E198CE932674B4CD4D71FD9A;
+IL2CPP_EXTERN_C String_t* _stringLiteralD5E8DD02EC57884E0F947CF4D1AEFF1D86083AB6;
+IL2CPP_EXTERN_C String_t* _stringLiteralDC4FD0EFD4AD23D7C7007FDD2A4BCF732137D51E;
+IL2CPP_EXTERN_C String_t* _stringLiteralE2903AFA12AA615C93893DA71DAEED17703E7D67;
+IL2CPP_EXTERN_C String_t* _stringLiteralE8477F991B91E12B387117B63318857E07F96366;
+IL2CPP_EXTERN_C String_t* _stringLiteralE8C3AD821181B60A8820B1A6EF5F99540B6DA0FE;
+IL2CPP_EXTERN_C String_t* _stringLiteralE9F8DE4BECF3649D4C19444B0361907ACA4F3B3C;
+IL2CPP_EXTERN_C String_t* _stringLiteralEA4DD82CF87728BA7AA9A6957B9AF12625C1DB04;
+IL2CPP_EXTERN_C String_t* _stringLiteralEDAB56C9C3FD0C238AAF76C9C8E2B0EA2FB73117;
+IL2CPP_EXTERN_C String_t* _stringLiteralF04B14692D34C5AE03B28783F6E6C15A36C21F0F;
+IL2CPP_EXTERN_C String_t* _stringLiteralF144A3546D3FF730FD576C1C8E3F68126CDF22B3;
+IL2CPP_EXTERN_C const RuntimeMethod* Component_GetComponentInChildren_TisText_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62_m1D5533D50D961602AC2CD364E03388FFE2985259_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* GameObject_AddComponent_TisLineRenderer_tEFEF960672DB69CB14B6D181FAE6292F0CF8B63D_mF8C0D953BCBFDD5A01A09ADB67EB04F0D677A056_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* GameObject_GetComponentInChildren_TisDropdown_t54C0BDC1441E058BE37E796F68886671C270EF89_m57E48D487188F67A8B796999E6DF0D192A35CC2E_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* GameObject_GetComponent_TisMeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE_m7FF948365C38BC39333D82B235A7C4EAD219960D_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* GameObject_GetComponentsInChildren_TisDefineTrackerLocation_t4651548465C3999F63C2CADE3D9EFF6C45428A53_mFD763A59FBA6A10D9653231F6C4B102D074022AC_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* HumanoidTrackingMenu_CalibrationStatusCallback_m525474C306C4527DD45D0423DAB70049BFAE8274_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* List_1_get_Count_mCB9F2AFFECBE38B6D7839CF67D1F2777D97EC8FE_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* List_1_get_Item_m3A8FCCA55575F52C710AD1B240853BD988AE2DA2_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* U3CStartBodyTrackingU3Ed__49_System_Collections_IEnumerator_Reset_m54F4482F036EA92FB56CFF982978960F20BFE517_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* U3CUpdatePoseU3Ed__5_System_Collections_IEnumerator_Reset_mBCBCD6C72591AC179C791EBF565367D50EA86C5D_RuntimeMethod_var;
+struct Delegate_t_marshaled_com;
+struct Delegate_t_marshaled_pinvoke;
+struct Exception_t_marshaled_com;
+struct Exception_t_marshaled_pinvoke;
+
+struct DefineTrackerLocationU5BU5D_tDC47EFDCF672CAC17C5E34770113030715C2851A;
+struct StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248;
+struct TrackerIndexBaseU5BU5D_tFB2B0143DB0A1A68AC66F7AA265AC95C0F98CB8D;
+struct TrackerTypeBaseU5BU5D_tEB7DF4D71E5E20B49B61068EF62E69A6663F2C39;
+
+IL2CPP_EXTERN_C_BEGIN
+IL2CPP_EXTERN_C_END
+
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+struct List_1_tD5AC9F392427318E81BE224E7E394A720E64463C  : public RuntimeObject
+{
+	DebugRotationU5BU5D_tEC9AFD1D34B7247E98AD86E6F0194E3C6DFC2765* ____items;
+	int32_t ____size;
+	int32_t ____version;
+	RuntimeObject* ____syncRoot;
+};
+struct List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D  : public RuntimeObject
+{
+	ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* ____items;
+	int32_t ____size;
+	int32_t ____version;
+	RuntimeObject* ____syncRoot;
+};
+struct U3CPrivateImplementationDetailsU3E_t70196C067741FED0B907BAEBA9EC94F1FD27261A  : public RuntimeObject
+{
+};
+struct ReaderWriterLockSlim_t3BF29C18C9FC0EE07209EDD54D938EA473FB3906  : public RuntimeObject
+{
+	bool ___fIsReentrant;
+	int32_t ___myLock;
+	uint32_t ___numWriteWaiters;
+	uint32_t ___numReadWaiters;
+	uint32_t ___numWriteUpgradeWaiters;
+	uint32_t ___numUpgradeWaiters;
+	bool ___fNoWaiters;
+	int32_t ___upgradeLockOwnerId;
+	int32_t ___writeLockOwnerId;
+	EventWaitHandle_t18F2EB0161747B0646A9A406015A61A214A1EB7E* ___writeEvent;
+	EventWaitHandle_t18F2EB0161747B0646A9A406015A61A214A1EB7E* ___readEvent;
+	EventWaitHandle_t18F2EB0161747B0646A9A406015A61A214A1EB7E* ___upgradeEvent;
+	EventWaitHandle_t18F2EB0161747B0646A9A406015A61A214A1EB7E* ___waitUpgradeEvent;
+	int64_t ___lockID;
+	bool ___fUpgradeThreadHoldingRead;
+	uint32_t ___owners;
+	bool ___fDisposed;
+};
+struct String_t  : public RuntimeObject
+{
+	int32_t ____stringLength;
+	Il2CppChar ____firstChar;
+};
+struct StringBuilder_t  : public RuntimeObject
+{
+	CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB* ___m_ChunkChars;
+	StringBuilder_t* ___m_ChunkPrevious;
+	int32_t ___m_ChunkLength;
+	int32_t ___m_ChunkOffset;
+	int32_t ___m_MaxCapacity;
+};
+struct ValueType_t6D9B272BD21782F0A9A14F2E41F85A50E97A986F  : public RuntimeObject
+{
+};
+struct ValueType_t6D9B272BD21782F0A9A14F2E41F85A50E97A986F_marshaled_pinvoke
+{
+};
+struct ValueType_t6D9B272BD21782F0A9A14F2E41F85A50E97A986F_marshaled_com
+{
+};
+struct YieldInstruction_tFCE35FD0907950EFEE9BC2890AC664E41C53728D  : public RuntimeObject
+{
+};
+struct YieldInstruction_tFCE35FD0907950EFEE9BC2890AC664E41C53728D_marshaled_pinvoke
+{
+};
+struct YieldInstruction_tFCE35FD0907950EFEE9BC2890AC664E41C53728D_marshaled_com
+{
+};
+struct U3CUpdatePoseU3Ed__5_t0BBB54F06F339003CA1E8589E45A24B7CD1A2888  : public RuntimeObject
+{
+	int32_t ___U3CU3E1__state;
+	RuntimeObject* ___U3CU3E2__current;
+	TrackerUpdater_t82756B23EA06F498F3945B6B863F235BF408B6AE* ___U3CU3E4__this;
+};
+struct Boolean_t09A6377A54BE2F9E6985A8149F19234FD7DDFE22 
+{
+	bool ___m_value;
+};
+struct Color_tD001788D726C3A7F1379BEED0260B9591F440C1F 
+{
+	float ___r;
+	float ___g;
+	float ___b;
+	float ___a;
+};
+struct Enum_t2A1A94B24E3B776EEF4E5E485E290BB9D4D072E2  : public ValueType_t6D9B272BD21782F0A9A14F2E41F85A50E97A986F
+{
+};
+struct Enum_t2A1A94B24E3B776EEF4E5E485E290BB9D4D072E2_marshaled_pinvoke
+{
+};
+struct Enum_t2A1A94B24E3B776EEF4E5E485E290BB9D4D072E2_marshaled_com
+{
+};
+struct Int32_t680FF22E76F6EFAD4375103CBBFFA0421349384C 
+{
+	int32_t ___m_value;
+};
+struct IntPtr_t 
+{
+	void* ___m_value;
+};
+struct Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 
+{
+	float ___x;
+	float ___y;
+	float ___z;
+	float ___w;
+};
+struct Single_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C 
+{
+	float ___m_value;
+};
+struct SpriteState_tC8199570BE6337FB5C49347C97892B4222E5AACD 
+{
+	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* ___m_HighlightedSprite;
+	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* ___m_PressedSprite;
+	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* ___m_SelectedSprite;
+	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* ___m_DisabledSprite;
+};
+struct SpriteState_tC8199570BE6337FB5C49347C97892B4222E5AACD_marshaled_pinvoke
+{
+	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* ___m_HighlightedSprite;
+	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* ___m_PressedSprite;
+	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* ___m_SelectedSprite;
+	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* ___m_DisabledSprite;
+};
+struct SpriteState_tC8199570BE6337FB5C49347C97892B4222E5AACD_marshaled_com
+{
+	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* ___m_HighlightedSprite;
+	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* ___m_PressedSprite;
+	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* ___m_SelectedSprite;
+	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* ___m_DisabledSprite;
+};
+struct UInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B 
+{
+	uint32_t ___m_value;
+};
+struct Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 
+{
+	float ___x;
+	float ___y;
+	float ___z;
+};
+struct Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 
+{
+	float ___x;
+	float ___y;
+	float ___z;
+	float ___w;
+};
+struct Void_t4861ACF8F4594C3437BB48B6E56783494B843915 
+{
+	union
+	{
+		struct
+		{
+		};
+		uint8_t Void_t4861ACF8F4594C3437BB48B6E56783494B843915__padding[1];
+	};
+};
+struct WaitForEndOfFrame_tE38D80923E3F8380069B423968C25ABE50A46663  : public YieldInstruction_tFCE35FD0907950EFEE9BC2890AC664E41C53728D
+{
+};
+#pragma pack(push, tp, 1)
+struct __StaticArrayInitTypeSizeU3D224_t4E7EC63B2ADEB3332DEAC84EC40EA0195FD5BB30 
+{
+	union
+	{
+		struct
+		{
+			union
+			{
+			};
+		};
+		uint8_t __StaticArrayInitTypeSizeU3D224_t4E7EC63B2ADEB3332DEAC84EC40EA0195FD5BB30__padding[224];
+	};
+};
+#pragma pack(pop, tp)
+#pragma pack(push, tp, 1)
+struct __StaticArrayInitTypeSizeU3D24_tD3994A724B0CB6E77D143925BCDB08A9A5F3420C 
+{
+	union
+	{
+		struct
+		{
+			union
+			{
+			};
+		};
+		uint8_t __StaticArrayInitTypeSizeU3D24_tD3994A724B0CB6E77D143925BCDB08A9A5F3420C__padding[24];
+	};
+};
+#pragma pack(pop, tp)
+#pragma pack(push, tp, 1)
+struct __StaticArrayInitTypeSizeU3D4285_tE34EF1DAFA2F400B1142A8159E3B6F5BA8E24947 
+{
+	union
+	{
+		struct
+		{
+			union
+			{
+			};
+		};
+		uint8_t __StaticArrayInitTypeSizeU3D4285_tE34EF1DAFA2F400B1142A8159E3B6F5BA8E24947__padding[4285];
+	};
+};
+#pragma pack(pop, tp)
+#pragma pack(push, tp, 1)
+struct __StaticArrayInitTypeSizeU3D5496_tC77B272FCA7701D9E0CC6432AE74CC3D70340781 
+{
+	union
+	{
+		struct
+		{
+			union
+			{
+			};
+		};
+		uint8_t __StaticArrayInitTypeSizeU3D5496_tC77B272FCA7701D9E0CC6432AE74CC3D70340781__padding[5496];
+	};
+};
+#pragma pack(pop, tp)
+#pragma pack(push, tp, 1)
+struct __StaticArrayInitTypeSizeU3D64_t5409461B895C1A06BE7BA7FDD914EC25540274CD 
+{
+	union
+	{
+		struct
+		{
+			union
+			{
+			};
+		};
+		uint8_t __StaticArrayInitTypeSizeU3D64_t5409461B895C1A06BE7BA7FDD914EC25540274CD__padding[64];
+	};
+};
+#pragma pack(pop, tp)
+struct BodyTrackingResult_t08A6CC5B7A675F40E6BB77BDE49B59A1EB1F9177 
+{
+	uint8_t ___value__;
+};
+struct CalibrationStatus_t03C3D87B5ADD74611CD0B65D0DFA83EF46F1B73E 
+{
+	int32_t ___value__;
+};
+struct ColorBlock_tDD7C62E7AFE442652FC98F8D058CE8AE6BFD7C11 
+{
+	Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___m_NormalColor;
+	Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___m_HighlightedColor;
+	Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___m_PressedColor;
+	Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___m_SelectedColor;
+	Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___m_DisabledColor;
+	float ___m_ColorMultiplier;
+	float ___m_FadeDuration;
+};
+struct Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B  : public YieldInstruction_tFCE35FD0907950EFEE9BC2890AC664E41C53728D
+{
+	intptr_t ___m_Ptr;
+};
+struct Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B_marshaled_pinvoke : public YieldInstruction_tFCE35FD0907950EFEE9BC2890AC664E41C53728D_marshaled_pinvoke
+{
+	intptr_t ___m_Ptr;
+};
+struct Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B_marshaled_com : public YieldInstruction_tFCE35FD0907950EFEE9BC2890AC664E41C53728D_marshaled_com
+{
+	intptr_t ___m_Ptr;
+};
+struct Delegate_t  : public RuntimeObject
+{
+	intptr_t ___method_ptr;
+	intptr_t ___invoke_impl;
+	RuntimeObject* ___m_target;
+	intptr_t ___method;
+	intptr_t ___delegate_trampoline;
+	intptr_t ___extra_arg;
+	intptr_t ___method_code;
+	intptr_t ___interp_method;
+	intptr_t ___interp_invoke_impl;
+	MethodInfo_t* ___method_info;
+	MethodInfo_t* ___original_method_info;
+	DelegateData_t9B286B493293CD2D23A5B2B5EF0E5B1324C2B77E* ___data;
+	bool ___method_is_virtual;
+};
+struct Delegate_t_marshaled_pinvoke
+{
+	intptr_t ___method_ptr;
+	intptr_t ___invoke_impl;
+	Il2CppIUnknown* ___m_target;
+	intptr_t ___method;
+	intptr_t ___delegate_trampoline;
+	intptr_t ___extra_arg;
+	intptr_t ___method_code;
+	intptr_t ___interp_method;
+	intptr_t ___interp_invoke_impl;
+	MethodInfo_t* ___method_info;
+	MethodInfo_t* ___original_method_info;
+	DelegateData_t9B286B493293CD2D23A5B2B5EF0E5B1324C2B77E* ___data;
+	int32_t ___method_is_virtual;
+};
+struct Delegate_t_marshaled_com
+{
+	intptr_t ___method_ptr;
+	intptr_t ___invoke_impl;
+	Il2CppIUnknown* ___m_target;
+	intptr_t ___method;
+	intptr_t ___delegate_trampoline;
+	intptr_t ___extra_arg;
+	intptr_t ___method_code;
+	intptr_t ___interp_method;
+	intptr_t ___interp_invoke_impl;
+	MethodInfo_t* ___method_info;
+	MethodInfo_t* ___original_method_info;
+	DelegateData_t9B286B493293CD2D23A5B2B5EF0E5B1324C2B77E* ___data;
+	int32_t ___method_is_virtual;
+};
+struct Exception_t  : public RuntimeObject
+{
+	String_t* ____className;
+	String_t* ____message;
+	RuntimeObject* ____data;
+	Exception_t* ____innerException;
+	String_t* ____helpURL;
+	RuntimeObject* ____stackTrace;
+	String_t* ____stackTraceString;
+	String_t* ____remoteStackTraceString;
+	int32_t ____remoteStackIndex;
+	RuntimeObject* ____dynamicMethods;
+	int32_t ____HResult;
+	String_t* ____source;
+	SafeSerializationManager_tCBB85B95DFD1634237140CD892E82D06ECB3F5E6* ____safeSerializationManager;
+	StackTraceU5BU5D_t32FBCB20930EAF5BAE3F450FF75228E5450DA0DF* ___captured_traces;
+	IntPtrU5BU5D_tFD177F8C806A6921AD7150264CCC62FA00CAD832* ___native_trace_ips;
+	int32_t ___caught_in_unmanaged;
+};
+struct Exception_t_marshaled_pinvoke
+{
+	char* ____className;
+	char* ____message;
+	RuntimeObject* ____data;
+	Exception_t_marshaled_pinvoke* ____innerException;
+	char* ____helpURL;
+	Il2CppIUnknown* ____stackTrace;
+	char* ____stackTraceString;
+	char* ____remoteStackTraceString;
+	int32_t ____remoteStackIndex;
+	Il2CppIUnknown* ____dynamicMethods;
+	int32_t ____HResult;
+	char* ____source;
+	SafeSerializationManager_tCBB85B95DFD1634237140CD892E82D06ECB3F5E6* ____safeSerializationManager;
+	StackTraceU5BU5D_t32FBCB20930EAF5BAE3F450FF75228E5450DA0DF* ___captured_traces;
+	Il2CppSafeArray* ___native_trace_ips;
+	int32_t ___caught_in_unmanaged;
+};
+struct Exception_t_marshaled_com
+{
+	Il2CppChar* ____className;
+	Il2CppChar* ____message;
+	RuntimeObject* ____data;
+	Exception_t_marshaled_com* ____innerException;
+	Il2CppChar* ____helpURL;
+	Il2CppIUnknown* ____stackTrace;
+	Il2CppChar* ____stackTraceString;
+	Il2CppChar* ____remoteStackTraceString;
+	int32_t ____remoteStackIndex;
+	Il2CppIUnknown* ____dynamicMethods;
+	int32_t ____HResult;
+	Il2CppChar* ____source;
+	SafeSerializationManager_tCBB85B95DFD1634237140CD892E82D06ECB3F5E6* ____safeSerializationManager;
+	StackTraceU5BU5D_t32FBCB20930EAF5BAE3F450FF75228E5450DA0DF* ___captured_traces;
+	Il2CppSafeArray* ___native_trace_ips;
+	int32_t ___caught_in_unmanaged;
+};
+struct Extrinsic_t6F6D05459024E84F236F0E626B453938F9D9631F 
+{
+	union
+	{
+		#pragma pack(push, tp, 1)
+		struct
+		{
+			Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___translation;
+		};
+		#pragma pack(pop, tp)
+		struct
+		{
+			Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___translation_forAlignmentOnly;
+		};
+		#pragma pack(push, tp, 1)
+		struct
+		{
+			char ___rotation_OffsetPadding[12];
+			Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 ___rotation;
+		};
+		#pragma pack(pop, tp)
+		struct
+		{
+			char ___rotation_OffsetPadding_forAlignmentOnly[12];
+			Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 ___rotation_forAlignmentOnly;
+		};
+	};
+};
+struct JointType_t9E7A51B0A49F8BDD59BD07D5EE8859EA1ECB28FE 
+{
+	int32_t ___value__;
+};
+struct Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C  : public RuntimeObject
+{
+	intptr_t ___m_CachedPtr;
+};
+struct Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_marshaled_pinvoke
+{
+	intptr_t ___m_CachedPtr;
+};
+struct Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_marshaled_com
+{
+	intptr_t ___m_CachedPtr;
+};
+struct PoseState_t8134A92ECDE7FEAD0268EAD622BA47A7DFBBFE62 
+{
+	uint32_t ___value__;
+};
+struct TrackerLocation_t9EF2F11A03DE77FB42AC4E282B9AF6A330CA5255 
+{
+	int32_t ___value__;
+};
+struct TrackerType_tC7DA4730B9DE346255AE9E6309751F96E2D29EEB 
+{
+	uint32_t ___value__;
+};
+struct TransformData_t37919E9183CB08C4ABB150F80E1904EF2907273D 
+{
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___position;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___localPosition;
+	Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 ___rotation;
+	Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 ___localRotation;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___localScale;
+};
+struct TrackerBase_tAEC933E7A6FFFB0F47443FBA5F1751EB63D7F781 
+{
+	int32_t ___value__;
+};
+struct TrackingMode_tAF7AFF916FBA230488E0A45453DA6F7319ECB619 
+{
+	int32_t ___value__;
+};
+struct TrackingStatus_tE51A748537DC609C4F25CA49C197F2624272426B 
+{
+	int32_t ___value__;
+};
+struct TrackingMode_t4E4B212AEF9299DEBDCBBB6694F8C40D264FD2C3 
+{
+	int32_t ___value__;
+};
+struct TrackingStatus_tE1AAC93B37C8961DFFBF6B33B3C4514AEC0DA51A 
+{
+	int32_t ___value__;
+};
+struct Mode_t2D49D0E10E2FDA0026278C2400C16033888D0542 
+{
+	int32_t ___value__;
+};
+struct Transition_tF856A77C9FAC6D26EA3CA158CF68B739D35397B3 
+{
+	int32_t ___value__;
+};
+struct Id_t4AF3A6A8D8097B0BA0D79DAE0BBF88B5503E64B7 
+{
+	uint32_t ___value__;
+};
+struct Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728  : public RuntimeObject
+{
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___root;
+	TransformData_t37919E9183CB08C4ABB150F80E1904EF2907273D ___hipData;
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___leftThigh;
+	TransformData_t37919E9183CB08C4ABB150F80E1904EF2907273D ___leftThighData;
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___leftLeg;
+	TransformData_t37919E9183CB08C4ABB150F80E1904EF2907273D ___leftLegData;
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___leftAnkle;
+	TransformData_t37919E9183CB08C4ABB150F80E1904EF2907273D ___leftAnkleData;
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___leftFoot;
+	TransformData_t37919E9183CB08C4ABB150F80E1904EF2907273D ___leftFootData;
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___rightThigh;
+	TransformData_t37919E9183CB08C4ABB150F80E1904EF2907273D ___rightThighData;
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___rightLeg;
+	TransformData_t37919E9183CB08C4ABB150F80E1904EF2907273D ___rightLegData;
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___rightAnkle;
+	TransformData_t37919E9183CB08C4ABB150F80E1904EF2907273D ___rightAnkleData;
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___rightFoot;
+	TransformData_t37919E9183CB08C4ABB150F80E1904EF2907273D ___rightFootData;
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___waist;
+	TransformData_t37919E9183CB08C4ABB150F80E1904EF2907273D ___waistData;
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___spineLower;
+	TransformData_t37919E9183CB08C4ABB150F80E1904EF2907273D ___spineLowerData;
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___spineMiddle;
+	TransformData_t37919E9183CB08C4ABB150F80E1904EF2907273D ___spineMiddleData;
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___spineHigh;
+	TransformData_t37919E9183CB08C4ABB150F80E1904EF2907273D ___spineHighData;
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___chest;
+	TransformData_t37919E9183CB08C4ABB150F80E1904EF2907273D ___chestData;
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___neck;
+	TransformData_t37919E9183CB08C4ABB150F80E1904EF2907273D ___neckData;
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___head;
+	TransformData_t37919E9183CB08C4ABB150F80E1904EF2907273D ___headData;
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___leftClavicle;
+	TransformData_t37919E9183CB08C4ABB150F80E1904EF2907273D ___leftClavicleData;
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___leftScapula;
+	TransformData_t37919E9183CB08C4ABB150F80E1904EF2907273D ___leftScapulaData;
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___leftUpperarm;
+	TransformData_t37919E9183CB08C4ABB150F80E1904EF2907273D ___leftUpperarmData;
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___leftForearm;
+	TransformData_t37919E9183CB08C4ABB150F80E1904EF2907273D ___leftForearmData;
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___leftHand;
+	TransformData_t37919E9183CB08C4ABB150F80E1904EF2907273D ___leftHandData;
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___rightClavicle;
+	TransformData_t37919E9183CB08C4ABB150F80E1904EF2907273D ___rightClavicleData;
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___rightScapula;
+	TransformData_t37919E9183CB08C4ABB150F80E1904EF2907273D ___rightScapulaData;
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___rightUpperarm;
+	TransformData_t37919E9183CB08C4ABB150F80E1904EF2907273D ___rightUpperarmData;
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___rightForearm;
+	TransformData_t37919E9183CB08C4ABB150F80E1904EF2907273D ___rightForearmData;
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___rightHand;
+	TransformData_t37919E9183CB08C4ABB150F80E1904EF2907273D ___rightHandData;
+	float ___height;
+};
+struct Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3  : public Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C
+{
+};
+struct ExtrinsicVector4_t_t0F9316E78F628C5F8646C4E143F5E3094F8E6A9D 
+{
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___translation;
+	Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 ___m_rotation;
+	Extrinsic_t6F6D05459024E84F236F0E626B453938F9D9631F ___ext;
+};
+struct GameObject_t76FEDD663AB33C991A9C9A23129337651094216F  : public Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C
+{
+};
+struct Joint_t6CA7EDEC06F0433A4794526819918937A51A8E35 
+{
+	union
+	{
+		#pragma pack(push, tp, 1)
+		struct
+		{
+			int32_t ___jointType;
+		};
+		#pragma pack(pop, tp)
+		struct
+		{
+			int32_t ___jointType_forAlignmentOnly;
+		};
+		#pragma pack(push, tp, 1)
+		struct
+		{
+			char ___poseState_OffsetPadding[4];
+			uint32_t ___poseState;
+		};
+		#pragma pack(pop, tp)
+		struct
+		{
+			char ___poseState_OffsetPadding_forAlignmentOnly[4];
+			uint32_t ___poseState_forAlignmentOnly;
+		};
+		#pragma pack(push, tp, 1)
+		struct
+		{
+			char ___translation_OffsetPadding[8];
+			Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___translation;
+		};
+		#pragma pack(pop, tp)
+		struct
+		{
+			char ___translation_OffsetPadding_forAlignmentOnly[8];
+			Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___translation_forAlignmentOnly;
+		};
+		#pragma pack(push, tp, 1)
+		struct
+		{
+			char ___velocity_OffsetPadding[20];
+			Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___velocity;
+		};
+		#pragma pack(pop, tp)
+		struct
+		{
+			char ___velocity_OffsetPadding_forAlignmentOnly[20];
+			Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___velocity_forAlignmentOnly;
+		};
+		#pragma pack(push, tp, 1)
+		struct
+		{
+			char ___angularVelocity_OffsetPadding[32];
+			Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___angularVelocity;
+		};
+		#pragma pack(pop, tp)
+		struct
+		{
+			char ___angularVelocity_OffsetPadding_forAlignmentOnly[32];
+			Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___angularVelocity_forAlignmentOnly;
+		};
+		#pragma pack(push, tp, 1)
+		struct
+		{
+			char ___rotation_OffsetPadding[44];
+			Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 ___rotation;
+		};
+		#pragma pack(pop, tp)
+		struct
+		{
+			char ___rotation_OffsetPadding_forAlignmentOnly[44];
+			Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 ___rotation_forAlignmentOnly;
+		};
+	};
+};
+struct Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3  : public Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C
+{
+};
+struct MulticastDelegate_t  : public Delegate_t
+{
+	DelegateU5BU5D_tC5AB7E8F745616680F337909D3A8E6C722CDF771* ___delegates;
+};
+struct MulticastDelegate_t_marshaled_pinvoke : public Delegate_t_marshaled_pinvoke
+{
+	Delegate_t_marshaled_pinvoke** ___delegates;
+};
+struct MulticastDelegate_t_marshaled_com : public Delegate_t_marshaled_com
+{
+	Delegate_t_marshaled_com** ___delegates;
+};
+struct Navigation_t4D2E201D65749CF4E104E8AC1232CF1D6F14795C 
+{
+	int32_t ___m_Mode;
+	bool ___m_WrapAround;
+	Selectable_t3251808068A17B8E92FB33590A4C2FA66D456712* ___m_SelectOnUp;
+	Selectable_t3251808068A17B8E92FB33590A4C2FA66D456712* ___m_SelectOnDown;
+	Selectable_t3251808068A17B8E92FB33590A4C2FA66D456712* ___m_SelectOnLeft;
+	Selectable_t3251808068A17B8E92FB33590A4C2FA66D456712* ___m_SelectOnRight;
+};
+struct Navigation_t4D2E201D65749CF4E104E8AC1232CF1D6F14795C_marshaled_pinvoke
+{
+	int32_t ___m_Mode;
+	int32_t ___m_WrapAround;
+	Selectable_t3251808068A17B8E92FB33590A4C2FA66D456712* ___m_SelectOnUp;
+	Selectable_t3251808068A17B8E92FB33590A4C2FA66D456712* ___m_SelectOnDown;
+	Selectable_t3251808068A17B8E92FB33590A4C2FA66D456712* ___m_SelectOnLeft;
+	Selectable_t3251808068A17B8E92FB33590A4C2FA66D456712* ___m_SelectOnRight;
+};
+struct Navigation_t4D2E201D65749CF4E104E8AC1232CF1D6F14795C_marshaled_com
+{
+	int32_t ___m_Mode;
+	int32_t ___m_WrapAround;
+	Selectable_t3251808068A17B8E92FB33590A4C2FA66D456712* ___m_SelectOnUp;
+	Selectable_t3251808068A17B8E92FB33590A4C2FA66D456712* ___m_SelectOnDown;
+	Selectable_t3251808068A17B8E92FB33590A4C2FA66D456712* ___m_SelectOnLeft;
+	Selectable_t3251808068A17B8E92FB33590A4C2FA66D456712* ___m_SelectOnRight;
+};
+struct Shader_tADC867D36B7876EE22427FAA2CE485105F4EE692  : public Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C
+{
+};
+struct SystemException_tCC48D868298F4C0705279823E34B00F4FBDB7295  : public Exception_t
+{
+};
+struct TrackerIndexBase_t2B04E837E04D1B082E9C3DA619849C2749AAC94D  : public RuntimeObject
+{
+	int32_t ___location;
+	uint32_t ___trackerId;
+};
+struct TrackerTypeBase_tF3E0753AAE99ECC8DADF5023B84C3DD40B30B85C  : public RuntimeObject
+{
+	int32_t ___location;
+	uint32_t ___type;
+};
+struct U3CStartBodyTrackingU3Ed__49_tD8F0E0671C60F27C0468C023E23885C6761FCC8C  : public RuntimeObject
+{
+	int32_t ___U3CU3E1__state;
+	RuntimeObject* ___U3CU3E2__current;
+	HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* ___U3CU3E4__this;
+	uint8_t ___U3CresultU3E5__2;
+};
+struct Behaviour_t01970CFBBA658497AE30F311C447DB0440BAB7FA  : public Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3
+{
+};
+struct BodyAvatar_tD225D5E1511C8FED0CEE3C112BC10C39F03A1B4F  : public RuntimeObject
+{
+	StringBuilder_t* ___m_sb;
+	float ___height;
+	Joint_t6CA7EDEC06F0433A4794526819918937A51A8E35 ___hip;
+	Joint_t6CA7EDEC06F0433A4794526819918937A51A8E35 ___leftThigh;
+	Joint_t6CA7EDEC06F0433A4794526819918937A51A8E35 ___leftLeg;
+	Joint_t6CA7EDEC06F0433A4794526819918937A51A8E35 ___leftAnkle;
+	Joint_t6CA7EDEC06F0433A4794526819918937A51A8E35 ___leftFoot;
+	Joint_t6CA7EDEC06F0433A4794526819918937A51A8E35 ___rightThigh;
+	Joint_t6CA7EDEC06F0433A4794526819918937A51A8E35 ___rightLeg;
+	Joint_t6CA7EDEC06F0433A4794526819918937A51A8E35 ___rightAnkle;
+	Joint_t6CA7EDEC06F0433A4794526819918937A51A8E35 ___rightFoot;
+	Joint_t6CA7EDEC06F0433A4794526819918937A51A8E35 ___waist;
+	Joint_t6CA7EDEC06F0433A4794526819918937A51A8E35 ___spineLower;
+	Joint_t6CA7EDEC06F0433A4794526819918937A51A8E35 ___spineMiddle;
+	Joint_t6CA7EDEC06F0433A4794526819918937A51A8E35 ___spineHigh;
+	Joint_t6CA7EDEC06F0433A4794526819918937A51A8E35 ___chest;
+	Joint_t6CA7EDEC06F0433A4794526819918937A51A8E35 ___neck;
+	Joint_t6CA7EDEC06F0433A4794526819918937A51A8E35 ___head;
+	Joint_t6CA7EDEC06F0433A4794526819918937A51A8E35 ___leftClavicle;
+	Joint_t6CA7EDEC06F0433A4794526819918937A51A8E35 ___leftScapula;
+	Joint_t6CA7EDEC06F0433A4794526819918937A51A8E35 ___leftUpperarm;
+	Joint_t6CA7EDEC06F0433A4794526819918937A51A8E35 ___leftForearm;
+	Joint_t6CA7EDEC06F0433A4794526819918937A51A8E35 ___leftHand;
+	Joint_t6CA7EDEC06F0433A4794526819918937A51A8E35 ___rightClavicle;
+	Joint_t6CA7EDEC06F0433A4794526819918937A51A8E35 ___rightScapula;
+	Joint_t6CA7EDEC06F0433A4794526819918937A51A8E35 ___rightUpperarm;
+	Joint_t6CA7EDEC06F0433A4794526819918937A51A8E35 ___rightForearm;
+	Joint_t6CA7EDEC06F0433A4794526819918937A51A8E35 ___rightHand;
+	float ___scale;
+	float ___confidence;
+	JointU5BU5D_t0CB1B689C73764217DFA94CBFA349EFA35C1B4B5* ___s_AvatarJoints;
+	List_1_t013BD468667855A72551AF73ADFEE8012C9A129C* ___joints;
+	bool ___print;
+};
+struct CalibrationStatusDelegate_t7456FF3FDFC24533E36DAEC05FE3ADD6EA1DCD41  : public MulticastDelegate_t
+{
+};
+struct ExtrinsicInfo_t_tD1526688D3BF6E217057C6BA7CC51BEE2406574F 
+{
+	bool ___isTracking;
+	ExtrinsicVector4_t_t0F9316E78F628C5F8646C4E143F5E3094F8E6A9D ___extrinsic;
+};
+struct ExtrinsicInfo_t_tD1526688D3BF6E217057C6BA7CC51BEE2406574F_marshaled_pinvoke
+{
+	int32_t ___isTracking;
+	ExtrinsicVector4_t_t0F9316E78F628C5F8646C4E143F5E3094F8E6A9D ___extrinsic;
+};
+struct ExtrinsicInfo_t_tD1526688D3BF6E217057C6BA7CC51BEE2406574F_marshaled_com
+{
+	int32_t ___isTracking;
+	ExtrinsicVector4_t_t0F9316E78F628C5F8646C4E143F5E3094F8E6A9D ___extrinsic;
+};
+struct NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A  : public SystemException_tCC48D868298F4C0705279823E34B00F4FBDB7295
+{
+};
+struct Renderer_t320575F223BCB177A982E5DDB5DB19FAA89E7FBF  : public Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3
+{
+};
+struct Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1  : public Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3
+{
+};
+struct LineRenderer_tEFEF960672DB69CB14B6D181FAE6292F0CF8B63D  : public Renderer_t320575F223BCB177A982E5DDB5DB19FAA89E7FBF
+{
+};
+struct MeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE  : public Renderer_t320575F223BCB177A982E5DDB5DB19FAA89E7FBF
+{
+};
+struct MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71  : public Behaviour_t01970CFBBA658497AE30F311C447DB0440BAB7FA
+{
+	CancellationTokenSource_tAAE1E0033BCFC233801F8CB4CED5C852B350CB7B* ___m_CancellationTokenSource;
+};
+struct BodyManager_tC2F2528B290757CB0FB5804C9FDA9DB22C5C1828  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
+{
+	StringBuilder_t* ___m_sb;
+	int32_t ___logFrame;
+	bool ___printIntervalLog;
+	bool ___m_EnableTrackingLog;
+	List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73* ___s_SkeletonIds;
+	BodyPose_t072C0E965396565F97CA661AEA5FC98372980479* ___m_StandardPose;
+	TrackerExtrinsic_t0F1387F0EF1080045C7BDF6ECF55A6EB0A2EEF6A* ___m_TrackerExtrinsic;
+	CalibrationStatusDelegate_t7456FF3FDFC24533E36DAEC05FE3ADD6EA1DCD41* ___upperIKLegFKCallback;
+	BodyRedirectives_t2DF349B1391893E09117107F21F9652CE6918119* ___m_Redirectives;
+	bool ___inCalibration;
+	int32_t ___m_FunctionalCalibrationStatus;
+	Dictionary_2_tEFB54AC11E68C0931DB23876EB2884AB4634F89E* ___s_BodyRotationSpaces;
+	Dictionary_2_t26FF6C13ECDF31E16CD6A81D365162BFA276F0AD* ___s_BodyPoses;
+	Dictionary_2_t58FF2960674CDBD30BBD769A90885AA455A4C9D1* ___s_BodyAvatars;
+	uint32_t ___m_OutputJointCount;
+	JointU5BU5D_t0CB1B689C73764217DFA94CBFA349EFA35C1B4B5* ___s_OutputJoints;
+};
+struct BodyRoleData_tB3E30ECEB3632C49D288739F6240594BC9BFB264  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
+{
+	StringBuilder_t* ___m_sb;
+	int32_t ___m_TrackerPose;
+	TrackerIndexBaseU5BU5D_tFB2B0143DB0A1A68AC66F7AA265AC95C0F98CB8D* ___m_TrackerIndexInputs;
+	TrackerTypeBaseU5BU5D_tEB7DF4D71E5E20B49B61068EF62E69A6663F2C39* ___m_TrackerTypeInputs;
+	RolePoseHead_tFE04F25A0BAC3CB6492AB8AF8689D13943726919* ___m_RoleHead;
+	RolePoseController_tB9995F8D6E87F30D3370EDAC7E2C8967E1A5B435* ___m_RoleControllerL;
+	RolePoseController_tB9995F8D6E87F30D3370EDAC7E2C8967E1A5B435* ___m_RoleControllerR;
+	RolePoseHand_t9BF17648CB20C8861A803D7638BC20A9747E0EA4* ___m_RoleHandL;
+	RolePoseHand_t9BF17648CB20C8861A803D7638BC20A9747E0EA4* ___m_RoleHandR;
+	List_1_tEDD08FEF5AE49977928854D26F4746C0654A234F* ___s_RoleTracker;
+	int32_t ___trackerFrame;
+	TrackerLocationU5BU5D_t16F0FC298A9885E4128AC22616039C00740C26D3* ___s_TrackerRole;
+};
+struct ConfigTrackerIndexType_t2A8BBD79DD1FBDD186BB68AED89643929C14CF2A  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
+{
+	StringBuilder_t* ___m_sb;
+	BodyRoleData_tB3E30ECEB3632C49D288739F6240594BC9BFB264* ___bodyData;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___menuIndex;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___menuType;
+};
+struct DebugRotation_t7937DC12D85BF51C2C66BAAF2B6CAB5C8CD88CBA  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
+{
+	Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 ___Rot;
+};
+struct DebugRotationMaster_tF3C5F0F48BDDF1C25AD290F4978F267D1F7E5559  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
+{
+	List_1_tD5AC9F392427318E81BE224E7E394A720E64463C* ___DRs;
+};
+struct DefineTrackerLocation_t4651548465C3999F63C2CADE3D9EFF6C45428A53  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
+{
+	int32_t ___location;
+};
+struct DrawBone_t6582AB9FC985CD515CDB7CA6C0E9A8C3E537374B  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
+{
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___m_TargetJoint;
+	float ___m_BoneWidth;
+	Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___m_BoneColor;
+	LineRenderer_tEFEF960672DB69CB14B6D181FAE6292F0CF8B63D* ___bone;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___startPos;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___endPos;
+};
+struct HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
+{
+	StringBuilder_t* ___m_sb;
+	int32_t ___logFrame;
+	bool ___printIntervalLog;
+	int32_t ___m_TrackingStatus;
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___m_AvatarOffset;
+	float ___m_AvatarScale;
+	bool ___m_CustomSettings;
+	float ___m_AvatarHeight;
+	Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* ___m_Body;
+	Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* ___m_InitialBody;
+	TransformData_t37919E9183CB08C4ABB150F80E1904EF2907273D ___m_InitialTransform;
+	bool ___updateTrackingData;
+	float ___avatarScale;
+	BodyAvatar_tD225D5E1511C8FED0CEE3C112BC10C39F03A1B4F* ___avatarBody;
+};
+struct HumanoidTracking_t3FE172B07552D5F70DCD9385CFDB6C03DF3AF979  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
+{
+	StringBuilder_t* ___m_sb;
+	int32_t ___logFrame;
+	bool ___printIntervalLog;
+	int32_t ___m_TrackingStatus;
+	bool ___m_ControlByGesture;
+	int32_t ___m_Tracking;
+	bool ___m_CustomSettings;
+	float ___m_AvatarHeight;
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___m_AvatarOffset;
+	float ___m_AvatarScale;
+	AvatarCoordinateProducer_t2FF600FF1B24092FFFBB955A8A77D30A18652BCD* ___m_JointCoordinate;
+	bool ___m_AutoGround;
+	float ___m_HeightFromSole;
+	bool ___m_CustomizeExtrinsics;
+	ExtrinsicInfo_t_tD1526688D3BF6E217057C6BA7CC51BEE2406574F ___m_Head;
+	ExtrinsicInfo_t_tD1526688D3BF6E217057C6BA7CC51BEE2406574F ___m_LeftWrist;
+	ExtrinsicInfo_t_tD1526688D3BF6E217057C6BA7CC51BEE2406574F ___m_RightWrist;
+	ExtrinsicInfo_t_tD1526688D3BF6E217057C6BA7CC51BEE2406574F ___m_LeftHandheld;
+	ExtrinsicInfo_t_tD1526688D3BF6E217057C6BA7CC51BEE2406574F ___m_RightHandheld;
+	ExtrinsicInfo_t_tD1526688D3BF6E217057C6BA7CC51BEE2406574F ___m_LeftHand;
+	ExtrinsicInfo_t_tD1526688D3BF6E217057C6BA7CC51BEE2406574F ___m_RightHand;
+	ExtrinsicInfo_t_tD1526688D3BF6E217057C6BA7CC51BEE2406574F ___m_Hips;
+	ExtrinsicInfo_t_tD1526688D3BF6E217057C6BA7CC51BEE2406574F ___m_LeftLowerLeg;
+	ExtrinsicInfo_t_tD1526688D3BF6E217057C6BA7CC51BEE2406574F ___m_RightLowerLeg;
+	ExtrinsicInfo_t_tD1526688D3BF6E217057C6BA7CC51BEE2406574F ___m_LeftFoot;
+	ExtrinsicInfo_t_tD1526688D3BF6E217057C6BA7CC51BEE2406574F ___m_RightFoot;
+	ExtrinsicInfo_t_tD1526688D3BF6E217057C6BA7CC51BEE2406574F ___m_LeftToes;
+	ExtrinsicInfo_t_tD1526688D3BF6E217057C6BA7CC51BEE2406574F ___m_RightToes;
+	Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* ___m_Body;
+	Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* ___m_InitialBody;
+	TransformData_t37919E9183CB08C4ABB150F80E1904EF2907273D ___m_InitialTransform;
+	TrackerExtrinsic_t0F1387F0EF1080045C7BDF6ECF55A6EB0A2EEF6A* ___m_CustomExts;
+	bool ___updateTrackingData;
+	int32_t ___m_AvatarID;
+};
+struct HumanoidTrackingMenu_tD8404766E39651BA25654BA0ED62D79B35AEFD35  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
+{
+	StringBuilder_t* ___m_sb;
+	HumanoidTracking_t3FE172B07552D5F70DCD9385CFDB6C03DF3AF979* ___humanoidTracking;
+	Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* ___beginTrackingButton;
+	Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* ___startCalibrationButton;
+	Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* ___trackingTitle;
+	Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* ___calibrationTitle;
+	Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* ___logButton;
+};
+struct HumanoidTrackingTeleport_t637C40B292957465BD7B97425070E2CD56D3ABB0  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
+{
+	HumanoidTracking_t3FE172B07552D5F70DCD9385CFDB6C03DF3AF979* ___humanoidTracking;
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___offsetOrigin;
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___offset1;
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___offset2;
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___offset3;
+};
+struct ProfilerLogger_t09D8B7A85E0B2DBD04B95B5D98FB1AAFD7EF38B0  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
+{
+	StringBuilder_t* ___m_sb;
+	String_t* ___logFilePath;
+};
+struct TrackerUpdater_t82756B23EA06F498F3945B6B863F235BF408B6AE  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
+{
+	uint32_t ___m_TrackIndex;
+	bool ___lastTracking;
+	bool ___toUpdate;
+};
+struct UIBehaviour_tB9D4295827BD2EEDEF0749200C6CA7090C742A9D  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
+{
+};
+struct Graphic_tCBFCA4585A19E2B75465AECFEAC43F4016BF7931  : public UIBehaviour_tB9D4295827BD2EEDEF0749200C6CA7090C742A9D
+{
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___m_Material;
+	Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___m_Color;
+	bool ___m_SkipLayoutUpdate;
+	bool ___m_SkipMaterialUpdate;
+	bool ___m_RaycastTarget;
+	bool ___m_RaycastTargetCache;
+	Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 ___m_RaycastPadding;
+	RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* ___m_RectTransform;
+	CanvasRenderer_tAB9A55A976C4E3B2B37D0CE5616E5685A8B43860* ___m_CanvasRenderer;
+	Canvas_t2DB4CEFDFF732884866C83F11ABF75F5AE8FFB26* ___m_Canvas;
+	bool ___m_VertsDirty;
+	bool ___m_MaterialDirty;
+	UnityAction_t11A1F3B953B365C072A5DCC32677EE1796A962A7* ___m_OnDirtyLayoutCallback;
+	UnityAction_t11A1F3B953B365C072A5DCC32677EE1796A962A7* ___m_OnDirtyVertsCallback;
+	UnityAction_t11A1F3B953B365C072A5DCC32677EE1796A962A7* ___m_OnDirtyMaterialCallback;
+	Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4* ___m_CachedMesh;
+	Vector2U5BU5D_tFEBBC94BCC6C9C88277BA04047D2B3FDB6ED7FDA* ___m_CachedUvs;
+	TweenRunner_1_t5BB0582F926E75E2FE795492679A6CF55A4B4BC4* ___m_ColorTweenRunner;
+	bool ___U3CuseLegacyMeshGenerationU3Ek__BackingField;
+};
+struct Selectable_t3251808068A17B8E92FB33590A4C2FA66D456712  : public UIBehaviour_tB9D4295827BD2EEDEF0749200C6CA7090C742A9D
+{
+	bool ___m_EnableCalled;
+	Navigation_t4D2E201D65749CF4E104E8AC1232CF1D6F14795C ___m_Navigation;
+	int32_t ___m_Transition;
+	ColorBlock_tDD7C62E7AFE442652FC98F8D058CE8AE6BFD7C11 ___m_Colors;
+	SpriteState_tC8199570BE6337FB5C49347C97892B4222E5AACD ___m_SpriteState;
+	AnimationTriggers_tA0DC06F89C5280C6DD972F6F4C8A56D7F4F79074* ___m_AnimationTriggers;
+	bool ___m_Interactable;
+	Graphic_tCBFCA4585A19E2B75465AECFEAC43F4016BF7931* ___m_TargetGraphic;
+	bool ___m_GroupsAllowInteraction;
+	int32_t ___m_CurrentIndex;
+	bool ___U3CisPointerInsideU3Ek__BackingField;
+	bool ___U3CisPointerDownU3Ek__BackingField;
+	bool ___U3ChasSelectionU3Ek__BackingField;
+	List_1_t2CDCA768E7F493F5EDEBC75AEB200FD621354E35* ___m_CanvasGroupCache;
+};
+struct Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098  : public Selectable_t3251808068A17B8E92FB33590A4C2FA66D456712
+{
+	ButtonClickedEvent_t8EA72E90B3BD1392FB3B3EF167D5121C23569E4C* ___m_OnClick;
+};
+struct Dropdown_t54C0BDC1441E058BE37E796F68886671C270EF89  : public Selectable_t3251808068A17B8E92FB33590A4C2FA66D456712
+{
+	RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* ___m_Template;
+	Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* ___m_CaptionText;
+	Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* ___m_CaptionImage;
+	Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* ___m_ItemText;
+	Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* ___m_ItemImage;
+	int32_t ___m_Value;
+	OptionDataList_t53255477D0A9C6980AB48693A520EFBC94DFFB96* ___m_Options;
+	DropdownEvent_t8A008B010A742724CFC93576D6976E474BB13059* ___m_OnValueChanged;
+	float ___m_AlphaFadeSpeed;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___m_Dropdown;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___m_Blocker;
+	List_1_t89B39292AD45371F7FDCB295AAE956D33588BC6E* ___m_Items;
+	TweenRunner_1_t830EC096236A3CEC7189DFA6E0B2E74C5C97780B* ___m_AlphaTweenRunner;
+	bool ___validTemplate;
+};
+struct MaskableGraphic_tFC5B6BE351C90DE53744DF2A70940242774B361E  : public Graphic_tCBFCA4585A19E2B75465AECFEAC43F4016BF7931
+{
+	bool ___m_ShouldRecalculateStencil;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___m_MaskMaterial;
+	RectMask2D_tACF92BE999C791A665BD1ADEABF5BCEB82846670* ___m_ParentMask;
+	bool ___m_Maskable;
+	bool ___m_IsMaskingGraphic;
+	bool ___m_IncludeForMasking;
+	CullStateChangedEvent_t6073CD0D951EC1256BF74B8F9107D68FC89B99B8* ___m_OnCullStateChanged;
+	bool ___m_ShouldRecalculate;
+	int32_t ___m_StencilValue;
+	Vector3U5BU5D_tFF1859CCE176131B909E2044F76443064254679C* ___m_Corners;
+};
+struct Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62  : public MaskableGraphic_tFC5B6BE351C90DE53744DF2A70940242774B361E
+{
+	FontData_tB8E562846C6CB59C43260F69AE346B9BF3157224* ___m_FontData;
+	String_t* ___m_Text;
+	TextGenerator_t85D00417640A53953556C01F9D4E7DDE1ABD8FEC* ___m_TextCache;
+	TextGenerator_t85D00417640A53953556C01F9D4E7DDE1ABD8FEC* ___m_TextCacheForLayout;
+	bool ___m_DisableFontTextureRebuiltCallback;
+	UIVertexU5BU5D_tBC532486B45D071A520751A90E819C77BA4E3D2F* ___m_TempVerts;
+};
+struct List_1_tD5AC9F392427318E81BE224E7E394A720E64463C_StaticFields
+{
+	DebugRotationU5BU5D_tEC9AFD1D34B7247E98AD86E6F0194E3C6DFC2765* ___s_emptyArray;
+};
+struct List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D_StaticFields
+{
+	ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* ___s_emptyArray;
+};
+struct U3CPrivateImplementationDetailsU3E_t70196C067741FED0B907BAEBA9EC94F1FD27261A_StaticFields
+{
+	__StaticArrayInitTypeSizeU3D4285_tE34EF1DAFA2F400B1142A8159E3B6F5BA8E24947 ___050DBA02E0A50A4E5CA12B6F39B240CCABCDE707DD57731A49939F91730513DD;
+	__StaticArrayInitTypeSizeU3D224_t4E7EC63B2ADEB3332DEAC84EC40EA0195FD5BB30 ___08EB9D0DD007527335342E0687CAFC7207FC835AB1325F287B478573EFE173A7;
+	__StaticArrayInitTypeSizeU3D64_t5409461B895C1A06BE7BA7FDD914EC25540274CD ___5D85718EC594B982C252D0279E5966FFCA33A5EAF2A455038D3AB331FDE70CEA;
+	__StaticArrayInitTypeSizeU3D64_t5409461B895C1A06BE7BA7FDD914EC25540274CD ___8667E718294E9E0DF1D30600BA3EEB201F764AAD2DAD72748643E4A285E1D1F7;
+	__StaticArrayInitTypeSizeU3D24_tD3994A724B0CB6E77D143925BCDB08A9A5F3420C ___90D856B7ECAC90C26898AF8A46404297AA0EF65768F62FDF8C3F08294BCBEE49;
+	__StaticArrayInitTypeSizeU3D5496_tC77B272FCA7701D9E0CC6432AE74CC3D70340781 ___9780954D93AD6AD6E0CCC5DE3D6305EC303E26AA2797C88A839652391973A9F1;
+};
+struct ReaderWriterLockSlim_t3BF29C18C9FC0EE07209EDD54D938EA473FB3906_StaticFields
+{
+	int64_t ___s_nextLockID;
+};
+struct ReaderWriterLockSlim_t3BF29C18C9FC0EE07209EDD54D938EA473FB3906_ThreadStaticFields
+{
+	ReaderWriterCount_tD7361BF31DEB70DC7319519D215F400357543333* ___t_rwc;
+};
+struct String_t_StaticFields
+{
+	String_t* ___Empty;
+};
+struct Boolean_t09A6377A54BE2F9E6985A8149F19234FD7DDFE22_StaticFields
+{
+	String_t* ___TrueString;
+	String_t* ___FalseString;
+};
+struct Enum_t2A1A94B24E3B776EEF4E5E485E290BB9D4D072E2_StaticFields
+{
+	CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB* ___enumSeperatorCharArray;
+};
+struct IntPtr_t_StaticFields
+{
+	intptr_t ___Zero;
+};
+struct Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974_StaticFields
+{
+	Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 ___identityQuaternion;
+};
+struct Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2_StaticFields
+{
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___zeroVector;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___oneVector;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___upVector;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___downVector;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___leftVector;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___rightVector;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___forwardVector;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___backVector;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___positiveInfinityVector;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___negativeInfinityVector;
+};
+struct Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3_StaticFields
+{
+	Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 ___zeroVector;
+	Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 ___oneVector;
+	Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 ___positiveInfinityVector;
+	Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 ___negativeInfinityVector;
+};
+struct Exception_t_StaticFields
+{
+	RuntimeObject* ___s_EDILock;
+};
+struct Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_StaticFields
+{
+	int32_t ___OffsetOfInstanceIDInCPlusPlusObject;
+};
+struct Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3_StaticFields
+{
+	int32_t ___k_ColorId;
+	int32_t ___k_MainTexId;
+};
+struct BodyManager_tC2F2528B290757CB0FB5804C9FDA9DB22C5C1828_StaticFields
+{
+	BodyManager_tC2F2528B290757CB0FB5804C9FDA9DB22C5C1828* ___m_Instance;
+};
+struct BodyRoleData_tB3E30ECEB3632C49D288739F6240594BC9BFB264_StaticFields
+{
+	RoleDataU5BU5D_tAE170CE87BD69B76C263BFA6952A187CB41A9ECA* ___s_RoleData;
+};
+struct HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A_StaticFields
+{
+	ReaderWriterLockSlim_t3BF29C18C9FC0EE07209EDD54D938EA473FB3906* ___m_TrackingStatusRWLock;
+};
+struct HumanoidTracking_t3FE172B07552D5F70DCD9385CFDB6C03DF3AF979_StaticFields
+{
+	ReaderWriterLockSlim_t3BF29C18C9FC0EE07209EDD54D938EA473FB3906* ___m_TrackingStatusRWLock;
+};
+struct Selectable_t3251808068A17B8E92FB33590A4C2FA66D456712_StaticFields
+{
+	SelectableU5BU5D_t4160E135F02A40F75A63F787D36F31FEC6FE91A9* ___s_Selectables;
+	int32_t ___s_SelectableCount;
+};
+struct Dropdown_t54C0BDC1441E058BE37E796F68886671C270EF89_StaticFields
+{
+	OptionData_t68DC820D58A3ABBAE844326B15A7F14D48FAE55F* ___s_NoOptionData;
+};
+struct Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62_StaticFields
+{
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___s_DefaultText;
+};
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+struct StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248  : public RuntimeArray
+{
+	ALIGN_FIELD (8) String_t* m_Items[1];
+
+	inline String_t* GetAt(il2cpp_array_size_t index) const
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		return m_Items[index];
+	}
+	inline String_t** GetAddressAt(il2cpp_array_size_t index)
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		return m_Items + index;
+	}
+	inline void SetAt(il2cpp_array_size_t index, String_t* value)
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		m_Items[index] = value;
+		Il2CppCodeGenWriteBarrier((void**)m_Items + index, (void*)value);
+	}
+	inline String_t* GetAtUnchecked(il2cpp_array_size_t index) const
+	{
+		return m_Items[index];
+	}
+	inline String_t** GetAddressAtUnchecked(il2cpp_array_size_t index)
+	{
+		return m_Items + index;
+	}
+	inline void SetAtUnchecked(il2cpp_array_size_t index, String_t* value)
+	{
+		m_Items[index] = value;
+		Il2CppCodeGenWriteBarrier((void**)m_Items + index, (void*)value);
+	}
+};
+struct DefineTrackerLocationU5BU5D_tDC47EFDCF672CAC17C5E34770113030715C2851A  : public RuntimeArray
+{
+	ALIGN_FIELD (8) DefineTrackerLocation_t4651548465C3999F63C2CADE3D9EFF6C45428A53* m_Items[1];
+
+	inline DefineTrackerLocation_t4651548465C3999F63C2CADE3D9EFF6C45428A53* GetAt(il2cpp_array_size_t index) const
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		return m_Items[index];
+	}
+	inline DefineTrackerLocation_t4651548465C3999F63C2CADE3D9EFF6C45428A53** GetAddressAt(il2cpp_array_size_t index)
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		return m_Items + index;
+	}
+	inline void SetAt(il2cpp_array_size_t index, DefineTrackerLocation_t4651548465C3999F63C2CADE3D9EFF6C45428A53* value)
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		m_Items[index] = value;
+		Il2CppCodeGenWriteBarrier((void**)m_Items + index, (void*)value);
+	}
+	inline DefineTrackerLocation_t4651548465C3999F63C2CADE3D9EFF6C45428A53* GetAtUnchecked(il2cpp_array_size_t index) const
+	{
+		return m_Items[index];
+	}
+	inline DefineTrackerLocation_t4651548465C3999F63C2CADE3D9EFF6C45428A53** GetAddressAtUnchecked(il2cpp_array_size_t index)
+	{
+		return m_Items + index;
+	}
+	inline void SetAtUnchecked(il2cpp_array_size_t index, DefineTrackerLocation_t4651548465C3999F63C2CADE3D9EFF6C45428A53* value)
+	{
+		m_Items[index] = value;
+		Il2CppCodeGenWriteBarrier((void**)m_Items + index, (void*)value);
+	}
+};
+struct TrackerIndexBaseU5BU5D_tFB2B0143DB0A1A68AC66F7AA265AC95C0F98CB8D  : public RuntimeArray
+{
+	ALIGN_FIELD (8) TrackerIndexBase_t2B04E837E04D1B082E9C3DA619849C2749AAC94D* m_Items[1];
+
+	inline TrackerIndexBase_t2B04E837E04D1B082E9C3DA619849C2749AAC94D* GetAt(il2cpp_array_size_t index) const
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		return m_Items[index];
+	}
+	inline TrackerIndexBase_t2B04E837E04D1B082E9C3DA619849C2749AAC94D** GetAddressAt(il2cpp_array_size_t index)
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		return m_Items + index;
+	}
+	inline void SetAt(il2cpp_array_size_t index, TrackerIndexBase_t2B04E837E04D1B082E9C3DA619849C2749AAC94D* value)
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		m_Items[index] = value;
+		Il2CppCodeGenWriteBarrier((void**)m_Items + index, (void*)value);
+	}
+	inline TrackerIndexBase_t2B04E837E04D1B082E9C3DA619849C2749AAC94D* GetAtUnchecked(il2cpp_array_size_t index) const
+	{
+		return m_Items[index];
+	}
+	inline TrackerIndexBase_t2B04E837E04D1B082E9C3DA619849C2749AAC94D** GetAddressAtUnchecked(il2cpp_array_size_t index)
+	{
+		return m_Items + index;
+	}
+	inline void SetAtUnchecked(il2cpp_array_size_t index, TrackerIndexBase_t2B04E837E04D1B082E9C3DA619849C2749AAC94D* value)
+	{
+		m_Items[index] = value;
+		Il2CppCodeGenWriteBarrier((void**)m_Items + index, (void*)value);
+	}
+};
+struct TrackerTypeBaseU5BU5D_tEB7DF4D71E5E20B49B61068EF62E69A6663F2C39  : public RuntimeArray
+{
+	ALIGN_FIELD (8) TrackerTypeBase_tF3E0753AAE99ECC8DADF5023B84C3DD40B30B85C* m_Items[1];
+
+	inline TrackerTypeBase_tF3E0753AAE99ECC8DADF5023B84C3DD40B30B85C* GetAt(il2cpp_array_size_t index) const
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		return m_Items[index];
+	}
+	inline TrackerTypeBase_tF3E0753AAE99ECC8DADF5023B84C3DD40B30B85C** GetAddressAt(il2cpp_array_size_t index)
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		return m_Items + index;
+	}
+	inline void SetAt(il2cpp_array_size_t index, TrackerTypeBase_tF3E0753AAE99ECC8DADF5023B84C3DD40B30B85C* value)
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		m_Items[index] = value;
+		Il2CppCodeGenWriteBarrier((void**)m_Items + index, (void*)value);
+	}
+	inline TrackerTypeBase_tF3E0753AAE99ECC8DADF5023B84C3DD40B30B85C* GetAtUnchecked(il2cpp_array_size_t index) const
+	{
+		return m_Items[index];
+	}
+	inline TrackerTypeBase_tF3E0753AAE99ECC8DADF5023B84C3DD40B30B85C** GetAddressAtUnchecked(il2cpp_array_size_t index)
+	{
+		return m_Items + index;
+	}
+	inline void SetAtUnchecked(il2cpp_array_size_t index, TrackerTypeBase_tF3E0753AAE99ECC8DADF5023B84C3DD40B30B85C* value)
+	{
+		m_Items[index] = value;
+		Il2CppCodeGenWriteBarrier((void**)m_Items + index, (void*)value);
+	}
+};
+
+
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* Component_GetComponentInChildren_TisRuntimeObject_mE483A27E876DE8E4E6901D6814837F81D7C42F65_gshared (Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* List_1_get_Item_m33561245D64798C2AB07584C0EC4F240E4839A38_gshared (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, int32_t ___0_index, const RuntimeMethod* method) ;
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t List_1_get_Count_m4407E4C389F22B8CEC282C15D56516658746C383_gshared_inline (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* GameObject_AddComponent_TisRuntimeObject_m69B93700FACCF372F5753371C6E8FB780800B824_gshared (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* GameObject_GetComponent_TisRuntimeObject_m6EAED4AA356F0F48288F67899E5958792395563B_gshared (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* GameObject_GetComponentsInChildren_TisRuntimeObject_m6F69570C0224EE6620FD43C4DDB0F0AB152A1B20_gshared (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* GameObject_GetComponentInChildren_TisRuntimeObject_mED181B37054A10395CA356010754C7DFC685893C_gshared (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* __this, const RuntimeMethod* method) ;
+
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void StringBuilder__ctor_m1D99713357DE05DAFA296633639DB55F8C30587D (StringBuilder_t* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Rdp_d_mD0F95A74606861C4AE1BCD335351900A97D3BEBC (String_t* ___0_tag, StringBuilder_t* ___1_sb, bool ___2_logInEditor, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Rdp_w_mBB39489DF46208E8D305783E90ADFAE302B05A76 (String_t* ___0_tag, StringBuilder_t* ___1_sb, bool ___2_logInEditor, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Rdp_e_m1FD5F70BED2AD9A31EEF9FBC71787E01C9D5A3EE (String_t* ___0_tag, StringBuilder_t* ___1_sb, bool ___2_logInEditor, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ReaderWriterLockSlim_ExitReadLock_m49891BB1D1FA606B9EBD354D575D7F1ECBD53E87 (ReaderWriterLockSlim_t3BF29C18C9FC0EE07209EDD54D938EA473FB3906* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ReaderWriterLockSlim_TryEnterReadLock_m5CB81D34821FE3C460F14CB964434C6A23F4E6EA (ReaderWriterLockSlim_t3BF29C18C9FC0EE07209EDD54D938EA473FB3906* __this, int32_t ___0_millisecondsTimeout, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringBuilder_t* HumanoidIKSample_get_sb_m518615B9FCFA3723CF066419C003B214B6251470 (HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringBuilder_t* StringBuilder_Clear_m2D76F6533574F40A4E3E2DC4E730277CBD0AF8F6 (StringBuilder_t* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringBuilder_t* StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D (StringBuilder_t* __this, String_t* ___0_value, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidIKSample_ERROR_mA0754D1F54D72F9BA0B522940D21DB426876BC80 (HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* __this, StringBuilder_t* ___0_msg, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ReaderWriterLockSlim_ExitWriteLock_m84F7F58C2B3552C5B32744FB06004CACDFCE57E6 (ReaderWriterLockSlim_t3BF29C18C9FC0EE07209EDD54D938EA473FB3906* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ReaderWriterLockSlim_TryEnterWriteLock_mE43F653D65A448225134E0CE1A289C4E112C62A2 (ReaderWriterLockSlim_t3BF29C18C9FC0EE07209EDD54D938EA473FB3906* __this, int32_t ___0_millisecondsTimeout, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t HumanoidIKSample_GetTrackingStatus_mAE02D57347060CB6C5E45E99B21B7F69C99B6E6E (HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringBuilder_t* StringBuilder_Append_m3A7D629DAA5E0E36B8A617A911E34F79AF84AE63 (StringBuilder_t* __this, RuntimeObject* ___0_value, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidIKSample_WARNING_mD3A27BA706B83B4516F731FCF80DA7702526892D (HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* __this, StringBuilder_t* ___0_msg, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidIKSample_DEBUG_mE793E83B8DFDCB5CBCCEC8C5C000E69B84744B6E (HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* __this, StringBuilder_t* ___0_msg, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371 (Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TransformData__ctor_m469C7B2A8C2BE73473EA2C0E63B13812992E1B84 (TransformData_t37919E9183CB08C4ABB150F80E1904EF2907273D* __this, Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___0_trans, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Body__ctor_m1FE770A1B9939BCB3B5D152C1C6670E07577098B (Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool HumanoidIKSample_AssignHumanoidToBody_m762D65A1536BBA61CAD265A67BF6487E875AB177 (HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* __this, Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728** ___0_body, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Body_UpdateData_m91B737BF8F51792DB4B07B820F764A439E423037 (Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* __this, Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* ___0_in_body, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidIKSample_StopTracking_m43259EB78F001863BCC4727A2DAE72BFE1E61A2F (HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool HumanoidIKSample_CanStartTracking_m15CF0228E8F6DDB0B9F4CDC9783838481EFB297E (HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidIKSample_SetTrackingStatus_m548AD0CFFF4FE18D15E5AAE939619CF5DAD94F1E (HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* __this, int32_t ___0_status, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* HumanoidIKSample_StartBodyTracking_m4BAA57D54C18775754A20A5A40EE8D76BD0AFBBE (HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* MonoBehaviour_StartCoroutine_m4CAFF732AA28CD3BDC5363B44A863575530EC812 (MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71* __this, RuntimeObject* ___0_routine, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool HumanoidIKSample_CanStopTracking_mEF8CD4BDED4DF3022613F72F875BE94B2F7DA619 (HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Body_UpdateBody_m5BD644CEC614B1312BC2E00936A65A28C88F5547 (Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* __this, Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728** ___0_body, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidIKSample_RecoverBodyScale_m016E7CA4B4E7251DC699D135BE84C15C6C76873B (HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidIKSample_RecoverBodyOffset_mF613351125AD759500FCE99CBD0D53945050837C (HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 Transform_get_localScale_m804A002A53A645CDFCD15BB0F37209162720363F (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* __this, const RuntimeMethod* method) ;
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 Vector3_op_Multiply_m87BA7C578F96C8E49BB07088DAAC4649F83B0353_inline (Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___0_a, float ___1_d, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Transform_set_localScale_mBA79E811BAF6C47B80FF76414C12B47B3CD03633 (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* __this, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___0_value, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602 (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C* ___0_x, Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C* ___1_y, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 Transform_get_rotation_m32AF40CA0D50C797DA639A696F8EAEC7524C179C (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 Transform_get_localPosition_mA9C86B990DF0685EA1061A120218993FDCC60A95 (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 Quaternion_op_Multiply_mE1EBA73F9173432B50F8F17CE8190C5A7986FB8C (Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 ___0_rotation, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___1_point, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Transform_set_localPosition_mDE1C997F7D79C0885210B7732B4BA50EE7D73134 (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* __this, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___0_value, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 Transform_get_position_m69CD5FA214FDAE7BB701552943674846C220FDE1 (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* __this, const RuntimeMethod* method) ;
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 Vector3_op_Addition_m78C0EC70CB66E8DCAC225743D82B268DAEE92067_inline (Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___0_a, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___1_b, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 Transform_get_localRotation_mD53D37611A5DAE93EC6C7BBCAC337408C5CACA77 (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* __this, const RuntimeMethod* method) ;
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 Quaternion_op_Multiply_mCB375FCCC12A2EC8F9EB824A1BFB4453B58C2012_inline (Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 ___0_lhs, Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 ___1_rhs, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Transform_set_localRotation_mAB4A011D134BA58AB780BECC0025CA65F16185FA (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* __this, Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 ___0_value, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CStartBodyTrackingU3Ed__49__ctor_mA8EE5B7DBE9FF53D2F54D45EE5F6B15F8F9ED9EB (U3CStartBodyTrackingU3Ed__49_tD8F0E0671C60F27C0468C023E23885C6761FCC8C* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringBuilder_t* StringBuilder_Append_m789EC7C63CDC0DE5136AE3FF0C85CA5EE11A842E (StringBuilder_t* __this, float ___0_value, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BodyAvatar_Update_m26E8D24970584E632B753F6D426C68B082313A70 (BodyAvatar_tD225D5E1511C8FED0CEE3C112BC10C39F03A1B4F* __this, int32_t ___0_jointType, Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1** ___1_trans, float ___2_scale, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MonoBehaviour__ctor_m592DB0105CA0BC97AA1C5F4AD27B12D68A3B7C1E (MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ReaderWriterLockSlim__ctor_m617A86382C7F076BC04E68726F50961C799688E8 (ReaderWriterLockSlim_t3BF29C18C9FC0EE07209EDD54D938EA473FB3906* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2 (RuntimeObject* __this, const RuntimeMethod* method) ;
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR BodyManager_tC2F2528B290757CB0FB5804C9FDA9DB22C5C1828* BodyManager_get_Instance_m4670608F4832E8A978881F4C4A2C4E39DEE9BD65_inline (const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Object_op_Equality_mB6120F782D83091EF56A198FCEBCF066DB4A9605 (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C* ___0_x, Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C* ___1_y, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidIKSample_ApplyBodyScale_m47FA362128A2BBAB5E7DB8017EBDD4B43031F6A8 (HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* __this, float ___0_scale, const RuntimeMethod* method) ;
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool BodyManager_get_EnableTrackingLog_m6AD7BC701EEA08BC7B51B4A20505051B2D597989_inline (BodyManager_tC2F2528B290757CB0FB5804C9FDA9DB22C5C1828* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidIKSample_UpdateBodyPosesInOrder_mFFEE2A4FF3DE9516601BF3B6B6C1A7135E463D32 (HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* __this, BodyAvatar_tD225D5E1511C8FED0CEE3C112BC10C39F03A1B4F* ___0_avatarBody, float ___1_scale, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidIKSample_ApplyBodyOffsetEachFrame_m5B8781DB46B786FBF8D0BE3BC541A64109C22ED1 (HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* __this, Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___0_offset, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WaitForEndOfFrame__ctor_m4AF7E576C01E6B04443BB898B1AE5D645F7D45AB (WaitForEndOfFrame_tE38D80923E3F8380069B423968C25ABE50A46663* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NotSupportedException__ctor_m1398D0CDE19B36AA3DE9392879738C1EA2439CDF (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* __this, const RuntimeMethod* method) ;
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t HumanoidTracking_get_Tracking_mDC04DCE20D9716E4C4ACB6521E2F57A8A3D68445_inline (HumanoidTracking_t3FE172B07552D5F70DCD9385CFDB6C03DF3AF979* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Enum_ToString_m946B0B83C4470457D0FF555D862022C72BB55741 (RuntimeObject* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* String_Concat_m9E3155FB84015C823606188F53B47CB44C444991 (String_t* ___0_str0, String_t* ___1_str1, const RuntimeMethod* method) ;
+inline Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* Component_GetComponentInChildren_TisText_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62_m1D5533D50D961602AC2CD364E03388FFE2985259 (Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3* __this, const RuntimeMethod* method)
+{
+	return ((  Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* (*) (Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3*, const RuntimeMethod*))Component_GetComponentInChildren_TisRuntimeObject_mE483A27E876DE8E4E6901D6814837F81D7C42F65_gshared)(__this, method);
+}
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void HumanoidTracking_set_Tracking_mD8D6BB9A9CD1BF95CB47286F7ED39AFBA69014D9_inline (HumanoidTracking_t3FE172B07552D5F70DCD9385CFDB6C03DF3AF979* __this, int32_t ___0_value, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Selectable_set_interactable_m8DD581C1AD99B2EFA8B3EE9AF69EDDF26688B492 (Selectable_t3251808068A17B8E92FB33590A4C2FA66D456712* __this, bool ___0_value, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidTracking_BeginTracking_m51107C572AD4863514AE7C261096FCEC2810FB85 (HumanoidTracking_t3FE172B07552D5F70DCD9385CFDB6C03DF3AF979* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidTracking_StopTracking_m8B81A016C9747C6D6F60A2E04EB3ACCC098D3B6A (HumanoidTracking_t3FE172B07552D5F70DCD9385CFDB6C03DF3AF979* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* BodyTrackingUtils_Name_m381B47362ABBB067CE4EAF4A80E67CDD7E3FF87B (int32_t ___0_status, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CalibrationStatusDelegate__ctor_m8F611FFD6771B48D8680442709D48FC4AD321367 (CalibrationStatusDelegate_t7456FF3FDFC24533E36DAEC05FE3ADD6EA1DCD41* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidTracking_BeginCalibration_mA114266BFC13E64EA14F8B05D7A8DF8089C5007D (HumanoidTracking_t3FE172B07552D5F70DCD9385CFDB6C03DF3AF979* __this, CalibrationStatusDelegate_t7456FF3FDFC24533E36DAEC05FE3ADD6EA1DCD41* ___0_callback, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidTracking_StopCalibration_mBE665B54CC320815034E9003117E44322D44E346 (HumanoidTracking_t3FE172B07552D5F70DCD9385CFDB6C03DF3AF979* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidTrackingMenu_StartCalibration_mB4459EB6110AEF9266DB02AB5DEE1FF63E002127 (HumanoidTrackingMenu_tD8404766E39651BA25654BA0ED62D79B35AEFD35* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidTrackingMenu_BeginTracking_m74E8189C7309D5F4928746DF35954BD3B5815E28 (HumanoidTrackingMenu_tD8404766E39651BA25654BA0ED62D79B35AEFD35* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidTrackingMenu_EndTracking_mB492E1AF73046DAE12DAE01C819111F4334E1DE7 (HumanoidTrackingMenu_tD8404766E39651BA25654BA0ED62D79B35AEFD35* __this, const RuntimeMethod* method) ;
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void BodyManager_set_EnableTrackingLog_mA15231EB3F7894BCFD4D9EB9C72DBFF871FF1361_inline (BodyManager_tC2F2528B290757CB0FB5804C9FDA9DB22C5C1828* __this, bool ___0_value, const RuntimeMethod* method) ;
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void HumanoidTracking_set_AvatarOffset_m534ED1139A3344C6C9F88E6BA2CA32326B9B9397_inline (HumanoidTracking_t3FE172B07552D5F70DCD9385CFDB6C03DF3AF979* __this, Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___0_value, const RuntimeMethod* method) ;
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Quaternion__ctor_m868FD60AA65DD5A8AC0C5DEB0608381A8D85FCD8_inline (Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974* __this, float ___0_x, float ___1_y, float ___2_z, float ___3_w, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Transform_set_rotation_m61340DE74726CF0F9946743A727C4D444397331D (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* __this, Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 ___0_value, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B (Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Object_get_name_mAC2F6B897CF1303BA4249B4CB55271AFACBB6392 (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C* __this, const RuntimeMethod* method) ;
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 Quaternion_get_eulerAngles_m2DB5158B5C3A71FD60FC8A6EE43D3AAA1CFED122_inline (Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Single_ToString_mE282EDA9CA4F7DF88432D807732837A629D04972 (float* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* String_Concat_m647EBF831F54B6DF7D5AFA5FD012CF4EE7571B6A (StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* ___0_values, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB (RuntimeObject* ___0_message, const RuntimeMethod* method) ;
+inline DebugRotation_t7937DC12D85BF51C2C66BAAF2B6CAB5C8CD88CBA* List_1_get_Item_m3A8FCCA55575F52C710AD1B240853BD988AE2DA2 (List_1_tD5AC9F392427318E81BE224E7E394A720E64463C* __this, int32_t ___0_index, const RuntimeMethod* method)
+{
+	return ((  DebugRotation_t7937DC12D85BF51C2C66BAAF2B6CAB5C8CD88CBA* (*) (List_1_tD5AC9F392427318E81BE224E7E394A720E64463C*, int32_t, const RuntimeMethod*))List_1_get_Item_m33561245D64798C2AB07584C0EC4F240E4839A38_gshared)(__this, ___0_index, method);
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugRotation_Rotate_mD38E4BC921ADD0B48282F401FF6AE8B406B85893 (DebugRotation_t7937DC12D85BF51C2C66BAAF2B6CAB5C8CD88CBA* __this, const RuntimeMethod* method) ;
+inline int32_t List_1_get_Count_mCB9F2AFFECBE38B6D7839CF67D1F2777D97EC8FE_inline (List_1_tD5AC9F392427318E81BE224E7E394A720E64463C* __this, const RuntimeMethod* method)
+{
+	return ((  int32_t (*) (List_1_tD5AC9F392427318E81BE224E7E394A720E64463C*, const RuntimeMethod*))List_1_get_Count_m4407E4C389F22B8CEC282C15D56516658746C383_gshared_inline)(__this, method);
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringBuilder_t* StringBuilder_Insert_mEA426100381DD65FB6A891BA28B5F1208BEDDD29 (StringBuilder_t* __this, int32_t ___0_index, String_t* ___1_value, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Application_get_persistentDataPath_mC58BD3E1A20732E0A536491DBCAE6505B1624399 (const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Path_Combine_m1ADAC05CDA2D1D61B172DF65A81E86592696BEAE (String_t* ___0_path1, String_t* ___1_path2, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringBuilder_t* ProfilerLogger_get_sb_mFEE33E335B2FB2E25F751C29FCB3A2FBE812DF08 (ProfilerLogger_t09D8B7A85E0B2DBD04B95B5D98FB1AAFD7EF38B0* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ProfilerLogger_DEBUG_m5712631D620E9072D1C8D95899B1832F7529DA68 (ProfilerLogger_t09D8B7A85E0B2DBD04B95B5D98FB1AAFD7EF38B0* __this, StringBuilder_t* ___0_sb, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Profiler_set_logFile_m169323E7FFAAF95B6D771AB8DBC4B3BB9042E072 (String_t* ___0_value, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Profiler_set_enableBinaryLog_mA859BD8D6D193C5E3FAF1888B76722C4D2B55024 (bool ___0_value, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Profiler_set_enabled_m54CE46AB03F2D012299B0E52A6651BDA3B3BBDC1 (bool ___0_value, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Application_Quit_mE304382DB9A6455C2A474C8F364C7387F37E9281 (const RuntimeMethod* method) ;
+inline LineRenderer_tEFEF960672DB69CB14B6D181FAE6292F0CF8B63D* GameObject_AddComponent_TisLineRenderer_tEFEF960672DB69CB14B6D181FAE6292F0CF8B63D_mF8C0D953BCBFDD5A01A09ADB67EB04F0D677A056 (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* __this, const RuntimeMethod* method)
+{
+	return ((  LineRenderer_tEFEF960672DB69CB14B6D181FAE6292F0CF8B63D* (*) (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*, const RuntimeMethod*))GameObject_AddComponent_TisRuntimeObject_m69B93700FACCF372F5753371C6E8FB780800B824_gshared)(__this, method);
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Shader_tADC867D36B7876EE22427FAA2CE485105F4EE692* Shader_Find_m183AA54F78320212DDEC811592F98456898A41C5 (String_t* ___0_name, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Material__ctor_m7FDF47105D66D19591BE505A0C42B0F90D88C9BF (Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* __this, Shader_tADC867D36B7876EE22427FAA2CE485105F4EE692* ___0_shader, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Renderer_set_material_m21E88977071E0A914D62F3D9CFF0193B3117C45A (Renderer_t320575F223BCB177A982E5DDB5DB19FAA89E7FBF* __this, Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___0_value, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LineRenderer_set_positionCount_m2001FB4044053895ECBE897AB833284F3300B205 (LineRenderer_tEFEF960672DB69CB14B6D181FAE6292F0CF8B63D* __this, int32_t ___0_value, const RuntimeMethod* method) ;
+inline MeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE* GameObject_GetComponent_TisMeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE_m7FF948365C38BC39333D82B235A7C4EAD219960D (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* __this, const RuntimeMethod* method)
+{
+	return ((  MeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE* (*) (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*, const RuntimeMethod*))GameObject_GetComponent_TisRuntimeObject_m6EAED4AA356F0F48288F67899E5958792395563B_gshared)(__this, method);
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Renderer_get_enabled_mFDDF363859AEC88105A925FA7EA341C077B09B54 (Renderer_t320575F223BCB177A982E5DDB5DB19FAA89E7FBF* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Renderer_set_enabled_m015E6D7B825528A31182F267234CC6A925F71DA8 (Renderer_t320575F223BCB177A982E5DDB5DB19FAA89E7FBF* __this, bool ___0_value, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56 (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LineRenderer_set_startColor_mF72FAB20C09372FC8F2CBFCBD837FA02A87FBA91 (LineRenderer_tEFEF960672DB69CB14B6D181FAE6292F0CF8B63D* __this, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___0_value, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LineRenderer_set_endColor_m6AF26E0174434828BC6EF1BAC1FE188084819D9D (LineRenderer_tEFEF960672DB69CB14B6D181FAE6292F0CF8B63D* __this, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___0_value, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LineRenderer_set_startWidth_m3899722E198D636DB216CB61C980214707069F4A (LineRenderer_tEFEF960672DB69CB14B6D181FAE6292F0CF8B63D* __this, float ___0_value, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LineRenderer_set_endWidth_mC7260401655C8BE1CBDFB832009295C89613F81D (LineRenderer_tEFEF960672DB69CB14B6D181FAE6292F0CF8B63D* __this, float ___0_value, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LineRenderer_SetPosition_m84C4AD9ADC6AC62B33DB4D7E4C9F066DFF8440C1 (LineRenderer_tEFEF960672DB69CB14B6D181FAE6292F0CF8B63D* __this, int32_t ___0_index, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___1_position, const RuntimeMethod* method) ;
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Color_tD001788D726C3A7F1379BEED0260B9591F440C1F Color_get_red_mA2E53E7173FDC97E68E335049AB0FAAEE43A844D_inline (const RuntimeMethod* method) ;
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 Vector3_get_zero_m0C1249C3F25B1C70EAD3CC8B31259975A457AE39_inline (const RuntimeMethod* method) ;
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR TrackerIndexBaseU5BU5D_tFB2B0143DB0A1A68AC66F7AA265AC95C0F98CB8D* BodyRoleData_get_TrackerIndexInputs_mF8ECD71D5D895CF4F415B1FD87DC5276846816FF_inline (BodyRoleData_tB3E30ECEB3632C49D288739F6240594BC9BFB264* __this, const RuntimeMethod* method) ;
+inline DefineTrackerLocationU5BU5D_tDC47EFDCF672CAC17C5E34770113030715C2851A* GameObject_GetComponentsInChildren_TisDefineTrackerLocation_t4651548465C3999F63C2CADE3D9EFF6C45428A53_mFD763A59FBA6A10D9653231F6C4B102D074022AC (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* __this, const RuntimeMethod* method)
+{
+	return ((  DefineTrackerLocationU5BU5D_tDC47EFDCF672CAC17C5E34770113030715C2851A* (*) (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*, const RuntimeMethod*))GameObject_GetComponentsInChildren_TisRuntimeObject_m6F69570C0224EE6620FD43C4DDB0F0AB152A1B20_gshared)(__this, method);
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringBuilder_t* ConfigTrackerIndexType_get_sb_mAD16372D5C34B67CF39EFF124F5F95E260F864BC (ConfigTrackerIndexType_t2A8BBD79DD1FBDD186BB68AED89643929C14CF2A* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringBuilder_t* StringBuilder_Append_m283B617AC29FB0DD6F3A7D8C01D385C25A5F0FAA (StringBuilder_t* __this, int32_t ___0_value, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConfigTrackerIndexType_DEBUG_m4E3A4ED1827E60A03515512693AA5269C7949B43 (ConfigTrackerIndexType_t2A8BBD79DD1FBDD186BB68AED89643929C14CF2A* __this, StringBuilder_t* ___0_msg, const RuntimeMethod* method) ;
+inline Dropdown_t54C0BDC1441E058BE37E796F68886671C270EF89* GameObject_GetComponentInChildren_TisDropdown_t54C0BDC1441E058BE37E796F68886671C270EF89_m57E48D487188F67A8B796999E6DF0D192A35CC2E (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* __this, const RuntimeMethod* method)
+{
+	return ((  Dropdown_t54C0BDC1441E058BE37E796F68886671C270EF89* (*) (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*, const RuntimeMethod*))GameObject_GetComponentInChildren_TisRuntimeObject_mED181B37054A10395CA356010754C7DFC685893C_gshared)(__this, method);
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Dropdown_set_value_m0764A5E2023E34705ADD422689BF6C0074449FEE (Dropdown_t54C0BDC1441E058BE37E796F68886671C270EF89* __this, int32_t ___0_value, const RuntimeMethod* method) ;
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR TrackerTypeBaseU5BU5D_tEB7DF4D71E5E20B49B61068EF62E69A6663F2C39* BodyRoleData_get_TrackerTypeInputs_m0229804B38C763B8EACF036B39D367ECB8429DD1_inline (BodyRoleData_tB3E30ECEB3632C49D288739F6240594BC9BFB264* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ConfigTrackerIndexType_GetTypeDropdownValue_mCB3609099594AB688E461643E6B76271EFF36B71 (ConfigTrackerIndexType_t2A8BBD79DD1FBDD186BB68AED89643929C14CF2A* __this, uint32_t ___0_type, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool GameObject_get_activeSelf_m4F3E5240E138B66AAA080EA30759A3D0517DA368 (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92 (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* __this, bool ___0_value, const RuntimeMethod* method) ;
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t BodyRoleData_get_TrackerPose_mD5128E8C847E320EB4F98D72A88B9DCF11FA3BFE_inline (BodyRoleData_tB3E30ECEB3632C49D288739F6240594BC9BFB264* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BodyRoleData_SetTrackerIndex_m304FF47EC6609E308509720D4130B41B494553F7 (BodyRoleData_tB3E30ECEB3632C49D288739F6240594BC9BFB264* __this, int32_t ___0_location, int32_t ___1_index, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR uint32_t ConfigTrackerIndexType_GetDropdownValueType_m50FD33F24345AF1BD294AEB4C6417335F48574E1 (ConfigTrackerIndexType_t2A8BBD79DD1FBDD186BB68AED89643929C14CF2A* __this, int32_t ___0_value, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Rdp_Name_mAA2E40DE6AE1F1662396039D6B63010AB04AE76D (uint32_t ___0_type, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BodyRoleData_SetTrackerType_m20841176731381E33AB9A7B75F8F845CAFBF52B9 (BodyRoleData_tB3E30ECEB3632C49D288739F6240594BC9BFB264* __this, int32_t ___0_location, uint32_t ___1_type, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TrackerUpdater_EnableChildren_m4C25E40FEF9F4B1FA214D08F5A311CAF81EDAFD0 (TrackerUpdater_t82756B23EA06F498F3945B6B863F235BF408B6AE* __this, bool ___0_enable, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* TrackerUpdater_UpdatePose_mD052050B660B5EEA5767CB8DF6387887DA8F2DFE (TrackerUpdater_t82756B23EA06F498F3945B6B863F235BF408B6AE* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MonoBehaviour_StopCoroutine_mF9E93B82091E804595BE13AA29F9AB7517F7E04A (MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71* __this, RuntimeObject* ___0_routine, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CUpdatePoseU3Ed__5__ctor_m56797A7160346357EE5B251EE4F0DA302085A019 (U3CUpdatePoseU3Ed__5_t0BBB54F06F339003CA1E8589E45A24B7CD1A2888* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Tracker_IsTracked_mEC5A802BDFE5ECC0AA165ADCD76A9C0F743A771F (uint32_t ___0_trackerId, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Tracker_GetTrackerPosition_m51CD0020FA679C4485E5F55B52144D0E8D3049F2 (uint32_t ___0_trackerId, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* ___1_position, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Tracker_GetTrackerRotation_mDC0E557121941111CC764416997AE10EDB768729 (uint32_t ___0_trackerId, Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974* ___1_rotation, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* Transform_GetChild_mE686DF0C7AAC1F7AEF356967B1C04D8B8E240EAF (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* __this, int32_t ___0_index, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Transform_get_childCount_mE9C29C702AB662CC540CA053EDE48BDAFA35B4B0 (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TrackerUpdater_CheckTrackingState_m7B626D38B9EAF89E63B5DF0DEFF6B8422E14B556 (TrackerUpdater_t82756B23EA06F498F3945B6B863F235BF408B6AE* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TrackerUpdater_UpdateTransform_m09658813901993035896277910E6B96EB13014CC (TrackerUpdater_t82756B23EA06F498F3945B6B863F235BF408B6AE* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 Quaternion_Internal_ToEulerRad_mC5BD020889B5A4FB6894CFB69A5D4C07B321B919 (Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974* ___0_rotation, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 Quaternion_Internal_MakePositive_m73E2D01920CB0DFE661A55022C129E8617F0C9A8 (Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___0_euler, const RuntimeMethod* method) ;
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Color__ctor_m3786F0D6E510D9CFA544523A955870BD2A514C8C_inline (Color_tD001788D726C3A7F1379BEED0260B9591F440C1F* __this, float ___0_r, float ___1_g, float ___2_b, float ___3_a, const RuntimeMethod* method) ;
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// Method Definition Index: 76964
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringBuilder_t* HumanoidIKSample_get_sb_m518615B9FCFA3723CF066419C003B214B6251470 (HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&StringBuilder_t_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:25>
+		StringBuilder_t* L_0 = __this->___m_sb;
+		if (L_0)
+		{
+			goto IL_0013;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:25>
+		StringBuilder_t* L_1 = (StringBuilder_t*)il2cpp_codegen_object_new(StringBuilder_t_il2cpp_TypeInfo_var);
+		StringBuilder__ctor_m1D99713357DE05DAFA296633639DB55F8C30587D(L_1, NULL);
+		__this->___m_sb = L_1;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___m_sb), (void*)L_1);
+	}
+
+IL_0013:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:26>
+		StringBuilder_t* L_2 = __this->___m_sb;
+		return L_2;
+	}
+}
+// Method Definition Index: 76965
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidIKSample_DEBUG_mE793E83B8DFDCB5CBCCEC8C5C000E69B84744B6E (HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* __this, StringBuilder_t* ___0_msg, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral51D99A8DAB988B0C2AEAD0425E45B21A792FB412);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:29>
+		StringBuilder_t* L_0 = ___0_msg;
+		Rdp_d_mD0F95A74606861C4AE1BCD335351900A97D3BEBC(_stringLiteral51D99A8DAB988B0C2AEAD0425E45B21A792FB412, L_0, (bool)1, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:29>
+		return;
+	}
+}
+// Method Definition Index: 76966
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidIKSample_WARNING_mD3A27BA706B83B4516F731FCF80DA7702526892D (HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* __this, StringBuilder_t* ___0_msg, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral51D99A8DAB988B0C2AEAD0425E45B21A792FB412);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:32>
+		StringBuilder_t* L_0 = ___0_msg;
+		Rdp_w_mBB39489DF46208E8D305783E90ADFAE302B05A76(_stringLiteral51D99A8DAB988B0C2AEAD0425E45B21A792FB412, L_0, (bool)1, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:32>
+		return;
+	}
+}
+// Method Definition Index: 76967
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidIKSample_ERROR_mA0754D1F54D72F9BA0B522940D21DB426876BC80 (HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* __this, StringBuilder_t* ___0_msg, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral51D99A8DAB988B0C2AEAD0425E45B21A792FB412);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:33>
+		StringBuilder_t* L_0 = ___0_msg;
+		Rdp_e_m1FD5F70BED2AD9A31EEF9FBC71787E01C9D5A3EE(_stringLiteral51D99A8DAB988B0C2AEAD0425E45B21A792FB412, L_0, (bool)1, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:33>
+		return;
+	}
+}
+// Method Definition Index: 76968
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t HumanoidIKSample_GetTrackingStatus_mAE02D57347060CB6C5E45E99B21B7F69C99B6E6E (HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	int32_t V_0 = 0;
+	Exception_t* V_1 = NULL;
+	il2cpp::utils::ExceptionSupportStack<RuntimeObject*, 1> __active_exceptions;
+	{
+		auto __finallyBlock = il2cpp::utils::Finally([&]
+		{
+
+FINALLY_0049:
+			{
+				//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:69>
+				il2cpp_codegen_runtime_class_init_inline(HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A_il2cpp_TypeInfo_var);
+				ReaderWriterLockSlim_t3BF29C18C9FC0EE07209EDD54D938EA473FB3906* L_0 = ((HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A_StaticFields*)il2cpp_codegen_static_fields_for(HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A_il2cpp_TypeInfo_var))->___m_TrackingStatusRWLock;
+				NullCheck(L_0);
+				ReaderWriterLockSlim_ExitReadLock_m49891BB1D1FA606B9EBD354D575D7F1ECBD53E87(L_0, NULL);
+				//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:70>
+				return;
+			}
+		});
+		try
+		{
+			try
+			{
+				//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:59>
+				il2cpp_codegen_runtime_class_init_inline(HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A_il2cpp_TypeInfo_var);
+				ReaderWriterLockSlim_t3BF29C18C9FC0EE07209EDD54D938EA473FB3906* L_1 = ((HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A_StaticFields*)il2cpp_codegen_static_fields_for(HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A_il2cpp_TypeInfo_var))->___m_TrackingStatusRWLock;
+				NullCheck(L_1);
+				bool L_2;
+				L_2 = ReaderWriterLockSlim_TryEnterReadLock_m5CB81D34821FE3C460F14CB964434C6A23F4E6EA(L_1, ((int32_t)2000), NULL);
+				//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:60>
+				int32_t L_3 = __this->___m_TrackingStatus;
+				V_0 = L_3;
+				goto IL_0054;
+			}
+			catch(Il2CppExceptionWrapper& e)
+			{
+				if(il2cpp_codegen_class_is_assignable_from (((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&Exception_t_il2cpp_TypeInfo_var)), il2cpp_codegen_object_class(e.ex)))
+				{
+					IL2CPP_PUSH_ACTIVE_EXCEPTION(e.ex);
+					goto CATCH_0019_1;
+				}
+				throw e;
+			}
+
+CATCH_0019_1:
+			{
+				Exception_t* L_4 = ((Exception_t*)IL2CPP_GET_ACTIVE_EXCEPTION(Exception_t*));;
+				//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:62>
+				V_1 = L_4;
+				//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:64>
+				StringBuilder_t* L_5;
+				L_5 = HumanoidIKSample_get_sb_m518615B9FCFA3723CF066419C003B214B6251470(__this, NULL);
+				NullCheck(L_5);
+				StringBuilder_t* L_6;
+				L_6 = StringBuilder_Clear_m2D76F6533574F40A4E3E2DC4E730277CBD0AF8F6(L_5, NULL);
+				NullCheck(L_6);
+				StringBuilder_t* L_7;
+				L_7 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_6, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteral986DB1C107584803CF898B4AF1677C90E8620BE7)), NULL);
+				Exception_t* L_8 = V_1;
+				NullCheck(L_8);
+				String_t* L_9;
+				L_9 = VirtualFuncInvoker0< String_t* >::Invoke(5, L_8);
+				NullCheck(L_7);
+				StringBuilder_t* L_10;
+				L_10 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_7, L_9, NULL);
+				//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:64>
+				StringBuilder_t* L_11;
+				L_11 = HumanoidIKSample_get_sb_m518615B9FCFA3723CF066419C003B214B6251470(__this, NULL);
+				HumanoidIKSample_ERROR_mA0754D1F54D72F9BA0B522940D21DB426876BC80(__this, L_11, NULL);
+				//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:65>
+				IL2CPP_RETHROW_MANAGED_EXCEPTION(IL2CPP_POP_ACTIVE_EXCEPTION(Exception_t*));
+			}
+		}
+		catch(Il2CppExceptionWrapper& e)
+		{
+			__finallyBlock.StoreException(e.ex);
+		}
+	}
+
+IL_0054:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:71>
+		int32_t L_12 = V_0;
+		return L_12;
+	}
+}
+// Method Definition Index: 76969
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidIKSample_SetTrackingStatus_m548AD0CFFF4FE18D15E5AAE939619CF5DAD94F1E (HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* __this, int32_t ___0_status, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Exception_t* V_0 = NULL;
+	il2cpp::utils::ExceptionSupportStack<RuntimeObject*, 1> __active_exceptions;
+	{
+		auto __finallyBlock = il2cpp::utils::Finally([&]
+		{
+
+FINALLY_0049:
+			{
+				//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:86>
+				il2cpp_codegen_runtime_class_init_inline(HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A_il2cpp_TypeInfo_var);
+				ReaderWriterLockSlim_t3BF29C18C9FC0EE07209EDD54D938EA473FB3906* L_0 = ((HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A_StaticFields*)il2cpp_codegen_static_fields_for(HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A_il2cpp_TypeInfo_var))->___m_TrackingStatusRWLock;
+				NullCheck(L_0);
+				ReaderWriterLockSlim_ExitWriteLock_m84F7F58C2B3552C5B32744FB06004CACDFCE57E6(L_0, NULL);
+				//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:87>
+				return;
+			}
+		});
+		try
+		{
+			try
+			{
+				//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:76>
+				il2cpp_codegen_runtime_class_init_inline(HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A_il2cpp_TypeInfo_var);
+				ReaderWriterLockSlim_t3BF29C18C9FC0EE07209EDD54D938EA473FB3906* L_1 = ((HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A_StaticFields*)il2cpp_codegen_static_fields_for(HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A_il2cpp_TypeInfo_var))->___m_TrackingStatusRWLock;
+				NullCheck(L_1);
+				bool L_2;
+				L_2 = ReaderWriterLockSlim_TryEnterWriteLock_mE43F653D65A448225134E0CE1A289C4E112C62A2(L_1, ((int32_t)2000), NULL);
+				//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:77>
+				int32_t L_3 = ___0_status;
+				__this->___m_TrackingStatus = L_3;
+				//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:78>
+				goto IL_0054;
+			}
+			catch(Il2CppExceptionWrapper& e)
+			{
+				if(il2cpp_codegen_class_is_assignable_from (((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&Exception_t_il2cpp_TypeInfo_var)), il2cpp_codegen_object_class(e.ex)))
+				{
+					IL2CPP_PUSH_ACTIVE_EXCEPTION(e.ex);
+					goto CATCH_0019_1;
+				}
+				throw e;
+			}
+
+CATCH_0019_1:
+			{
+				Exception_t* L_4 = ((Exception_t*)IL2CPP_GET_ACTIVE_EXCEPTION(Exception_t*));;
+				//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:79>
+				V_0 = L_4;
+				//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:81>
+				StringBuilder_t* L_5;
+				L_5 = HumanoidIKSample_get_sb_m518615B9FCFA3723CF066419C003B214B6251470(__this, NULL);
+				NullCheck(L_5);
+				StringBuilder_t* L_6;
+				L_6 = StringBuilder_Clear_m2D76F6533574F40A4E3E2DC4E730277CBD0AF8F6(L_5, NULL);
+				NullCheck(L_6);
+				StringBuilder_t* L_7;
+				L_7 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_6, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteralC048BBCEBFF1E9895CFFF62411491F30B811E922)), NULL);
+				Exception_t* L_8 = V_0;
+				NullCheck(L_8);
+				String_t* L_9;
+				L_9 = VirtualFuncInvoker0< String_t* >::Invoke(5, L_8);
+				NullCheck(L_7);
+				StringBuilder_t* L_10;
+				L_10 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_7, L_9, NULL);
+				//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:81>
+				StringBuilder_t* L_11;
+				L_11 = HumanoidIKSample_get_sb_m518615B9FCFA3723CF066419C003B214B6251470(__this, NULL);
+				HumanoidIKSample_ERROR_mA0754D1F54D72F9BA0B522940D21DB426876BC80(__this, L_11, NULL);
+				//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:82>
+				IL2CPP_RETHROW_MANAGED_EXCEPTION(IL2CPP_POP_ACTIVE_EXCEPTION(Exception_t*));
+			}
+		}
+		catch(Il2CppExceptionWrapper& e)
+		{
+			__finallyBlock.StoreException(e.ex);
+		}
+	}
+
+IL_0054:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:88>
+		return;
+	}
+}
+// Method Definition Index: 76970
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool HumanoidIKSample_CanStartTracking_m15CF0228E8F6DDB0B9F4CDC9783838481EFB297E (HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&TrackingStatus_tE51A748537DC609C4F25CA49C197F2624272426B_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral2BA0A5FC5480FE9917E00A23283E02B76EBCB997);
+		s_Il2CppMethodInitialized = true;
+	}
+	int32_t V_0 = 0;
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:91>
+		int32_t L_0;
+		L_0 = HumanoidIKSample_GetTrackingStatus_mAE02D57347060CB6C5E45E99B21B7F69C99B6E6E(__this, NULL);
+		V_0 = L_0;
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:92>
+		int32_t L_1 = V_0;
+		if (!L_1)
+		{
+			goto IL_000e;
+		}
+	}
+	{
+		int32_t L_2 = V_0;
+		if ((!(((uint32_t)L_2) == ((uint32_t)1))))
+		{
+			goto IL_0010;
+		}
+	}
+
+IL_000e:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:92>
+		return (bool)1;
+	}
+
+IL_0010:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:93>
+		StringBuilder_t* L_3;
+		L_3 = HumanoidIKSample_get_sb_m518615B9FCFA3723CF066419C003B214B6251470(__this, NULL);
+		NullCheck(L_3);
+		StringBuilder_t* L_4;
+		L_4 = StringBuilder_Clear_m2D76F6533574F40A4E3E2DC4E730277CBD0AF8F6(L_3, NULL);
+		NullCheck(L_4);
+		StringBuilder_t* L_5;
+		L_5 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_4, _stringLiteral2BA0A5FC5480FE9917E00A23283E02B76EBCB997, NULL);
+		int32_t L_6 = V_0;
+		int32_t L_7 = L_6;
+		RuntimeObject* L_8 = Box(TrackingStatus_tE51A748537DC609C4F25CA49C197F2624272426B_il2cpp_TypeInfo_var, &L_7);
+		NullCheck(L_5);
+		StringBuilder_t* L_9;
+		L_9 = StringBuilder_Append_m3A7D629DAA5E0E36B8A617A911E34F79AF84AE63(L_5, L_8, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:93>
+		StringBuilder_t* L_10;
+		L_10 = HumanoidIKSample_get_sb_m518615B9FCFA3723CF066419C003B214B6251470(__this, NULL);
+		HumanoidIKSample_WARNING_mD3A27BA706B83B4516F731FCF80DA7702526892D(__this, L_10, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:94>
+		return (bool)0;
+	}
+}
+// Method Definition Index: 76971
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool HumanoidIKSample_CanStopTracking_mEF8CD4BDED4DF3022613F72F875BE94B2F7DA619 (HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&TrackingStatus_tE51A748537DC609C4F25CA49C197F2624272426B_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralBC87A8CABB18BBA2DA5E7B48B4DF40BF53ECDB5D);
+		s_Il2CppMethodInitialized = true;
+	}
+	int32_t V_0 = 0;
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:98>
+		int32_t L_0;
+		L_0 = HumanoidIKSample_GetTrackingStatus_mAE02D57347060CB6C5E45E99B21B7F69C99B6E6E(__this, NULL);
+		V_0 = L_0;
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:99>
+		int32_t L_1 = V_0;
+		if ((!(((uint32_t)L_1) == ((uint32_t)4))))
+		{
+			goto IL_000d;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:99>
+		return (bool)1;
+	}
+
+IL_000d:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:100>
+		StringBuilder_t* L_2;
+		L_2 = HumanoidIKSample_get_sb_m518615B9FCFA3723CF066419C003B214B6251470(__this, NULL);
+		NullCheck(L_2);
+		StringBuilder_t* L_3;
+		L_3 = StringBuilder_Clear_m2D76F6533574F40A4E3E2DC4E730277CBD0AF8F6(L_2, NULL);
+		NullCheck(L_3);
+		StringBuilder_t* L_4;
+		L_4 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_3, _stringLiteralBC87A8CABB18BBA2DA5E7B48B4DF40BF53ECDB5D, NULL);
+		int32_t L_5 = V_0;
+		int32_t L_6 = L_5;
+		RuntimeObject* L_7 = Box(TrackingStatus_tE51A748537DC609C4F25CA49C197F2624272426B_il2cpp_TypeInfo_var, &L_6);
+		NullCheck(L_4);
+		StringBuilder_t* L_8;
+		L_8 = StringBuilder_Append_m3A7D629DAA5E0E36B8A617A911E34F79AF84AE63(L_4, L_7, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:100>
+		StringBuilder_t* L_9;
+		L_9 = HumanoidIKSample_get_sb_m518615B9FCFA3723CF066419C003B214B6251470(__this, NULL);
+		HumanoidIKSample_WARNING_mD3A27BA706B83B4516F731FCF80DA7702526892D(__this, L_9, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:101>
+		return (bool)0;
+	}
+}
+// Method Definition Index: 76972
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* HumanoidIKSample_get_AvatarOffset_m00B9A5E1C68DE91D5A4926511DC770DC37C83341 (HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* __this, const RuntimeMethod* method) 
+{
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:120>
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_0 = __this->___m_AvatarOffset;
+		return L_0;
+	}
+}
+// Method Definition Index: 76973
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidIKSample_set_AvatarOffset_m032125BB28FC5ABDEAE058B5C2BDE7FC1EF3A25A (HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* __this, Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___0_value, const RuntimeMethod* method) 
+{
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:120>
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_0 = ___0_value;
+		__this->___m_AvatarOffset = L_0;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___m_AvatarOffset), (void*)L_0);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:120>
+		return;
+	}
+}
+// Method Definition Index: 76974
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float HumanoidIKSample_get_AvatarScale_mDC12AD55063DD9482C5514B1CBEA2EC0F84A192E (HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* __this, const RuntimeMethod* method) 
+{
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:125>
+		float L_0 = __this->___m_AvatarScale;
+		return L_0;
+	}
+}
+// Method Definition Index: 76975
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidIKSample_set_AvatarScale_mC63B8115C4393EECCD8DDAC3B2662295C219890B (HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* __this, float ___0_value, const RuntimeMethod* method) 
+{
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:125>
+		float L_0 = ___0_value;
+		__this->___m_AvatarScale = L_0;
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:125>
+		return;
+	}
+}
+// Method Definition Index: 76976
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool HumanoidIKSample_get_CustomSettings_m5B96361B03B0E6B2C8670F085F118D9ACDB76265 (HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* __this, const RuntimeMethod* method) 
+{
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:129>
+		bool L_0 = __this->___m_CustomSettings;
+		return L_0;
+	}
+}
+// Method Definition Index: 76977
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidIKSample_set_CustomSettings_m56948D4ABA842D0B6AFB01D84D9440F6E0BA2C8E (HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* __this, bool ___0_value, const RuntimeMethod* method) 
+{
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:129>
+		bool L_0 = ___0_value;
+		__this->___m_CustomSettings = L_0;
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:129>
+		return;
+	}
+}
+// Method Definition Index: 76978
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float HumanoidIKSample_get_AvatarHeight_m64621FA4CCB858BCFCDC70A46327B3CF3A223F08 (HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* __this, const RuntimeMethod* method) 
+{
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:135>
+		float L_0 = __this->___m_AvatarHeight;
+		return L_0;
+	}
+}
+// Method Definition Index: 76979
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidIKSample_set_AvatarHeight_mF84D900D4B89706BCED7210C540977F07F3D057A (HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* __this, float ___0_value, const RuntimeMethod* method) 
+{
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:138>
+		float L_0 = ___0_value;
+		if ((!(((float)L_0) > ((float)(0.0f)))))
+		{
+			goto IL_000f;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:138>
+		float L_1 = ___0_value;
+		__this->___m_AvatarHeight = L_1;
+	}
+
+IL_000f:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:139>
+		return;
+	}
+}
+// Method Definition Index: 76980
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool HumanoidIKSample_AssignHumanoidToBody_m762D65A1536BBA61CAD265A67BF6487E875AB177 (HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* __this, Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728** ___0_body, const RuntimeMethod* method) 
+{
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:151>
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728** L_0 = ___0_body;
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_1 = *((Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728**)L_0);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:151>
+		return (bool)0;
+	}
+}
+// Method Definition Index: 76981
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidIKSample_Awake_mD2547E26434511FF5DCA8E0913012B34BB825B38 (HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral631DCCC7D86B3019E03AB183FDDAF679518F901D);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral7A7D7D6A8625012B7D69B80F5F456DB3EA53431F);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralAE2CA2EC1CFA1DF2DC752BF01356C619F57D38DA);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralE8477F991B91E12B387117B63318857E07F96366);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:427>
+		StringBuilder_t* L_0;
+		L_0 = HumanoidIKSample_get_sb_m518615B9FCFA3723CF066419C003B214B6251470(__this, NULL);
+		NullCheck(L_0);
+		StringBuilder_t* L_1;
+		L_1 = StringBuilder_Clear_m2D76F6533574F40A4E3E2DC4E730277CBD0AF8F6(L_0, NULL);
+		NullCheck(L_1);
+		StringBuilder_t* L_2;
+		L_2 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_1, _stringLiteralE8477F991B91E12B387117B63318857E07F96366, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:427>
+		StringBuilder_t* L_3;
+		L_3 = HumanoidIKSample_get_sb_m518615B9FCFA3723CF066419C003B214B6251470(__this, NULL);
+		HumanoidIKSample_DEBUG_mE793E83B8DFDCB5CBCCEC8C5C000E69B84744B6E(__this, L_3, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:428>
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_4;
+		L_4 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
+		TransformData_t37919E9183CB08C4ABB150F80E1904EF2907273D L_5;
+		memset((&L_5), 0, sizeof(L_5));
+		TransformData__ctor_m469C7B2A8C2BE73473EA2C0E63B13812992E1B84((&L_5), L_4, NULL);
+		__this->___m_InitialTransform = L_5;
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:430>
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_6 = __this->___m_Body;
+		if (L_6)
+		{
+			goto IL_00a0;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:432>
+		StringBuilder_t* L_7;
+		L_7 = HumanoidIKSample_get_sb_m518615B9FCFA3723CF066419C003B214B6251470(__this, NULL);
+		NullCheck(L_7);
+		StringBuilder_t* L_8;
+		L_8 = StringBuilder_Clear_m2D76F6533574F40A4E3E2DC4E730277CBD0AF8F6(L_7, NULL);
+		NullCheck(L_8);
+		StringBuilder_t* L_9;
+		L_9 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_8, _stringLiteralAE2CA2EC1CFA1DF2DC752BF01356C619F57D38DA, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:432>
+		StringBuilder_t* L_10;
+		L_10 = HumanoidIKSample_get_sb_m518615B9FCFA3723CF066419C003B214B6251470(__this, NULL);
+		HumanoidIKSample_DEBUG_mE793E83B8DFDCB5CBCCEC8C5C000E69B84744B6E(__this, L_10, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:433>
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_11 = (Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728*)il2cpp_codegen_object_new(Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728_il2cpp_TypeInfo_var);
+		Body__ctor_m1FE770A1B9939BCB3B5D152C1C6670E07577098B(L_11, NULL);
+		__this->___m_Body = L_11;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___m_Body), (void*)L_11);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:434>
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728** L_12 = (Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728**)(&__this->___m_Body);
+		bool L_13;
+		L_13 = HumanoidIKSample_AssignHumanoidToBody_m762D65A1536BBA61CAD265A67BF6487E875AB177(__this, L_12, NULL);
+		if (L_13)
+		{
+			goto IL_00a0;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:436>
+		StringBuilder_t* L_14;
+		L_14 = HumanoidIKSample_get_sb_m518615B9FCFA3723CF066419C003B214B6251470(__this, NULL);
+		NullCheck(L_14);
+		StringBuilder_t* L_15;
+		L_15 = StringBuilder_Clear_m2D76F6533574F40A4E3E2DC4E730277CBD0AF8F6(L_14, NULL);
+		NullCheck(L_15);
+		StringBuilder_t* L_16;
+		L_16 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_15, _stringLiteral7A7D7D6A8625012B7D69B80F5F456DB3EA53431F, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:436>
+		StringBuilder_t* L_17;
+		L_17 = HumanoidIKSample_get_sb_m518615B9FCFA3723CF066419C003B214B6251470(__this, NULL);
+		HumanoidIKSample_ERROR_mA0754D1F54D72F9BA0B522940D21DB426876BC80(__this, L_17, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:437>
+		__this->___m_Body = (Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728*)NULL;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___m_Body), (void*)(Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728*)NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:438>
+		return;
+	}
+
+IL_00a0:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:441>
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_18 = __this->___m_InitialBody;
+		if (L_18)
+		{
+			goto IL_00e6;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:443>
+		StringBuilder_t* L_19;
+		L_19 = HumanoidIKSample_get_sb_m518615B9FCFA3723CF066419C003B214B6251470(__this, NULL);
+		NullCheck(L_19);
+		StringBuilder_t* L_20;
+		L_20 = StringBuilder_Clear_m2D76F6533574F40A4E3E2DC4E730277CBD0AF8F6(L_19, NULL);
+		NullCheck(L_20);
+		StringBuilder_t* L_21;
+		L_21 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_20, _stringLiteral631DCCC7D86B3019E03AB183FDDAF679518F901D, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:443>
+		StringBuilder_t* L_22;
+		L_22 = HumanoidIKSample_get_sb_m518615B9FCFA3723CF066419C003B214B6251470(__this, NULL);
+		HumanoidIKSample_DEBUG_mE793E83B8DFDCB5CBCCEC8C5C000E69B84744B6E(__this, L_22, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:444>
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_23 = (Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728*)il2cpp_codegen_object_new(Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728_il2cpp_TypeInfo_var);
+		Body__ctor_m1FE770A1B9939BCB3B5D152C1C6670E07577098B(L_23, NULL);
+		__this->___m_InitialBody = L_23;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___m_InitialBody), (void*)L_23);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:445>
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_24 = __this->___m_InitialBody;
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_25 = __this->___m_Body;
+		NullCheck(L_24);
+		Body_UpdateData_m91B737BF8F51792DB4B07B820F764A439E423037(L_24, L_25, NULL);
+	}
+
+IL_00e6:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:447>
+		return;
+	}
+}
+// Method Definition Index: 76982
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidIKSample_Update_m822FF7F11759B84F692C65C2462CC543ACF2E693 (HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* __this, const RuntimeMethod* method) 
+{
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:450>
+		int32_t L_0 = __this->___logFrame;
+		__this->___logFrame = ((int32_t)il2cpp_codegen_add(L_0, 1));
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:451>
+		int32_t L_1 = __this->___logFrame;
+		__this->___logFrame = ((int32_t)(L_1%((int32_t)300)));
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:452>
+		int32_t L_2 = __this->___logFrame;
+		__this->___printIntervalLog = (bool)((((int32_t)L_2) == ((int32_t)0))? 1 : 0);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:453>
+		return;
+	}
+}
+// Method Definition Index: 76983
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidIKSample_OnDisable_mD577EC4190F773F493DC8C4DBD818CEEF3BA1825 (HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral84C893E7A175253E3154243B593B16AE55A95BDA);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:456>
+		StringBuilder_t* L_0;
+		L_0 = HumanoidIKSample_get_sb_m518615B9FCFA3723CF066419C003B214B6251470(__this, NULL);
+		NullCheck(L_0);
+		StringBuilder_t* L_1;
+		L_1 = StringBuilder_Clear_m2D76F6533574F40A4E3E2DC4E730277CBD0AF8F6(L_0, NULL);
+		NullCheck(L_1);
+		StringBuilder_t* L_2;
+		L_2 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_1, _stringLiteral84C893E7A175253E3154243B593B16AE55A95BDA, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:456>
+		StringBuilder_t* L_3;
+		L_3 = HumanoidIKSample_get_sb_m518615B9FCFA3723CF066419C003B214B6251470(__this, NULL);
+		HumanoidIKSample_DEBUG_mE793E83B8DFDCB5CBCCEC8C5C000E69B84744B6E(__this, L_3, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:457>
+		HumanoidIKSample_StopTracking_m43259EB78F001863BCC4727A2DAE72BFE1E61A2F(__this, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:458>
+		return;
+	}
+}
+// Method Definition Index: 76984
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidIKSample_BeginTracking_mE5F7D8E709A686CE2D70030E71F08CBAB01ABC9F (HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* __this, const RuntimeMethod* method) 
+{
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:463>
+		bool L_0;
+		L_0 = HumanoidIKSample_CanStartTracking_m15CF0228E8F6DDB0B9F4CDC9783838481EFB297E(__this, NULL);
+		if (L_0)
+		{
+			goto IL_0009;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:463>
+		return;
+	}
+
+IL_0009:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:466>
+		HumanoidIKSample_SetTrackingStatus_m548AD0CFFF4FE18D15E5AAE939619CF5DAD94F1E(__this, 2, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:467>
+		RuntimeObject* L_1;
+		L_1 = HumanoidIKSample_StartBodyTracking_m4BAA57D54C18775754A20A5A40EE8D76BD0AFBBE(__this, NULL);
+		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_2;
+		L_2 = MonoBehaviour_StartCoroutine_m4CAFF732AA28CD3BDC5363B44A863575530EC812(__this, L_1, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:468>
+		return;
+	}
+}
+// Method Definition Index: 76985
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidIKSample_StopTracking_m43259EB78F001863BCC4727A2DAE72BFE1E61A2F (HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral157A71014B374913FB1A7E367187C0C8CA55C44A);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:471>
+		bool L_0;
+		L_0 = HumanoidIKSample_CanStopTracking_mEF8CD4BDED4DF3022613F72F875BE94B2F7DA619(__this, NULL);
+		if (L_0)
+		{
+			goto IL_0009;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:471>
+		return;
+	}
+
+IL_0009:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:474>
+		HumanoidIKSample_SetTrackingStatus_m548AD0CFFF4FE18D15E5AAE939619CF5DAD94F1E(__this, 3, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:475>
+		__this->___updateTrackingData = (bool)0;
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:477>
+		StringBuilder_t* L_1;
+		L_1 = HumanoidIKSample_get_sb_m518615B9FCFA3723CF066419C003B214B6251470(__this, NULL);
+		NullCheck(L_1);
+		StringBuilder_t* L_2;
+		L_2 = StringBuilder_Clear_m2D76F6533574F40A4E3E2DC4E730277CBD0AF8F6(L_1, NULL);
+		NullCheck(L_2);
+		StringBuilder_t* L_3;
+		L_3 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_2, _stringLiteral157A71014B374913FB1A7E367187C0C8CA55C44A, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:477>
+		StringBuilder_t* L_4;
+		L_4 = HumanoidIKSample_get_sb_m518615B9FCFA3723CF066419C003B214B6251470(__this, NULL);
+		HumanoidIKSample_DEBUG_mE793E83B8DFDCB5CBCCEC8C5C000E69B84744B6E(__this, L_4, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:478>
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_5 = __this->___m_Body;
+		if (!L_5)
+		{
+			goto IL_005a;
+		}
+	}
+	{
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_6 = __this->___m_InitialBody;
+		if (!L_6)
+		{
+			goto IL_005a;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:478>
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_7 = __this->___m_InitialBody;
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728** L_8 = (Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728**)(&__this->___m_Body);
+		NullCheck(L_7);
+		Body_UpdateBody_m5BD644CEC614B1312BC2E00936A65A28C88F5547(L_7, L_8, NULL);
+	}
+
+IL_005a:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:479>
+		HumanoidIKSample_RecoverBodyScale_m016E7CA4B4E7251DC699D135BE84C15C6C76873B(__this, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:480>
+		HumanoidIKSample_RecoverBodyOffset_mF613351125AD759500FCE99CBD0D53945050837C(__this, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:481>
+		return;
+	}
+}
+// Method Definition Index: 76986
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidIKSample_ApplyBodyScale_m47FA362128A2BBAB5E7DB8017EBDD4B43031F6A8 (HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* __this, float ___0_scale, const RuntimeMethod* method) 
+{
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:485>
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_0;
+		L_0 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_1 = L_0;
+		NullCheck(L_1);
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_2;
+		L_2 = Transform_get_localScale_m804A002A53A645CDFCD15BB0F37209162720363F(L_1, NULL);
+		float L_3 = ___0_scale;
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_4;
+		L_4 = Vector3_op_Multiply_m87BA7C578F96C8E49BB07088DAAC4649F83B0353_inline(L_2, L_3, NULL);
+		NullCheck(L_1);
+		Transform_set_localScale_mBA79E811BAF6C47B80FF76414C12B47B3CD03633(L_1, L_4, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:486>
+		return;
+	}
+}
+// Method Definition Index: 76987
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidIKSample_RecoverBodyScale_m016E7CA4B4E7251DC699D135BE84C15C6C76873B (HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* __this, const RuntimeMethod* method) 
+{
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:489>
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_0;
+		L_0 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
+		TransformData_t37919E9183CB08C4ABB150F80E1904EF2907273D* L_1 = (TransformData_t37919E9183CB08C4ABB150F80E1904EF2907273D*)(&__this->___m_InitialTransform);
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_2 = L_1->___localScale;
+		NullCheck(L_0);
+		Transform_set_localScale_mBA79E811BAF6C47B80FF76414C12B47B3CD03633(L_0, L_2, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:490>
+		return;
+	}
+}
+// Method Definition Index: 76988
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidIKSample_ApplyBodyOffsetEachFrame_m5B8781DB46B786FBF8D0BE3BC541A64109C22ED1 (HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* __this, Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___0_offset, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:493>
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_0 = ___0_offset;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_1;
+		L_1 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_0, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_1)
+		{
+			goto IL_0062;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:495>
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_2;
+		L_2 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_3 = ___0_offset;
+		NullCheck(L_3);
+		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_4;
+		L_4 = Transform_get_rotation_m32AF40CA0D50C797DA639A696F8EAEC7524C179C(L_3, NULL);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_5;
+		L_5 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
+		NullCheck(L_5);
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_6;
+		L_6 = Transform_get_localPosition_mA9C86B990DF0685EA1061A120218993FDCC60A95(L_5, NULL);
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_7;
+		L_7 = Quaternion_op_Multiply_mE1EBA73F9173432B50F8F17CE8190C5A7986FB8C(L_4, L_6, NULL);
+		NullCheck(L_2);
+		Transform_set_localPosition_mDE1C997F7D79C0885210B7732B4BA50EE7D73134(L_2, L_7, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:496>
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_8;
+		L_8 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_9 = L_8;
+		NullCheck(L_9);
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_10;
+		L_10 = Transform_get_localPosition_mA9C86B990DF0685EA1061A120218993FDCC60A95(L_9, NULL);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_11 = ___0_offset;
+		NullCheck(L_11);
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_12;
+		L_12 = Transform_get_position_m69CD5FA214FDAE7BB701552943674846C220FDE1(L_11, NULL);
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_13;
+		L_13 = Vector3_op_Addition_m78C0EC70CB66E8DCAC225743D82B268DAEE92067_inline(L_10, L_12, NULL);
+		NullCheck(L_9);
+		Transform_set_localPosition_mDE1C997F7D79C0885210B7732B4BA50EE7D73134(L_9, L_13, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:497>
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_14;
+		L_14 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_15 = L_14;
+		NullCheck(L_15);
+		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_16;
+		L_16 = Transform_get_localRotation_mD53D37611A5DAE93EC6C7BBCAC337408C5CACA77(L_15, NULL);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_17 = ___0_offset;
+		NullCheck(L_17);
+		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_18;
+		L_18 = Transform_get_rotation_m32AF40CA0D50C797DA639A696F8EAEC7524C179C(L_17, NULL);
+		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_19;
+		L_19 = Quaternion_op_Multiply_mCB375FCCC12A2EC8F9EB824A1BFB4453B58C2012_inline(L_16, L_18, NULL);
+		NullCheck(L_15);
+		Transform_set_localRotation_mAB4A011D134BA58AB780BECC0025CA65F16185FA(L_15, L_19, NULL);
+	}
+
+IL_0062:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:499>
+		return;
+	}
+}
+// Method Definition Index: 76989
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidIKSample_RecoverBodyOffset_mF613351125AD759500FCE99CBD0D53945050837C (HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* __this, const RuntimeMethod* method) 
+{
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:502>
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_0;
+		L_0 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
+		TransformData_t37919E9183CB08C4ABB150F80E1904EF2907273D* L_1 = (TransformData_t37919E9183CB08C4ABB150F80E1904EF2907273D*)(&__this->___m_InitialTransform);
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_2 = L_1->___localPosition;
+		NullCheck(L_0);
+		Transform_set_localPosition_mDE1C997F7D79C0885210B7732B4BA50EE7D73134(L_0, L_2, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:503>
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_3;
+		L_3 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
+		TransformData_t37919E9183CB08C4ABB150F80E1904EF2907273D* L_4 = (TransformData_t37919E9183CB08C4ABB150F80E1904EF2907273D*)(&__this->___m_InitialTransform);
+		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_5 = L_4->___localRotation;
+		NullCheck(L_3);
+		Transform_set_localRotation_mAB4A011D134BA58AB780BECC0025CA65F16185FA(L_3, L_5, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:504>
+		return;
+	}
+}
+// Method Definition Index: 76990
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* HumanoidIKSample_StartBodyTracking_m4BAA57D54C18775754A20A5A40EE8D76BD0AFBBE (HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CStartBodyTrackingU3Ed__49_tD8F0E0671C60F27C0468C023E23885C6761FCC8C_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		U3CStartBodyTrackingU3Ed__49_tD8F0E0671C60F27C0468C023E23885C6761FCC8C* L_0 = (U3CStartBodyTrackingU3Ed__49_tD8F0E0671C60F27C0468C023E23885C6761FCC8C*)il2cpp_codegen_object_new(U3CStartBodyTrackingU3Ed__49_tD8F0E0671C60F27C0468C023E23885C6761FCC8C_il2cpp_TypeInfo_var);
+		U3CStartBodyTrackingU3Ed__49__ctor_mA8EE5B7DBE9FF53D2F54D45EE5F6B15F8F9ED9EB(L_0, 0, NULL);
+		U3CStartBodyTrackingU3Ed__49_tD8F0E0671C60F27C0468C023E23885C6761FCC8C* L_1 = L_0;
+		NullCheck(L_1);
+		L_1->___U3CU3E4__this = __this;
+		Il2CppCodeGenWriteBarrier((void**)(&L_1->___U3CU3E4__this), (void*)__this);
+		return L_1;
+	}
+}
+// Method Definition Index: 76991
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidIKSample_UpdateBodyPosesInOrder_mFFEE2A4FF3DE9516601BF3B6B6C1A7135E463D32 (HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* __this, BodyAvatar_tD225D5E1511C8FED0CEE3C112BC10C39F03A1B4F* ___0_avatarBody, float ___1_scale, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral12B42E3755A3A673EB22E95E3E390BA13CA9483C);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral7DBBD6DA91C2A6AD4D81FAAFE1E95F2CF265AB2E);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralDC4FD0EFD4AD23D7C7007FDD2A4BCF732137D51E);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralF04B14692D34C5AE03B28783F6E6C15A36C21F0F);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:586>
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_0 = __this->___m_Body;
+		if (!L_0)
+		{
+			goto IL_000b;
+		}
+	}
+	{
+		BodyAvatar_tD225D5E1511C8FED0CEE3C112BC10C39F03A1B4F* L_1 = ___0_avatarBody;
+		if (L_1)
+		{
+			goto IL_000c;
+		}
+	}
+
+IL_000b:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:586>
+		return;
+	}
+
+IL_000c:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:587>
+		bool L_2 = __this->___printIntervalLog;
+		if (!L_2)
+		{
+			goto IL_0085;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:589>
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:590>
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:591>
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:592>
+		StringBuilder_t* L_3;
+		L_3 = HumanoidIKSample_get_sb_m518615B9FCFA3723CF066419C003B214B6251470(__this, NULL);
+		NullCheck(L_3);
+		StringBuilder_t* L_4;
+		L_4 = StringBuilder_Clear_m2D76F6533574F40A4E3E2DC4E730277CBD0AF8F6(L_3, NULL);
+		NullCheck(L_4);
+		StringBuilder_t* L_5;
+		L_5 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_4, _stringLiteralF04B14692D34C5AE03B28783F6E6C15A36C21F0F, NULL);
+		BodyAvatar_tD225D5E1511C8FED0CEE3C112BC10C39F03A1B4F* L_6 = ___0_avatarBody;
+		NullCheck(L_6);
+		float L_7 = L_6->___height;
+		NullCheck(L_5);
+		StringBuilder_t* L_8;
+		L_8 = StringBuilder_Append_m789EC7C63CDC0DE5136AE3FF0C85CA5EE11A842E(L_5, L_7, NULL);
+		NullCheck(L_8);
+		StringBuilder_t* L_9;
+		L_9 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_8, _stringLiteral12B42E3755A3A673EB22E95E3E390BA13CA9483C, NULL);
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_10 = __this->___m_InitialBody;
+		NullCheck(L_10);
+		float L_11 = L_10->___height;
+		NullCheck(L_9);
+		StringBuilder_t* L_12;
+		L_12 = StringBuilder_Append_m789EC7C63CDC0DE5136AE3FF0C85CA5EE11A842E(L_9, L_11, NULL);
+		NullCheck(L_12);
+		StringBuilder_t* L_13;
+		L_13 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_12, _stringLiteral7DBBD6DA91C2A6AD4D81FAAFE1E95F2CF265AB2E, NULL);
+		BodyAvatar_tD225D5E1511C8FED0CEE3C112BC10C39F03A1B4F* L_14 = ___0_avatarBody;
+		NullCheck(L_14);
+		float L_15 = L_14->___scale;
+		NullCheck(L_13);
+		StringBuilder_t* L_16;
+		L_16 = StringBuilder_Append_m789EC7C63CDC0DE5136AE3FF0C85CA5EE11A842E(L_13, L_15, NULL);
+		NullCheck(L_16);
+		StringBuilder_t* L_17;
+		L_17 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_16, _stringLiteralDC4FD0EFD4AD23D7C7007FDD2A4BCF732137D51E, NULL);
+		BodyAvatar_tD225D5E1511C8FED0CEE3C112BC10C39F03A1B4F* L_18 = ___0_avatarBody;
+		NullCheck(L_18);
+		float L_19 = L_18->___confidence;
+		NullCheck(L_17);
+		StringBuilder_t* L_20;
+		L_20 = StringBuilder_Append_m789EC7C63CDC0DE5136AE3FF0C85CA5EE11A842E(L_17, L_19, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:593>
+		StringBuilder_t* L_21;
+		L_21 = HumanoidIKSample_get_sb_m518615B9FCFA3723CF066419C003B214B6251470(__this, NULL);
+		HumanoidIKSample_DEBUG_mE793E83B8DFDCB5CBCCEC8C5C000E69B84744B6E(__this, L_21, NULL);
+	}
+
+IL_0085:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:598>
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_22 = __this->___m_Body;
+		NullCheck(L_22);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_23 = L_22->___root;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_24;
+		L_24 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_23, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_24)
+		{
+			goto IL_00ab;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:598>
+		BodyAvatar_tD225D5E1511C8FED0CEE3C112BC10C39F03A1B4F* L_25 = ___0_avatarBody;
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_26 = __this->___m_Body;
+		NullCheck(L_26);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1** L_27 = (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1**)(&L_26->___root);
+		float L_28 = ___1_scale;
+		NullCheck(L_25);
+		BodyAvatar_Update_m26E8D24970584E632B753F6D426C68B082313A70(L_25, 0, L_27, L_28, NULL);
+	}
+
+IL_00ab:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:600>
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_29 = __this->___m_Body;
+		NullCheck(L_29);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_30 = L_29->___leftThigh;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_31;
+		L_31 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_30, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_31)
+		{
+			goto IL_00d1;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:600>
+		BodyAvatar_tD225D5E1511C8FED0CEE3C112BC10C39F03A1B4F* L_32 = ___0_avatarBody;
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_33 = __this->___m_Body;
+		NullCheck(L_33);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1** L_34 = (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1**)(&L_33->___leftThigh);
+		float L_35 = ___1_scale;
+		NullCheck(L_32);
+		BodyAvatar_Update_m26E8D24970584E632B753F6D426C68B082313A70(L_32, 1, L_34, L_35, NULL);
+	}
+
+IL_00d1:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:601>
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_36 = __this->___m_Body;
+		NullCheck(L_36);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_37 = L_36->___leftLeg;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_38;
+		L_38 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_37, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_38)
+		{
+			goto IL_00f7;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:601>
+		BodyAvatar_tD225D5E1511C8FED0CEE3C112BC10C39F03A1B4F* L_39 = ___0_avatarBody;
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_40 = __this->___m_Body;
+		NullCheck(L_40);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1** L_41 = (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1**)(&L_40->___leftLeg);
+		float L_42 = ___1_scale;
+		NullCheck(L_39);
+		BodyAvatar_Update_m26E8D24970584E632B753F6D426C68B082313A70(L_39, 2, L_41, L_42, NULL);
+	}
+
+IL_00f7:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:602>
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_43 = __this->___m_Body;
+		NullCheck(L_43);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_44 = L_43->___leftAnkle;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_45;
+		L_45 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_44, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_45)
+		{
+			goto IL_011d;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:602>
+		BodyAvatar_tD225D5E1511C8FED0CEE3C112BC10C39F03A1B4F* L_46 = ___0_avatarBody;
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_47 = __this->___m_Body;
+		NullCheck(L_47);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1** L_48 = (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1**)(&L_47->___leftAnkle);
+		float L_49 = ___1_scale;
+		NullCheck(L_46);
+		BodyAvatar_Update_m26E8D24970584E632B753F6D426C68B082313A70(L_46, 3, L_48, L_49, NULL);
+	}
+
+IL_011d:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:603>
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_50 = __this->___m_Body;
+		NullCheck(L_50);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_51 = L_50->___leftFoot;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_52;
+		L_52 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_51, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_52)
+		{
+			goto IL_0143;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:603>
+		BodyAvatar_tD225D5E1511C8FED0CEE3C112BC10C39F03A1B4F* L_53 = ___0_avatarBody;
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_54 = __this->___m_Body;
+		NullCheck(L_54);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1** L_55 = (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1**)(&L_54->___leftFoot);
+		float L_56 = ___1_scale;
+		NullCheck(L_53);
+		BodyAvatar_Update_m26E8D24970584E632B753F6D426C68B082313A70(L_53, 4, L_55, L_56, NULL);
+	}
+
+IL_0143:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:605>
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_57 = __this->___m_Body;
+		NullCheck(L_57);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_58 = L_57->___rightThigh;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_59;
+		L_59 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_58, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_59)
+		{
+			goto IL_0169;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:605>
+		BodyAvatar_tD225D5E1511C8FED0CEE3C112BC10C39F03A1B4F* L_60 = ___0_avatarBody;
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_61 = __this->___m_Body;
+		NullCheck(L_61);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1** L_62 = (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1**)(&L_61->___rightThigh);
+		float L_63 = ___1_scale;
+		NullCheck(L_60);
+		BodyAvatar_Update_m26E8D24970584E632B753F6D426C68B082313A70(L_60, 5, L_62, L_63, NULL);
+	}
+
+IL_0169:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:606>
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_64 = __this->___m_Body;
+		NullCheck(L_64);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_65 = L_64->___rightLeg;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_66;
+		L_66 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_65, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_66)
+		{
+			goto IL_018f;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:606>
+		BodyAvatar_tD225D5E1511C8FED0CEE3C112BC10C39F03A1B4F* L_67 = ___0_avatarBody;
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_68 = __this->___m_Body;
+		NullCheck(L_68);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1** L_69 = (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1**)(&L_68->___rightLeg);
+		float L_70 = ___1_scale;
+		NullCheck(L_67);
+		BodyAvatar_Update_m26E8D24970584E632B753F6D426C68B082313A70(L_67, 6, L_69, L_70, NULL);
+	}
+
+IL_018f:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:607>
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_71 = __this->___m_Body;
+		NullCheck(L_71);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_72 = L_71->___rightAnkle;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_73;
+		L_73 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_72, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_73)
+		{
+			goto IL_01b5;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:607>
+		BodyAvatar_tD225D5E1511C8FED0CEE3C112BC10C39F03A1B4F* L_74 = ___0_avatarBody;
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_75 = __this->___m_Body;
+		NullCheck(L_75);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1** L_76 = (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1**)(&L_75->___rightAnkle);
+		float L_77 = ___1_scale;
+		NullCheck(L_74);
+		BodyAvatar_Update_m26E8D24970584E632B753F6D426C68B082313A70(L_74, 7, L_76, L_77, NULL);
+	}
+
+IL_01b5:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:608>
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_78 = __this->___m_Body;
+		NullCheck(L_78);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_79 = L_78->___rightFoot;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_80;
+		L_80 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_79, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_80)
+		{
+			goto IL_01db;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:608>
+		BodyAvatar_tD225D5E1511C8FED0CEE3C112BC10C39F03A1B4F* L_81 = ___0_avatarBody;
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_82 = __this->___m_Body;
+		NullCheck(L_82);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1** L_83 = (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1**)(&L_82->___rightFoot);
+		float L_84 = ___1_scale;
+		NullCheck(L_81);
+		BodyAvatar_Update_m26E8D24970584E632B753F6D426C68B082313A70(L_81, 8, L_83, L_84, NULL);
+	}
+
+IL_01db:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:610>
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_85 = __this->___m_Body;
+		NullCheck(L_85);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_86 = L_85->___waist;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_87;
+		L_87 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_86, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_87)
+		{
+			goto IL_0202;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:610>
+		BodyAvatar_tD225D5E1511C8FED0CEE3C112BC10C39F03A1B4F* L_88 = ___0_avatarBody;
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_89 = __this->___m_Body;
+		NullCheck(L_89);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1** L_90 = (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1**)(&L_89->___waist);
+		float L_91 = ___1_scale;
+		NullCheck(L_88);
+		BodyAvatar_Update_m26E8D24970584E632B753F6D426C68B082313A70(L_88, ((int32_t)9), L_90, L_91, NULL);
+	}
+
+IL_0202:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:612>
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_92 = __this->___m_Body;
+		NullCheck(L_92);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_93 = L_92->___spineLower;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_94;
+		L_94 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_93, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_94)
+		{
+			goto IL_0229;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:612>
+		BodyAvatar_tD225D5E1511C8FED0CEE3C112BC10C39F03A1B4F* L_95 = ___0_avatarBody;
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_96 = __this->___m_Body;
+		NullCheck(L_96);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1** L_97 = (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1**)(&L_96->___spineLower);
+		float L_98 = ___1_scale;
+		NullCheck(L_95);
+		BodyAvatar_Update_m26E8D24970584E632B753F6D426C68B082313A70(L_95, ((int32_t)10), L_97, L_98, NULL);
+	}
+
+IL_0229:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:613>
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_99 = __this->___m_Body;
+		NullCheck(L_99);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_100 = L_99->___spineMiddle;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_101;
+		L_101 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_100, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_101)
+		{
+			goto IL_0250;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:613>
+		BodyAvatar_tD225D5E1511C8FED0CEE3C112BC10C39F03A1B4F* L_102 = ___0_avatarBody;
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_103 = __this->___m_Body;
+		NullCheck(L_103);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1** L_104 = (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1**)(&L_103->___spineMiddle);
+		float L_105 = ___1_scale;
+		NullCheck(L_102);
+		BodyAvatar_Update_m26E8D24970584E632B753F6D426C68B082313A70(L_102, ((int32_t)11), L_104, L_105, NULL);
+	}
+
+IL_0250:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:614>
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_106 = __this->___m_Body;
+		NullCheck(L_106);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_107 = L_106->___spineHigh;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_108;
+		L_108 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_107, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_108)
+		{
+			goto IL_0277;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:614>
+		BodyAvatar_tD225D5E1511C8FED0CEE3C112BC10C39F03A1B4F* L_109 = ___0_avatarBody;
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_110 = __this->___m_Body;
+		NullCheck(L_110);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1** L_111 = (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1**)(&L_110->___spineHigh);
+		float L_112 = ___1_scale;
+		NullCheck(L_109);
+		BodyAvatar_Update_m26E8D24970584E632B753F6D426C68B082313A70(L_109, ((int32_t)12), L_111, L_112, NULL);
+	}
+
+IL_0277:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:616>
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_113 = __this->___m_Body;
+		NullCheck(L_113);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_114 = L_113->___chest;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_115;
+		L_115 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_114, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_115)
+		{
+			goto IL_029e;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:616>
+		BodyAvatar_tD225D5E1511C8FED0CEE3C112BC10C39F03A1B4F* L_116 = ___0_avatarBody;
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_117 = __this->___m_Body;
+		NullCheck(L_117);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1** L_118 = (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1**)(&L_117->___chest);
+		float L_119 = ___1_scale;
+		NullCheck(L_116);
+		BodyAvatar_Update_m26E8D24970584E632B753F6D426C68B082313A70(L_116, ((int32_t)13), L_118, L_119, NULL);
+	}
+
+IL_029e:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:617>
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_120 = __this->___m_Body;
+		NullCheck(L_120);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_121 = L_120->___neck;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_122;
+		L_122 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_121, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_122)
+		{
+			goto IL_02c5;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:617>
+		BodyAvatar_tD225D5E1511C8FED0CEE3C112BC10C39F03A1B4F* L_123 = ___0_avatarBody;
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_124 = __this->___m_Body;
+		NullCheck(L_124);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1** L_125 = (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1**)(&L_124->___neck);
+		float L_126 = ___1_scale;
+		NullCheck(L_123);
+		BodyAvatar_Update_m26E8D24970584E632B753F6D426C68B082313A70(L_123, ((int32_t)14), L_125, L_126, NULL);
+	}
+
+IL_02c5:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:618>
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_127 = __this->___m_Body;
+		NullCheck(L_127);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_128 = L_127->___head;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_129;
+		L_129 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_128, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_129)
+		{
+			goto IL_02ec;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:618>
+		BodyAvatar_tD225D5E1511C8FED0CEE3C112BC10C39F03A1B4F* L_130 = ___0_avatarBody;
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_131 = __this->___m_Body;
+		NullCheck(L_131);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1** L_132 = (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1**)(&L_131->___head);
+		float L_133 = ___1_scale;
+		NullCheck(L_130);
+		BodyAvatar_Update_m26E8D24970584E632B753F6D426C68B082313A70(L_130, ((int32_t)15), L_132, L_133, NULL);
+	}
+
+IL_02ec:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:620>
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_134 = __this->___m_Body;
+		NullCheck(L_134);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_135 = L_134->___leftClavicle;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_136;
+		L_136 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_135, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_136)
+		{
+			goto IL_0313;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:620>
+		BodyAvatar_tD225D5E1511C8FED0CEE3C112BC10C39F03A1B4F* L_137 = ___0_avatarBody;
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_138 = __this->___m_Body;
+		NullCheck(L_138);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1** L_139 = (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1**)(&L_138->___leftClavicle);
+		float L_140 = ___1_scale;
+		NullCheck(L_137);
+		BodyAvatar_Update_m26E8D24970584E632B753F6D426C68B082313A70(L_137, ((int32_t)16), L_139, L_140, NULL);
+	}
+
+IL_0313:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:621>
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_141 = __this->___m_Body;
+		NullCheck(L_141);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_142 = L_141->___leftScapula;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_143;
+		L_143 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_142, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_143)
+		{
+			goto IL_033a;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:621>
+		BodyAvatar_tD225D5E1511C8FED0CEE3C112BC10C39F03A1B4F* L_144 = ___0_avatarBody;
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_145 = __this->___m_Body;
+		NullCheck(L_145);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1** L_146 = (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1**)(&L_145->___leftScapula);
+		float L_147 = ___1_scale;
+		NullCheck(L_144);
+		BodyAvatar_Update_m26E8D24970584E632B753F6D426C68B082313A70(L_144, ((int32_t)17), L_146, L_147, NULL);
+	}
+
+IL_033a:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:622>
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_148 = __this->___m_Body;
+		NullCheck(L_148);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_149 = L_148->___leftUpperarm;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_150;
+		L_150 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_149, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_150)
+		{
+			goto IL_0361;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:622>
+		BodyAvatar_tD225D5E1511C8FED0CEE3C112BC10C39F03A1B4F* L_151 = ___0_avatarBody;
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_152 = __this->___m_Body;
+		NullCheck(L_152);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1** L_153 = (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1**)(&L_152->___leftUpperarm);
+		float L_154 = ___1_scale;
+		NullCheck(L_151);
+		BodyAvatar_Update_m26E8D24970584E632B753F6D426C68B082313A70(L_151, ((int32_t)18), L_153, L_154, NULL);
+	}
+
+IL_0361:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:623>
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_155 = __this->___m_Body;
+		NullCheck(L_155);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_156 = L_155->___leftForearm;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_157;
+		L_157 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_156, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_157)
+		{
+			goto IL_0388;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:623>
+		BodyAvatar_tD225D5E1511C8FED0CEE3C112BC10C39F03A1B4F* L_158 = ___0_avatarBody;
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_159 = __this->___m_Body;
+		NullCheck(L_159);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1** L_160 = (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1**)(&L_159->___leftForearm);
+		float L_161 = ___1_scale;
+		NullCheck(L_158);
+		BodyAvatar_Update_m26E8D24970584E632B753F6D426C68B082313A70(L_158, ((int32_t)19), L_160, L_161, NULL);
+	}
+
+IL_0388:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:624>
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_162 = __this->___m_Body;
+		NullCheck(L_162);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_163 = L_162->___leftHand;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_164;
+		L_164 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_163, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_164)
+		{
+			goto IL_03af;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:624>
+		BodyAvatar_tD225D5E1511C8FED0CEE3C112BC10C39F03A1B4F* L_165 = ___0_avatarBody;
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_166 = __this->___m_Body;
+		NullCheck(L_166);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1** L_167 = (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1**)(&L_166->___leftHand);
+		float L_168 = ___1_scale;
+		NullCheck(L_165);
+		BodyAvatar_Update_m26E8D24970584E632B753F6D426C68B082313A70(L_165, ((int32_t)20), L_167, L_168, NULL);
+	}
+
+IL_03af:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:626>
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_169 = __this->___m_Body;
+		NullCheck(L_169);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_170 = L_169->___rightClavicle;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_171;
+		L_171 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_170, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_171)
+		{
+			goto IL_03d6;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:626>
+		BodyAvatar_tD225D5E1511C8FED0CEE3C112BC10C39F03A1B4F* L_172 = ___0_avatarBody;
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_173 = __this->___m_Body;
+		NullCheck(L_173);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1** L_174 = (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1**)(&L_173->___rightClavicle);
+		float L_175 = ___1_scale;
+		NullCheck(L_172);
+		BodyAvatar_Update_m26E8D24970584E632B753F6D426C68B082313A70(L_172, ((int32_t)21), L_174, L_175, NULL);
+	}
+
+IL_03d6:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:627>
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_176 = __this->___m_Body;
+		NullCheck(L_176);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_177 = L_176->___rightScapula;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_178;
+		L_178 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_177, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_178)
+		{
+			goto IL_03fd;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:627>
+		BodyAvatar_tD225D5E1511C8FED0CEE3C112BC10C39F03A1B4F* L_179 = ___0_avatarBody;
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_180 = __this->___m_Body;
+		NullCheck(L_180);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1** L_181 = (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1**)(&L_180->___rightScapula);
+		float L_182 = ___1_scale;
+		NullCheck(L_179);
+		BodyAvatar_Update_m26E8D24970584E632B753F6D426C68B082313A70(L_179, ((int32_t)22), L_181, L_182, NULL);
+	}
+
+IL_03fd:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:628>
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_183 = __this->___m_Body;
+		NullCheck(L_183);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_184 = L_183->___rightUpperarm;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_185;
+		L_185 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_184, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_185)
+		{
+			goto IL_0424;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:628>
+		BodyAvatar_tD225D5E1511C8FED0CEE3C112BC10C39F03A1B4F* L_186 = ___0_avatarBody;
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_187 = __this->___m_Body;
+		NullCheck(L_187);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1** L_188 = (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1**)(&L_187->___rightUpperarm);
+		float L_189 = ___1_scale;
+		NullCheck(L_186);
+		BodyAvatar_Update_m26E8D24970584E632B753F6D426C68B082313A70(L_186, ((int32_t)23), L_188, L_189, NULL);
+	}
+
+IL_0424:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:629>
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_190 = __this->___m_Body;
+		NullCheck(L_190);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_191 = L_190->___rightForearm;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_192;
+		L_192 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_191, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_192)
+		{
+			goto IL_044b;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:629>
+		BodyAvatar_tD225D5E1511C8FED0CEE3C112BC10C39F03A1B4F* L_193 = ___0_avatarBody;
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_194 = __this->___m_Body;
+		NullCheck(L_194);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1** L_195 = (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1**)(&L_194->___rightForearm);
+		float L_196 = ___1_scale;
+		NullCheck(L_193);
+		BodyAvatar_Update_m26E8D24970584E632B753F6D426C68B082313A70(L_193, ((int32_t)24), L_195, L_196, NULL);
+	}
+
+IL_044b:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:630>
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_197 = __this->___m_Body;
+		NullCheck(L_197);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_198 = L_197->___rightHand;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_199;
+		L_199 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_198, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_199)
+		{
+			goto IL_0472;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:630>
+		BodyAvatar_tD225D5E1511C8FED0CEE3C112BC10C39F03A1B4F* L_200 = ___0_avatarBody;
+		Body_t89744D61EC884458FA00DFC93D50DA67F9F4E728* L_201 = __this->___m_Body;
+		NullCheck(L_201);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1** L_202 = (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1**)(&L_201->___rightHand);
+		float L_203 = ___1_scale;
+		NullCheck(L_200);
+		BodyAvatar_Update_m26E8D24970584E632B753F6D426C68B082313A70(L_200, ((int32_t)25), L_202, L_203, NULL);
+	}
+
+IL_0472:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:631>
+		return;
+	}
+}
+// Method Definition Index: 76992
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidIKSample__ctor_m1E5047AA0BE21F07F145E9E5CDC4D008A24A555B (HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* __this, const RuntimeMethod* method) 
+{
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:30>
+		__this->___logFrame = (-1);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:124>
+		__this->___m_AvatarScale = (1.0f);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:132>
+		__this->___m_AvatarHeight = (1.5f);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:508>
+		__this->___avatarScale = (1.0f);
+		MonoBehaviour__ctor_m592DB0105CA0BC97AA1C5F4AD27B12D68A3B7C1E(__this, NULL);
+		return;
+	}
+}
+// Method Definition Index: 76993
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidIKSample__cctor_mCD4E830E6B5B788BCDC5186E7DDFE9091C6F4EF7 (const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ReaderWriterLockSlim_t3BF29C18C9FC0EE07209EDD54D938EA473FB3906_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:54>
+		ReaderWriterLockSlim_t3BF29C18C9FC0EE07209EDD54D938EA473FB3906* L_0 = (ReaderWriterLockSlim_t3BF29C18C9FC0EE07209EDD54D938EA473FB3906*)il2cpp_codegen_object_new(ReaderWriterLockSlim_t3BF29C18C9FC0EE07209EDD54D938EA473FB3906_il2cpp_TypeInfo_var);
+		ReaderWriterLockSlim__ctor_m617A86382C7F076BC04E68726F50961C799688E8(L_0, NULL);
+		((HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A_StaticFields*)il2cpp_codegen_static_fields_for(HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A_il2cpp_TypeInfo_var))->___m_TrackingStatusRWLock = L_0;
+		Il2CppCodeGenWriteBarrier((void**)(&((HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A_StaticFields*)il2cpp_codegen_static_fields_for(HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A_il2cpp_TypeInfo_var))->___m_TrackingStatusRWLock), (void*)L_0);
+		return;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// Method Definition Index: 76994
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CStartBodyTrackingU3Ed__49__ctor_mA8EE5B7DBE9FF53D2F54D45EE5F6B15F8F9ED9EB (U3CStartBodyTrackingU3Ed__49_tD8F0E0671C60F27C0468C023E23885C6761FCC8C* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) 
+{
+	{
+		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2(__this, NULL);
+		int32_t L_0 = ___0_U3CU3E1__state;
+		__this->___U3CU3E1__state = L_0;
+		return;
+	}
+}
+// Method Definition Index: 76995
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CStartBodyTrackingU3Ed__49_System_IDisposable_Dispose_m096A60C7631D2D7EBEF68A8C52D54B6133847A46 (U3CStartBodyTrackingU3Ed__49_tD8F0E0671C60F27C0468C023E23885C6761FCC8C* __this, const RuntimeMethod* method) 
+{
+	{
+		return;
+	}
+}
+// Method Definition Index: 76996
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CStartBodyTrackingU3Ed__49_MoveNext_mC4FEFEF5D794586B4E69B48CB5E9B760DB6BD474 (U3CStartBodyTrackingU3Ed__49_tD8F0E0671C60F27C0468C023E23885C6761FCC8C* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&WaitForEndOfFrame_tE38D80923E3F8380069B423968C25ABE50A46663_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral536EE7EC962721792F5B244FDC6F1CC925161129);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral76D6BE1C6DCE46870C1F6DAAB0C1B31559BC90A6);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralB590C33CB1F77314369BCE108CD827DCFCAC5963);
+		s_Il2CppMethodInitialized = true;
+	}
+	int32_t V_0 = 0;
+	HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* V_1 = NULL;
+	{
+		int32_t L_0 = __this->___U3CU3E1__state;
+		V_0 = L_0;
+		HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* L_1 = __this->___U3CU3E4__this;
+		V_1 = L_1;
+		int32_t L_2 = V_0;
+		switch (L_2)
+		{
+			case 0:
+			{
+				goto IL_0022;
+			}
+			case 1:
+			{
+				goto IL_0159;
+			}
+			case 2:
+			{
+				goto IL_017b;
+			}
+		}
+	}
+	{
+		return (bool)0;
+	}
+
+IL_0022:
+	{
+		__this->___U3CU3E1__state = (-1);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:513>
+		BodyManager_tC2F2528B290757CB0FB5804C9FDA9DB22C5C1828* L_3;
+		L_3 = BodyManager_get_Instance_m4670608F4832E8A978881F4C4A2C4E39DEE9BD65_inline(NULL);
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_4;
+		L_4 = Object_op_Equality_mB6120F782D83091EF56A198FCEBCF066DB4A9605(L_3, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_4)
+		{
+			goto IL_003f;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:515>
+		HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* L_5 = V_1;
+		NullCheck(L_5);
+		HumanoidIKSample_SetTrackingStatus_m548AD0CFFF4FE18D15E5AAE939619CF5DAD94F1E(L_5, 1, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:516>
+		return (bool)0;
+	}
+
+IL_003f:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:518>
+		HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* L_6 = V_1;
+		NullCheck(L_6);
+		StringBuilder_t* L_7;
+		L_7 = HumanoidIKSample_get_sb_m518615B9FCFA3723CF066419C003B214B6251470(L_6, NULL);
+		NullCheck(L_7);
+		StringBuilder_t* L_8;
+		L_8 = StringBuilder_Clear_m2D76F6533574F40A4E3E2DC4E730277CBD0AF8F6(L_7, NULL);
+		NullCheck(L_8);
+		StringBuilder_t* L_9;
+		L_9 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_8, _stringLiteral536EE7EC962721792F5B244FDC6F1CC925161129, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:518>
+		HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* L_10 = V_1;
+		HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* L_11 = V_1;
+		NullCheck(L_11);
+		StringBuilder_t* L_12;
+		L_12 = HumanoidIKSample_get_sb_m518615B9FCFA3723CF066419C003B214B6251470(L_11, NULL);
+		NullCheck(L_10);
+		HumanoidIKSample_DEBUG_mE793E83B8DFDCB5CBCCEC8C5C000E69B84744B6E(L_10, L_12, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:520>
+		__this->___U3CresultU3E5__2 = ((int32_t)255);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:527>
+		uint8_t L_13 = __this->___U3CresultU3E5__2;
+		if (!L_13)
+		{
+			goto IL_007d;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:529>
+		HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* L_14 = V_1;
+		NullCheck(L_14);
+		HumanoidIKSample_SetTrackingStatus_m548AD0CFFF4FE18D15E5AAE939619CF5DAD94F1E(L_14, 1, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:530>
+		return (bool)0;
+	}
+
+IL_007d:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:538>
+		uint8_t L_15 = __this->___U3CresultU3E5__2;
+		if (L_15)
+		{
+			goto IL_016b;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:543>
+		HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* L_16 = V_1;
+		NullCheck(L_16);
+		StringBuilder_t* L_17;
+		L_17 = HumanoidIKSample_get_sb_m518615B9FCFA3723CF066419C003B214B6251470(L_16, NULL);
+		NullCheck(L_17);
+		StringBuilder_t* L_18;
+		L_18 = StringBuilder_Clear_m2D76F6533574F40A4E3E2DC4E730277CBD0AF8F6(L_17, NULL);
+		NullCheck(L_18);
+		StringBuilder_t* L_19;
+		L_19 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_18, _stringLiteral76D6BE1C6DCE46870C1F6DAAB0C1B31559BC90A6, NULL);
+		HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* L_20 = V_1;
+		NullCheck(L_20);
+		float L_21 = L_20->___avatarScale;
+		NullCheck(L_19);
+		StringBuilder_t* L_22;
+		L_22 = StringBuilder_Append_m789EC7C63CDC0DE5136AE3FF0C85CA5EE11A842E(L_19, L_21, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:543>
+		HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* L_23 = V_1;
+		HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* L_24 = V_1;
+		NullCheck(L_24);
+		StringBuilder_t* L_25;
+		L_25 = HumanoidIKSample_get_sb_m518615B9FCFA3723CF066419C003B214B6251470(L_24, NULL);
+		NullCheck(L_23);
+		HumanoidIKSample_DEBUG_mE793E83B8DFDCB5CBCCEC8C5C000E69B84744B6E(L_23, L_25, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:544>
+		HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* L_26 = V_1;
+		HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* L_27 = V_1;
+		NullCheck(L_27);
+		float L_28 = L_27->___avatarScale;
+		HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* L_29 = V_1;
+		NullCheck(L_29);
+		float L_30 = L_29->___m_AvatarScale;
+		NullCheck(L_26);
+		HumanoidIKSample_ApplyBodyScale_m47FA362128A2BBAB5E7DB8017EBDD4B43031F6A8(L_26, ((float)il2cpp_codegen_multiply(L_28, L_30)), NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:547>
+		HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* L_31 = V_1;
+		NullCheck(L_31);
+		HumanoidIKSample_SetTrackingStatus_m548AD0CFFF4FE18D15E5AAE939619CF5DAD94F1E(L_31, 4, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:548>
+		HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* L_32 = V_1;
+		NullCheck(L_32);
+		L_32->___updateTrackingData = (bool)1;
+		goto IL_0160;
+	}
+
+IL_00db:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:554>
+		uint8_t L_33 = __this->___U3CresultU3E5__2;
+		if (L_33)
+		{
+			goto IL_0145;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:556>
+		BodyManager_tC2F2528B290757CB0FB5804C9FDA9DB22C5C1828* L_34;
+		L_34 = BodyManager_get_Instance_m4670608F4832E8A978881F4C4A2C4E39DEE9BD65_inline(NULL);
+		NullCheck(L_34);
+		bool L_35;
+		L_35 = BodyManager_get_EnableTrackingLog_m6AD7BC701EEA08BC7B51B4A20505051B2D597989_inline(L_34, NULL);
+		if (!L_35)
+		{
+			goto IL_0121;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:558>
+		HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* L_36 = V_1;
+		NullCheck(L_36);
+		StringBuilder_t* L_37;
+		L_37 = HumanoidIKSample_get_sb_m518615B9FCFA3723CF066419C003B214B6251470(L_36, NULL);
+		NullCheck(L_37);
+		StringBuilder_t* L_38;
+		L_38 = StringBuilder_Clear_m2D76F6533574F40A4E3E2DC4E730277CBD0AF8F6(L_37, NULL);
+		NullCheck(L_38);
+		StringBuilder_t* L_39;
+		L_39 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_38, _stringLiteralB590C33CB1F77314369BCE108CD827DCFCAC5963, NULL);
+		HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* L_40 = V_1;
+		NullCheck(L_40);
+		BodyAvatar_tD225D5E1511C8FED0CEE3C112BC10C39F03A1B4F* L_41 = L_40->___avatarBody;
+		NullCheck(L_41);
+		float L_42 = L_41->___confidence;
+		NullCheck(L_39);
+		StringBuilder_t* L_43;
+		L_43 = StringBuilder_Append_m789EC7C63CDC0DE5136AE3FF0C85CA5EE11A842E(L_39, L_42, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:559>
+		HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* L_44 = V_1;
+		HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* L_45 = V_1;
+		NullCheck(L_45);
+		StringBuilder_t* L_46;
+		L_46 = HumanoidIKSample_get_sb_m518615B9FCFA3723CF066419C003B214B6251470(L_45, NULL);
+		NullCheck(L_44);
+		HumanoidIKSample_DEBUG_mE793E83B8DFDCB5CBCCEC8C5C000E69B84744B6E(L_44, L_46, NULL);
+	}
+
+IL_0121:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:561>
+		HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* L_47 = V_1;
+		NullCheck(L_47);
+		HumanoidIKSample_RecoverBodyOffset_mF613351125AD759500FCE99CBD0D53945050837C(L_47, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:562>
+		HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* L_48 = V_1;
+		HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* L_49 = V_1;
+		NullCheck(L_49);
+		BodyAvatar_tD225D5E1511C8FED0CEE3C112BC10C39F03A1B4F* L_50 = L_49->___avatarBody;
+		HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* L_51 = V_1;
+		NullCheck(L_51);
+		float L_52 = L_51->___m_AvatarScale;
+		NullCheck(L_48);
+		HumanoidIKSample_UpdateBodyPosesInOrder_mFFEE2A4FF3DE9516601BF3B6B6C1A7135E463D32(L_48, L_50, L_52, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:563>
+		HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* L_53 = V_1;
+		HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* L_54 = V_1;
+		NullCheck(L_54);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_55 = L_54->___m_AvatarOffset;
+		NullCheck(L_53);
+		HumanoidIKSample_ApplyBodyOffsetEachFrame_m5B8781DB46B786FBF8D0BE3BC541A64109C22ED1(L_53, L_55, NULL);
+	}
+
+IL_0145:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:565>
+		WaitForEndOfFrame_tE38D80923E3F8380069B423968C25ABE50A46663* L_56 = (WaitForEndOfFrame_tE38D80923E3F8380069B423968C25ABE50A46663*)il2cpp_codegen_object_new(WaitForEndOfFrame_tE38D80923E3F8380069B423968C25ABE50A46663_il2cpp_TypeInfo_var);
+		WaitForEndOfFrame__ctor_m4AF7E576C01E6B04443BB898B1AE5D645F7D45AB(L_56, NULL);
+		__this->___U3CU3E2__current = L_56;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CU3E2__current), (void*)L_56);
+		__this->___U3CU3E1__state = 1;
+		return (bool)1;
+	}
+
+IL_0159:
+	{
+		__this->___U3CU3E1__state = (-1);
+	}
+
+IL_0160:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:549>
+		HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* L_57 = V_1;
+		NullCheck(L_57);
+		bool L_58 = L_57->___updateTrackingData;
+		if (L_58)
+		{
+			goto IL_00db;
+		}
+	}
+
+IL_016b:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:573>
+		__this->___U3CU3E2__current = NULL;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CU3E2__current), (void*)NULL);
+		__this->___U3CU3E1__state = 2;
+		return (bool)1;
+	}
+
+IL_017b:
+	{
+		__this->___U3CU3E1__state = (-1);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:576>
+		HumanoidIKSample_tCAB8D9C8CE484AD6F547709828189657B34BA98A* L_59 = V_1;
+		NullCheck(L_59);
+		HumanoidIKSample_SetTrackingStatus_m548AD0CFFF4FE18D15E5AAE939619CF5DAD94F1E(L_59, 0, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidIKSample.cs:577>
+		return (bool)0;
+	}
+}
+// Method Definition Index: 76997
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CStartBodyTrackingU3Ed__49_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mD6E86A6AAFF615F32B1EA8E41540D1BAA3D6BA4F (U3CStartBodyTrackingU3Ed__49_tD8F0E0671C60F27C0468C023E23885C6761FCC8C* __this, const RuntimeMethod* method) 
+{
+	{
+		RuntimeObject* L_0 = __this->___U3CU3E2__current;
+		return L_0;
+	}
+}
+// Method Definition Index: 76998
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CStartBodyTrackingU3Ed__49_System_Collections_IEnumerator_Reset_m54F4482F036EA92FB56CFF982978960F20BFE517 (U3CStartBodyTrackingU3Ed__49_tD8F0E0671C60F27C0468C023E23885C6761FCC8C* __this, const RuntimeMethod* method) 
+{
+	{
+		NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* L_0 = (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var)));
+		NotSupportedException__ctor_m1398D0CDE19B36AA3DE9392879738C1EA2439CDF(L_0, NULL);
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&U3CStartBodyTrackingU3Ed__49_System_Collections_IEnumerator_Reset_m54F4482F036EA92FB56CFF982978960F20BFE517_RuntimeMethod_var)));
+	}
+}
+// Method Definition Index: 76999
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CStartBodyTrackingU3Ed__49_System_Collections_IEnumerator_get_Current_m5159A9AA8CDD7B5BE2E71C741CA34CA7F9527DA8 (U3CStartBodyTrackingU3Ed__49_tD8F0E0671C60F27C0468C023E23885C6761FCC8C* __this, const RuntimeMethod* method) 
+{
+	{
+		RuntimeObject* L_0 = __this->___U3CU3E2__current;
+		return L_0;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// Method Definition Index: 77000
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringBuilder_t* HumanoidTrackingMenu_get_sb_mEE9DC1964B4C0E410E16C612B0F9C2A5A76C6AA4 (HumanoidTrackingMenu_tD8404766E39651BA25654BA0ED62D79B35AEFD35* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&StringBuilder_t_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:19>
+		StringBuilder_t* L_0 = __this->___m_sb;
+		if (L_0)
+		{
+			goto IL_0013;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:19>
+		StringBuilder_t* L_1 = (StringBuilder_t*)il2cpp_codegen_object_new(StringBuilder_t_il2cpp_TypeInfo_var);
+		StringBuilder__ctor_m1D99713357DE05DAFA296633639DB55F8C30587D(L_1, NULL);
+		__this->___m_sb = L_1;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___m_sb), (void*)L_1);
+	}
+
+IL_0013:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:20>
+		StringBuilder_t* L_2 = __this->___m_sb;
+		return L_2;
+	}
+}
+// Method Definition Index: 77001
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidTrackingMenu_DEBUG_m96AB72784648788B583B7A7517913EC3D7EA5203 (HumanoidTrackingMenu_tD8404766E39651BA25654BA0ED62D79B35AEFD35* __this, StringBuilder_t* ___0_msg, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral47B898568F99C9632E73054262D0501E0B9876AC);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:23>
+		StringBuilder_t* L_0 = ___0_msg;
+		Rdp_d_mD0F95A74606861C4AE1BCD335351900A97D3BEBC(_stringLiteral47B898568F99C9632E73054262D0501E0B9876AC, L_0, (bool)1, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:23>
+		return;
+	}
+}
+// Method Definition Index: 77002
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidTrackingMenu_Update_m2D5021C7732F4F93436FB0B81093AF8958D6FADD (HumanoidTrackingMenu_tD8404766E39651BA25654BA0ED62D79B35AEFD35* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Component_GetComponentInChildren_TisText_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62_m1D5533D50D961602AC2CD364E03388FFE2985259_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&TrackingMode_t4E4B212AEF9299DEBDCBBB6694F8C40D264FD2C3_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral2FB7AA8BBF5BD690367F5418DE81DF2D900EA3E9);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral549B9D496B9C9EDE7280BA216D09059C895E4ECB);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralE9F8DE4BECF3649D4C19444B0361907ACA4F3B3C);
+		s_Il2CppMethodInitialized = true;
+	}
+	int32_t V_0 = 0;
+	Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* G_B7_0 = NULL;
+	Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* G_B6_0 = NULL;
+	String_t* G_B8_0 = NULL;
+	Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* G_B8_1 = NULL;
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:34>
+		HumanoidTracking_t3FE172B07552D5F70DCD9385CFDB6C03DF3AF979* L_0 = __this->___humanoidTracking;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_1;
+		L_1 = Object_op_Equality_mB6120F782D83091EF56A198FCEBCF066DB4A9605(L_0, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (L_1)
+		{
+			goto IL_001c;
+		}
+	}
+	{
+		Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* L_2 = __this->___trackingTitle;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_3;
+		L_3 = Object_op_Equality_mB6120F782D83091EF56A198FCEBCF066DB4A9605(L_2, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_3)
+		{
+			goto IL_001d;
+		}
+	}
+
+IL_001c:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:34>
+		return;
+	}
+
+IL_001d:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:36>
+		Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* L_4 = __this->___trackingTitle;
+		HumanoidTracking_t3FE172B07552D5F70DCD9385CFDB6C03DF3AF979* L_5 = __this->___humanoidTracking;
+		NullCheck(L_5);
+		int32_t L_6;
+		L_6 = HumanoidTracking_get_Tracking_mDC04DCE20D9716E4C4ACB6521E2F57A8A3D68445_inline(L_5, NULL);
+		V_0 = L_6;
+		Il2CppFakeBox<int32_t> L_7(TrackingMode_t4E4B212AEF9299DEBDCBBB6694F8C40D264FD2C3_il2cpp_TypeInfo_var, (&V_0));
+		String_t* L_8;
+		L_8 = Enum_ToString_m946B0B83C4470457D0FF555D862022C72BB55741((Enum_t2A1A94B24E3B776EEF4E5E485E290BB9D4D072E2*)(&L_7), NULL);
+		String_t* L_9;
+		L_9 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(L_8, _stringLiteralE9F8DE4BECF3649D4C19444B0361907ACA4F3B3C, NULL);
+		NullCheck(L_4);
+		VirtualActionInvoker1< String_t* >::Invoke(75, L_4, L_9);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:38>
+		Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* L_10 = __this->___logButton;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_11;
+		L_11 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_10, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_11)
+		{
+			goto IL_008e;
+		}
+	}
+	{
+		BodyManager_tC2F2528B290757CB0FB5804C9FDA9DB22C5C1828* L_12;
+		L_12 = BodyManager_get_Instance_m4670608F4832E8A978881F4C4A2C4E39DEE9BD65_inline(NULL);
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_13;
+		L_13 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_12, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_13)
+		{
+			goto IL_008e;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:40>
+		Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* L_14 = __this->___logButton;
+		NullCheck(L_14);
+		Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* L_15;
+		L_15 = Component_GetComponentInChildren_TisText_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62_m1D5533D50D961602AC2CD364E03388FFE2985259(L_14, Component_GetComponentInChildren_TisText_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62_m1D5533D50D961602AC2CD364E03388FFE2985259_RuntimeMethod_var);
+		BodyManager_tC2F2528B290757CB0FB5804C9FDA9DB22C5C1828* L_16;
+		L_16 = BodyManager_get_Instance_m4670608F4832E8A978881F4C4A2C4E39DEE9BD65_inline(NULL);
+		NullCheck(L_16);
+		bool L_17;
+		L_17 = BodyManager_get_EnableTrackingLog_m6AD7BC701EEA08BC7B51B4A20505051B2D597989_inline(L_16, NULL);
+		if (L_17)
+		{
+			G_B7_0 = L_15;
+			goto IL_0084;
+		}
+		G_B6_0 = L_15;
+	}
+	{
+		G_B8_0 = _stringLiteral2FB7AA8BBF5BD690367F5418DE81DF2D900EA3E9;
+		G_B8_1 = G_B6_0;
+		goto IL_0089;
+	}
+
+IL_0084:
+	{
+		G_B8_0 = _stringLiteral549B9D496B9C9EDE7280BA216D09059C895E4ECB;
+		G_B8_1 = G_B7_0;
+	}
+
+IL_0089:
+	{
+		NullCheck(G_B8_1);
+		VirtualActionInvoker1< String_t* >::Invoke(75, G_B8_1, G_B8_0);
+	}
+
+IL_008e:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:42>
+		return;
+	}
+}
+// Method Definition Index: 77003
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidTrackingMenu_SetArmMode_m1D4FCC1B2CCF08DD876EC2D7AA08299639C12DD4 (HumanoidTrackingMenu_tD8404766E39651BA25654BA0ED62D79B35AEFD35* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:46>
+		HumanoidTracking_t3FE172B07552D5F70DCD9385CFDB6C03DF3AF979* L_0 = __this->___humanoidTracking;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_1;
+		L_1 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_0, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_1)
+		{
+			goto IL_001a;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:47>
+		HumanoidTracking_t3FE172B07552D5F70DCD9385CFDB6C03DF3AF979* L_2 = __this->___humanoidTracking;
+		NullCheck(L_2);
+		HumanoidTracking_set_Tracking_mD8D6BB9A9CD1BF95CB47286F7ED39AFBA69014D9_inline(L_2, 0, NULL);
+	}
+
+IL_001a:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:48>
+		return;
+	}
+}
+// Method Definition Index: 77004
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidTrackingMenu_SetUpperMode_m7096A3EE26D032EC71DDB02987ED1D18C9A26B27 (HumanoidTrackingMenu_tD8404766E39651BA25654BA0ED62D79B35AEFD35* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:51>
+		HumanoidTracking_t3FE172B07552D5F70DCD9385CFDB6C03DF3AF979* L_0 = __this->___humanoidTracking;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_1;
+		L_1 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_0, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_1)
+		{
+			goto IL_001a;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:52>
+		HumanoidTracking_t3FE172B07552D5F70DCD9385CFDB6C03DF3AF979* L_2 = __this->___humanoidTracking;
+		NullCheck(L_2);
+		HumanoidTracking_set_Tracking_mD8D6BB9A9CD1BF95CB47286F7ED39AFBA69014D9_inline(L_2, 1, NULL);
+	}
+
+IL_001a:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:53>
+		return;
+	}
+}
+// Method Definition Index: 77005
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidTrackingMenu_SetFullMode_mA47DD94C846533AD86023A8FB1A4DDB6C0B5AE81 (HumanoidTrackingMenu_tD8404766E39651BA25654BA0ED62D79B35AEFD35* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:56>
+		HumanoidTracking_t3FE172B07552D5F70DCD9385CFDB6C03DF3AF979* L_0 = __this->___humanoidTracking;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_1;
+		L_1 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_0, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_1)
+		{
+			goto IL_001a;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:57>
+		HumanoidTracking_t3FE172B07552D5F70DCD9385CFDB6C03DF3AF979* L_2 = __this->___humanoidTracking;
+		NullCheck(L_2);
+		HumanoidTracking_set_Tracking_mD8D6BB9A9CD1BF95CB47286F7ED39AFBA69014D9_inline(L_2, 2, NULL);
+	}
+
+IL_001a:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:58>
+		return;
+	}
+}
+// Method Definition Index: 77006
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidTrackingMenu_SetUpperBodyAndLegMode_m11BF9607FCE9E28E11944F349CFFAA7B1CC638FF (HumanoidTrackingMenu_tD8404766E39651BA25654BA0ED62D79B35AEFD35* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:61>
+		HumanoidTracking_t3FE172B07552D5F70DCD9385CFDB6C03DF3AF979* L_0 = __this->___humanoidTracking;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_1;
+		L_1 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_0, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_1)
+		{
+			goto IL_001a;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:62>
+		HumanoidTracking_t3FE172B07552D5F70DCD9385CFDB6C03DF3AF979* L_2 = __this->___humanoidTracking;
+		NullCheck(L_2);
+		HumanoidTracking_set_Tracking_mD8D6BB9A9CD1BF95CB47286F7ED39AFBA69014D9_inline(L_2, 3, NULL);
+	}
+
+IL_001a:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:63>
+		return;
+	}
+}
+// Method Definition Index: 77007
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidTrackingMenu_BeginTracking_m74E8189C7309D5F4928746DF35954BD3B5815E28 (HumanoidTrackingMenu_tD8404766E39651BA25654BA0ED62D79B35AEFD35* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:67>
+		HumanoidTracking_t3FE172B07552D5F70DCD9385CFDB6C03DF3AF979* L_0 = __this->___humanoidTracking;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_1;
+		L_1 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_0, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_1)
+		{
+			goto IL_004d;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:69>
+		Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* L_2 = __this->___beginTrackingButton;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_3;
+		L_3 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_2, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_3)
+		{
+			goto IL_0028;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:69>
+		Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* L_4 = __this->___beginTrackingButton;
+		NullCheck(L_4);
+		Selectable_set_interactable_m8DD581C1AD99B2EFA8B3EE9AF69EDDF26688B492(L_4, (bool)0, NULL);
+	}
+
+IL_0028:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:70>
+		Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* L_5 = __this->___startCalibrationButton;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_6;
+		L_6 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_5, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_6)
+		{
+			goto IL_0042;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:70>
+		Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* L_7 = __this->___startCalibrationButton;
+		NullCheck(L_7);
+		Selectable_set_interactable_m8DD581C1AD99B2EFA8B3EE9AF69EDDF26688B492(L_7, (bool)0, NULL);
+	}
+
+IL_0042:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:71>
+		HumanoidTracking_t3FE172B07552D5F70DCD9385CFDB6C03DF3AF979* L_8 = __this->___humanoidTracking;
+		NullCheck(L_8);
+		HumanoidTracking_BeginTracking_m51107C572AD4863514AE7C261096FCEC2810FB85(L_8, NULL);
+	}
+
+IL_004d:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:73>
+		return;
+	}
+}
+// Method Definition Index: 77008
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidTrackingMenu_EndTracking_mB492E1AF73046DAE12DAE01C819111F4334E1DE7 (HumanoidTrackingMenu_tD8404766E39651BA25654BA0ED62D79B35AEFD35* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:76>
+		HumanoidTracking_t3FE172B07552D5F70DCD9385CFDB6C03DF3AF979* L_0 = __this->___humanoidTracking;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_1;
+		L_1 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_0, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_1)
+		{
+			goto IL_004d;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:78>
+		Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* L_2 = __this->___beginTrackingButton;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_3;
+		L_3 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_2, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_3)
+		{
+			goto IL_0028;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:78>
+		Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* L_4 = __this->___beginTrackingButton;
+		NullCheck(L_4);
+		Selectable_set_interactable_m8DD581C1AD99B2EFA8B3EE9AF69EDDF26688B492(L_4, (bool)1, NULL);
+	}
+
+IL_0028:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:79>
+		Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* L_5 = __this->___startCalibrationButton;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_6;
+		L_6 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_5, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_6)
+		{
+			goto IL_0042;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:79>
+		Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* L_7 = __this->___startCalibrationButton;
+		NullCheck(L_7);
+		Selectable_set_interactable_m8DD581C1AD99B2EFA8B3EE9AF69EDDF26688B492(L_7, (bool)1, NULL);
+	}
+
+IL_0042:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:80>
+		HumanoidTracking_t3FE172B07552D5F70DCD9385CFDB6C03DF3AF979* L_8 = __this->___humanoidTracking;
+		NullCheck(L_8);
+		HumanoidTracking_StopTracking_m8B81A016C9747C6D6F60A2E04EB3ACCC098D3B6A(L_8, NULL);
+	}
+
+IL_004d:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:82>
+		return;
+	}
+}
+// Method Definition Index: 77009
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidTrackingMenu_CalibrationStatusCallback_m525474C306C4527DD45D0423DAB70049BFAE8274 (HumanoidTrackingMenu_tD8404766E39651BA25654BA0ED62D79B35AEFD35* __this, RuntimeObject* ___0_sender, int32_t ___1_status, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&BodyTrackingUtils_t5FCC0E4F696D7C3AA52BF543CA81592CBAAC490C_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral32C3C4AE250B0499299A9ECB7523690CEBFE8C80);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:86>
+		Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* L_0 = __this->___startCalibrationButton;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_1;
+		L_1 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_0, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_1)
+		{
+			goto IL_0020;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:86>
+		Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* L_2 = __this->___startCalibrationButton;
+		int32_t L_3 = ___1_status;
+		NullCheck(L_2);
+		Selectable_set_interactable_m8DD581C1AD99B2EFA8B3EE9AF69EDDF26688B492(L_2, (bool)((((int32_t)((((int32_t)L_3) < ((int32_t)6))? 1 : 0)) == ((int32_t)0))? 1 : 0), NULL);
+	}
+
+IL_0020:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:87>
+		Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* L_4 = __this->___calibrationTitle;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_5;
+		L_5 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_4, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_5)
+		{
+			goto IL_0049;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:87>
+		Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* L_6 = __this->___calibrationTitle;
+		int32_t L_7 = ___1_status;
+		il2cpp_codegen_runtime_class_init_inline(BodyTrackingUtils_t5FCC0E4F696D7C3AA52BF543CA81592CBAAC490C_il2cpp_TypeInfo_var);
+		String_t* L_8;
+		L_8 = BodyTrackingUtils_Name_m381B47362ABBB067CE4EAF4A80E67CDD7E3FF87B(L_7, NULL);
+		String_t* L_9;
+		L_9 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(_stringLiteral32C3C4AE250B0499299A9ECB7523690CEBFE8C80, L_8, NULL);
+		NullCheck(L_6);
+		VirtualActionInvoker1< String_t* >::Invoke(75, L_6, L_9);
+	}
+
+IL_0049:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:88>
+		return;
+	}
+}
+// Method Definition Index: 77010
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidTrackingMenu_StartCalibration_mB4459EB6110AEF9266DB02AB5DEE1FF63E002127 (HumanoidTrackingMenu_tD8404766E39651BA25654BA0ED62D79B35AEFD35* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&CalibrationStatusDelegate_t7456FF3FDFC24533E36DAEC05FE3ADD6EA1DCD41_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&HumanoidTrackingMenu_CalibrationStatusCallback_m525474C306C4527DD45D0423DAB70049BFAE8274_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral5EFE4646979B4FE226DD9281CBB33148DDB09D66);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:91>
+		HumanoidTracking_t3FE172B07552D5F70DCD9385CFDB6C03DF3AF979* L_0 = __this->___humanoidTracking;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_1;
+		L_1 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_0, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_1)
+		{
+			goto IL_005d;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:93>
+		Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* L_2 = __this->___startCalibrationButton;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_3;
+		L_3 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_2, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_3)
+		{
+			goto IL_0028;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:93>
+		Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* L_4 = __this->___startCalibrationButton;
+		NullCheck(L_4);
+		Selectable_set_interactable_m8DD581C1AD99B2EFA8B3EE9AF69EDDF26688B492(L_4, (bool)0, NULL);
+	}
+
+IL_0028:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:94>
+		Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* L_5 = __this->___calibrationTitle;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_6;
+		L_6 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_5, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_6)
+		{
+			goto IL_0046;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:94>
+		Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* L_7 = __this->___calibrationTitle;
+		NullCheck(L_7);
+		VirtualActionInvoker1< String_t* >::Invoke(75, L_7, _stringLiteral5EFE4646979B4FE226DD9281CBB33148DDB09D66);
+	}
+
+IL_0046:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:96>
+		HumanoidTracking_t3FE172B07552D5F70DCD9385CFDB6C03DF3AF979* L_8 = __this->___humanoidTracking;
+		CalibrationStatusDelegate_t7456FF3FDFC24533E36DAEC05FE3ADD6EA1DCD41* L_9 = (CalibrationStatusDelegate_t7456FF3FDFC24533E36DAEC05FE3ADD6EA1DCD41*)il2cpp_codegen_object_new(CalibrationStatusDelegate_t7456FF3FDFC24533E36DAEC05FE3ADD6EA1DCD41_il2cpp_TypeInfo_var);
+		CalibrationStatusDelegate__ctor_m8F611FFD6771B48D8680442709D48FC4AD321367(L_9, __this, (intptr_t)((void*)HumanoidTrackingMenu_CalibrationStatusCallback_m525474C306C4527DD45D0423DAB70049BFAE8274_RuntimeMethod_var), NULL);
+		NullCheck(L_8);
+		HumanoidTracking_BeginCalibration_mA114266BFC13E64EA14F8B05D7A8DF8089C5007D(L_8, L_9, NULL);
+	}
+
+IL_005d:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:99>
+		return;
+	}
+}
+// Method Definition Index: 77011
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidTrackingMenu_StopCalibration_m45A5C71FBCE4EAE7B37E261182498E11A6C4B3A5 (HumanoidTrackingMenu_tD8404766E39651BA25654BA0ED62D79B35AEFD35* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral5EFE4646979B4FE226DD9281CBB33148DDB09D66);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:102>
+		HumanoidTracking_t3FE172B07552D5F70DCD9385CFDB6C03DF3AF979* L_0 = __this->___humanoidTracking;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_1;
+		L_1 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_0, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_1)
+		{
+			goto IL_0051;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:104>
+		Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* L_2 = __this->___startCalibrationButton;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_3;
+		L_3 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_2, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_3)
+		{
+			goto IL_0028;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:104>
+		Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* L_4 = __this->___startCalibrationButton;
+		NullCheck(L_4);
+		Selectable_set_interactable_m8DD581C1AD99B2EFA8B3EE9AF69EDDF26688B492(L_4, (bool)1, NULL);
+	}
+
+IL_0028:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:105>
+		Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* L_5 = __this->___calibrationTitle;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_6;
+		L_6 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_5, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_6)
+		{
+			goto IL_0046;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:105>
+		Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* L_7 = __this->___calibrationTitle;
+		NullCheck(L_7);
+		VirtualActionInvoker1< String_t* >::Invoke(75, L_7, _stringLiteral5EFE4646979B4FE226DD9281CBB33148DDB09D66);
+	}
+
+IL_0046:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:107>
+		HumanoidTracking_t3FE172B07552D5F70DCD9385CFDB6C03DF3AF979* L_8 = __this->___humanoidTracking;
+		NullCheck(L_8);
+		HumanoidTracking_StopCalibration_mBE665B54CC320815034E9003117E44322D44E346(L_8, NULL);
+	}
+
+IL_0051:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:110>
+		return;
+	}
+}
+// Method Definition Index: 77012
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidTrackingMenu_OneStepStart_mAA16E966F90087BAD0D0E2685D51C1FEE3FFDB1A (HumanoidTrackingMenu_tD8404766E39651BA25654BA0ED62D79B35AEFD35* __this, const RuntimeMethod* method) 
+{
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:114>
+		HumanoidTrackingMenu_StartCalibration_mB4459EB6110AEF9266DB02AB5DEE1FF63E002127(__this, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:115>
+		HumanoidTrackingMenu_BeginTracking_m74E8189C7309D5F4928746DF35954BD3B5815E28(__this, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:116>
+		return;
+	}
+}
+// Method Definition Index: 77013
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidTrackingMenu_OneStepStop_m14C98E0B8FB0255D1E9450F9A1B66FD0F27D14F6 (HumanoidTrackingMenu_tD8404766E39651BA25654BA0ED62D79B35AEFD35* __this, const RuntimeMethod* method) 
+{
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:119>
+		HumanoidTrackingMenu_EndTracking_mB492E1AF73046DAE12DAE01C819111F4334E1DE7(__this, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:120>
+		return;
+	}
+}
+// Method Definition Index: 77014
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidTrackingMenu_ActivateTrackingLog_mA325452AA1D4468113BA6FD670EE19BAE55677FC (HumanoidTrackingMenu_tD8404766E39651BA25654BA0ED62D79B35AEFD35* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:124>
+		BodyManager_tC2F2528B290757CB0FB5804C9FDA9DB22C5C1828* L_0;
+		L_0 = BodyManager_get_Instance_m4670608F4832E8A978881F4C4A2C4E39DEE9BD65_inline(NULL);
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_1;
+		L_1 = Object_op_Equality_mB6120F782D83091EF56A198FCEBCF066DB4A9605(L_0, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_1)
+		{
+			goto IL_000e;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:124>
+		return;
+	}
+
+IL_000e:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:126>
+		BodyManager_tC2F2528B290757CB0FB5804C9FDA9DB22C5C1828* L_2;
+		L_2 = BodyManager_get_Instance_m4670608F4832E8A978881F4C4A2C4E39DEE9BD65_inline(NULL);
+		BodyManager_tC2F2528B290757CB0FB5804C9FDA9DB22C5C1828* L_3;
+		L_3 = BodyManager_get_Instance_m4670608F4832E8A978881F4C4A2C4E39DEE9BD65_inline(NULL);
+		NullCheck(L_3);
+		bool L_4;
+		L_4 = BodyManager_get_EnableTrackingLog_m6AD7BC701EEA08BC7B51B4A20505051B2D597989_inline(L_3, NULL);
+		NullCheck(L_2);
+		BodyManager_set_EnableTrackingLog_mA15231EB3F7894BCFD4D9EB9C72DBFF871FF1361_inline(L_2, (bool)((((int32_t)L_4) == ((int32_t)0))? 1 : 0), NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingMenu.cs:127>
+		return;
+	}
+}
+// Method Definition Index: 77015
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidTrackingMenu__ctor_m7E0C102078F49C16A807310728A8C5440181D63C (HumanoidTrackingMenu_tD8404766E39651BA25654BA0ED62D79B35AEFD35* __this, const RuntimeMethod* method) 
+{
+	{
+		MonoBehaviour__ctor_m592DB0105CA0BC97AA1C5F4AD27B12D68A3B7C1E(__this, NULL);
+		return;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// Method Definition Index: 77016
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidTrackingTeleport_TeleportOrigin_m663A4DB9FA292E7A5C48B7B9CAD65E8EC5179589 (HumanoidTrackingTeleport_t637C40B292957465BD7B97425070E2CD56D3ABB0* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingTeleport.cs:16>
+		HumanoidTracking_t3FE172B07552D5F70DCD9385CFDB6C03DF3AF979* L_0 = __this->___humanoidTracking;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_1;
+		L_1 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_0, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_1)
+		{
+			goto IL_002d;
+		}
+	}
+	{
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_2 = __this->___offsetOrigin;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_3;
+		L_3 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_2, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_3)
+		{
+			goto IL_002d;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingTeleport.cs:17>
+		HumanoidTracking_t3FE172B07552D5F70DCD9385CFDB6C03DF3AF979* L_4 = __this->___humanoidTracking;
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_5 = __this->___offsetOrigin;
+		NullCheck(L_4);
+		HumanoidTracking_set_AvatarOffset_m534ED1139A3344C6C9F88E6BA2CA32326B9B9397_inline(L_4, L_5, NULL);
+	}
+
+IL_002d:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingTeleport.cs:18>
+		return;
+	}
+}
+// Method Definition Index: 77017
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidTrackingTeleport_Teleport1_m0BEAB4D289BFAE201C59346182A77B4F13F6A7EF (HumanoidTrackingTeleport_t637C40B292957465BD7B97425070E2CD56D3ABB0* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingTeleport.cs:21>
+		HumanoidTracking_t3FE172B07552D5F70DCD9385CFDB6C03DF3AF979* L_0 = __this->___humanoidTracking;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_1;
+		L_1 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_0, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_1)
+		{
+			goto IL_002d;
+		}
+	}
+	{
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_2 = __this->___offset1;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_3;
+		L_3 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_2, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_3)
+		{
+			goto IL_002d;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingTeleport.cs:22>
+		HumanoidTracking_t3FE172B07552D5F70DCD9385CFDB6C03DF3AF979* L_4 = __this->___humanoidTracking;
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_5 = __this->___offset1;
+		NullCheck(L_4);
+		HumanoidTracking_set_AvatarOffset_m534ED1139A3344C6C9F88E6BA2CA32326B9B9397_inline(L_4, L_5, NULL);
+	}
+
+IL_002d:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingTeleport.cs:23>
+		return;
+	}
+}
+// Method Definition Index: 77018
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidTrackingTeleport_Teleport2_m37356635A2E94C1E8CC593D1F9D5075466C58F6B (HumanoidTrackingTeleport_t637C40B292957465BD7B97425070E2CD56D3ABB0* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingTeleport.cs:26>
+		HumanoidTracking_t3FE172B07552D5F70DCD9385CFDB6C03DF3AF979* L_0 = __this->___humanoidTracking;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_1;
+		L_1 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_0, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_1)
+		{
+			goto IL_002d;
+		}
+	}
+	{
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_2 = __this->___offset2;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_3;
+		L_3 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_2, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_3)
+		{
+			goto IL_002d;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingTeleport.cs:27>
+		HumanoidTracking_t3FE172B07552D5F70DCD9385CFDB6C03DF3AF979* L_4 = __this->___humanoidTracking;
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_5 = __this->___offset2;
+		NullCheck(L_4);
+		HumanoidTracking_set_AvatarOffset_m534ED1139A3344C6C9F88E6BA2CA32326B9B9397_inline(L_4, L_5, NULL);
+	}
+
+IL_002d:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingTeleport.cs:28>
+		return;
+	}
+}
+// Method Definition Index: 77019
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidTrackingTeleport_Teleport3_mFD28A325CECB4824095E866E3BD2858077117913 (HumanoidTrackingTeleport_t637C40B292957465BD7B97425070E2CD56D3ABB0* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingTeleport.cs:31>
+		HumanoidTracking_t3FE172B07552D5F70DCD9385CFDB6C03DF3AF979* L_0 = __this->___humanoidTracking;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_1;
+		L_1 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_0, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_1)
+		{
+			goto IL_002d;
+		}
+	}
+	{
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_2 = __this->___offset3;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_3;
+		L_3 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_2, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_3)
+		{
+			goto IL_002d;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingTeleport.cs:32>
+		HumanoidTracking_t3FE172B07552D5F70DCD9385CFDB6C03DF3AF979* L_4 = __this->___humanoidTracking;
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_5 = __this->___offset3;
+		NullCheck(L_4);
+		HumanoidTracking_set_AvatarOffset_m534ED1139A3344C6C9F88E6BA2CA32326B9B9397_inline(L_4, L_5, NULL);
+	}
+
+IL_002d:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/ContentIK/Humanoid/HumanoidTrackingTeleport.cs:33>
+		return;
+	}
+}
+// Method Definition Index: 77020
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HumanoidTrackingTeleport__ctor_mC4E9C96F8CCFC47B193EBD6C0C2F51CF8DD5291E (HumanoidTrackingTeleport_t637C40B292957465BD7B97425070E2CD56D3ABB0* __this, const RuntimeMethod* method) 
+{
+	{
+		MonoBehaviour__ctor_m592DB0105CA0BC97AA1C5F4AD27B12D68A3B7C1E(__this, NULL);
+		return;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// Method Definition Index: 77021
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugRotation_Rotate_mD38E4BC921ADD0B48282F401FF6AE8B406B85893 (DebugRotation_t7937DC12D85BF51C2C66BAAF2B6CAB5C8CD88CBA* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral758733BDBED83CBFF4F635AC26CA92AAE477F75D);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralAF3D249DEA0CB88949E4A6E926A37B4C54FD84CB);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralB3F14BF976EFD974E34846B742502C802FABAE9D);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralD5E8DD02EC57884E0F947CF4D1AEFF1D86083AB6);
+		s_Il2CppMethodInitialized = true;
+	}
+	Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 V_0;
+	memset((&V_0), 0, sizeof(V_0));
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 V_1;
+	memset((&V_1), 0, sizeof(V_1));
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/Debug/DebugRotation.cs:12>
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_0;
+		L_0 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
+		Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3* L_1 = (Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3*)(&__this->___Rot);
+		float L_2 = L_1->___x;
+		Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3* L_3 = (Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3*)(&__this->___Rot);
+		float L_4 = L_3->___y;
+		Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3* L_5 = (Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3*)(&__this->___Rot);
+		float L_6 = L_5->___z;
+		Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3* L_7 = (Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3*)(&__this->___Rot);
+		float L_8 = L_7->___w;
+		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_9;
+		memset((&L_9), 0, sizeof(L_9));
+		Quaternion__ctor_m868FD60AA65DD5A8AC0C5DEB0608381A8D85FCD8_inline((&L_9), L_2, L_4, L_6, L_8, NULL);
+		NullCheck(L_0);
+		Transform_set_rotation_m61340DE74726CF0F9946743A727C4D444397331D(L_0, L_9, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/Debug/DebugRotation.cs:13>
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/Debug/DebugRotation.cs:14>
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/Debug/DebugRotation.cs:15>
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/Debug/DebugRotation.cs:16>
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/Debug/DebugRotation.cs:17>
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_10 = (StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248*)(StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248*)SZArrayNew(StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248_il2cpp_TypeInfo_var, (uint32_t)((int32_t)9));
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_11 = L_10;
+		NullCheck(L_11);
+		(L_11)->SetAt(static_cast<il2cpp_array_size_t>(0), (String_t*)_stringLiteralD5E8DD02EC57884E0F947CF4D1AEFF1D86083AB6);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_12 = L_11;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_13;
+		L_13 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(__this, NULL);
+		NullCheck(L_13);
+		String_t* L_14;
+		L_14 = Object_get_name_mAC2F6B897CF1303BA4249B4CB55271AFACBB6392(L_13, NULL);
+		NullCheck(L_12);
+		(L_12)->SetAt(static_cast<il2cpp_array_size_t>(1), (String_t*)L_14);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_15 = L_12;
+		NullCheck(L_15);
+		(L_15)->SetAt(static_cast<il2cpp_array_size_t>(2), (String_t*)_stringLiteralAF3D249DEA0CB88949E4A6E926A37B4C54FD84CB);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_16 = L_15;
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_17;
+		L_17 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
+		NullCheck(L_17);
+		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_18;
+		L_18 = Transform_get_rotation_m32AF40CA0D50C797DA639A696F8EAEC7524C179C(L_17, NULL);
+		V_0 = L_18;
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_19;
+		L_19 = Quaternion_get_eulerAngles_m2DB5158B5C3A71FD60FC8A6EE43D3AAA1CFED122_inline((&V_0), NULL);
+		V_1 = L_19;
+		float* L_20 = (float*)(&(&V_1)->___x);
+		String_t* L_21;
+		L_21 = Single_ToString_mE282EDA9CA4F7DF88432D807732837A629D04972(L_20, NULL);
+		NullCheck(L_16);
+		(L_16)->SetAt(static_cast<il2cpp_array_size_t>(3), (String_t*)L_21);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_22 = L_16;
+		NullCheck(L_22);
+		(L_22)->SetAt(static_cast<il2cpp_array_size_t>(4), (String_t*)_stringLiteral758733BDBED83CBFF4F635AC26CA92AAE477F75D);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_23 = L_22;
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_24;
+		L_24 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
+		NullCheck(L_24);
+		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_25;
+		L_25 = Transform_get_rotation_m32AF40CA0D50C797DA639A696F8EAEC7524C179C(L_24, NULL);
+		V_0 = L_25;
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_26;
+		L_26 = Quaternion_get_eulerAngles_m2DB5158B5C3A71FD60FC8A6EE43D3AAA1CFED122_inline((&V_0), NULL);
+		V_1 = L_26;
+		float* L_27 = (float*)(&(&V_1)->___y);
+		String_t* L_28;
+		L_28 = Single_ToString_mE282EDA9CA4F7DF88432D807732837A629D04972(L_27, NULL);
+		NullCheck(L_23);
+		(L_23)->SetAt(static_cast<il2cpp_array_size_t>(5), (String_t*)L_28);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_29 = L_23;
+		NullCheck(L_29);
+		(L_29)->SetAt(static_cast<il2cpp_array_size_t>(6), (String_t*)_stringLiteral758733BDBED83CBFF4F635AC26CA92AAE477F75D);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_30 = L_29;
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_31;
+		L_31 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
+		NullCheck(L_31);
+		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_32;
+		L_32 = Transform_get_rotation_m32AF40CA0D50C797DA639A696F8EAEC7524C179C(L_31, NULL);
+		V_0 = L_32;
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_33;
+		L_33 = Quaternion_get_eulerAngles_m2DB5158B5C3A71FD60FC8A6EE43D3AAA1CFED122_inline((&V_0), NULL);
+		V_1 = L_33;
+		float* L_34 = (float*)(&(&V_1)->___z);
+		String_t* L_35;
+		L_35 = Single_ToString_mE282EDA9CA4F7DF88432D807732837A629D04972(L_34, NULL);
+		NullCheck(L_30);
+		(L_30)->SetAt(static_cast<il2cpp_array_size_t>(7), (String_t*)L_35);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_36 = L_30;
+		NullCheck(L_36);
+		(L_36)->SetAt(static_cast<il2cpp_array_size_t>(8), (String_t*)_stringLiteralB3F14BF976EFD974E34846B742502C802FABAE9D);
+		String_t* L_37;
+		L_37 = String_Concat_m647EBF831F54B6DF7D5AFA5FD012CF4EE7571B6A(L_36, NULL);
+		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
+		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(L_37, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/Debug/DebugRotation.cs:18>
+		return;
+	}
+}
+// Method Definition Index: 77022
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugRotation__ctor_m08080D600B3CDD3DC8EFE4AB546D9F0D89FF22FB (DebugRotation_t7937DC12D85BF51C2C66BAAF2B6CAB5C8CD88CBA* __this, const RuntimeMethod* method) 
+{
+	{
+		MonoBehaviour__ctor_m592DB0105CA0BC97AA1C5F4AD27B12D68A3B7C1E(__this, NULL);
+		return;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// Method Definition Index: 77023
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugRotationMaster_Start_mE5A5A9093C2305CC4E5FC59AB5489FE1F3D8550A (DebugRotationMaster_tF3C5F0F48BDDF1C25AD290F4978F267D1F7E5559* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&List_1_get_Count_mCB9F2AFFECBE38B6D7839CF67D1F2777D97EC8FE_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&List_1_get_Item_m3A8FCCA55575F52C710AD1B240853BD988AE2DA2_RuntimeMethod_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	int32_t V_0 = 0;
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/Debug/DebugRotationMaster.cs:13>
+		V_0 = 0;
+		goto IL_0019;
+	}
+
+IL_0004:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/Debug/DebugRotationMaster.cs:15>
+		List_1_tD5AC9F392427318E81BE224E7E394A720E64463C* L_0 = __this->___DRs;
+		int32_t L_1 = V_0;
+		NullCheck(L_0);
+		DebugRotation_t7937DC12D85BF51C2C66BAAF2B6CAB5C8CD88CBA* L_2;
+		L_2 = List_1_get_Item_m3A8FCCA55575F52C710AD1B240853BD988AE2DA2(L_0, L_1, List_1_get_Item_m3A8FCCA55575F52C710AD1B240853BD988AE2DA2_RuntimeMethod_var);
+		NullCheck(L_2);
+		DebugRotation_Rotate_mD38E4BC921ADD0B48282F401FF6AE8B406B85893(L_2, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/Debug/DebugRotationMaster.cs:13>
+		int32_t L_3 = V_0;
+		V_0 = ((int32_t)il2cpp_codegen_add(L_3, 1));
+	}
+
+IL_0019:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/Debug/DebugRotationMaster.cs:13>
+		int32_t L_4 = V_0;
+		List_1_tD5AC9F392427318E81BE224E7E394A720E64463C* L_5 = __this->___DRs;
+		NullCheck(L_5);
+		int32_t L_6;
+		L_6 = List_1_get_Count_mCB9F2AFFECBE38B6D7839CF67D1F2777D97EC8FE_inline(L_5, List_1_get_Count_mCB9F2AFFECBE38B6D7839CF67D1F2777D97EC8FE_RuntimeMethod_var);
+		if ((((int32_t)L_4) < ((int32_t)L_6)))
+		{
+			goto IL_0004;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/Debug/DebugRotationMaster.cs:17>
+		return;
+	}
+}
+// Method Definition Index: 77024
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugRotationMaster__ctor_mE5BC2325F48101509E3BE5E83EDF9DBA2C6F458B (DebugRotationMaster_tF3C5F0F48BDDF1C25AD290F4978F267D1F7E5559* __this, const RuntimeMethod* method) 
+{
+	{
+		MonoBehaviour__ctor_m592DB0105CA0BC97AA1C5F4AD27B12D68A3B7C1E(__this, NULL);
+		return;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// Method Definition Index: 77025
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringBuilder_t* ProfilerLogger_get_sb_mFEE33E335B2FB2E25F751C29FCB3A2FBE812DF08 (ProfilerLogger_t09D8B7A85E0B2DBD04B95B5D98FB1AAFD7EF38B0* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&StringBuilder_t_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/Debug/ProfilerLogger.cs:17>
+		StringBuilder_t* L_0 = __this->___m_sb;
+		if (L_0)
+		{
+			goto IL_0013;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/Debug/ProfilerLogger.cs:17>
+		StringBuilder_t* L_1 = (StringBuilder_t*)il2cpp_codegen_object_new(StringBuilder_t_il2cpp_TypeInfo_var);
+		StringBuilder__ctor_m1D99713357DE05DAFA296633639DB55F8C30587D(L_1, NULL);
+		__this->___m_sb = L_1;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___m_sb), (void*)L_1);
+	}
+
+IL_0013:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/Debug/ProfilerLogger.cs:18>
+		StringBuilder_t* L_2 = __this->___m_sb;
+		return L_2;
+	}
+}
+// Method Definition Index: 77026
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ProfilerLogger_DEBUG_m5712631D620E9072D1C8D95899B1832F7529DA68 (ProfilerLogger_t09D8B7A85E0B2DBD04B95B5D98FB1AAFD7EF38B0* __this, StringBuilder_t* ___0_sb, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral1D42CADF6CAAB1179EEA6FF8E6BEBF3893129A00);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/Debug/ProfilerLogger.cs:23>
+		StringBuilder_t* L_0 = ___0_sb;
+		NullCheck(L_0);
+		StringBuilder_t* L_1;
+		L_1 = StringBuilder_Insert_mEA426100381DD65FB6A891BA28B5F1208BEDDD29(L_0, 0, _stringLiteral1D42CADF6CAAB1179EEA6FF8E6BEBF3893129A00, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/Debug/ProfilerLogger.cs:24>
+		StringBuilder_t* L_2 = ___0_sb;
+		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
+		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(L_2, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/Debug/ProfilerLogger.cs:25>
+		return;
+	}
+}
+// Method Definition Index: 77027
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ProfilerLogger_Awake_m16D8A5D2BBB82070337169DBFE14E51D2B9994C3 (ProfilerLogger_t09D8B7A85E0B2DBD04B95B5D98FB1AAFD7EF38B0* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Application_tDB03BE91CDF0ACA614A5E0B67CFB77C44EB19B21_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Path_t8A38A801D0219E8209C1B1D90D82D4D755D998BC_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral91C96449EEF5884973CD053AEC3084EF3F706954);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralCC988E3F8B22A03CDF4C42C272A0AEC293448233);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/Debug/ProfilerLogger.cs:31>
+		il2cpp_codegen_runtime_class_init_inline(Application_tDB03BE91CDF0ACA614A5E0B67CFB77C44EB19B21_il2cpp_TypeInfo_var);
+		String_t* L_0;
+		L_0 = Application_get_persistentDataPath_mC58BD3E1A20732E0A536491DBCAE6505B1624399(NULL);
+		il2cpp_codegen_runtime_class_init_inline(Path_t8A38A801D0219E8209C1B1D90D82D4D755D998BC_il2cpp_TypeInfo_var);
+		String_t* L_1;
+		L_1 = Path_Combine_m1ADAC05CDA2D1D61B172DF65A81E86592696BEAE(L_0, _stringLiteralCC988E3F8B22A03CDF4C42C272A0AEC293448233, NULL);
+		__this->___logFilePath = L_1;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___logFilePath), (void*)L_1);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/Debug/ProfilerLogger.cs:32>
+		StringBuilder_t* L_2;
+		L_2 = ProfilerLogger_get_sb_mFEE33E335B2FB2E25F751C29FCB3A2FBE812DF08(__this, NULL);
+		NullCheck(L_2);
+		StringBuilder_t* L_3;
+		L_3 = StringBuilder_Clear_m2D76F6533574F40A4E3E2DC4E730277CBD0AF8F6(L_2, NULL);
+		NullCheck(L_3);
+		StringBuilder_t* L_4;
+		L_4 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_3, _stringLiteral91C96449EEF5884973CD053AEC3084EF3F706954, NULL);
+		String_t* L_5 = __this->___logFilePath;
+		NullCheck(L_4);
+		StringBuilder_t* L_6;
+		L_6 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_4, L_5, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/Debug/ProfilerLogger.cs:32>
+		StringBuilder_t* L_7;
+		L_7 = ProfilerLogger_get_sb_mFEE33E335B2FB2E25F751C29FCB3A2FBE812DF08(__this, NULL);
+		ProfilerLogger_DEBUG_m5712631D620E9072D1C8D95899B1832F7529DA68(__this, L_7, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/Debug/ProfilerLogger.cs:34>
+		String_t* L_8 = __this->___logFilePath;
+		Profiler_set_logFile_m169323E7FFAAF95B6D771AB8DBC4B3BB9042E072(L_8, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/Debug/ProfilerLogger.cs:35>
+		Profiler_set_enableBinaryLog_mA859BD8D6D193C5E3FAF1888B76722C4D2B55024((bool)1, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/Debug/ProfilerLogger.cs:36>
+		Profiler_set_enabled_m54CE46AB03F2D012299B0E52A6651BDA3B3BBDC1((bool)1, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/Debug/ProfilerLogger.cs:37>
+		return;
+	}
+}
+// Method Definition Index: 77028
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ProfilerLogger_ExitGame_m3CA49FC55F38BFFDB2C0DF714D33D5A0C6BB02C9 (ProfilerLogger_t09D8B7A85E0B2DBD04B95B5D98FB1AAFD7EF38B0* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Application_tDB03BE91CDF0ACA614A5E0B67CFB77C44EB19B21_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/Debug/ProfilerLogger.cs:41>
+		Profiler_set_enableBinaryLog_mA859BD8D6D193C5E3FAF1888B76722C4D2B55024((bool)0, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/Debug/ProfilerLogger.cs:42>
+		Profiler_set_enabled_m54CE46AB03F2D012299B0E52A6651BDA3B3BBDC1((bool)0, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/Debug/ProfilerLogger.cs:49>
+		il2cpp_codegen_runtime_class_init_inline(Application_tDB03BE91CDF0ACA614A5E0B67CFB77C44EB19B21_il2cpp_TypeInfo_var);
+		Application_Quit_mE304382DB9A6455C2A474C8F364C7387F37E9281(NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/Debug/ProfilerLogger.cs:50>
+		return;
+	}
+}
+// Method Definition Index: 77029
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ProfilerLogger__ctor_m4E289EDA86690BEDDE8D09A23445E1B855DAF5E2 (ProfilerLogger_t09D8B7A85E0B2DBD04B95B5D98FB1AAFD7EF38B0* __this, const RuntimeMethod* method) 
+{
+	{
+		MonoBehaviour__ctor_m592DB0105CA0BC97AA1C5F4AD27B12D68A3B7C1E(__this, NULL);
+		return;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// Method Definition Index: 77030
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* DrawBone_get_TargetJoint_m448ADF541569C3BEB767CE801EA5D0D3422EE6D4 (DrawBone_t6582AB9FC985CD515CDB7CA6C0E9A8C3E537374B* __this, const RuntimeMethod* method) 
+{
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/DrawBone.cs:11>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_0 = __this->___m_TargetJoint;
+		return L_0;
+	}
+}
+// Method Definition Index: 77031
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DrawBone_set_TargetJoint_m8704BB3FC3AFC1427516B5204FDA9CFCFB3B4A85 (DrawBone_t6582AB9FC985CD515CDB7CA6C0E9A8C3E537374B* __this, GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_value, const RuntimeMethod* method) 
+{
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/DrawBone.cs:11>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_0 = ___0_value;
+		__this->___m_TargetJoint = L_0;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___m_TargetJoint), (void*)L_0);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/DrawBone.cs:11>
+		return;
+	}
+}
+// Method Definition Index: 77032
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float DrawBone_get_BoneWidth_mDAAEF81C138949D102317C25E792B8F8C4224305 (DrawBone_t6582AB9FC985CD515CDB7CA6C0E9A8C3E537374B* __this, const RuntimeMethod* method) 
+{
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/DrawBone.cs:15>
+		float L_0 = __this->___m_BoneWidth;
+		return L_0;
+	}
+}
+// Method Definition Index: 77033
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DrawBone_set_BoneWidth_mAEC97EDC9C3505BAA330389429B16407F76EE5CB (DrawBone_t6582AB9FC985CD515CDB7CA6C0E9A8C3E537374B* __this, float ___0_value, const RuntimeMethod* method) 
+{
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/DrawBone.cs:15>
+		float L_0 = ___0_value;
+		__this->___m_BoneWidth = L_0;
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/DrawBone.cs:15>
+		return;
+	}
+}
+// Method Definition Index: 77034
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Color_tD001788D726C3A7F1379BEED0260B9591F440C1F DrawBone_get_BoneColor_m571CF10822296064B5614882F0C9B3AAA43071CD (DrawBone_t6582AB9FC985CD515CDB7CA6C0E9A8C3E537374B* __this, const RuntimeMethod* method) 
+{
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/DrawBone.cs:19>
+		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_0 = __this->___m_BoneColor;
+		return L_0;
+	}
+}
+// Method Definition Index: 77035
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DrawBone_set_BoneColor_m3AA5CCA8E25BA4CA6C19F7428FAA05BB0B396510 (DrawBone_t6582AB9FC985CD515CDB7CA6C0E9A8C3E537374B* __this, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___0_value, const RuntimeMethod* method) 
+{
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/DrawBone.cs:19>
+		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_0 = ___0_value;
+		__this->___m_BoneColor = L_0;
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/DrawBone.cs:19>
+		return;
+	}
+}
+// Method Definition Index: 77036
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DrawBone_Start_mB17B6496398E0AF72630700E2241B8F70880C240 (DrawBone_t6582AB9FC985CD515CDB7CA6C0E9A8C3E537374B* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&GameObject_AddComponent_TisLineRenderer_tEFEF960672DB69CB14B6D181FAE6292F0CF8B63D_mF8C0D953BCBFDD5A01A09ADB67EB04F0D677A056_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralD2F2BB2B5FA73624E198CE932674B4CD4D71FD9A);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/DrawBone.cs:28>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_0 = __this->___m_TargetJoint;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_1;
+		L_1 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_0, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_1)
+		{
+			goto IL_0045;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/DrawBone.cs:30>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_2;
+		L_2 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(__this, NULL);
+		NullCheck(L_2);
+		LineRenderer_tEFEF960672DB69CB14B6D181FAE6292F0CF8B63D* L_3;
+		L_3 = GameObject_AddComponent_TisLineRenderer_tEFEF960672DB69CB14B6D181FAE6292F0CF8B63D_mF8C0D953BCBFDD5A01A09ADB67EB04F0D677A056(L_2, GameObject_AddComponent_TisLineRenderer_tEFEF960672DB69CB14B6D181FAE6292F0CF8B63D_mF8C0D953BCBFDD5A01A09ADB67EB04F0D677A056_RuntimeMethod_var);
+		__this->___bone = L_3;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___bone), (void*)L_3);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/DrawBone.cs:32>
+		LineRenderer_tEFEF960672DB69CB14B6D181FAE6292F0CF8B63D* L_4 = __this->___bone;
+		Shader_tADC867D36B7876EE22427FAA2CE485105F4EE692* L_5;
+		L_5 = Shader_Find_m183AA54F78320212DDEC811592F98456898A41C5(_stringLiteralD2F2BB2B5FA73624E198CE932674B4CD4D71FD9A, NULL);
+		Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* L_6 = (Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3*)il2cpp_codegen_object_new(Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3_il2cpp_TypeInfo_var);
+		Material__ctor_m7FDF47105D66D19591BE505A0C42B0F90D88C9BF(L_6, L_5, NULL);
+		NullCheck(L_4);
+		Renderer_set_material_m21E88977071E0A914D62F3D9CFF0193B3117C45A(L_4, L_6, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/DrawBone.cs:38>
+		LineRenderer_tEFEF960672DB69CB14B6D181FAE6292F0CF8B63D* L_7 = __this->___bone;
+		NullCheck(L_7);
+		LineRenderer_set_positionCount_m2001FB4044053895ECBE897AB833284F3300B205(L_7, 2, NULL);
+	}
+
+IL_0045:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/DrawBone.cs:43>
+		return;
+	}
+}
+// Method Definition Index: 77037
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DrawBone_Update_mE73110EED079F949BFB9EDB8BD48D8F6EB359ED3 (DrawBone_t6582AB9FC985CD515CDB7CA6C0E9A8C3E537374B* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&GameObject_GetComponent_TisMeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE_m7FF948365C38BC39333D82B235A7C4EAD219960D_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/DrawBone.cs:47>
+		LineRenderer_tEFEF960672DB69CB14B6D181FAE6292F0CF8B63D* L_0 = __this->___bone;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_1;
+		L_1 = Object_op_Equality_mB6120F782D83091EF56A198FCEBCF066DB4A9605(L_0, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_1)
+		{
+			goto IL_000f;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/DrawBone.cs:48>
+		return;
+	}
+
+IL_000f:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/DrawBone.cs:50>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_2 = __this->___m_TargetJoint;
+		NullCheck(L_2);
+		MeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE* L_3;
+		L_3 = GameObject_GetComponent_TisMeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE_m7FF948365C38BC39333D82B235A7C4EAD219960D(L_2, GameObject_GetComponent_TisMeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE_m7FF948365C38BC39333D82B235A7C4EAD219960D_RuntimeMethod_var);
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_4;
+		L_4 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_3, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_4)
+		{
+			goto IL_003d;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/DrawBone.cs:52>
+		LineRenderer_tEFEF960672DB69CB14B6D181FAE6292F0CF8B63D* L_5 = __this->___bone;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_6 = __this->___m_TargetJoint;
+		NullCheck(L_6);
+		MeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE* L_7;
+		L_7 = GameObject_GetComponent_TisMeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE_m7FF948365C38BC39333D82B235A7C4EAD219960D(L_6, GameObject_GetComponent_TisMeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE_m7FF948365C38BC39333D82B235A7C4EAD219960D_RuntimeMethod_var);
+		NullCheck(L_7);
+		bool L_8;
+		L_8 = Renderer_get_enabled_mFDDF363859AEC88105A925FA7EA341C077B09B54(L_7, NULL);
+		NullCheck(L_5);
+		Renderer_set_enabled_m015E6D7B825528A31182F267234CC6A925F71DA8(L_5, L_8, NULL);
+	}
+
+IL_003d:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/DrawBone.cs:55>
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_9;
+		L_9 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
+		NullCheck(L_9);
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_10;
+		L_10 = Transform_get_position_m69CD5FA214FDAE7BB701552943674846C220FDE1(L_9, NULL);
+		__this->___startPos = L_10;
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/DrawBone.cs:56>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_11 = __this->___m_TargetJoint;
+		NullCheck(L_11);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_12;
+		L_12 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(L_11, NULL);
+		NullCheck(L_12);
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_13;
+		L_13 = Transform_get_position_m69CD5FA214FDAE7BB701552943674846C220FDE1(L_12, NULL);
+		__this->___endPos = L_13;
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/DrawBone.cs:58>
+		LineRenderer_tEFEF960672DB69CB14B6D181FAE6292F0CF8B63D* L_14 = __this->___bone;
+		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_15 = __this->___m_BoneColor;
+		NullCheck(L_14);
+		LineRenderer_set_startColor_mF72FAB20C09372FC8F2CBFCBD837FA02A87FBA91(L_14, L_15, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/DrawBone.cs:59>
+		LineRenderer_tEFEF960672DB69CB14B6D181FAE6292F0CF8B63D* L_16 = __this->___bone;
+		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_17 = __this->___m_BoneColor;
+		NullCheck(L_16);
+		LineRenderer_set_endColor_m6AF26E0174434828BC6EF1BAC1FE188084819D9D(L_16, L_17, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/DrawBone.cs:60>
+		LineRenderer_tEFEF960672DB69CB14B6D181FAE6292F0CF8B63D* L_18 = __this->___bone;
+		float L_19 = __this->___m_BoneWidth;
+		NullCheck(L_18);
+		LineRenderer_set_startWidth_m3899722E198D636DB216CB61C980214707069F4A(L_18, L_19, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/DrawBone.cs:61>
+		LineRenderer_tEFEF960672DB69CB14B6D181FAE6292F0CF8B63D* L_20 = __this->___bone;
+		float L_21 = __this->___m_BoneWidth;
+		NullCheck(L_20);
+		LineRenderer_set_endWidth_mC7260401655C8BE1CBDFB832009295C89613F81D(L_20, L_21, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/DrawBone.cs:62>
+		LineRenderer_tEFEF960672DB69CB14B6D181FAE6292F0CF8B63D* L_22 = __this->___bone;
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_23 = __this->___startPos;
+		NullCheck(L_22);
+		LineRenderer_SetPosition_m84C4AD9ADC6AC62B33DB4D7E4C9F066DFF8440C1(L_22, 0, L_23, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/DrawBone.cs:63>
+		LineRenderer_tEFEF960672DB69CB14B6D181FAE6292F0CF8B63D* L_24 = __this->___bone;
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_25 = __this->___endPos;
+		NullCheck(L_24);
+		LineRenderer_SetPosition_m84C4AD9ADC6AC62B33DB4D7E4C9F066DFF8440C1(L_24, 1, L_25, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/DrawBone.cs:64>
+		return;
+	}
+}
+// Method Definition Index: 77038
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DrawBone__ctor_m4D87097CACEC59A5238472273E55D32EFBF868C7 (DrawBone_t6582AB9FC985CD515CDB7CA6C0E9A8C3E537374B* __this, const RuntimeMethod* method) 
+{
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/DrawBone.cs:14>
+		__this->___m_BoneWidth = (0.00100000005f);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/DrawBone.cs:18>
+		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_0;
+		L_0 = Color_get_red_mA2E53E7173FDC97E68E335049AB0FAAEE43A844D_inline(NULL);
+		__this->___m_BoneColor = L_0;
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/DrawBone.cs:23>
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_1;
+		L_1 = Vector3_get_zero_m0C1249C3F25B1C70EAD3CC8B31259975A457AE39_inline(NULL);
+		__this->___startPos = L_1;
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/DrawBone.cs:24>
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_2;
+		L_2 = Vector3_get_zero_m0C1249C3F25B1C70EAD3CC8B31259975A457AE39_inline(NULL);
+		__this->___endPos = L_2;
+		MonoBehaviour__ctor_m592DB0105CA0BC97AA1C5F4AD27B12D68A3B7C1E(__this, NULL);
+		return;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// Method Definition Index: 77039
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringBuilder_t* ConfigTrackerIndexType_get_sb_mAD16372D5C34B67CF39EFF124F5F95E260F864BC (ConfigTrackerIndexType_t2A8BBD79DD1FBDD186BB68AED89643929C14CF2A* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&StringBuilder_t_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:20>
+		StringBuilder_t* L_0 = __this->___m_sb;
+		if (L_0)
+		{
+			goto IL_0013;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:20>
+		StringBuilder_t* L_1 = (StringBuilder_t*)il2cpp_codegen_object_new(StringBuilder_t_il2cpp_TypeInfo_var);
+		StringBuilder__ctor_m1D99713357DE05DAFA296633639DB55F8C30587D(L_1, NULL);
+		__this->___m_sb = L_1;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___m_sb), (void*)L_1);
+	}
+
+IL_0013:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:21>
+		StringBuilder_t* L_2 = __this->___m_sb;
+		return L_2;
+	}
+}
+// Method Definition Index: 77040
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConfigTrackerIndexType_DEBUG_m4E3A4ED1827E60A03515512693AA5269C7949B43 (ConfigTrackerIndexType_t2A8BBD79DD1FBDD186BB68AED89643929C14CF2A* __this, StringBuilder_t* ___0_msg, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral2B936D842006246E8EBF84A002EDB281EE1E4F57);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:24>
+		StringBuilder_t* L_0 = ___0_msg;
+		Rdp_d_mD0F95A74606861C4AE1BCD335351900A97D3BEBC(_stringLiteral2B936D842006246E8EBF84A002EDB281EE1E4F57, L_0, (bool)1, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:24>
+		return;
+	}
+}
+// Method Definition Index: 77041
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ConfigTrackerIndexType_GetTypeDropdownValue_mCB3609099594AB688E461643E6B76271EFF36B71 (ConfigTrackerIndexType_t2A8BBD79DD1FBDD186BB68AED89643929C14CF2A* __this, uint32_t ___0_type, const RuntimeMethod* method) 
+{
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:33>
+		uint32_t L_0 = ___0_type;
+		if ((!(((uint32_t)L_0) == ((uint32_t)4))))
+		{
+			goto IL_0006;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:33>
+		return 1;
+	}
+
+IL_0006:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:34>
+		uint32_t L_1 = ___0_type;
+		if ((!(((uint32_t)L_1) == ((uint32_t)5))))
+		{
+			goto IL_000c;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:34>
+		return 2;
+	}
+
+IL_000c:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:35>
+		uint32_t L_2 = ___0_type;
+		if ((!(((uint32_t)L_2) == ((uint32_t)6))))
+		{
+			goto IL_0012;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:35>
+		return 3;
+	}
+
+IL_0012:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:37>
+		return 0;
+	}
+}
+// Method Definition Index: 77042
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR uint32_t ConfigTrackerIndexType_GetDropdownValueType_m50FD33F24345AF1BD294AEB4C6417335F48574E1 (ConfigTrackerIndexType_t2A8BBD79DD1FBDD186BB68AED89643929C14CF2A* __this, int32_t ___0_value, const RuntimeMethod* method) 
+{
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:41>
+		int32_t L_0 = ___0_value;
+		if ((!(((uint32_t)L_0) == ((uint32_t)1))))
+		{
+			goto IL_0006;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:41>
+		return (uint32_t)(4);
+	}
+
+IL_0006:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:42>
+		int32_t L_1 = ___0_value;
+		if ((!(((uint32_t)L_1) == ((uint32_t)2))))
+		{
+			goto IL_000c;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:42>
+		return (uint32_t)(5);
+	}
+
+IL_000c:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:43>
+		int32_t L_2 = ___0_value;
+		if ((!(((uint32_t)L_2) == ((uint32_t)3))))
+		{
+			goto IL_0012;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:43>
+		return (uint32_t)(6);
+	}
+
+IL_0012:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:45>
+		return (uint32_t)(0);
+	}
+}
+// Method Definition Index: 77043
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConfigTrackerIndexType_Start_m52FEC5BF46B8E517EC5E60B6C8CAEB6D864CD574 (ConfigTrackerIndexType_t2A8BBD79DD1FBDD186BB68AED89643929C14CF2A* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&GameObject_GetComponentInChildren_TisDropdown_t54C0BDC1441E058BE37E796F68886671C270EF89_m57E48D487188F67A8B796999E6DF0D192A35CC2E_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&GameObject_GetComponentsInChildren_TisDefineTrackerLocation_t4651548465C3999F63C2CADE3D9EFF6C45428A53_mFD763A59FBA6A10D9653231F6C4B102D074022AC_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral34D93BFDB064722883F4297523126AABAEA47E8E);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral3A6926D5AB1CE09ED545EFAB43BA4835EFB4D6C7);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralC6E949F53CD6A3F6391F0421E2B7AD43C2A96064);
+		s_Il2CppMethodInitialized = true;
+	}
+	DefineTrackerLocationU5BU5D_tDC47EFDCF672CAC17C5E34770113030715C2851A* V_0 = NULL;
+	int32_t V_1 = 0;
+	int32_t V_2 = 0;
+	int32_t V_3 = 0;
+	DefineTrackerLocationU5BU5D_tDC47EFDCF672CAC17C5E34770113030715C2851A* V_4 = NULL;
+	int32_t V_5 = 0;
+	int32_t V_6 = 0;
+	int32_t V_7 = 0;
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:50>
+		BodyRoleData_tB3E30ECEB3632C49D288739F6240594BC9BFB264* L_0 = __this->___bodyData;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_1;
+		L_1 = Object_op_Equality_mB6120F782D83091EF56A198FCEBCF066DB4A9605(L_0, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_1)
+		{
+			goto IL_000f;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:50>
+		return;
+	}
+
+IL_000f:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:52>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_2 = __this->___menuIndex;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_3;
+		L_3 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_2, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_3)
+		{
+			goto IL_00fa;
+		}
+	}
+	{
+		BodyRoleData_tB3E30ECEB3632C49D288739F6240594BC9BFB264* L_4 = __this->___bodyData;
+		NullCheck(L_4);
+		TrackerIndexBaseU5BU5D_tFB2B0143DB0A1A68AC66F7AA265AC95C0F98CB8D* L_5;
+		L_5 = BodyRoleData_get_TrackerIndexInputs_mF8ECD71D5D895CF4F415B1FD87DC5276846816FF_inline(L_4, NULL);
+		if (!L_5)
+		{
+			goto IL_00fa;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:54>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_6 = __this->___menuIndex;
+		NullCheck(L_6);
+		DefineTrackerLocationU5BU5D_tDC47EFDCF672CAC17C5E34770113030715C2851A* L_7;
+		L_7 = GameObject_GetComponentsInChildren_TisDefineTrackerLocation_t4651548465C3999F63C2CADE3D9EFF6C45428A53_mFD763A59FBA6A10D9653231F6C4B102D074022AC(L_6, GameObject_GetComponentsInChildren_TisDefineTrackerLocation_t4651548465C3999F63C2CADE3D9EFF6C45428A53_mFD763A59FBA6A10D9653231F6C4B102D074022AC_RuntimeMethod_var);
+		V_0 = L_7;
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:55>
+		DefineTrackerLocationU5BU5D_tDC47EFDCF672CAC17C5E34770113030715C2851A* L_8 = V_0;
+		if (!L_8)
+		{
+			goto IL_00fa;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:57>
+		V_1 = 0;
+		goto IL_00f1;
+	}
+
+IL_0049:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:59>
+		V_2 = 0;
+		goto IL_00da;
+	}
+
+IL_0050:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:61>
+		DefineTrackerLocationU5BU5D_tDC47EFDCF672CAC17C5E34770113030715C2851A* L_9 = V_0;
+		int32_t L_10 = V_1;
+		NullCheck(L_9);
+		int32_t L_11 = L_10;
+		DefineTrackerLocation_t4651548465C3999F63C2CADE3D9EFF6C45428A53* L_12 = (L_9)->GetAt(static_cast<il2cpp_array_size_t>(L_11));
+		NullCheck(L_12);
+		int32_t L_13 = L_12->___location;
+		BodyRoleData_tB3E30ECEB3632C49D288739F6240594BC9BFB264* L_14 = __this->___bodyData;
+		NullCheck(L_14);
+		TrackerIndexBaseU5BU5D_tFB2B0143DB0A1A68AC66F7AA265AC95C0F98CB8D* L_15;
+		L_15 = BodyRoleData_get_TrackerIndexInputs_mF8ECD71D5D895CF4F415B1FD87DC5276846816FF_inline(L_14, NULL);
+		int32_t L_16 = V_2;
+		NullCheck(L_15);
+		int32_t L_17 = L_16;
+		TrackerIndexBase_t2B04E837E04D1B082E9C3DA619849C2749AAC94D* L_18 = (L_15)->GetAt(static_cast<il2cpp_array_size_t>(L_17));
+		NullCheck(L_18);
+		int32_t L_19 = L_18->___location;
+		if ((!(((uint32_t)L_13) == ((uint32_t)L_19))))
+		{
+			goto IL_00d6;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:63>
+		BodyRoleData_tB3E30ECEB3632C49D288739F6240594BC9BFB264* L_20 = __this->___bodyData;
+		NullCheck(L_20);
+		TrackerIndexBaseU5BU5D_tFB2B0143DB0A1A68AC66F7AA265AC95C0F98CB8D* L_21;
+		L_21 = BodyRoleData_get_TrackerIndexInputs_mF8ECD71D5D895CF4F415B1FD87DC5276846816FF_inline(L_20, NULL);
+		int32_t L_22 = V_2;
+		NullCheck(L_21);
+		int32_t L_23 = L_22;
+		TrackerIndexBase_t2B04E837E04D1B082E9C3DA619849C2749AAC94D* L_24 = (L_21)->GetAt(static_cast<il2cpp_array_size_t>(L_23));
+		NullCheck(L_24);
+		uint32_t L_25 = L_24->___trackerId;
+		V_3 = L_25;
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:64>
+		StringBuilder_t* L_26;
+		L_26 = ConfigTrackerIndexType_get_sb_mAD16372D5C34B67CF39EFF124F5F95E260F864BC(__this, NULL);
+		NullCheck(L_26);
+		StringBuilder_t* L_27;
+		L_27 = StringBuilder_Clear_m2D76F6533574F40A4E3E2DC4E730277CBD0AF8F6(L_26, NULL);
+		NullCheck(L_27);
+		StringBuilder_t* L_28;
+		L_28 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_27, _stringLiteral34D93BFDB064722883F4297523126AABAEA47E8E, NULL);
+		DefineTrackerLocationU5BU5D_tDC47EFDCF672CAC17C5E34770113030715C2851A* L_29 = V_0;
+		int32_t L_30 = V_1;
+		NullCheck(L_29);
+		int32_t L_31 = L_30;
+		DefineTrackerLocation_t4651548465C3999F63C2CADE3D9EFF6C45428A53* L_32 = (L_29)->GetAt(static_cast<il2cpp_array_size_t>(L_31));
+		NullCheck(L_32);
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_33;
+		L_33 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(L_32, NULL);
+		NullCheck(L_33);
+		String_t* L_34;
+		L_34 = Object_get_name_mAC2F6B897CF1303BA4249B4CB55271AFACBB6392(L_33, NULL);
+		NullCheck(L_28);
+		StringBuilder_t* L_35;
+		L_35 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_28, L_34, NULL);
+		NullCheck(L_35);
+		StringBuilder_t* L_36;
+		L_36 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_35, _stringLiteral3A6926D5AB1CE09ED545EFAB43BA4835EFB4D6C7, NULL);
+		int32_t L_37 = V_3;
+		NullCheck(L_36);
+		StringBuilder_t* L_38;
+		L_38 = StringBuilder_Append_m283B617AC29FB0DD6F3A7D8C01D385C25A5F0FAA(L_36, L_37, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:64>
+		StringBuilder_t* L_39;
+		L_39 = ConfigTrackerIndexType_get_sb_mAD16372D5C34B67CF39EFF124F5F95E260F864BC(__this, NULL);
+		ConfigTrackerIndexType_DEBUG_m4E3A4ED1827E60A03515512693AA5269C7949B43(__this, L_39, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:65>
+		DefineTrackerLocationU5BU5D_tDC47EFDCF672CAC17C5E34770113030715C2851A* L_40 = V_0;
+		int32_t L_41 = V_1;
+		NullCheck(L_40);
+		int32_t L_42 = L_41;
+		DefineTrackerLocation_t4651548465C3999F63C2CADE3D9EFF6C45428A53* L_43 = (L_40)->GetAt(static_cast<il2cpp_array_size_t>(L_42));
+		NullCheck(L_43);
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_44;
+		L_44 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(L_43, NULL);
+		NullCheck(L_44);
+		Dropdown_t54C0BDC1441E058BE37E796F68886671C270EF89* L_45;
+		L_45 = GameObject_GetComponentInChildren_TisDropdown_t54C0BDC1441E058BE37E796F68886671C270EF89_m57E48D487188F67A8B796999E6DF0D192A35CC2E(L_44, GameObject_GetComponentInChildren_TisDropdown_t54C0BDC1441E058BE37E796F68886671C270EF89_m57E48D487188F67A8B796999E6DF0D192A35CC2E_RuntimeMethod_var);
+		int32_t L_46 = V_3;
+		NullCheck(L_45);
+		Dropdown_set_value_m0764A5E2023E34705ADD422689BF6C0074449FEE(L_45, L_46, NULL);
+	}
+
+IL_00d6:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:59>
+		int32_t L_47 = V_2;
+		V_2 = ((int32_t)il2cpp_codegen_add(L_47, 1));
+	}
+
+IL_00da:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:59>
+		int32_t L_48 = V_2;
+		BodyRoleData_tB3E30ECEB3632C49D288739F6240594BC9BFB264* L_49 = __this->___bodyData;
+		NullCheck(L_49);
+		TrackerIndexBaseU5BU5D_tFB2B0143DB0A1A68AC66F7AA265AC95C0F98CB8D* L_50;
+		L_50 = BodyRoleData_get_TrackerIndexInputs_mF8ECD71D5D895CF4F415B1FD87DC5276846816FF_inline(L_49, NULL);
+		NullCheck(L_50);
+		if ((((int32_t)L_48) < ((int32_t)((int32_t)(((RuntimeArray*)L_50)->max_length)))))
+		{
+			goto IL_0050;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:57>
+		int32_t L_51 = V_1;
+		V_1 = ((int32_t)il2cpp_codegen_add(L_51, 1));
+	}
+
+IL_00f1:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:57>
+		int32_t L_52 = V_1;
+		DefineTrackerLocationU5BU5D_tDC47EFDCF672CAC17C5E34770113030715C2851A* L_53 = V_0;
+		NullCheck(L_53);
+		if ((((int32_t)L_52) < ((int32_t)((int32_t)(((RuntimeArray*)L_53)->max_length)))))
+		{
+			goto IL_0049;
+		}
+	}
+
+IL_00fa:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:72>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_54 = __this->___menuType;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_55;
+		L_55 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_54, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_55)
+		{
+			goto IL_0201;
+		}
+	}
+	{
+		BodyRoleData_tB3E30ECEB3632C49D288739F6240594BC9BFB264* L_56 = __this->___bodyData;
+		NullCheck(L_56);
+		TrackerTypeBaseU5BU5D_tEB7DF4D71E5E20B49B61068EF62E69A6663F2C39* L_57;
+		L_57 = BodyRoleData_get_TrackerTypeInputs_m0229804B38C763B8EACF036B39D367ECB8429DD1_inline(L_56, NULL);
+		if (!L_57)
+		{
+			goto IL_0201;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:74>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_58 = __this->___menuType;
+		NullCheck(L_58);
+		DefineTrackerLocationU5BU5D_tDC47EFDCF672CAC17C5E34770113030715C2851A* L_59;
+		L_59 = GameObject_GetComponentsInChildren_TisDefineTrackerLocation_t4651548465C3999F63C2CADE3D9EFF6C45428A53_mFD763A59FBA6A10D9653231F6C4B102D074022AC(L_58, GameObject_GetComponentsInChildren_TisDefineTrackerLocation_t4651548465C3999F63C2CADE3D9EFF6C45428A53_mFD763A59FBA6A10D9653231F6C4B102D074022AC_RuntimeMethod_var);
+		V_4 = L_59;
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:75>
+		DefineTrackerLocationU5BU5D_tDC47EFDCF672CAC17C5E34770113030715C2851A* L_60 = V_4;
+		if (!L_60)
+		{
+			goto IL_0201;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:77>
+		V_5 = 0;
+		goto IL_01f6;
+	}
+
+IL_0137:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:79>
+		V_6 = 0;
+		goto IL_01dc;
+	}
+
+IL_013f:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:81>
+		DefineTrackerLocationU5BU5D_tDC47EFDCF672CAC17C5E34770113030715C2851A* L_61 = V_4;
+		int32_t L_62 = V_5;
+		NullCheck(L_61);
+		int32_t L_63 = L_62;
+		DefineTrackerLocation_t4651548465C3999F63C2CADE3D9EFF6C45428A53* L_64 = (L_61)->GetAt(static_cast<il2cpp_array_size_t>(L_63));
+		NullCheck(L_64);
+		int32_t L_65 = L_64->___location;
+		BodyRoleData_tB3E30ECEB3632C49D288739F6240594BC9BFB264* L_66 = __this->___bodyData;
+		NullCheck(L_66);
+		TrackerTypeBaseU5BU5D_tEB7DF4D71E5E20B49B61068EF62E69A6663F2C39* L_67;
+		L_67 = BodyRoleData_get_TrackerTypeInputs_m0229804B38C763B8EACF036B39D367ECB8429DD1_inline(L_66, NULL);
+		int32_t L_68 = V_6;
+		NullCheck(L_67);
+		int32_t L_69 = L_68;
+		TrackerTypeBase_tF3E0753AAE99ECC8DADF5023B84C3DD40B30B85C* L_70 = (L_67)->GetAt(static_cast<il2cpp_array_size_t>(L_69));
+		NullCheck(L_70);
+		int32_t L_71 = L_70->___location;
+		if ((!(((uint32_t)L_65) == ((uint32_t)L_71))))
+		{
+			goto IL_01d6;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:83>
+		BodyRoleData_tB3E30ECEB3632C49D288739F6240594BC9BFB264* L_72 = __this->___bodyData;
+		NullCheck(L_72);
+		TrackerTypeBaseU5BU5D_tEB7DF4D71E5E20B49B61068EF62E69A6663F2C39* L_73;
+		L_73 = BodyRoleData_get_TrackerTypeInputs_m0229804B38C763B8EACF036B39D367ECB8429DD1_inline(L_72, NULL);
+		int32_t L_74 = V_6;
+		NullCheck(L_73);
+		int32_t L_75 = L_74;
+		TrackerTypeBase_tF3E0753AAE99ECC8DADF5023B84C3DD40B30B85C* L_76 = (L_73)->GetAt(static_cast<il2cpp_array_size_t>(L_75));
+		NullCheck(L_76);
+		uint32_t L_77 = L_76->___type;
+		int32_t L_78;
+		L_78 = ConfigTrackerIndexType_GetTypeDropdownValue_mCB3609099594AB688E461643E6B76271EFF36B71(__this, L_77, NULL);
+		V_7 = L_78;
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:84>
+		StringBuilder_t* L_79;
+		L_79 = ConfigTrackerIndexType_get_sb_mAD16372D5C34B67CF39EFF124F5F95E260F864BC(__this, NULL);
+		NullCheck(L_79);
+		StringBuilder_t* L_80;
+		L_80 = StringBuilder_Clear_m2D76F6533574F40A4E3E2DC4E730277CBD0AF8F6(L_79, NULL);
+		NullCheck(L_80);
+		StringBuilder_t* L_81;
+		L_81 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_80, _stringLiteral34D93BFDB064722883F4297523126AABAEA47E8E, NULL);
+		DefineTrackerLocationU5BU5D_tDC47EFDCF672CAC17C5E34770113030715C2851A* L_82 = V_4;
+		int32_t L_83 = V_5;
+		NullCheck(L_82);
+		int32_t L_84 = L_83;
+		DefineTrackerLocation_t4651548465C3999F63C2CADE3D9EFF6C45428A53* L_85 = (L_82)->GetAt(static_cast<il2cpp_array_size_t>(L_84));
+		NullCheck(L_85);
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_86;
+		L_86 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(L_85, NULL);
+		NullCheck(L_86);
+		String_t* L_87;
+		L_87 = Object_get_name_mAC2F6B897CF1303BA4249B4CB55271AFACBB6392(L_86, NULL);
+		NullCheck(L_81);
+		StringBuilder_t* L_88;
+		L_88 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_81, L_87, NULL);
+		NullCheck(L_88);
+		StringBuilder_t* L_89;
+		L_89 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_88, _stringLiteralC6E949F53CD6A3F6391F0421E2B7AD43C2A96064, NULL);
+		int32_t L_90 = V_7;
+		NullCheck(L_89);
+		StringBuilder_t* L_91;
+		L_91 = StringBuilder_Append_m283B617AC29FB0DD6F3A7D8C01D385C25A5F0FAA(L_89, L_90, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:84>
+		StringBuilder_t* L_92;
+		L_92 = ConfigTrackerIndexType_get_sb_mAD16372D5C34B67CF39EFF124F5F95E260F864BC(__this, NULL);
+		ConfigTrackerIndexType_DEBUG_m4E3A4ED1827E60A03515512693AA5269C7949B43(__this, L_92, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:85>
+		DefineTrackerLocationU5BU5D_tDC47EFDCF672CAC17C5E34770113030715C2851A* L_93 = V_4;
+		int32_t L_94 = V_5;
+		NullCheck(L_93);
+		int32_t L_95 = L_94;
+		DefineTrackerLocation_t4651548465C3999F63C2CADE3D9EFF6C45428A53* L_96 = (L_93)->GetAt(static_cast<il2cpp_array_size_t>(L_95));
+		NullCheck(L_96);
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_97;
+		L_97 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(L_96, NULL);
+		NullCheck(L_97);
+		Dropdown_t54C0BDC1441E058BE37E796F68886671C270EF89* L_98;
+		L_98 = GameObject_GetComponentInChildren_TisDropdown_t54C0BDC1441E058BE37E796F68886671C270EF89_m57E48D487188F67A8B796999E6DF0D192A35CC2E(L_97, GameObject_GetComponentInChildren_TisDropdown_t54C0BDC1441E058BE37E796F68886671C270EF89_m57E48D487188F67A8B796999E6DF0D192A35CC2E_RuntimeMethod_var);
+		int32_t L_99 = V_7;
+		NullCheck(L_98);
+		Dropdown_set_value_m0764A5E2023E34705ADD422689BF6C0074449FEE(L_98, L_99, NULL);
+	}
+
+IL_01d6:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:79>
+		int32_t L_100 = V_6;
+		V_6 = ((int32_t)il2cpp_codegen_add(L_100, 1));
+	}
+
+IL_01dc:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:79>
+		int32_t L_101 = V_6;
+		BodyRoleData_tB3E30ECEB3632C49D288739F6240594BC9BFB264* L_102 = __this->___bodyData;
+		NullCheck(L_102);
+		TrackerTypeBaseU5BU5D_tEB7DF4D71E5E20B49B61068EF62E69A6663F2C39* L_103;
+		L_103 = BodyRoleData_get_TrackerTypeInputs_m0229804B38C763B8EACF036B39D367ECB8429DD1_inline(L_102, NULL);
+		NullCheck(L_103);
+		if ((((int32_t)L_101) < ((int32_t)((int32_t)(((RuntimeArray*)L_103)->max_length)))))
+		{
+			goto IL_013f;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:77>
+		int32_t L_104 = V_5;
+		V_5 = ((int32_t)il2cpp_codegen_add(L_104, 1));
+	}
+
+IL_01f6:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:77>
+		int32_t L_105 = V_5;
+		DefineTrackerLocationU5BU5D_tDC47EFDCF672CAC17C5E34770113030715C2851A* L_106 = V_4;
+		NullCheck(L_106);
+		if ((((int32_t)L_105) < ((int32_t)((int32_t)(((RuntimeArray*)L_106)->max_length)))))
+		{
+			goto IL_0137;
+		}
+	}
+
+IL_0201:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:91>
+		return;
+	}
+}
+// Method Definition Index: 77044
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConfigTrackerIndexType_Update_m2FC99D5BD21DD08B4D18ED2E8794601247D00D7D (ConfigTrackerIndexType_t2A8BBD79DD1FBDD186BB68AED89643929C14CF2A* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:94>
+		BodyRoleData_tB3E30ECEB3632C49D288739F6240594BC9BFB264* L_0 = __this->___bodyData;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_1;
+		L_1 = Object_op_Equality_mB6120F782D83091EF56A198FCEBCF066DB4A9605(L_0, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_1)
+		{
+			goto IL_005d;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:96>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_2 = __this->___menuIndex;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_3;
+		L_3 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_2, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_3)
+		{
+			goto IL_0035;
+		}
+	}
+	{
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_4 = __this->___menuIndex;
+		NullCheck(L_4);
+		bool L_5;
+		L_5 = GameObject_get_activeSelf_m4F3E5240E138B66AAA080EA30759A3D0517DA368(L_4, NULL);
+		if (!L_5)
+		{
+			goto IL_0035;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:96>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_6 = __this->___menuIndex;
+		NullCheck(L_6);
+		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_6, (bool)0, NULL);
+	}
+
+IL_0035:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:97>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_7 = __this->___menuType;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_8;
+		L_8 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_7, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_8)
+		{
+			goto IL_005c;
+		}
+	}
+	{
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_9 = __this->___menuType;
+		NullCheck(L_9);
+		bool L_10;
+		L_10 = GameObject_get_activeSelf_m4F3E5240E138B66AAA080EA30759A3D0517DA368(L_9, NULL);
+		if (!L_10)
+		{
+			goto IL_005c;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:97>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_11 = __this->___menuType;
+		NullCheck(L_11);
+		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_11, (bool)0, NULL);
+	}
+
+IL_005c:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:98>
+		return;
+	}
+
+IL_005d:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:101>
+		BodyRoleData_tB3E30ECEB3632C49D288739F6240594BC9BFB264* L_12 = __this->___bodyData;
+		NullCheck(L_12);
+		int32_t L_13;
+		L_13 = BodyRoleData_get_TrackerPose_mD5128E8C847E320EB4F98D72A88B9DCF11FA3BFE_inline(L_12, NULL);
+		if (L_13)
+		{
+			goto IL_00b9;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:103>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_14 = __this->___menuIndex;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_15;
+		L_15 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_14, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_15)
+		{
+			goto IL_0091;
+		}
+	}
+	{
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_16 = __this->___menuIndex;
+		NullCheck(L_16);
+		bool L_17;
+		L_17 = GameObject_get_activeSelf_m4F3E5240E138B66AAA080EA30759A3D0517DA368(L_16, NULL);
+		if (L_17)
+		{
+			goto IL_0091;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:103>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_18 = __this->___menuIndex;
+		NullCheck(L_18);
+		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_18, (bool)1, NULL);
+	}
+
+IL_0091:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:104>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_19 = __this->___menuType;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_20;
+		L_20 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_19, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_20)
+		{
+			goto IL_0107;
+		}
+	}
+	{
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_21 = __this->___menuType;
+		NullCheck(L_21);
+		bool L_22;
+		L_22 = GameObject_get_activeSelf_m4F3E5240E138B66AAA080EA30759A3D0517DA368(L_21, NULL);
+		if (!L_22)
+		{
+			goto IL_0107;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:104>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_23 = __this->___menuType;
+		NullCheck(L_23);
+		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_23, (bool)0, NULL);
+		return;
+	}
+
+IL_00b9:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:108>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_24 = __this->___menuIndex;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_25;
+		L_25 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_24, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_25)
+		{
+			goto IL_00e0;
+		}
+	}
+	{
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_26 = __this->___menuIndex;
+		NullCheck(L_26);
+		bool L_27;
+		L_27 = GameObject_get_activeSelf_m4F3E5240E138B66AAA080EA30759A3D0517DA368(L_26, NULL);
+		if (!L_27)
+		{
+			goto IL_00e0;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:108>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_28 = __this->___menuIndex;
+		NullCheck(L_28);
+		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_28, (bool)0, NULL);
+	}
+
+IL_00e0:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:109>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_29 = __this->___menuType;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_30;
+		L_30 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_29, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_30)
+		{
+			goto IL_0107;
+		}
+	}
+	{
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_31 = __this->___menuType;
+		NullCheck(L_31);
+		bool L_32;
+		L_32 = GameObject_get_activeSelf_m4F3E5240E138B66AAA080EA30759A3D0517DA368(L_31, NULL);
+		if (L_32)
+		{
+			goto IL_0107;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:109>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_33 = __this->___menuType;
+		NullCheck(L_33);
+		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_33, (bool)1, NULL);
+	}
+
+IL_0107:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:111>
+		return;
+	}
+}
+// Method Definition Index: 77045
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConfigTrackerIndexType_OnLeftWristIndexChanged_mCCE66494164539F96FB086B9D426D9D5E254F43D (ConfigTrackerIndexType_t2A8BBD79DD1FBDD186BB68AED89643929C14CF2A* __this, int32_t ___0_value, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral08A809AE3B6353FBA0B954B3E9CED3C73E66D352);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:115>
+		BodyRoleData_tB3E30ECEB3632C49D288739F6240594BC9BFB264* L_0 = __this->___bodyData;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_1;
+		L_1 = Object_op_Equality_mB6120F782D83091EF56A198FCEBCF066DB4A9605(L_0, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (L_1)
+		{
+			goto IL_0016;
+		}
+	}
+	{
+		int32_t L_2 = ___0_value;
+		if ((((int32_t)L_2) < ((int32_t)0)))
+		{
+			goto IL_0016;
+		}
+	}
+	{
+		int32_t L_3 = ___0_value;
+		if ((((int32_t)L_3) <= ((int32_t)6)))
+		{
+			goto IL_0017;
+		}
+	}
+
+IL_0016:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:115>
+		return;
+	}
+
+IL_0017:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:117>
+		StringBuilder_t* L_4;
+		L_4 = ConfigTrackerIndexType_get_sb_mAD16372D5C34B67CF39EFF124F5F95E260F864BC(__this, NULL);
+		NullCheck(L_4);
+		StringBuilder_t* L_5;
+		L_5 = StringBuilder_Clear_m2D76F6533574F40A4E3E2DC4E730277CBD0AF8F6(L_4, NULL);
+		NullCheck(L_5);
+		StringBuilder_t* L_6;
+		L_6 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_5, _stringLiteral08A809AE3B6353FBA0B954B3E9CED3C73E66D352, NULL);
+		int32_t L_7 = ___0_value;
+		NullCheck(L_6);
+		StringBuilder_t* L_8;
+		L_8 = StringBuilder_Append_m283B617AC29FB0DD6F3A7D8C01D385C25A5F0FAA(L_6, L_7, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:117>
+		StringBuilder_t* L_9;
+		L_9 = ConfigTrackerIndexType_get_sb_mAD16372D5C34B67CF39EFF124F5F95E260F864BC(__this, NULL);
+		ConfigTrackerIndexType_DEBUG_m4E3A4ED1827E60A03515512693AA5269C7949B43(__this, L_9, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:118>
+		BodyRoleData_tB3E30ECEB3632C49D288739F6240594BC9BFB264* L_10 = __this->___bodyData;
+		int32_t L_11 = ___0_value;
+		NullCheck(L_10);
+		BodyRoleData_SetTrackerIndex_m304FF47EC6609E308509720D4130B41B494553F7(L_10, 4, L_11, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:119>
+		return;
+	}
+}
+// Method Definition Index: 77046
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConfigTrackerIndexType_OnRightWristIndexChanged_m9AD3AA926E8388124231DF0EF51C047FF21F9D4C (ConfigTrackerIndexType_t2A8BBD79DD1FBDD186BB68AED89643929C14CF2A* __this, int32_t ___0_value, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralF144A3546D3FF730FD576C1C8E3F68126CDF22B3);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:122>
+		BodyRoleData_tB3E30ECEB3632C49D288739F6240594BC9BFB264* L_0 = __this->___bodyData;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_1;
+		L_1 = Object_op_Equality_mB6120F782D83091EF56A198FCEBCF066DB4A9605(L_0, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (L_1)
+		{
+			goto IL_0016;
+		}
+	}
+	{
+		int32_t L_2 = ___0_value;
+		if ((((int32_t)L_2) < ((int32_t)0)))
+		{
+			goto IL_0016;
+		}
+	}
+	{
+		int32_t L_3 = ___0_value;
+		if ((((int32_t)L_3) <= ((int32_t)6)))
+		{
+			goto IL_0017;
+		}
+	}
+
+IL_0016:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:122>
+		return;
+	}
+
+IL_0017:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:124>
+		StringBuilder_t* L_4;
+		L_4 = ConfigTrackerIndexType_get_sb_mAD16372D5C34B67CF39EFF124F5F95E260F864BC(__this, NULL);
+		NullCheck(L_4);
+		StringBuilder_t* L_5;
+		L_5 = StringBuilder_Clear_m2D76F6533574F40A4E3E2DC4E730277CBD0AF8F6(L_4, NULL);
+		NullCheck(L_5);
+		StringBuilder_t* L_6;
+		L_6 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_5, _stringLiteralF144A3546D3FF730FD576C1C8E3F68126CDF22B3, NULL);
+		int32_t L_7 = ___0_value;
+		NullCheck(L_6);
+		StringBuilder_t* L_8;
+		L_8 = StringBuilder_Append_m283B617AC29FB0DD6F3A7D8C01D385C25A5F0FAA(L_6, L_7, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:124>
+		StringBuilder_t* L_9;
+		L_9 = ConfigTrackerIndexType_get_sb_mAD16372D5C34B67CF39EFF124F5F95E260F864BC(__this, NULL);
+		ConfigTrackerIndexType_DEBUG_m4E3A4ED1827E60A03515512693AA5269C7949B43(__this, L_9, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:125>
+		BodyRoleData_tB3E30ECEB3632C49D288739F6240594BC9BFB264* L_10 = __this->___bodyData;
+		int32_t L_11 = ___0_value;
+		NullCheck(L_10);
+		BodyRoleData_SetTrackerIndex_m304FF47EC6609E308509720D4130B41B494553F7(L_10, 8, L_11, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:126>
+		return;
+	}
+}
+// Method Definition Index: 77047
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConfigTrackerIndexType_OnWaistIndexChanged_m097F6B85BFE5C1D96540C7816897834DDBB70DC2 (ConfigTrackerIndexType_t2A8BBD79DD1FBDD186BB68AED89643929C14CF2A* __this, int32_t ___0_value, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralE2903AFA12AA615C93893DA71DAEED17703E7D67);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:129>
+		BodyRoleData_tB3E30ECEB3632C49D288739F6240594BC9BFB264* L_0 = __this->___bodyData;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_1;
+		L_1 = Object_op_Equality_mB6120F782D83091EF56A198FCEBCF066DB4A9605(L_0, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (L_1)
+		{
+			goto IL_0016;
+		}
+	}
+	{
+		int32_t L_2 = ___0_value;
+		if ((((int32_t)L_2) < ((int32_t)0)))
+		{
+			goto IL_0016;
+		}
+	}
+	{
+		int32_t L_3 = ___0_value;
+		if ((((int32_t)L_3) <= ((int32_t)6)))
+		{
+			goto IL_0017;
+		}
+	}
+
+IL_0016:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:129>
+		return;
+	}
+
+IL_0017:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:131>
+		StringBuilder_t* L_4;
+		L_4 = ConfigTrackerIndexType_get_sb_mAD16372D5C34B67CF39EFF124F5F95E260F864BC(__this, NULL);
+		NullCheck(L_4);
+		StringBuilder_t* L_5;
+		L_5 = StringBuilder_Clear_m2D76F6533574F40A4E3E2DC4E730277CBD0AF8F6(L_4, NULL);
+		NullCheck(L_5);
+		StringBuilder_t* L_6;
+		L_6 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_5, _stringLiteralE2903AFA12AA615C93893DA71DAEED17703E7D67, NULL);
+		int32_t L_7 = ___0_value;
+		NullCheck(L_6);
+		StringBuilder_t* L_8;
+		L_8 = StringBuilder_Append_m283B617AC29FB0DD6F3A7D8C01D385C25A5F0FAA(L_6, L_7, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:131>
+		StringBuilder_t* L_9;
+		L_9 = ConfigTrackerIndexType_get_sb_mAD16372D5C34B67CF39EFF124F5F95E260F864BC(__this, NULL);
+		ConfigTrackerIndexType_DEBUG_m4E3A4ED1827E60A03515512693AA5269C7949B43(__this, L_9, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:132>
+		BodyRoleData_tB3E30ECEB3632C49D288739F6240594BC9BFB264* L_10 = __this->___bodyData;
+		int32_t L_11 = ___0_value;
+		NullCheck(L_10);
+		BodyRoleData_SetTrackerIndex_m304FF47EC6609E308509720D4130B41B494553F7(L_10, 0, L_11, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:133>
+		return;
+	}
+}
+// Method Definition Index: 77048
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConfigTrackerIndexType_OnLeftKneeIndexChanged_m9AB307235E353F16F7382A03FE1D553399CC127A (ConfigTrackerIndexType_t2A8BBD79DD1FBDD186BB68AED89643929C14CF2A* __this, int32_t ___0_value, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralE8C3AD821181B60A8820B1A6EF5F99540B6DA0FE);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:136>
+		BodyRoleData_tB3E30ECEB3632C49D288739F6240594BC9BFB264* L_0 = __this->___bodyData;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_1;
+		L_1 = Object_op_Equality_mB6120F782D83091EF56A198FCEBCF066DB4A9605(L_0, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (L_1)
+		{
+			goto IL_0016;
+		}
+	}
+	{
+		int32_t L_2 = ___0_value;
+		if ((((int32_t)L_2) < ((int32_t)0)))
+		{
+			goto IL_0016;
+		}
+	}
+	{
+		int32_t L_3 = ___0_value;
+		if ((((int32_t)L_3) <= ((int32_t)6)))
+		{
+			goto IL_0017;
+		}
+	}
+
+IL_0016:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:136>
+		return;
+	}
+
+IL_0017:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:138>
+		StringBuilder_t* L_4;
+		L_4 = ConfigTrackerIndexType_get_sb_mAD16372D5C34B67CF39EFF124F5F95E260F864BC(__this, NULL);
+		NullCheck(L_4);
+		StringBuilder_t* L_5;
+		L_5 = StringBuilder_Clear_m2D76F6533574F40A4E3E2DC4E730277CBD0AF8F6(L_4, NULL);
+		NullCheck(L_5);
+		StringBuilder_t* L_6;
+		L_6 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_5, _stringLiteralE8C3AD821181B60A8820B1A6EF5F99540B6DA0FE, NULL);
+		int32_t L_7 = ___0_value;
+		NullCheck(L_6);
+		StringBuilder_t* L_8;
+		L_8 = StringBuilder_Append_m283B617AC29FB0DD6F3A7D8C01D385C25A5F0FAA(L_6, L_7, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:138>
+		StringBuilder_t* L_9;
+		L_9 = ConfigTrackerIndexType_get_sb_mAD16372D5C34B67CF39EFF124F5F95E260F864BC(__this, NULL);
+		ConfigTrackerIndexType_DEBUG_m4E3A4ED1827E60A03515512693AA5269C7949B43(__this, L_9, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:139>
+		BodyRoleData_tB3E30ECEB3632C49D288739F6240594BC9BFB264* L_10 = __this->___bodyData;
+		int32_t L_11 = ___0_value;
+		NullCheck(L_10);
+		BodyRoleData_SetTrackerIndex_m304FF47EC6609E308509720D4130B41B494553F7(L_10, ((int32_t)11), L_11, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:140>
+		return;
+	}
+}
+// Method Definition Index: 77049
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConfigTrackerIndexType_OnRightKneeIndexChanged_m32EAA71BD089278664D7C51DB8CE6F48CEC87F6E (ConfigTrackerIndexType_t2A8BBD79DD1FBDD186BB68AED89643929C14CF2A* __this, int32_t ___0_value, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral42E3CEFC75FEDC65FDCB5FE388AFAB158E6AB804);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:143>
+		BodyRoleData_tB3E30ECEB3632C49D288739F6240594BC9BFB264* L_0 = __this->___bodyData;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_1;
+		L_1 = Object_op_Equality_mB6120F782D83091EF56A198FCEBCF066DB4A9605(L_0, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (L_1)
+		{
+			goto IL_0016;
+		}
+	}
+	{
+		int32_t L_2 = ___0_value;
+		if ((((int32_t)L_2) < ((int32_t)0)))
+		{
+			goto IL_0016;
+		}
+	}
+	{
+		int32_t L_3 = ___0_value;
+		if ((((int32_t)L_3) <= ((int32_t)6)))
+		{
+			goto IL_0017;
+		}
+	}
+
+IL_0016:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:143>
+		return;
+	}
+
+IL_0017:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:145>
+		StringBuilder_t* L_4;
+		L_4 = ConfigTrackerIndexType_get_sb_mAD16372D5C34B67CF39EFF124F5F95E260F864BC(__this, NULL);
+		NullCheck(L_4);
+		StringBuilder_t* L_5;
+		L_5 = StringBuilder_Clear_m2D76F6533574F40A4E3E2DC4E730277CBD0AF8F6(L_4, NULL);
+		NullCheck(L_5);
+		StringBuilder_t* L_6;
+		L_6 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_5, _stringLiteral42E3CEFC75FEDC65FDCB5FE388AFAB158E6AB804, NULL);
+		int32_t L_7 = ___0_value;
+		NullCheck(L_6);
+		StringBuilder_t* L_8;
+		L_8 = StringBuilder_Append_m283B617AC29FB0DD6F3A7D8C01D385C25A5F0FAA(L_6, L_7, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:145>
+		StringBuilder_t* L_9;
+		L_9 = ConfigTrackerIndexType_get_sb_mAD16372D5C34B67CF39EFF124F5F95E260F864BC(__this, NULL);
+		ConfigTrackerIndexType_DEBUG_m4E3A4ED1827E60A03515512693AA5269C7949B43(__this, L_9, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:146>
+		BodyRoleData_tB3E30ECEB3632C49D288739F6240594BC9BFB264* L_10 = __this->___bodyData;
+		int32_t L_11 = ___0_value;
+		NullCheck(L_10);
+		BodyRoleData_SetTrackerIndex_m304FF47EC6609E308509720D4130B41B494553F7(L_10, ((int32_t)14), L_11, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:147>
+		return;
+	}
+}
+// Method Definition Index: 77050
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConfigTrackerIndexType_OnLeftAnkleIndexChanged_m52D5CE9AE0F7C00C25212C4D6A21421DB7AAFE1E (ConfigTrackerIndexType_t2A8BBD79DD1FBDD186BB68AED89643929C14CF2A* __this, int32_t ___0_value, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralEA4DD82CF87728BA7AA9A6957B9AF12625C1DB04);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:150>
+		BodyRoleData_tB3E30ECEB3632C49D288739F6240594BC9BFB264* L_0 = __this->___bodyData;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_1;
+		L_1 = Object_op_Equality_mB6120F782D83091EF56A198FCEBCF066DB4A9605(L_0, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (L_1)
+		{
+			goto IL_0016;
+		}
+	}
+	{
+		int32_t L_2 = ___0_value;
+		if ((((int32_t)L_2) < ((int32_t)0)))
+		{
+			goto IL_0016;
+		}
+	}
+	{
+		int32_t L_3 = ___0_value;
+		if ((((int32_t)L_3) <= ((int32_t)6)))
+		{
+			goto IL_0017;
+		}
+	}
+
+IL_0016:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:150>
+		return;
+	}
+
+IL_0017:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:152>
+		StringBuilder_t* L_4;
+		L_4 = ConfigTrackerIndexType_get_sb_mAD16372D5C34B67CF39EFF124F5F95E260F864BC(__this, NULL);
+		NullCheck(L_4);
+		StringBuilder_t* L_5;
+		L_5 = StringBuilder_Clear_m2D76F6533574F40A4E3E2DC4E730277CBD0AF8F6(L_4, NULL);
+		NullCheck(L_5);
+		StringBuilder_t* L_6;
+		L_6 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_5, _stringLiteralEA4DD82CF87728BA7AA9A6957B9AF12625C1DB04, NULL);
+		int32_t L_7 = ___0_value;
+		NullCheck(L_6);
+		StringBuilder_t* L_8;
+		L_8 = StringBuilder_Append_m283B617AC29FB0DD6F3A7D8C01D385C25A5F0FAA(L_6, L_7, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:152>
+		StringBuilder_t* L_9;
+		L_9 = ConfigTrackerIndexType_get_sb_mAD16372D5C34B67CF39EFF124F5F95E260F864BC(__this, NULL);
+		ConfigTrackerIndexType_DEBUG_m4E3A4ED1827E60A03515512693AA5269C7949B43(__this, L_9, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:153>
+		BodyRoleData_tB3E30ECEB3632C49D288739F6240594BC9BFB264* L_10 = __this->___bodyData;
+		int32_t L_11 = ___0_value;
+		NullCheck(L_10);
+		BodyRoleData_SetTrackerIndex_m304FF47EC6609E308509720D4130B41B494553F7(L_10, ((int32_t)12), L_11, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:154>
+		return;
+	}
+}
+// Method Definition Index: 77051
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConfigTrackerIndexType_OnRightAnkleIndexChanged_mBAF454FB219EF6DD01A860CDBCFBF30B598399DD (ConfigTrackerIndexType_t2A8BBD79DD1FBDD186BB68AED89643929C14CF2A* __this, int32_t ___0_value, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral7E8B89610436A439C6F07796571F5BE4CEC41D0E);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:157>
+		BodyRoleData_tB3E30ECEB3632C49D288739F6240594BC9BFB264* L_0 = __this->___bodyData;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_1;
+		L_1 = Object_op_Equality_mB6120F782D83091EF56A198FCEBCF066DB4A9605(L_0, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (L_1)
+		{
+			goto IL_0016;
+		}
+	}
+	{
+		int32_t L_2 = ___0_value;
+		if ((((int32_t)L_2) < ((int32_t)0)))
+		{
+			goto IL_0016;
+		}
+	}
+	{
+		int32_t L_3 = ___0_value;
+		if ((((int32_t)L_3) <= ((int32_t)6)))
+		{
+			goto IL_0017;
+		}
+	}
+
+IL_0016:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:157>
+		return;
+	}
+
+IL_0017:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:159>
+		StringBuilder_t* L_4;
+		L_4 = ConfigTrackerIndexType_get_sb_mAD16372D5C34B67CF39EFF124F5F95E260F864BC(__this, NULL);
+		NullCheck(L_4);
+		StringBuilder_t* L_5;
+		L_5 = StringBuilder_Clear_m2D76F6533574F40A4E3E2DC4E730277CBD0AF8F6(L_4, NULL);
+		NullCheck(L_5);
+		StringBuilder_t* L_6;
+		L_6 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_5, _stringLiteral7E8B89610436A439C6F07796571F5BE4CEC41D0E, NULL);
+		int32_t L_7 = ___0_value;
+		NullCheck(L_6);
+		StringBuilder_t* L_8;
+		L_8 = StringBuilder_Append_m283B617AC29FB0DD6F3A7D8C01D385C25A5F0FAA(L_6, L_7, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:159>
+		StringBuilder_t* L_9;
+		L_9 = ConfigTrackerIndexType_get_sb_mAD16372D5C34B67CF39EFF124F5F95E260F864BC(__this, NULL);
+		ConfigTrackerIndexType_DEBUG_m4E3A4ED1827E60A03515512693AA5269C7949B43(__this, L_9, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:160>
+		BodyRoleData_tB3E30ECEB3632C49D288739F6240594BC9BFB264* L_10 = __this->___bodyData;
+		int32_t L_11 = ___0_value;
+		NullCheck(L_10);
+		BodyRoleData_SetTrackerIndex_m304FF47EC6609E308509720D4130B41B494553F7(L_10, ((int32_t)15), L_11, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:161>
+		return;
+	}
+}
+// Method Definition Index: 77052
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConfigTrackerIndexType_OnLeftWristTypeChanged_m5B1DD039316D40807E2F883A0C22B07B4255EDCC (ConfigTrackerIndexType_t2A8BBD79DD1FBDD186BB68AED89643929C14CF2A* __this, int32_t ___0_value, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral6A59B8CAD62C9BABFB834CE4DBBE357011C504AC);
+		s_Il2CppMethodInitialized = true;
+	}
+	uint32_t V_0 = 0;
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:166>
+		BodyRoleData_tB3E30ECEB3632C49D288739F6240594BC9BFB264* L_0 = __this->___bodyData;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_1;
+		L_1 = Object_op_Equality_mB6120F782D83091EF56A198FCEBCF066DB4A9605(L_0, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (L_1)
+		{
+			goto IL_0016;
+		}
+	}
+	{
+		int32_t L_2 = ___0_value;
+		if ((((int32_t)L_2) < ((int32_t)0)))
+		{
+			goto IL_0016;
+		}
+	}
+	{
+		int32_t L_3 = ___0_value;
+		if ((((int32_t)L_3) <= ((int32_t)3)))
+		{
+			goto IL_0017;
+		}
+	}
+
+IL_0016:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:166>
+		return;
+	}
+
+IL_0017:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:168>
+		int32_t L_4 = ___0_value;
+		uint32_t L_5;
+		L_5 = ConfigTrackerIndexType_GetDropdownValueType_m50FD33F24345AF1BD294AEB4C6417335F48574E1(__this, L_4, NULL);
+		V_0 = L_5;
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:169>
+		StringBuilder_t* L_6;
+		L_6 = ConfigTrackerIndexType_get_sb_mAD16372D5C34B67CF39EFF124F5F95E260F864BC(__this, NULL);
+		NullCheck(L_6);
+		StringBuilder_t* L_7;
+		L_7 = StringBuilder_Clear_m2D76F6533574F40A4E3E2DC4E730277CBD0AF8F6(L_6, NULL);
+		NullCheck(L_7);
+		StringBuilder_t* L_8;
+		L_8 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_7, _stringLiteral6A59B8CAD62C9BABFB834CE4DBBE357011C504AC, NULL);
+		uint32_t L_9 = V_0;
+		String_t* L_10;
+		L_10 = Rdp_Name_mAA2E40DE6AE1F1662396039D6B63010AB04AE76D(L_9, NULL);
+		NullCheck(L_8);
+		StringBuilder_t* L_11;
+		L_11 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_8, L_10, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:169>
+		StringBuilder_t* L_12;
+		L_12 = ConfigTrackerIndexType_get_sb_mAD16372D5C34B67CF39EFF124F5F95E260F864BC(__this, NULL);
+		ConfigTrackerIndexType_DEBUG_m4E3A4ED1827E60A03515512693AA5269C7949B43(__this, L_12, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:170>
+		BodyRoleData_tB3E30ECEB3632C49D288739F6240594BC9BFB264* L_13 = __this->___bodyData;
+		uint32_t L_14 = V_0;
+		NullCheck(L_13);
+		BodyRoleData_SetTrackerType_m20841176731381E33AB9A7B75F8F845CAFBF52B9(L_13, 4, L_14, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:171>
+		return;
+	}
+}
+// Method Definition Index: 77053
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConfigTrackerIndexType_OnRightWristTypeChanged_m266B7329AEAE41C47F574982A63854D299B90565 (ConfigTrackerIndexType_t2A8BBD79DD1FBDD186BB68AED89643929C14CF2A* __this, int32_t ___0_value, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral91865F645BC7327F72AF3162CF5882EC9F3DF502);
+		s_Il2CppMethodInitialized = true;
+	}
+	uint32_t V_0 = 0;
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:174>
+		BodyRoleData_tB3E30ECEB3632C49D288739F6240594BC9BFB264* L_0 = __this->___bodyData;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_1;
+		L_1 = Object_op_Equality_mB6120F782D83091EF56A198FCEBCF066DB4A9605(L_0, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (L_1)
+		{
+			goto IL_0016;
+		}
+	}
+	{
+		int32_t L_2 = ___0_value;
+		if ((((int32_t)L_2) < ((int32_t)0)))
+		{
+			goto IL_0016;
+		}
+	}
+	{
+		int32_t L_3 = ___0_value;
+		if ((((int32_t)L_3) <= ((int32_t)3)))
+		{
+			goto IL_0017;
+		}
+	}
+
+IL_0016:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:174>
+		return;
+	}
+
+IL_0017:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:176>
+		int32_t L_4 = ___0_value;
+		uint32_t L_5;
+		L_5 = ConfigTrackerIndexType_GetDropdownValueType_m50FD33F24345AF1BD294AEB4C6417335F48574E1(__this, L_4, NULL);
+		V_0 = L_5;
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:177>
+		StringBuilder_t* L_6;
+		L_6 = ConfigTrackerIndexType_get_sb_mAD16372D5C34B67CF39EFF124F5F95E260F864BC(__this, NULL);
+		NullCheck(L_6);
+		StringBuilder_t* L_7;
+		L_7 = StringBuilder_Clear_m2D76F6533574F40A4E3E2DC4E730277CBD0AF8F6(L_6, NULL);
+		NullCheck(L_7);
+		StringBuilder_t* L_8;
+		L_8 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_7, _stringLiteral91865F645BC7327F72AF3162CF5882EC9F3DF502, NULL);
+		uint32_t L_9 = V_0;
+		String_t* L_10;
+		L_10 = Rdp_Name_mAA2E40DE6AE1F1662396039D6B63010AB04AE76D(L_9, NULL);
+		NullCheck(L_8);
+		StringBuilder_t* L_11;
+		L_11 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_8, L_10, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:177>
+		StringBuilder_t* L_12;
+		L_12 = ConfigTrackerIndexType_get_sb_mAD16372D5C34B67CF39EFF124F5F95E260F864BC(__this, NULL);
+		ConfigTrackerIndexType_DEBUG_m4E3A4ED1827E60A03515512693AA5269C7949B43(__this, L_12, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:178>
+		BodyRoleData_tB3E30ECEB3632C49D288739F6240594BC9BFB264* L_13 = __this->___bodyData;
+		uint32_t L_14 = V_0;
+		NullCheck(L_13);
+		BodyRoleData_SetTrackerType_m20841176731381E33AB9A7B75F8F845CAFBF52B9(L_13, 8, L_14, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:179>
+		return;
+	}
+}
+// Method Definition Index: 77054
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConfigTrackerIndexType_OnWaistTypeChanged_mDB6C6B686E6F2C5D238940E51A23754D0812A246 (ConfigTrackerIndexType_t2A8BBD79DD1FBDD186BB68AED89643929C14CF2A* __this, int32_t ___0_value, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral06A589F5065EA97BDF1E93AFFBE9135C8733EAC9);
+		s_Il2CppMethodInitialized = true;
+	}
+	uint32_t V_0 = 0;
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:182>
+		BodyRoleData_tB3E30ECEB3632C49D288739F6240594BC9BFB264* L_0 = __this->___bodyData;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_1;
+		L_1 = Object_op_Equality_mB6120F782D83091EF56A198FCEBCF066DB4A9605(L_0, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (L_1)
+		{
+			goto IL_0016;
+		}
+	}
+	{
+		int32_t L_2 = ___0_value;
+		if ((((int32_t)L_2) < ((int32_t)0)))
+		{
+			goto IL_0016;
+		}
+	}
+	{
+		int32_t L_3 = ___0_value;
+		if ((((int32_t)L_3) <= ((int32_t)3)))
+		{
+			goto IL_0017;
+		}
+	}
+
+IL_0016:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:182>
+		return;
+	}
+
+IL_0017:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:184>
+		int32_t L_4 = ___0_value;
+		uint32_t L_5;
+		L_5 = ConfigTrackerIndexType_GetDropdownValueType_m50FD33F24345AF1BD294AEB4C6417335F48574E1(__this, L_4, NULL);
+		V_0 = L_5;
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:185>
+		StringBuilder_t* L_6;
+		L_6 = ConfigTrackerIndexType_get_sb_mAD16372D5C34B67CF39EFF124F5F95E260F864BC(__this, NULL);
+		NullCheck(L_6);
+		StringBuilder_t* L_7;
+		L_7 = StringBuilder_Clear_m2D76F6533574F40A4E3E2DC4E730277CBD0AF8F6(L_6, NULL);
+		NullCheck(L_7);
+		StringBuilder_t* L_8;
+		L_8 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_7, _stringLiteral06A589F5065EA97BDF1E93AFFBE9135C8733EAC9, NULL);
+		uint32_t L_9 = V_0;
+		String_t* L_10;
+		L_10 = Rdp_Name_mAA2E40DE6AE1F1662396039D6B63010AB04AE76D(L_9, NULL);
+		NullCheck(L_8);
+		StringBuilder_t* L_11;
+		L_11 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_8, L_10, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:185>
+		StringBuilder_t* L_12;
+		L_12 = ConfigTrackerIndexType_get_sb_mAD16372D5C34B67CF39EFF124F5F95E260F864BC(__this, NULL);
+		ConfigTrackerIndexType_DEBUG_m4E3A4ED1827E60A03515512693AA5269C7949B43(__this, L_12, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:186>
+		BodyRoleData_tB3E30ECEB3632C49D288739F6240594BC9BFB264* L_13 = __this->___bodyData;
+		uint32_t L_14 = V_0;
+		NullCheck(L_13);
+		BodyRoleData_SetTrackerType_m20841176731381E33AB9A7B75F8F845CAFBF52B9(L_13, 0, L_14, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:187>
+		return;
+	}
+}
+// Method Definition Index: 77055
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConfigTrackerIndexType_OnLeftKneeTypeChanged_mE79D228ED605816B766BC8BA04B52B56E5B1E0D5 (ConfigTrackerIndexType_t2A8BBD79DD1FBDD186BB68AED89643929C14CF2A* __this, int32_t ___0_value, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral221547242E067F98F093F2EE57C29BB9DEC34F99);
+		s_Il2CppMethodInitialized = true;
+	}
+	uint32_t V_0 = 0;
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:190>
+		BodyRoleData_tB3E30ECEB3632C49D288739F6240594BC9BFB264* L_0 = __this->___bodyData;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_1;
+		L_1 = Object_op_Equality_mB6120F782D83091EF56A198FCEBCF066DB4A9605(L_0, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (L_1)
+		{
+			goto IL_0016;
+		}
+	}
+	{
+		int32_t L_2 = ___0_value;
+		if ((((int32_t)L_2) < ((int32_t)0)))
+		{
+			goto IL_0016;
+		}
+	}
+	{
+		int32_t L_3 = ___0_value;
+		if ((((int32_t)L_3) <= ((int32_t)3)))
+		{
+			goto IL_0017;
+		}
+	}
+
+IL_0016:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:190>
+		return;
+	}
+
+IL_0017:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:192>
+		int32_t L_4 = ___0_value;
+		uint32_t L_5;
+		L_5 = ConfigTrackerIndexType_GetDropdownValueType_m50FD33F24345AF1BD294AEB4C6417335F48574E1(__this, L_4, NULL);
+		V_0 = L_5;
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:193>
+		StringBuilder_t* L_6;
+		L_6 = ConfigTrackerIndexType_get_sb_mAD16372D5C34B67CF39EFF124F5F95E260F864BC(__this, NULL);
+		NullCheck(L_6);
+		StringBuilder_t* L_7;
+		L_7 = StringBuilder_Clear_m2D76F6533574F40A4E3E2DC4E730277CBD0AF8F6(L_6, NULL);
+		NullCheck(L_7);
+		StringBuilder_t* L_8;
+		L_8 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_7, _stringLiteral221547242E067F98F093F2EE57C29BB9DEC34F99, NULL);
+		uint32_t L_9 = V_0;
+		String_t* L_10;
+		L_10 = Rdp_Name_mAA2E40DE6AE1F1662396039D6B63010AB04AE76D(L_9, NULL);
+		NullCheck(L_8);
+		StringBuilder_t* L_11;
+		L_11 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_8, L_10, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:193>
+		StringBuilder_t* L_12;
+		L_12 = ConfigTrackerIndexType_get_sb_mAD16372D5C34B67CF39EFF124F5F95E260F864BC(__this, NULL);
+		ConfigTrackerIndexType_DEBUG_m4E3A4ED1827E60A03515512693AA5269C7949B43(__this, L_12, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:194>
+		BodyRoleData_tB3E30ECEB3632C49D288739F6240594BC9BFB264* L_13 = __this->___bodyData;
+		uint32_t L_14 = V_0;
+		NullCheck(L_13);
+		BodyRoleData_SetTrackerType_m20841176731381E33AB9A7B75F8F845CAFBF52B9(L_13, ((int32_t)11), L_14, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:195>
+		return;
+	}
+}
+// Method Definition Index: 77056
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConfigTrackerIndexType_OnRightKneeTypeChanged_mEBD1D11DA2F9874927D6C76C65274B24B2888D68 (ConfigTrackerIndexType_t2A8BBD79DD1FBDD186BB68AED89643929C14CF2A* __this, int32_t ___0_value, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralEDAB56C9C3FD0C238AAF76C9C8E2B0EA2FB73117);
+		s_Il2CppMethodInitialized = true;
+	}
+	uint32_t V_0 = 0;
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:198>
+		BodyRoleData_tB3E30ECEB3632C49D288739F6240594BC9BFB264* L_0 = __this->___bodyData;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_1;
+		L_1 = Object_op_Equality_mB6120F782D83091EF56A198FCEBCF066DB4A9605(L_0, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (L_1)
+		{
+			goto IL_0016;
+		}
+	}
+	{
+		int32_t L_2 = ___0_value;
+		if ((((int32_t)L_2) < ((int32_t)0)))
+		{
+			goto IL_0016;
+		}
+	}
+	{
+		int32_t L_3 = ___0_value;
+		if ((((int32_t)L_3) <= ((int32_t)3)))
+		{
+			goto IL_0017;
+		}
+	}
+
+IL_0016:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:198>
+		return;
+	}
+
+IL_0017:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:200>
+		int32_t L_4 = ___0_value;
+		uint32_t L_5;
+		L_5 = ConfigTrackerIndexType_GetDropdownValueType_m50FD33F24345AF1BD294AEB4C6417335F48574E1(__this, L_4, NULL);
+		V_0 = L_5;
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:201>
+		StringBuilder_t* L_6;
+		L_6 = ConfigTrackerIndexType_get_sb_mAD16372D5C34B67CF39EFF124F5F95E260F864BC(__this, NULL);
+		NullCheck(L_6);
+		StringBuilder_t* L_7;
+		L_7 = StringBuilder_Clear_m2D76F6533574F40A4E3E2DC4E730277CBD0AF8F6(L_6, NULL);
+		NullCheck(L_7);
+		StringBuilder_t* L_8;
+		L_8 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_7, _stringLiteralEDAB56C9C3FD0C238AAF76C9C8E2B0EA2FB73117, NULL);
+		uint32_t L_9 = V_0;
+		String_t* L_10;
+		L_10 = Rdp_Name_mAA2E40DE6AE1F1662396039D6B63010AB04AE76D(L_9, NULL);
+		NullCheck(L_8);
+		StringBuilder_t* L_11;
+		L_11 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_8, L_10, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:201>
+		StringBuilder_t* L_12;
+		L_12 = ConfigTrackerIndexType_get_sb_mAD16372D5C34B67CF39EFF124F5F95E260F864BC(__this, NULL);
+		ConfigTrackerIndexType_DEBUG_m4E3A4ED1827E60A03515512693AA5269C7949B43(__this, L_12, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:202>
+		BodyRoleData_tB3E30ECEB3632C49D288739F6240594BC9BFB264* L_13 = __this->___bodyData;
+		uint32_t L_14 = V_0;
+		NullCheck(L_13);
+		BodyRoleData_SetTrackerType_m20841176731381E33AB9A7B75F8F845CAFBF52B9(L_13, ((int32_t)14), L_14, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:203>
+		return;
+	}
+}
+// Method Definition Index: 77057
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConfigTrackerIndexType_OnLeftAnkleTypeChanged_m379461E98B766FE262BCEE8E00E8EBA62A35C984 (ConfigTrackerIndexType_t2A8BBD79DD1FBDD186BB68AED89643929C14CF2A* __this, int32_t ___0_value, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralBF1FB54A3EE2EF0B2548FC1B6CDCBD078A4135CD);
+		s_Il2CppMethodInitialized = true;
+	}
+	uint32_t V_0 = 0;
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:206>
+		BodyRoleData_tB3E30ECEB3632C49D288739F6240594BC9BFB264* L_0 = __this->___bodyData;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_1;
+		L_1 = Object_op_Equality_mB6120F782D83091EF56A198FCEBCF066DB4A9605(L_0, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (L_1)
+		{
+			goto IL_0016;
+		}
+	}
+	{
+		int32_t L_2 = ___0_value;
+		if ((((int32_t)L_2) < ((int32_t)0)))
+		{
+			goto IL_0016;
+		}
+	}
+	{
+		int32_t L_3 = ___0_value;
+		if ((((int32_t)L_3) <= ((int32_t)3)))
+		{
+			goto IL_0017;
+		}
+	}
+
+IL_0016:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:206>
+		return;
+	}
+
+IL_0017:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:208>
+		int32_t L_4 = ___0_value;
+		uint32_t L_5;
+		L_5 = ConfigTrackerIndexType_GetDropdownValueType_m50FD33F24345AF1BD294AEB4C6417335F48574E1(__this, L_4, NULL);
+		V_0 = L_5;
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:209>
+		StringBuilder_t* L_6;
+		L_6 = ConfigTrackerIndexType_get_sb_mAD16372D5C34B67CF39EFF124F5F95E260F864BC(__this, NULL);
+		NullCheck(L_6);
+		StringBuilder_t* L_7;
+		L_7 = StringBuilder_Clear_m2D76F6533574F40A4E3E2DC4E730277CBD0AF8F6(L_6, NULL);
+		NullCheck(L_7);
+		StringBuilder_t* L_8;
+		L_8 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_7, _stringLiteralBF1FB54A3EE2EF0B2548FC1B6CDCBD078A4135CD, NULL);
+		uint32_t L_9 = V_0;
+		String_t* L_10;
+		L_10 = Rdp_Name_mAA2E40DE6AE1F1662396039D6B63010AB04AE76D(L_9, NULL);
+		NullCheck(L_8);
+		StringBuilder_t* L_11;
+		L_11 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_8, L_10, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:209>
+		StringBuilder_t* L_12;
+		L_12 = ConfigTrackerIndexType_get_sb_mAD16372D5C34B67CF39EFF124F5F95E260F864BC(__this, NULL);
+		ConfigTrackerIndexType_DEBUG_m4E3A4ED1827E60A03515512693AA5269C7949B43(__this, L_12, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:210>
+		BodyRoleData_tB3E30ECEB3632C49D288739F6240594BC9BFB264* L_13 = __this->___bodyData;
+		uint32_t L_14 = V_0;
+		NullCheck(L_13);
+		BodyRoleData_SetTrackerType_m20841176731381E33AB9A7B75F8F845CAFBF52B9(L_13, ((int32_t)12), L_14, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:211>
+		return;
+	}
+}
+// Method Definition Index: 77058
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConfigTrackerIndexType_OnRightAnkleTypeChanged_mA5FEEADC57C634D9219DDF662422702E64F7121D (ConfigTrackerIndexType_t2A8BBD79DD1FBDD186BB68AED89643929C14CF2A* __this, int32_t ___0_value, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral84C9981C9F4C4B52CD123317C7901E63EDAE05C1);
+		s_Il2CppMethodInitialized = true;
+	}
+	uint32_t V_0 = 0;
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:214>
+		BodyRoleData_tB3E30ECEB3632C49D288739F6240594BC9BFB264* L_0 = __this->___bodyData;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_1;
+		L_1 = Object_op_Equality_mB6120F782D83091EF56A198FCEBCF066DB4A9605(L_0, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (L_1)
+		{
+			goto IL_0016;
+		}
+	}
+	{
+		int32_t L_2 = ___0_value;
+		if ((((int32_t)L_2) < ((int32_t)0)))
+		{
+			goto IL_0016;
+		}
+	}
+	{
+		int32_t L_3 = ___0_value;
+		if ((((int32_t)L_3) <= ((int32_t)3)))
+		{
+			goto IL_0017;
+		}
+	}
+
+IL_0016:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:214>
+		return;
+	}
+
+IL_0017:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:216>
+		int32_t L_4 = ___0_value;
+		uint32_t L_5;
+		L_5 = ConfigTrackerIndexType_GetDropdownValueType_m50FD33F24345AF1BD294AEB4C6417335F48574E1(__this, L_4, NULL);
+		V_0 = L_5;
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:217>
+		StringBuilder_t* L_6;
+		L_6 = ConfigTrackerIndexType_get_sb_mAD16372D5C34B67CF39EFF124F5F95E260F864BC(__this, NULL);
+		NullCheck(L_6);
+		StringBuilder_t* L_7;
+		L_7 = StringBuilder_Clear_m2D76F6533574F40A4E3E2DC4E730277CBD0AF8F6(L_6, NULL);
+		NullCheck(L_7);
+		StringBuilder_t* L_8;
+		L_8 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_7, _stringLiteral84C9981C9F4C4B52CD123317C7901E63EDAE05C1, NULL);
+		uint32_t L_9 = V_0;
+		String_t* L_10;
+		L_10 = Rdp_Name_mAA2E40DE6AE1F1662396039D6B63010AB04AE76D(L_9, NULL);
+		NullCheck(L_8);
+		StringBuilder_t* L_11;
+		L_11 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_8, L_10, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:217>
+		StringBuilder_t* L_12;
+		L_12 = ConfigTrackerIndexType_get_sb_mAD16372D5C34B67CF39EFF124F5F95E260F864BC(__this, NULL);
+		ConfigTrackerIndexType_DEBUG_m4E3A4ED1827E60A03515512693AA5269C7949B43(__this, L_12, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:218>
+		BodyRoleData_tB3E30ECEB3632C49D288739F6240594BC9BFB264* L_13 = __this->___bodyData;
+		uint32_t L_14 = V_0;
+		NullCheck(L_13);
+		BodyRoleData_SetTrackerType_m20841176731381E33AB9A7B75F8F845CAFBF52B9(L_13, ((int32_t)15), L_14, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/ConfigTrackerIndexType.cs:219>
+		return;
+	}
+}
+// Method Definition Index: 77059
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConfigTrackerIndexType__ctor_m219D886DAEC94AC810A60FF299E8435F33D647BC (ConfigTrackerIndexType_t2A8BBD79DD1FBDD186BB68AED89643929C14CF2A* __this, const RuntimeMethod* method) 
+{
+	{
+		MonoBehaviour__ctor_m592DB0105CA0BC97AA1C5F4AD27B12D68A3B7C1E(__this, NULL);
+		return;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// Method Definition Index: 77060
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DefineTrackerLocation__ctor_m443C9F30E78C3009B1D2546BEA9F2351274D386D (DefineTrackerLocation_t4651548465C3999F63C2CADE3D9EFF6C45428A53* __this, const RuntimeMethod* method) 
+{
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerConfig/DefineTrackerLocation.cs:10>
+		__this->___location = (-1);
+		MonoBehaviour__ctor_m592DB0105CA0BC97AA1C5F4AD27B12D68A3B7C1E(__this, NULL);
+		return;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// Method Definition Index: 77061
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TrackerUpdater_OnEnable_mA47A7DFFB823784371F0C16AE2F3977E75912229 (TrackerUpdater_t82756B23EA06F498F3945B6B863F235BF408B6AE* __this, const RuntimeMethod* method) 
+{
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerUpdater.cs:18>
+		TrackerUpdater_EnableChildren_m4C25E40FEF9F4B1FA214D08F5A311CAF81EDAFD0(__this, (bool)0, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerUpdater.cs:19>
+		bool L_0 = __this->___toUpdate;
+		if (L_0)
+		{
+			goto IL_0023;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerUpdater.cs:21>
+		__this->___toUpdate = (bool)1;
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerUpdater.cs:22>
+		RuntimeObject* L_1;
+		L_1 = TrackerUpdater_UpdatePose_mD052050B660B5EEA5767CB8DF6387887DA8F2DFE(__this, NULL);
+		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_2;
+		L_2 = MonoBehaviour_StartCoroutine_m4CAFF732AA28CD3BDC5363B44A863575530EC812(__this, L_1, NULL);
+	}
+
+IL_0023:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerUpdater.cs:24>
+		return;
+	}
+}
+// Method Definition Index: 77062
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TrackerUpdater_OnDisable_m93B0620C8187EB80D5CE5B93D8F0CB6E0B1DC38F (TrackerUpdater_t82756B23EA06F498F3945B6B863F235BF408B6AE* __this, const RuntimeMethod* method) 
+{
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerUpdater.cs:28>
+		bool L_0 = __this->___toUpdate;
+		if (!L_0)
+		{
+			goto IL_001b;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerUpdater.cs:30>
+		__this->___toUpdate = (bool)0;
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerUpdater.cs:31>
+		RuntimeObject* L_1;
+		L_1 = TrackerUpdater_UpdatePose_mD052050B660B5EEA5767CB8DF6387887DA8F2DFE(__this, NULL);
+		MonoBehaviour_StopCoroutine_mF9E93B82091E804595BE13AA29F9AB7517F7E04A(__this, L_1, NULL);
+	}
+
+IL_001b:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerUpdater.cs:33>
+		return;
+	}
+}
+// Method Definition Index: 77063
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* TrackerUpdater_UpdatePose_mD052050B660B5EEA5767CB8DF6387887DA8F2DFE (TrackerUpdater_t82756B23EA06F498F3945B6B863F235BF408B6AE* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CUpdatePoseU3Ed__5_t0BBB54F06F339003CA1E8589E45A24B7CD1A2888_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		U3CUpdatePoseU3Ed__5_t0BBB54F06F339003CA1E8589E45A24B7CD1A2888* L_0 = (U3CUpdatePoseU3Ed__5_t0BBB54F06F339003CA1E8589E45A24B7CD1A2888*)il2cpp_codegen_object_new(U3CUpdatePoseU3Ed__5_t0BBB54F06F339003CA1E8589E45A24B7CD1A2888_il2cpp_TypeInfo_var);
+		U3CUpdatePoseU3Ed__5__ctor_m56797A7160346357EE5B251EE4F0DA302085A019(L_0, 0, NULL);
+		U3CUpdatePoseU3Ed__5_t0BBB54F06F339003CA1E8589E45A24B7CD1A2888* L_1 = L_0;
+		NullCheck(L_1);
+		L_1->___U3CU3E4__this = __this;
+		Il2CppCodeGenWriteBarrier((void**)(&L_1->___U3CU3E4__this), (void*)__this);
+		return L_1;
+	}
+}
+// Method Definition Index: 77064
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TrackerUpdater_CheckTrackingState_m7B626D38B9EAF89E63B5DF0DEFF6B8422E14B556 (TrackerUpdater_t82756B23EA06F498F3945B6B863F235BF408B6AE* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Tracker_t127766830CF66C34BAB8282F55B0C0C02C596F30_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	bool V_0 = false;
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerUpdater.cs:51>
+		uint32_t L_0 = __this->___m_TrackIndex;
+		il2cpp_codegen_runtime_class_init_inline(Tracker_t127766830CF66C34BAB8282F55B0C0C02C596F30_il2cpp_TypeInfo_var);
+		bool L_1;
+		L_1 = Tracker_IsTracked_mEC5A802BDFE5ECC0AA165ADCD76A9C0F743A771F(L_0, NULL);
+		V_0 = L_1;
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerUpdater.cs:52>
+		bool L_2 = V_0;
+		bool L_3 = __this->___lastTracking;
+		if ((((int32_t)L_2) == ((int32_t)L_3)))
+		{
+			goto IL_0023;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerUpdater.cs:54>
+		bool L_4 = V_0;
+		TrackerUpdater_EnableChildren_m4C25E40FEF9F4B1FA214D08F5A311CAF81EDAFD0(__this, L_4, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerUpdater.cs:55>
+		bool L_5 = V_0;
+		__this->___lastTracking = L_5;
+	}
+
+IL_0023:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerUpdater.cs:57>
+		return;
+	}
+}
+// Method Definition Index: 77065
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TrackerUpdater_UpdateTransform_m09658813901993035896277910E6B96EB13014CC (TrackerUpdater_t82756B23EA06F498F3945B6B863F235BF408B6AE* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Tracker_t127766830CF66C34BAB8282F55B0C0C02C596F30_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 V_0;
+	memset((&V_0), 0, sizeof(V_0));
+	Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 V_1;
+	memset((&V_1), 0, sizeof(V_1));
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerUpdater.cs:61>
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerUpdater.cs:62>
+		uint32_t L_0 = __this->___m_TrackIndex;
+		il2cpp_codegen_runtime_class_init_inline(Tracker_t127766830CF66C34BAB8282F55B0C0C02C596F30_il2cpp_TypeInfo_var);
+		bool L_1;
+		L_1 = Tracker_GetTrackerPosition_m51CD0020FA679C4485E5F55B52144D0E8D3049F2(L_0, (&V_0), NULL);
+		if (!L_1)
+		{
+			goto IL_0036;
+		}
+	}
+	{
+		uint32_t L_2 = __this->___m_TrackIndex;
+		il2cpp_codegen_runtime_class_init_inline(Tracker_t127766830CF66C34BAB8282F55B0C0C02C596F30_il2cpp_TypeInfo_var);
+		bool L_3;
+		L_3 = Tracker_GetTrackerRotation_mDC0E557121941111CC764416997AE10EDB768729(L_2, (&V_1), NULL);
+		if (!L_3)
+		{
+			goto IL_0036;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerUpdater.cs:64>
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_4;
+		L_4 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_5 = V_0;
+		NullCheck(L_4);
+		Transform_set_localPosition_mDE1C997F7D79C0885210B7732B4BA50EE7D73134(L_4, L_5, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerUpdater.cs:65>
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_6;
+		L_6 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
+		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_7 = V_1;
+		NullCheck(L_6);
+		Transform_set_localRotation_mAB4A011D134BA58AB780BECC0025CA65F16185FA(L_6, L_7, NULL);
+	}
+
+IL_0036:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerUpdater.cs:67>
+		return;
+	}
+}
+// Method Definition Index: 77066
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TrackerUpdater_EnableChildren_m4C25E40FEF9F4B1FA214D08F5A311CAF81EDAFD0 (TrackerUpdater_t82756B23EA06F498F3945B6B863F235BF408B6AE* __this, bool ___0_enable, const RuntimeMethod* method) 
+{
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* V_0 = NULL;
+	int32_t V_1 = 0;
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerUpdater.cs:71>
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_0;
+		L_0 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
+		V_0 = L_0;
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerUpdater.cs:73>
+		V_1 = 0;
+		goto IL_0021;
+	}
+
+IL_000b:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerUpdater.cs:75>
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_1 = V_0;
+		int32_t L_2 = V_1;
+		NullCheck(L_1);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_3;
+		L_3 = Transform_GetChild_mE686DF0C7AAC1F7AEF356967B1C04D8B8E240EAF(L_1, L_2, NULL);
+		NullCheck(L_3);
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_4;
+		L_4 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(L_3, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerUpdater.cs:76>
+		bool L_5 = ___0_enable;
+		NullCheck(L_4);
+		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_4, L_5, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerUpdater.cs:73>
+		int32_t L_6 = V_1;
+		V_1 = ((int32_t)il2cpp_codegen_add(L_6, 1));
+	}
+
+IL_0021:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerUpdater.cs:73>
+		int32_t L_7 = V_1;
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_8 = V_0;
+		NullCheck(L_8);
+		int32_t L_9;
+		L_9 = Transform_get_childCount_mE9C29C702AB662CC540CA053EDE48BDAFA35B4B0(L_8, NULL);
+		if ((((int32_t)L_7) < ((int32_t)L_9)))
+		{
+			goto IL_000b;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerUpdater.cs:78>
+		return;
+	}
+}
+// Method Definition Index: 77067
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TrackerUpdater__ctor_m620724A0C35178E27A2486BB87BF1B2A09B6095A (TrackerUpdater_t82756B23EA06F498F3945B6B863F235BF408B6AE* __this, const RuntimeMethod* method) 
+{
+	{
+		MonoBehaviour__ctor_m592DB0105CA0BC97AA1C5F4AD27B12D68A3B7C1E(__this, NULL);
+		return;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// Method Definition Index: 77068
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CUpdatePoseU3Ed__5__ctor_m56797A7160346357EE5B251EE4F0DA302085A019 (U3CUpdatePoseU3Ed__5_t0BBB54F06F339003CA1E8589E45A24B7CD1A2888* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) 
+{
+	{
+		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2(__this, NULL);
+		int32_t L_0 = ___0_U3CU3E1__state;
+		__this->___U3CU3E1__state = L_0;
+		return;
+	}
+}
+// Method Definition Index: 77069
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CUpdatePoseU3Ed__5_System_IDisposable_Dispose_mC69CB8973CD9843D151804A8A5FB246BE28948F0 (U3CUpdatePoseU3Ed__5_t0BBB54F06F339003CA1E8589E45A24B7CD1A2888* __this, const RuntimeMethod* method) 
+{
+	{
+		return;
+	}
+}
+// Method Definition Index: 77070
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CUpdatePoseU3Ed__5_MoveNext_m1ECED1A3A3DBFA660B4EFA8FF93F32F57AD4911F (U3CUpdatePoseU3Ed__5_t0BBB54F06F339003CA1E8589E45A24B7CD1A2888* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&WaitForEndOfFrame_tE38D80923E3F8380069B423968C25ABE50A46663_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	int32_t V_0 = 0;
+	TrackerUpdater_t82756B23EA06F498F3945B6B863F235BF408B6AE* V_1 = NULL;
+	{
+		int32_t L_0 = __this->___U3CU3E1__state;
+		V_0 = L_0;
+		TrackerUpdater_t82756B23EA06F498F3945B6B863F235BF408B6AE* L_1 = __this->___U3CU3E4__this;
+		V_1 = L_1;
+		int32_t L_2 = V_0;
+		switch (L_2)
+		{
+			case 0:
+			{
+				goto IL_0022;
+			}
+			case 1:
+			{
+				goto IL_003f;
+			}
+			case 2:
+			{
+				goto IL_0064;
+			}
+		}
+	}
+	{
+		return (bool)0;
+	}
+
+IL_0022:
+	{
+		__this->___U3CU3E1__state = (-1);
+		goto IL_0071;
+	}
+
+IL_002b:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerUpdater.cs:40>
+		WaitForEndOfFrame_tE38D80923E3F8380069B423968C25ABE50A46663* L_3 = (WaitForEndOfFrame_tE38D80923E3F8380069B423968C25ABE50A46663*)il2cpp_codegen_object_new(WaitForEndOfFrame_tE38D80923E3F8380069B423968C25ABE50A46663_il2cpp_TypeInfo_var);
+		WaitForEndOfFrame__ctor_m4AF7E576C01E6B04443BB898B1AE5D645F7D45AB(L_3, NULL);
+		__this->___U3CU3E2__current = L_3;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CU3E2__current), (void*)L_3);
+		__this->___U3CU3E1__state = 1;
+		return (bool)1;
+	}
+
+IL_003f:
+	{
+		__this->___U3CU3E1__state = (-1);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerUpdater.cs:42>
+		TrackerUpdater_t82756B23EA06F498F3945B6B863F235BF408B6AE* L_4 = V_1;
+		NullCheck(L_4);
+		TrackerUpdater_CheckTrackingState_m7B626D38B9EAF89E63B5DF0DEFF6B8422E14B556(L_4, NULL);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerUpdater.cs:43>
+		TrackerUpdater_t82756B23EA06F498F3945B6B863F235BF408B6AE* L_5 = V_1;
+		NullCheck(L_5);
+		bool L_6 = L_5->___lastTracking;
+		if (L_6)
+		{
+			goto IL_006b;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerUpdater.cs:43>
+		__this->___U3CU3E2__current = NULL;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CU3E2__current), (void*)NULL);
+		__this->___U3CU3E1__state = 2;
+		return (bool)1;
+	}
+
+IL_0064:
+	{
+		__this->___U3CU3E1__state = (-1);
+	}
+
+IL_006b:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerUpdater.cs:45>
+		TrackerUpdater_t82756B23EA06F498F3945B6B863F235BF408B6AE* L_7 = V_1;
+		NullCheck(L_7);
+		TrackerUpdater_UpdateTransform_m09658813901993035896277910E6B96EB13014CC(L_7, NULL);
+	}
+
+IL_0071:
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerUpdater.cs:38>
+		TrackerUpdater_t82756B23EA06F498F3945B6B863F235BF408B6AE* L_8 = V_1;
+		NullCheck(L_8);
+		bool L_9 = L_8->___toUpdate;
+		if (L_9)
+		{
+			goto IL_002b;
+		}
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Demo/Scripts/TrackerUpdater.cs:47>
+		return (bool)0;
+	}
+}
+// Method Definition Index: 77071
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CUpdatePoseU3Ed__5_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mFD39D7A15AA5291495E5799A4D41A2E211A06478 (U3CUpdatePoseU3Ed__5_t0BBB54F06F339003CA1E8589E45A24B7CD1A2888* __this, const RuntimeMethod* method) 
+{
+	{
+		RuntimeObject* L_0 = __this->___U3CU3E2__current;
+		return L_0;
+	}
+}
+// Method Definition Index: 77072
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CUpdatePoseU3Ed__5_System_Collections_IEnumerator_Reset_mBCBCD6C72591AC179C791EBF565367D50EA86C5D (U3CUpdatePoseU3Ed__5_t0BBB54F06F339003CA1E8589E45A24B7CD1A2888* __this, const RuntimeMethod* method) 
+{
+	{
+		NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* L_0 = (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var)));
+		NotSupportedException__ctor_m1398D0CDE19B36AA3DE9392879738C1EA2439CDF(L_0, NULL);
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&U3CUpdatePoseU3Ed__5_System_Collections_IEnumerator_Reset_mBCBCD6C72591AC179C791EBF565367D50EA86C5D_RuntimeMethod_var)));
+	}
+}
+// Method Definition Index: 77073
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CUpdatePoseU3Ed__5_System_Collections_IEnumerator_get_Current_mD1A81E87C9794AE9665C64EF21B87F89EC3E39F8 (U3CUpdatePoseU3Ed__5_t0BBB54F06F339003CA1E8589E45A24B7CD1A2888* __this, const RuntimeMethod* method) 
+{
+	{
+		RuntimeObject* L_0 = __this->___U3CU3E2__current;
+		return L_0;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+// Method Definition Index: 43223
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 Vector3_op_Multiply_m87BA7C578F96C8E49BB07088DAAC4649F83B0353_inline (Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___0_a, float ___1_d, const RuntimeMethod* method) 
+{
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 V_0;
+	memset((&V_0), 0, sizeof(V_0));
+	{
+		il2cpp_codegen_initobj((&V_0), sizeof(Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2));
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_0 = ___0_a;
+		float L_1 = L_0.___x;
+		float L_2 = ___1_d;
+		(&V_0)->___x = ((float)il2cpp_codegen_multiply(L_1, L_2));
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_3 = ___0_a;
+		float L_4 = L_3.___y;
+		float L_5 = ___1_d;
+		(&V_0)->___y = ((float)il2cpp_codegen_multiply(L_4, L_5));
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_6 = ___0_a;
+		float L_7 = L_6.___z;
+		float L_8 = ___1_d;
+		(&V_0)->___z = ((float)il2cpp_codegen_multiply(L_7, L_8));
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_9 = V_0;
+		return L_9;
+	}
+}
+// Method Definition Index: 43220
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 Vector3_op_Addition_m78C0EC70CB66E8DCAC225743D82B268DAEE92067_inline (Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___0_a, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___1_b, const RuntimeMethod* method) 
+{
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 V_0;
+	memset((&V_0), 0, sizeof(V_0));
+	{
+		il2cpp_codegen_initobj((&V_0), sizeof(Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2));
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_0 = ___0_a;
+		float L_1 = L_0.___x;
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_2 = ___1_b;
+		float L_3 = L_2.___x;
+		(&V_0)->___x = ((float)il2cpp_codegen_add(L_1, L_3));
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_4 = ___0_a;
+		float L_5 = L_4.___y;
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_6 = ___1_b;
+		float L_7 = L_6.___y;
+		(&V_0)->___y = ((float)il2cpp_codegen_add(L_5, L_7));
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_8 = ___0_a;
+		float L_9 = L_8.___z;
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_10 = ___1_b;
+		float L_11 = L_10.___z;
+		(&V_0)->___z = ((float)il2cpp_codegen_add(L_9, L_11));
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_12 = V_0;
+		return L_12;
+	}
+}
+// Method Definition Index: 43254
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 Quaternion_op_Multiply_mCB375FCCC12A2EC8F9EB824A1BFB4453B58C2012_inline (Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 ___0_lhs, Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 ___1_rhs, const RuntimeMethod* method) 
+{
+	Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 V_0;
+	memset((&V_0), 0, sizeof(V_0));
+	{
+		il2cpp_codegen_initobj((&V_0), sizeof(Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974));
+		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_0 = ___0_lhs;
+		float L_1 = L_0.___w;
+		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_2 = ___1_rhs;
+		float L_3 = L_2.___x;
+		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_4 = ___0_lhs;
+		float L_5 = L_4.___x;
+		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_6 = ___1_rhs;
+		float L_7 = L_6.___w;
+		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_8 = ___0_lhs;
+		float L_9 = L_8.___y;
+		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_10 = ___1_rhs;
+		float L_11 = L_10.___z;
+		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_12 = ___0_lhs;
+		float L_13 = L_12.___z;
+		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_14 = ___1_rhs;
+		float L_15 = L_14.___y;
+		(&V_0)->___x = ((float)il2cpp_codegen_subtract(((float)il2cpp_codegen_add(((float)il2cpp_codegen_add(((float)il2cpp_codegen_multiply(L_1, L_3)), ((float)il2cpp_codegen_multiply(L_5, L_7)))), ((float)il2cpp_codegen_multiply(L_9, L_11)))), ((float)il2cpp_codegen_multiply(L_13, L_15))));
+		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_16 = ___0_lhs;
+		float L_17 = L_16.___w;
+		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_18 = ___1_rhs;
+		float L_19 = L_18.___y;
+		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_20 = ___0_lhs;
+		float L_21 = L_20.___y;
+		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_22 = ___1_rhs;
+		float L_23 = L_22.___w;
+		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_24 = ___0_lhs;
+		float L_25 = L_24.___z;
+		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_26 = ___1_rhs;
+		float L_27 = L_26.___x;
+		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_28 = ___0_lhs;
+		float L_29 = L_28.___x;
+		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_30 = ___1_rhs;
+		float L_31 = L_30.___z;
+		(&V_0)->___y = ((float)il2cpp_codegen_subtract(((float)il2cpp_codegen_add(((float)il2cpp_codegen_add(((float)il2cpp_codegen_multiply(L_17, L_19)), ((float)il2cpp_codegen_multiply(L_21, L_23)))), ((float)il2cpp_codegen_multiply(L_25, L_27)))), ((float)il2cpp_codegen_multiply(L_29, L_31))));
+		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_32 = ___0_lhs;
+		float L_33 = L_32.___w;
+		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_34 = ___1_rhs;
+		float L_35 = L_34.___z;
+		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_36 = ___0_lhs;
+		float L_37 = L_36.___z;
+		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_38 = ___1_rhs;
+		float L_39 = L_38.___w;
+		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_40 = ___0_lhs;
+		float L_41 = L_40.___x;
+		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_42 = ___1_rhs;
+		float L_43 = L_42.___y;
+		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_44 = ___0_lhs;
+		float L_45 = L_44.___y;
+		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_46 = ___1_rhs;
+		float L_47 = L_46.___x;
+		(&V_0)->___z = ((float)il2cpp_codegen_subtract(((float)il2cpp_codegen_add(((float)il2cpp_codegen_add(((float)il2cpp_codegen_multiply(L_33, L_35)), ((float)il2cpp_codegen_multiply(L_37, L_39)))), ((float)il2cpp_codegen_multiply(L_41, L_43)))), ((float)il2cpp_codegen_multiply(L_45, L_47))));
+		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_48 = ___0_lhs;
+		float L_49 = L_48.___w;
+		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_50 = ___1_rhs;
+		float L_51 = L_50.___w;
+		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_52 = ___0_lhs;
+		float L_53 = L_52.___x;
+		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_54 = ___1_rhs;
+		float L_55 = L_54.___x;
+		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_56 = ___0_lhs;
+		float L_57 = L_56.___y;
+		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_58 = ___1_rhs;
+		float L_59 = L_58.___y;
+		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_60 = ___0_lhs;
+		float L_61 = L_60.___z;
+		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_62 = ___1_rhs;
+		float L_63 = L_62.___z;
+		(&V_0)->___w = ((float)il2cpp_codegen_subtract(((float)il2cpp_codegen_subtract(((float)il2cpp_codegen_subtract(((float)il2cpp_codegen_multiply(L_49, L_51)), ((float)il2cpp_codegen_multiply(L_53, L_55)))), ((float)il2cpp_codegen_multiply(L_57, L_59)))), ((float)il2cpp_codegen_multiply(L_61, L_63))));
+		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_64 = V_0;
+		return L_64;
+	}
+}
+// Method Definition Index: 76300
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR BodyManager_tC2F2528B290757CB0FB5804C9FDA9DB22C5C1828* BodyManager_get_Instance_m4670608F4832E8A978881F4C4A2C4E39DEE9BD65_inline (const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&BodyManager_tC2F2528B290757CB0FB5804C9FDA9DB22C5C1828_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Scripts/BodyManager.cs:865>
+		BodyManager_tC2F2528B290757CB0FB5804C9FDA9DB22C5C1828* L_0 = ((BodyManager_tC2F2528B290757CB0FB5804C9FDA9DB22C5C1828_StaticFields*)il2cpp_codegen_static_fields_for(BodyManager_tC2F2528B290757CB0FB5804C9FDA9DB22C5C1828_il2cpp_TypeInfo_var))->___m_Instance;
+		return L_0;
+	}
+}
+// Method Definition Index: 76298
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool BodyManager_get_EnableTrackingLog_m6AD7BC701EEA08BC7B51B4A20505051B2D597989_inline (BodyManager_tC2F2528B290757CB0FB5804C9FDA9DB22C5C1828* __this, const RuntimeMethod* method) 
+{
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Scripts/BodyManager.cs:862>
+		bool L_0 = __this->___m_EnableTrackingLog;
+		return L_0;
+	}
+}
+// Method Definition Index: 76541
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t HumanoidTracking_get_Tracking_mDC04DCE20D9716E4C4ACB6521E2F57A8A3D68445_inline (HumanoidTracking_t3FE172B07552D5F70DCD9385CFDB6C03DF3AF979* __this, const RuntimeMethod* method) 
+{
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Scripts/HumanoidTracking.cs:124>
+		int32_t L_0 = __this->___m_Tracking;
+		return L_0;
+	}
+}
+// Method Definition Index: 76542
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void HumanoidTracking_set_Tracking_mD8D6BB9A9CD1BF95CB47286F7ED39AFBA69014D9_inline (HumanoidTracking_t3FE172B07552D5F70DCD9385CFDB6C03DF3AF979* __this, int32_t ___0_value, const RuntimeMethod* method) 
+{
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Scripts/HumanoidTracking.cs:124>
+		int32_t L_0 = ___0_value;
+		__this->___m_Tracking = L_0;
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Scripts/HumanoidTracking.cs:124>
+		return;
+	}
+}
+// Method Definition Index: 76299
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void BodyManager_set_EnableTrackingLog_mA15231EB3F7894BCFD4D9EB9C72DBFF871FF1361_inline (BodyManager_tC2F2528B290757CB0FB5804C9FDA9DB22C5C1828* __this, bool ___0_value, const RuntimeMethod* method) 
+{
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Scripts/BodyManager.cs:862>
+		bool L_0 = ___0_value;
+		__this->___m_EnableTrackingLog = L_0;
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Scripts/BodyManager.cs:862>
+		return;
+	}
+}
+// Method Definition Index: 76548
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void HumanoidTracking_set_AvatarOffset_m534ED1139A3344C6C9F88E6BA2CA32326B9B9397_inline (HumanoidTracking_t3FE172B07552D5F70DCD9385CFDB6C03DF3AF979* __this, Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___0_value, const RuntimeMethod* method) 
+{
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Scripts/HumanoidTracking.cs:143>
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_0 = ___0_value;
+		__this->___m_AvatarOffset = L_0;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___m_AvatarOffset), (void*)L_0);
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Scripts/HumanoidTracking.cs:143>
+		return;
+	}
+}
+// Method Definition Index: 43252
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Quaternion__ctor_m868FD60AA65DD5A8AC0C5DEB0608381A8D85FCD8_inline (Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974* __this, float ___0_x, float ___1_y, float ___2_z, float ___3_w, const RuntimeMethod* method) 
+{
+	{
+		float L_0 = ___0_x;
+		__this->___x = L_0;
+		float L_1 = ___1_y;
+		__this->___y = L_1;
+		float L_2 = ___2_z;
+		__this->___z = L_2;
+		float L_3 = ___3_w;
+		__this->___w = L_3;
+		return;
+	}
+}
+// Method Definition Index: 43263
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 Quaternion_get_eulerAngles_m2DB5158B5C3A71FD60FC8A6EE43D3AAA1CFED122_inline (Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974* __this, const RuntimeMethod* method) 
+{
+	{
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_0;
+		L_0 = Quaternion_Internal_ToEulerRad_mC5BD020889B5A4FB6894CFB69A5D4C07B321B919(__this, NULL);
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_1;
+		L_1 = Vector3_op_Multiply_m87BA7C578F96C8E49BB07088DAAC4649F83B0353_inline(L_0, (57.2957802f), NULL);
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_2;
+		L_2 = Quaternion_Internal_MakePositive_m73E2D01920CB0DFE661A55022C129E8617F0C9A8(L_1, NULL);
+		return L_2;
+	}
+}
+// Method Definition Index: 43059
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Color_tD001788D726C3A7F1379BEED0260B9591F440C1F Color_get_red_mA2E53E7173FDC97E68E335049AB0FAAEE43A844D_inline (const RuntimeMethod* method) 
+{
+	{
+		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_0;
+		memset((&L_0), 0, sizeof(L_0));
+		Color__ctor_m3786F0D6E510D9CFA544523A955870BD2A514C8C_inline((&L_0), (1.0f), (0.0f), (0.0f), (1.0f), NULL);
+		return L_0;
+	}
+}
+// Method Definition Index: 43212
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 Vector3_get_zero_m0C1249C3F25B1C70EAD3CC8B31259975A457AE39_inline (const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_0 = ((Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2_StaticFields*)il2cpp_codegen_static_fields_for(Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2_il2cpp_TypeInfo_var))->___zeroVector;
+		return L_0;
+	}
+}
+// Method Definition Index: 76595
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR TrackerIndexBaseU5BU5D_tFB2B0143DB0A1A68AC66F7AA265AC95C0F98CB8D* BodyRoleData_get_TrackerIndexInputs_mF8ECD71D5D895CF4F415B1FD87DC5276846816FF_inline (BodyRoleData_tB3E30ECEB3632C49D288739F6240594BC9BFB264* __this, const RuntimeMethod* method) 
+{
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Scripts/Poses/BodyRoleData.cs:81>
+		TrackerIndexBaseU5BU5D_tFB2B0143DB0A1A68AC66F7AA265AC95C0F98CB8D* L_0 = __this->___m_TrackerIndexInputs;
+		return L_0;
+	}
+}
+// Method Definition Index: 76597
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR TrackerTypeBaseU5BU5D_tEB7DF4D71E5E20B49B61068EF62E69A6663F2C39* BodyRoleData_get_TrackerTypeInputs_m0229804B38C763B8EACF036B39D367ECB8429DD1_inline (BodyRoleData_tB3E30ECEB3632C49D288739F6240594BC9BFB264* __this, const RuntimeMethod* method) 
+{
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Scripts/Poses/BodyRoleData.cs:127>
+		TrackerTypeBaseU5BU5D_tEB7DF4D71E5E20B49B61068EF62E69A6663F2C39* L_0 = __this->___m_TrackerTypeInputs;
+		return L_0;
+	}
+}
+// Method Definition Index: 76594
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t BodyRoleData_get_TrackerPose_mD5128E8C847E320EB4F98D72A88B9DCF11FA3BFE_inline (BodyRoleData_tB3E30ECEB3632C49D288739F6240594BC9BFB264* __this, const RuntimeMethod* method) 
+{
+	{
+		//<source_info:C:/Users/Studis/FocusGuard/Assets/Samples/VIVE OpenXR Plugin/2.5.1/VIVE OpenXR Toolkits/Toolkits/BodyTracking(experimental)/Scripts/Poses/BodyRoleData.cs:68>
+		int32_t L_0 = __this->___m_TrackerPose;
+		return L_0;
+	}
+}
+// Method Definition Index: 9283
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t List_1_get_Count_m4407E4C389F22B8CEC282C15D56516658746C383_gshared_inline (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, const RuntimeMethod* method) 
+{
+	{
+		int32_t L_0 = __this->____size;
+		return L_0;
+	}
+}
+// Method Definition Index: 43025
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Color__ctor_m3786F0D6E510D9CFA544523A955870BD2A514C8C_inline (Color_tD001788D726C3A7F1379BEED0260B9591F440C1F* __this, float ___0_r, float ___1_g, float ___2_b, float ___3_a, const RuntimeMethod* method) 
+{
+	{
+		float L_0 = ___0_r;
+		__this->___r = L_0;
+		float L_1 = ___1_g;
+		__this->___g = L_1;
+		float L_2 = ___2_b;
+		__this->___b = L_2;
+		float L_3 = ___3_a;
+		__this->___a = L_3;
+		return;
+	}
+}

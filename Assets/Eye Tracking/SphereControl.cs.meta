@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: a252f70032f048640baf183d18621a72
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - RightSphere: {instanceID: 0}
+  - LeftSphere: {instanceID: 0}
+  - TriggerR: {fileID: 1469815666870366873, guid: 4774c2793d02a0142baed37a01688512, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

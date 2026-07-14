@@ -14,7 +14,7 @@ namespace Assets.UISwap
         public void ApplyEffect(double strength)
         {
             var strengthAsFloat = Convert.ToSingle(strength);
-            var newColor = new Color(_color.r * strengthAsFloat, _color.g * strengthAsFloat, _color.b * strengthAsFloat);
+            var newColor = new Color(_color.r * strengthAsFloat, _color.g * strengthAsFloat, _color.b * strengthAsFloat, strengthAsFloat);
             Camera.main.backgroundColor = newColor;
         }
     }
