@@ -5,8 +5,7 @@ using UnityEngine;
 
 public class UISwap : MonoBehaviour
 {
-    public GameObject Focused;
-    public GameObject Distracted;
+    public GameObject Screen;
     public GameObject GazeTrigger;
 
     private readonly IFocusEffect focusEffect;
@@ -16,7 +15,7 @@ public class UISwap : MonoBehaviour
         focusEffect = new LinearEffect(this, new UnionEffect(new IFocusEffect[]
         {
             new LogStrengthEffect(),
-            new BackgroundColorEffect(new Color(0, 150 / 255.0f, 130 / 255.0f)),
+            //new BackgroundColorEffect(new Color(0, 150 / 255.0f, 130 / 255.0f, 0.0f)),
             new VignetteEffect(),
         }
         ));

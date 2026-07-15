@@ -27,6 +27,10 @@ extern void UpdateRightGaze__ctor_m579D2C300ADB77B3982AAC67CC4426D10B825438 (voi
 extern void UpdateRightPupil_Start_mDFAD8C49C2F17344B2F08CF84BE5036F7442FC2D (void);
 extern void UpdateRightPupil_Update_m18E5BFDED3F61E9CB72791E30E6D380C8832FEDC (void);
 extern void UpdateRightPupil__ctor_mCA147073986A49EA6D1C122221CD310ABAFDB699 (void);
+extern void PlanarPassthrough_Start_mE9EA7C2019DB42BE8B81EC972EF93D5A5CA3F512 (void);
+extern void PlanarPassthrough_Update_mF30265438880F6B8DC3BAEC7643C0B9DD5A61606 (void);
+extern void PlanarPassthrough_TogglePassthrough_m5B4B60FDC473FC098902394782A096DEE35B385B (void);
+extern void PlanarPassthrough__ctor_mDF78334C8BE459D646D9F43098419308076C29F5 (void);
 extern void Readme__ctor_m69C325C4C171DCB0312B646A9034AA91EA8C39C6 (void);
 extern void Section__ctor_m5F732533E4DFC0167D965E5F5DB332E46055399B (void);
 extern void UISwap__ctor_mF5B315ACED056A69F26B10EC8D5223FE58436B3E (void);
@@ -52,7 +56,7 @@ extern void UnionEffect_ApplyEffect_m6A8DBBF000F76014075CB58B0955BC660D160D06 (v
 extern void VignetteEffect__ctor_mFDA42B78E6C96AE92BEB7DBDF1E0605373941890 (void);
 extern void VignetteEffect_ApplyEffect_m8DFBA8DC781792B8CA608282AB9038AC49F6947E (void);
 extern void VignetteEffect_TryFindVignette_m1E49C5314CC03573E00A08A8509280FAC3B7ED81 (void);
-static Il2CppMethodPointer s_methodPointers[46] = 
+static Il2CppMethodPointer s_methodPointers[50] = 
 {
 	SphereControl_Update_m2C7B52D664DF3115E65EC3570025FC244B4D3FD0,
 	SphereControl__ctor_mCA64CF5625A23BAC067A35057FE3B3578CD6C4BD,
@@ -74,6 +78,10 @@ static Il2CppMethodPointer s_methodPointers[46] =
 	UpdateRightPupil_Start_mDFAD8C49C2F17344B2F08CF84BE5036F7442FC2D,
 	UpdateRightPupil_Update_m18E5BFDED3F61E9CB72791E30E6D380C8832FEDC,
 	UpdateRightPupil__ctor_mCA147073986A49EA6D1C122221CD310ABAFDB699,
+	PlanarPassthrough_Start_mE9EA7C2019DB42BE8B81EC972EF93D5A5CA3F512,
+	PlanarPassthrough_Update_mF30265438880F6B8DC3BAEC7643C0B9DD5A61606,
+	PlanarPassthrough_TogglePassthrough_m5B4B60FDC473FC098902394782A096DEE35B385B,
+	PlanarPassthrough__ctor_mDF78334C8BE459D646D9F43098419308076C29F5,
 	Readme__ctor_m69C325C4C171DCB0312B646A9034AA91EA8C39C6,
 	Section__ctor_m5F732533E4DFC0167D965E5F5DB332E46055399B,
 	UISwap__ctor_mF5B315ACED056A69F26B10EC8D5223FE58436B3E,
@@ -101,8 +109,12 @@ static Il2CppMethodPointer s_methodPointers[46] =
 	VignetteEffect_ApplyEffect_m8DFBA8DC781792B8CA608282AB9038AC49F6947E,
 	VignetteEffect_TryFindVignette_m1E49C5314CC03573E00A08A8509280FAC3B7ED81,
 };
-static const int32_t s_InvokerIndices[46] = 
+static const int32_t s_InvokerIndices[50] = 
 {
+	16681,
+	16681,
+	16681,
+	16681,
 	16681,
 	16681,
 	16681,
@@ -154,7 +166,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	46,
+	50,
 	s_methodPointers,
 	0,
 	NULL,

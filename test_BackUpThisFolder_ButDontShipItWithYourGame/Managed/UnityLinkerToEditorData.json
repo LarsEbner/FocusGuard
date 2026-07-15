@@ -1023,9 +1023,7 @@
           },
           {
             "name": "SphereCollider",
-            "scenes": [
-              "Assets/Scenes/Focus.unity"
-            ],
+            "scenes": [],
             "dependencyType": 0,
             "icon": null
           },

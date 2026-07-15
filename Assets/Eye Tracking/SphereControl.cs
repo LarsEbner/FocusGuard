@@ -10,7 +10,7 @@ public class SphereControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var triggerPressed = (TriggerR.action.ReadValue<float>() > 0.5f);
+        var triggerPressed = (TriggerR.action.ReadValue<float>() < 0.5f);
         if (triggerPressed)
         {
             RightSphere.SetActive(false);
