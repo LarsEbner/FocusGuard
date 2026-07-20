@@ -108,3 +108,6 @@ InitTestScene*.unity*
 # Backup files
 _Recovery
 _Recovery.meta
+
+# Code Editor files
+.vscode
