@@ -324,7 +324,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8135023674665499069, guid: 58d0a4ac86f2348deb02f3880c71378e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8518324294302271954, guid: 58d0a4ac86f2348deb02f3880c71378e, type: 3}
       propertyPath: m_LocalScale.x
@@ -666,7 +666,7 @@ Camera:
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
-  m_HDR: 1
+  m_HDR: 0
   m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
@@ -783,7 +783,7 @@ GameObject:
   - component: {fileID: 676082731}
   - component: {fileID: 676082734}
   - component: {fileID: 676082733}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -956,7 +956,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 1
+  m_RenderPostProcessing: 0
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -1138,7 +1138,7 @@ Camera:
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
-  m_HDR: 1
+  m_HDR: 0
   m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
@@ -1609,7 +1609,7 @@ GameObject:
   - component: {fileID: 838068427}
   - component: {fileID: 838068429}
   - component: {fileID: 838068428}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Gaze Interactor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1986,7 +1986,7 @@ GameObject:
   m_Component:
   - component: {fileID: 863371477}
   - component: {fileID: 863371478}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RightGaze
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2047,7 +2047,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 868886408}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.6947801}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.1, y: 0.10000004, z: 0.10000004}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2055,7 +2055,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.07501, y: 1.5}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &868886410
@@ -2083,7 +2083,7 @@ GameObject:
   - component: {fileID: 934807448}
   - component: {fileID: 934807450}
   - component: {fileID: 934807449}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Gaze Interactor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2628,7 +2628,7 @@ Transform:
   m_GameObject: {fileID: 985550722}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.07501, y: -0, z: 2.69478}
+  m_LocalPosition: {x: 0, y: -0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2853,7 +2853,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1409620016}
   - component: {fileID: 1409620017}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: LeftGaze
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3183,7 +3183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3971242bd0d39d44f8b7b86fc791b33d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VIVE.OpenXR.CompositionLayer.Samples.Passthrough.PlanarPassthrough
-  TriggerL: {fileID: 7904272356298805229, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  TriggerL: {fileID: -4289430672226363583, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!1 &1655376680
 GameObject:
   m_ObjectHideFlags: 0
@@ -3277,7 +3277,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1706987665
 Transform:
   m_ObjectHideFlags: 0
@@ -3287,7 +3287,7 @@ Transform:
   m_GameObject: {fileID: 1706987664}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.9488499, y: 2.32284, z: -0.5402801}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3452,7 +3452,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SphereControl
   RightSphere: {fileID: 1785867741}
   LeftSphere: {fileID: 676082730}
-  TriggerR: {fileID: 0}
+  TriggerR: {fileID: 7904272356298805229, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!4 &1771850424
 Transform:
   m_ObjectHideFlags: 0
@@ -3479,7 +3479,7 @@ GameObject:
   - component: {fileID: 1785867742}
   - component: {fileID: 1785867745}
   - component: {fileID: 1785867744}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3776,7 +3776,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2074328111
 Transform:
   m_ObjectHideFlags: 0

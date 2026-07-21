@@ -15,7 +15,7 @@ public class UISwap : MonoBehaviour
         focusEffect = new LinearEffect(this, new UnionEffect(new IFocusEffect[]
         {
             new LogStrengthEffect(),
-            new BackgroundColorEffect(new Color(0, 150 / 255.0f, 130 / 255.0f, 0.0f)),
+            new BackgroundColorEffect(new Color(0, 150 / 255.0f, 130 / 255.0f, 1.0f)),
             new VignetteEffect(),
         }
         ));
@@ -23,7 +23,7 @@ public class UISwap : MonoBehaviour
 
     public void LooksAtScreen()
     {
-        focusEffect.ApplyEffect(1);
+        focusEffect.ApplyEffect(0);
     }
 
     public void LooksAway()
