@@ -1,33 +1,9 @@
 using Assets.UISwap;
-using System;
 using System.Collections;
 using UnityEngine;
 
-public class UISwap : MonoBehaviour
+public class DistractionDetection : MonoBehaviour
 {
-    /*public GameObject Screen;
-    public GameObject GazeTrigger;
-
-    private readonly IFocusEffect focusEffect;
-
-    public UISwap()
-    {
-        focusEffect = new LinearEffect(this, new UnionEffect(new IFocusEffect[]
-        {
-            new RangedEffect(new BackgroundColorEffect(Color.white), 0.5f, 1.0f, null)
-        }
-        ), effectLength: 10.0f);
-    }
-
-    public void LooksAtScreen()
-    {
-        focusEffect.ApplyEffect(0);
-    }
-
-    public void LooksAway()
-    {
-        focusEffect.ApplyEffect(1);
-    }*/
     public GameObject Screen;
     public GameObject GazeTrigger;
 
@@ -39,7 +15,7 @@ public class UISwap : MonoBehaviour
 
     int shortDistractionCount = 0;
 
-    public UISwap()
+    public DistractionDetection()
     {
         focusEffect = new LinearEffect(this, new UnionEffect(new IFocusEffect[]
         {

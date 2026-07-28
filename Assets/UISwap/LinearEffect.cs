@@ -20,6 +20,8 @@ namespace Assets.UISwap
         private double lastStrength = 0;
         private double currentStrength = 0;
 
+        private Coroutine _runningCoroutine;
+
         /// <summary>
         /// Creates a new instance of this class.
         /// </summary>
@@ -38,8 +40,12 @@ namespace Assets.UISwap
         public void ApplyEffect(double strength)
         {
             lastStrength = currentStrength;
-            _coroutineTrigger.StopAllCoroutines();
-            _coroutineTrigger.StartCoroutine(ApplyLinearEffect(strength));
+            //removed StopAllCoroutines();
+            if (_runningCoroutine != null)
+            {
+                _coroutineTrigger.StopCoroutine(_runningCoroutine);
+            }
+            _runningCoroutine = _coroutineTrigger.StartCoroutine(ApplyLinearEffect(strength));
         }
 
         public IEnumerator ApplyLinearEffect(double strength)
@@ -56,6 +62,7 @@ namespace Assets.UISwap
                 currentStrength = strength < lastStrength ? Math.Max(strength, rawStrength) : Math.Min(strength, rawStrength);
                 _effect.ApplyEffect(currentStrength);
             }
+            _runningCoroutine = null;
         }
     }
 }
