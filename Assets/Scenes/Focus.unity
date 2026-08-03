@@ -745,7 +745,7 @@ MonoBehaviour:
     m_Bits: 8
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -1010,7 +1010,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -2134,9 +2134,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UISwap
   Screen: {fileID: 776454413}
   GazeTrigger: {fileID: 978221848}
-  shortDistractionLimit: 2
-  timeForLongDistractions: 10
-  timeForShortDistractions: 3
 --- !u!1 &934807447
 GameObject:
   m_ObjectHideFlags: 0
@@ -3342,7 +3339,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1706987665
 Transform:
   m_ObjectHideFlags: 0

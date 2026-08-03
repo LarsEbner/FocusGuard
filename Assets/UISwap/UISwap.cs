@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class UISwap : MonoBehaviour
 {
-    /*public GameObject Screen;
+    public GameObject Screen;
     public GameObject GazeTrigger;
 
     private readonly IFocusEffect focusEffect;
@@ -14,7 +14,9 @@ public class UISwap : MonoBehaviour
     {
         focusEffect = new LinearEffect(this, new UnionEffect(new IFocusEffect[]
         {
-            new RangedEffect(new BackgroundColorEffect(Color.white), 0.5f, 1.0f, null)
+            new RangedEffect(new BackgroundColorEffect(Color.white), 0.5f, 1.0f, null),
+            new VignetteEffect(),
+            new LogStrengthEffect(),
         }
         ), effectLength: 10.0f);
     }
@@ -27,7 +29,7 @@ public class UISwap : MonoBehaviour
     public void LooksAway()
     {
         focusEffect.ApplyEffect(1);
-    }*/
+    }/*
     public GameObject Screen;
     public GameObject GazeTrigger;
 
@@ -47,7 +49,7 @@ public class UISwap : MonoBehaviour
         }
         ), effectLength: 10.0f);
     }
-
+    /*
     public void LooksAtScreen()
     {
         //StopCoroutine(LongDistractions());
@@ -77,5 +79,5 @@ public class UISwap : MonoBehaviour
         yield return new WaitForSecondsRealtime(timeForShortDistractions);
         shortDistractionCount--;
         Debug.Log("ShortDistractionCount: " + shortDistractionCount);
-    }
+    }*/
 }
