@@ -112,3 +112,6 @@ _Recovery.meta
 
 # Code Editor files
 .vscode
+
+# Lokale Projektarchive
+*.zip
