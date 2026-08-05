@@ -3,6 +3,12 @@ using System.Text.RegularExpressions;
 using UnityEngine;
 using Unity.InferenceEngine;
 using FF = Unity.InferenceEngine.Functional;
+using System;
+using System.Collections.Generic;
+using System.Text.RegularExpressions;
+using UnityEngine;
+using Unity.InferenceEngine;
+
 
 public class LaptopCameraYoloDetector : MonoBehaviour
 {
@@ -19,6 +25,8 @@ public class LaptopCameraYoloDetector : MonoBehaviour
 
     private const int ModelInputSize = 640; // YOLOv8 Standard-Export
     private const BackendType Backend = BackendType.GPUCompute;
+    public event Action<int> OnPersonCountUpdated;
+    private int lastLoggedPersonCount = -1;
 
     private WebCamTexture webCamTexture;
     private Worker worker;
@@ -103,6 +111,8 @@ public class LaptopCameraYoloDetector : MonoBehaviour
         RunDetection();
     }
 
+
+
     private void RunDetection()
     {
         using Tensor<float> inputTensor = new Tensor<float>(new TensorShape(1, 3, ModelInputSize, ModelInputSize));
@@ -110,24 +120,28 @@ public class LaptopCameraYoloDetector : MonoBehaviour
 
         worker.Schedule(inputTensor);
 
-        // Die Outputs sind schon NMS-gefiltert -- kein DecodeDetections/NonMaxSuppression mehr nötig
         using var coordsCpu = (worker.PeekOutput("output_0") as Tensor<float>).ReadbackAndClone();
         using var labelIDsCpu = (worker.PeekOutput("output_1") as Tensor<int>).ReadbackAndClone();
 
         int boxesFound = coordsCpu.shape[0];
+        int personCount = 0;
+
         for (int n = 0; n < boxesFound; n++)
         {
-            float centerX = coordsCpu[n, 0];
-            float centerY = coordsCpu[n, 1];
-            float width = coordsCpu[n, 2];
-            float height = coordsCpu[n, 3];
-
             int classId = labelIDsCpu[n];
-            string label = classId < classNames.Length ? classNames[classId] : $"Unbekannt ({classId})";
-
-            Debug.Log($"{label} erkannt bei ({centerX:F0},{centerY:F0}), Größe {width:F0}x{height:F0}");
+            if (classId < classNames.Length && classNames[classId] == "person")
+                personCount++;
         }
-    }
+
+        OnPersonCountUpdated?.Invoke(personCount);
+
+        // Nur loggen, wenn sich die Anzahl tatsächlich geändert hat -- kein Spam mehr pro Frame
+        if (personCount != lastLoggedPersonCount)
+        {
+            Debug.Log($"Erkannte Personen: {personCount}");
+            lastLoggedPersonCount = personCount;
+        }
+}
 
     private void OnDisable()
     {

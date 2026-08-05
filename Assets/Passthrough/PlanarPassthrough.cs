@@ -31,15 +31,30 @@ public class PlanarPassthrough : MonoBehaviour
     {
         if (!passthroughEnabled)
         {
-            PassthroughAPI.CreatePlanarPassthrough(out passthrough, LayerType.Underlay);
-            passthroughEnabled = true;
-            Camera.main.backgroundColor = new Color(1.0f, 1.0f, 1.0f, 0.0f);
+            EnablePassthrough();
         }
         else
         {
-            PassthroughAPI.DestroyPassthrough(passthrough);
-            passthroughEnabled = false;
-            Camera.main.backgroundColor = new Color(0.0f, 1.0f, 0.0f, 0.0f);
+            DisablePassthrough();
         }
+    }
+    // NEU: gezielt aktivieren, unabhängig vom aktuellen Zustand -- für den UI-Button
+    public void EnablePassthrough()
+    {
+        if (passthroughEnabled) return; // schon an, nichts tun
+
+        PassthroughAPI.CreatePlanarPassthrough(out passthrough, LayerType.Underlay);
+        passthroughEnabled = true;
+        Camera.main.backgroundColor = new Color(1.0f, 1.0f, 1.0f, 0.0f);
+    }
+
+    // NEU: gezielt deaktivieren
+    public void DisablePassthrough()
+    {
+        if (!passthroughEnabled) return; // schon aus, nichts tun
+
+        PassthroughAPI.DestroyPassthrough(passthrough);
+        passthroughEnabled = false;
+        Camera.main.backgroundColor = new Color(0.0f, 1.0f, 0.0f, 0.0f);
     }
 }

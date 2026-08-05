@@ -7,6 +7,7 @@ public class UISwap : MonoBehaviour
 {
     public GameObject Screen;
     public GameObject GazeTrigger;
+    private bool passthroughOverride = false;
 
     private readonly IFocusEffect focusEffect;
 
@@ -28,8 +29,16 @@ public class UISwap : MonoBehaviour
 
     public void LooksAway()
     {
+        if (passthroughOverride) return;
         focusEffect.ApplyEffect(1);
-    }/*
+    }
+    public void ForcePassthroughOverride(bool active)
+    {
+        passthroughOverride = active;
+        if (active) focusEffect.ApplyEffect(0);
+    }
+
+    /*
     public GameObject Screen;
     public GameObject GazeTrigger;
 
