@@ -1,4 +1,4 @@
-﻿namespace Assets.UISwap
+﻿namespace Assets.Effects
 {
     internal class UnionEffect : IFocusEffect
     {
@@ -9,7 +9,7 @@
             _effects = effects;
         }
 
-        public void ApplyEffect(double strength)
+        public void ApplyEffect(float strength)
         {
             foreach (var effect in _effects)
             {

@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlTypes;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Assets.UISwap
+﻿namespace Assets.Effects
 {
     /// <summary>
     /// Interface for applying effects to refocus.
@@ -18,6 +11,8 @@ namespace Assets.UISwap
         /// A strength of 1 means the effect should be fully applied.
         /// </summary>
         /// <param name="strength">A value between 0 and 1 regarding how much the effect should be applied.</param>
-        public void ApplyEffect(double strength);
+        public void ApplyEffect(float strength);
+
+        public IFocusEffect Invert() => new InvertedEffect(this);
     }
 }

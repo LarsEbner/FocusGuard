@@ -1,4 +1,4 @@
-using Assets.UISwap;
+using Assets.Effects; 
 using System.Collections;
 using UnityEngine;
 
@@ -11,17 +11,18 @@ public class DistractionDetection : MonoBehaviour
     public int timeForLongDistractions;
     public int timeForShortDistractions;
 
-    private readonly IFocusEffect focusEffect;
+    private IFocusEffect focusEffect;
 
     int shortDistractionCount = 0;
 
-    public DistractionDetection()
+    public void Start()
     {
         focusEffect = new LinearEffect(this, new UnionEffect(new IFocusEffect[]
         {
             new RangedEffect(new BackgroundColorEffect(Color.white), 0.0f, 0.5f, null)
         }
         ), effectLength: 10.0f);
+        focusEffect.ApplyEffect(0);
     }
 
     public void LooksAtScreen()

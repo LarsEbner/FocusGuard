@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace Assets.UISwap
+namespace Assets.Effects
 {
     /// <summary>
     /// Applies another focus effect with a linear gradient.
@@ -17,8 +17,8 @@ namespace Assets.UISwap
         private readonly float _effectLength;
         private readonly float _tickDuration;
 
-        private double lastStrength = 0;
-        private double currentStrength = 0;
+        private float lastStrength = 0;
+        private float currentStrength = 0;
 
         private Coroutine _runningCoroutine;
 
@@ -37,10 +37,9 @@ namespace Assets.UISwap
             _tickDuration = tickDuration;
         }
 
-        public void ApplyEffect(double strength)
+        public void ApplyEffect(float strength)
         {
             lastStrength = currentStrength;
-            //removed StopAllCoroutines();
             if (_runningCoroutine != null)
             {
                 _coroutineTrigger.StopCoroutine(_runningCoroutine);
@@ -48,7 +47,7 @@ namespace Assets.UISwap
             _runningCoroutine = _coroutineTrigger.StartCoroutine(ApplyLinearEffect(strength));
         }
 
-        public IEnumerator ApplyLinearEffect(double strength)
+        public IEnumerator ApplyLinearEffect(float strength)
         {
             var tickEffectDifference = 1.0f / (_effectLength / _tickDuration);
             var currentDifference = 0.0f;

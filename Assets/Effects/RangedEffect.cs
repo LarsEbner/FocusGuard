@@ -1,14 +1,7 @@
 using UnityEngine;
 
-namespace Assets.UISwap
+namespace Assets.Effects
 {
-    /// <summary>
-    /// Wrapt einen bestehenden IFocusEffect und remapt die eingehende Stärke
-    /// so, dass der Effekt erst ab "start" beginnt, bei "peak" sein Maximum (1)
-    /// erreicht und ab "end" wieder auf 0 zurückgeht.
-    /// - start == null  -> Effekt ist von Anfang an (s=0) bis zum Peak durchgehend voll aktiv.
-    /// - end == null    -> Effekt bleibt nach dem Peak durchgehend bei 1 (fällt nie wieder ab).
-    /// </summary>
     internal class RangedEffect : IFocusEffect
     {
         private readonly IFocusEffect _effect;
@@ -24,9 +17,9 @@ namespace Assets.UISwap
             _end = end;
         }
 
-        public void ApplyEffect(double strength)
+        public void ApplyEffect(float strength)
         {
-            var s = Mathf.Clamp01((float)strength);
+            var s = Mathf.Clamp01(strength);
             var mapped = ComputeValue(s, _start, _peak, _end);
             _effect.ApplyEffect(mapped);
         }

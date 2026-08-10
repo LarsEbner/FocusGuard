@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 
-namespace Assets.UISwap
+namespace Assets.Effects
 {
     internal class LogStrengthEffect : IFocusEffect
     {
-        public void ApplyEffect(double strength)
+        public void ApplyEffect(float strength)
         {
             Debug.Log("Focus effect strength: " + strength);
         }
