@@ -109,6 +109,8 @@ InitTestScene*.unity*
 # Backup files
 _Recovery
 _Recovery.meta
+test_BackUpThisFolder_ButDontShipItWithYourGame/
+FocusGuard_BurstDebugInformation_DoNotShip/
 
 # Code Editor files
 .vscode
