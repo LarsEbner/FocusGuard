@@ -148,6 +148,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a8818257e2b170438b0190cee74e1de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FocusGuard.Detection.DetectionManager
+  frameProvider: {fileID: 0}
+  objectDetector: {fileID: 0}
+  roomAnalyzer: {fileID: 0}
 --- !u!4 &9982071
 Transform:
   m_ObjectHideFlags: 0
@@ -3289,8 +3292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3971242bd0d39d44f8b7b86fc791b33d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VIVE.OpenXR.CompositionLayer.Samples.Passthrough.PlanarPassthrough
-  enableOnStart: 1
-  toggleAction: {fileID: 0}
+  TriggerL: {fileID: -4289430672226363583, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!1 &1655376680
 GameObject:
   m_ObjectHideFlags: 0
