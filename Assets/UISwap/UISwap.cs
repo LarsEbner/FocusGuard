@@ -1,33 +1,32 @@
 using Assets.Effects;
 using UnityEngine;
+using static Assets.Effects.FocusEffects;
 
 public class UISwap : MonoBehaviour
 {
     public GameObject Screen;
     public GameObject GazeTrigger;
 
-    private IFocusEffect focusEffect;
+    private FocusEffect focusEffect;
 
     public void Start()
     {
-        focusEffect = new LinearEffect(this, new UnionEffect(new IFocusEffect[]
-        {
-            new RangedEffect(new BackgroundColorEffect(Color.white), 0.5f, 1.0f, null),
-            ((IFocusEffect)new PassthroughEffect()).Invert(),
-            new VignetteEffect(),
-            new LogStrengthEffect(),
-        }
-        ), effectLength: 10.0f);
-        focusEffect.ApplyEffect(0);
+        focusEffect = Union(
+            BackgroundColor(Color.white).AddRange(0.5f, 1.0f, null),
+            Passthrough().Invert(),
+            Vignette(),
+            LogStrength()
+        ).AddLinearTransition(this, effectLength: 10.0f);
+        focusEffect(0);
     }
 
     public void LooksAtScreen()
     {
-        focusEffect.ApplyEffect(0);
+        focusEffect(0);
     }
 
     public void LooksAway()
     {
-        focusEffect.ApplyEffect(1);
+        focusEffect(1);
     }
 }

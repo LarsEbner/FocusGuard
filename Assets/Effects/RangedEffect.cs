@@ -1,15 +1,16 @@
 using UnityEngine;
+using static Assets.Effects.FocusEffects;
 
 namespace Assets.Effects
 {
-    internal class RangedEffect : IFocusEffect
+    internal class RangedEffect
     {
-        private readonly IFocusEffect _effect;
+        private readonly FocusEffect _effect;
         private readonly float? _start;
         private readonly float _peak;
         private readonly float? _end;
 
-        public RangedEffect(IFocusEffect effect, float? start, float peak, float? end)
+        public RangedEffect(FocusEffect effect, float? start, float peak, float? end)
         {
             _effect = effect;
             _start = start;
@@ -21,7 +22,7 @@ namespace Assets.Effects
         {
             var s = Mathf.Clamp01(strength);
             var mapped = ComputeValue(s, _start, _peak, _end);
-            _effect.ApplyEffect(mapped);
+            _effect(mapped);
         }
 
         private static float ComputeValue(float s, float? start, float peak, float? end)

@@ -1,18 +1,69 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 namespace Assets.Effects
 {
     internal static class FocusEffects
     {
-        public static IFocusEffect CreateBackgroundColorEffect(Color color, Color? baseColor = null)
+        /// <summary>
+        /// Applies the focus effect according to a given strength.
+        /// A strength of 0 means the effect should be cleared.
+        /// A strength of 1 means the effect should be fully applied.
+        /// </summary>
+        /// <param name="strength">A value between 0 and 1 regarding how much the effect should be applied.</param>
+        public delegate void FocusEffect(float strength);
+
+        public static FocusEffect BackgroundColor(Color color, Color? baseColor = null)
         {
-            throw new NotImplementedException();
-            //return (strength) => Camera.main.backgroundColor = Color.Lerp(baseColor ?? new Color(0, 0, 0, 0), color, strength);
+            var from = baseColor ?? new Color(0, 0, 0, 0);
+            return strength => Camera.main.backgroundColor = Color.Lerp(from, color, strength);
+        }
+
+        public static FocusEffect LogStrength()
+        {
+            return strength => Debug.Log("Focus effect strength: " + strength);
+        }
+
+        public static FocusEffect Passthrough()
+        {
+            return new PassthroughEffect().ApplyEffect;
+        }
+
+        public static FocusEffect Volume<T>(Action<T, float> effect) where T : VolumeComponent
+        {
+            return new VolumeEffect<T>(effect).ApplyEffect;
+        }
+
+        public static FocusEffect Blur(float sharpAperture = 2.5f, float maxBlurAperture = 0f)
+        {
+            return Volume<DepthOfField>((depthOfField, strength) => depthOfField.focusDistance.Override(Mathf.Lerp(sharpAperture, maxBlurAperture, strength)));
+        }
+
+        public static FocusEffect Union(params FocusEffect[] effects)
+        {
+            return strength => Array.ForEach(effects, effect => effect(strength));
+        }
+
+        public static FocusEffect Vignette()
+        {
+            return Volume<Vignette>((vignette, strength) => vignette.intensity.Override(strength));
+        }
+
+        public static FocusEffect Invert(this FocusEffect effect)
+        {
+            return strength => effect(Mathf.Clamp01(1 - strength));
+        }
+
+        public static FocusEffect AddLinearTransition(this FocusEffect effect, MonoBehaviour coroutineTrigger, float effectLength = 5.0f, float tickDuration = 0.04f)
+        {
+            return new LinearEffect(effect, coroutineTrigger, effectLength, tickDuration).ApplyEffect;
+        }
+
+        public static FocusEffect AddRange(this FocusEffect effect, float? start, float peak, float? end)
+        {
+            return new RangedEffect(effect, start, peak, end).ApplyEffect;
         }
     }
 }

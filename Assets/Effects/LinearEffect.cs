@@ -1,19 +1,20 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
+using static Assets.Effects.FocusEffects;
 
 namespace Assets.Effects
 {
     /// <summary>
-    /// Applies another focus effect with a linear gradient.
+    /// Applies another focus effect with a linear transition.
     /// When setting the strength of this effect, the other effect
     /// is not fully applied immediatly.
     /// Instead, the effect is only partially applied in a linear transition.
     /// </summary>
-    internal class LinearEffect : IFocusEffect
+    internal class LinearEffect
     {
+        private readonly FocusEffect _effect;
         private readonly MonoBehaviour _coroutineTrigger;
-        private readonly IFocusEffect _effect;
         private readonly float _effectLength;
         private readonly float _tickDuration;
 
@@ -29,10 +30,10 @@ namespace Assets.Effects
         /// <param name="effect">The effect that should be applied</param>
         /// <param name="effectLength">How long - in seconds - a full application (from 0 to 1) should take</param>
         /// <param name="tickDuration">Time - in seconds - between updates of the effect</param>
-        public LinearEffect(MonoBehaviour coroutineTrigger, IFocusEffect effect, float effectLength = 5.0f, float tickDuration = 0.04f)
+        public LinearEffect(FocusEffect effect, MonoBehaviour coroutineTrigger, float effectLength, float tickDuration)
         {
-            _coroutineTrigger = coroutineTrigger;
             _effect = effect;
+            _coroutineTrigger = coroutineTrigger;
             _effectLength = effectLength;
             _tickDuration = tickDuration;
         }
@@ -59,7 +60,7 @@ namespace Assets.Effects
 
                 var rawStrength = lastStrength + (strength < lastStrength ? -1 : 1) * currentDifference;
                 currentStrength = strength < lastStrength ? Math.Max(strength, rawStrength) : Math.Min(strength, rawStrength);
-                _effect.ApplyEffect(currentStrength);
+                _effect(currentStrength);
             }
             _runningCoroutine = null;
         }

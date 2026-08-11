@@ -4,7 +4,7 @@ using XrPassthroughHTC = VIVE.OpenXR.Passthrough.XrPassthroughHTC;
 
 namespace Assets.Effects
 {
-    internal class PassthroughEffect : IFocusEffect
+    internal class PassthroughEffect
     {
         private XrPassthroughHTC passthrough;
         private bool passthroughEnabled = false;
