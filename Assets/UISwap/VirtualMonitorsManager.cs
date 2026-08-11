@@ -1,7 +1,7 @@
 using System.Linq;
 using Unity.Mathematics;
-using Unity.XR.CoreUtils;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using uWindowCapture;
 using Display = WindowsDisplayAPI.Display;
 
@@ -24,28 +24,34 @@ public class VirtualMonitorsManager : MonoBehaviour
     private UwcWindowTexture windowPrefab;
 
     /// <summary>
+    /// Parent under which the virtual monitors are created.
+    /// Their positions are relative to this object.
+    /// </summary>
+    [Tooltip("Parent under which the virtual monitors are created.")]
+    [SerializeField]
+    private Transform monitorParent;
+
+    /// <summary>
+    /// Unity layer assigned to the virtual monitors.
+    /// </summary>
+    [Tooltip("Unity layer assigned to the virtual monitors.")]
+    [SerializeField]
+    private LayerMask roiLayer;
+
+    /// <summary>
+    /// Handles registration of the monitors for gaze interaction.
+    /// </summary>
+    [Tooltip("ROIGazeInteraction used to register the virtual monitors.")]
+    [SerializeField]
+    private Assets.UISwap.ROIGazeInteraction roiGazeInteraction;
+
+    /// <summary>
     /// The scale per 1000 pixels to size for Unity units.
     /// </summary>
     [Tooltip("Scale per 1000 pixels.")]
     [Min(float.Epsilon)]
     [SerializeField]
     private float scalePer1000Pixel = 1;
-
-    /// <summary>
-    /// How height the center of the screens should be positioned at.
-    /// </summary>
-    [Tooltip("The height to place the screens at.")]
-    [Min(0)]
-    [SerializeField]
-    private float height;
-
-    /// <summary>
-    /// How far along the Z axis the screens should be positioned at.
-    /// </summary>
-    [Tooltip("The distance to place the screens at.")]
-    [Min(0)]
-    [SerializeField]
-    private float distance;
 
     /// <summary>
     /// The container for all the monitors in Unity.
@@ -62,12 +68,6 @@ public class VirtualMonitorsManager : MonoBehaviour
     /// </summary>
     private int2 _offset;
 
-    /// <summary>
-    /// The height the virtual camera begins it to initially base the height and distance based off of.
-    /// In the future this could be useful for some kind of "reset" or "recenter" function.
-    /// </summary>
-    private float _cameraHeight;
-
     private void Start()
     {
         // Ensure there is only one manager.
@@ -77,18 +77,28 @@ public class VirtualMonitorsManager : MonoBehaviour
             {
                 Destroy(gameObject);
             }
-            
+
             return;
         }
 
         _manager = this;
 
-        // Zero out the origin and get the height the headset is at.
-        XROrigin xrOrigin = FindObjectOfType<XROrigin>();
-        if (xrOrigin != null)
+        if (monitorParent == null)
         {
-            xrOrigin.transform.position = Vector3.zero;
-            _cameraHeight = xrOrigin.CameraYOffset;
+            Debug.LogError(
+                "Kein Monitor-Parent für VirtualMonitorsManager angegeben.",
+                this);
+
+            return;
+        }
+
+        if (roiGazeInteraction == null)
+        {
+            Debug.LogError(
+                "Keine ROIGazeInteraction für VirtualMonitorsManager angegeben.",
+                this);
+
+            return;
         }
 
         // Ensure there is a window manager to control the rendering of the screens.
@@ -96,39 +106,41 @@ public class VirtualMonitorsManager : MonoBehaviour
         {
             gameObject.AddComponent<UwcManager>();
         }
-        
-        // Set them to the most performant modes as we don't need these features since titles will not change.
+
+        // Set them to the most performant modes as we don't need these features
+        // since titles will not change.
         UwcManager.instance.debugModeFromInspector = DebugMode.None;
-        UwcManager.instance.windowTitlesUpdateTiming = WindowTitlesUpdateTiming.Manual;
+        UwcManager.instance.windowTitlesUpdateTiming =
+            WindowTitlesUpdateTiming.Manual;
 
         // The lower and upper bound pixel values.
         int minX = int.MaxValue;
         int maxX = int.MinValue;
         int minY = int.MaxValue;
         int maxY = int.MinValue;
-        
-        // The Unity library for getting monitors doesn't get their position data in relation to each other.
-        // Additionally, no built-in Unity methods get this data we need either.
-        // We need this data to position the monitors as they appear in Windows settings.
-        // WindowsDisplayAPI can get this missing data for us.
-        // This library is a wrapper around Windows Display APIs for C# but has a terrible overhead cost of calling.
-        // For instance, trying to calling this in Update will drop your frames like crazy.
-        // So, call it only once in Start() and cache the values in our "DisplayData" class.
-        // In the future, this logic could perhaps be moved to a method call to update to a new monitor layout.
+
+        // Get display information once and cache it.
         Display[] displays = Display.GetDisplays().ToArray();
 
-        // Store the number of monitors and the cached data.
         _windows = new WindowContainer[displays.Length];
         _data = new DisplayData[displays.Length];
-        
+
         // Create every new monitor.
         for (int i = 0; i < displays.Length; i++)
         {
             // Cache the data for performance.
-            _data[i] = new(displays[i].DisplayName, displays[i].CurrentSetting.Position.X, displays[i].CurrentSetting.Position.Y);
-            
-            // Create the monitor in Unity.
-            _windows[i] = new(Instantiate(windowPrefab))
+            _data[i] = new DisplayData(
+                displays[i].DisplayName,
+                displays[i].CurrentSetting.Position.X,
+                displays[i].CurrentSetting.Position.Y);
+
+            // Create the monitor as a child of the configured parent.
+            var monitor = Instantiate(windowPrefab, monitorParent);
+
+            // Assign the ROI layer.
+            monitor.gameObject.layer = GetRoiLayer();
+
+            _windows[i] = new WindowContainer(monitor)
             {
                 Window =
                 {
@@ -147,12 +159,18 @@ public class VirtualMonitorsManager : MonoBehaviour
                 Data = i
             };
 
-            // We don't need colliders so remove them, maybe in the future they could have a use.
-            Collider c = _windows[i].Window.GetComponent<Collider>();
-            if (c != null)
+            // Add a mesh collider for gaze interaction.
+            var collider = monitor.GetComponent<MeshCollider>();
+
+            if (collider == null)
             {
-                Destroy(c);
+                collider = monitor.gameObject.AddComponent<MeshCollider>();
             }
+
+            collider.convex = true;
+
+            // Register the monitor with the gaze interaction system.
+            roiGazeInteraction.Register(collider);
 
             // See if this is any min or max value.
             if (_data[i].X < minX)
@@ -164,7 +182,7 @@ public class VirtualMonitorsManager : MonoBehaviour
             {
                 maxX = _data[i].X;
             }
-            
+
             if (_data[i].Y < minY)
             {
                 minY = _data[i].Y;
@@ -177,30 +195,32 @@ public class VirtualMonitorsManager : MonoBehaviour
         }
 
         // Set the offset so monitors are centered.
-        _offset = new((maxX + minX) / 2, (maxY + minY) / 2);
+        _offset = new(
+            (maxX + minX) / 2,
+            (maxY + minY) / 2);
     }
 
     private void Update()
     {
-        // During the initial setup, the monitors may not be fully populated and since the order is not deterministic,
-        // it may need to get updated here and correct which monitor ID goes to which location.
+        // During the initial setup, the monitors may not be fully populated
+        // and since the order is not deterministic, it may need to get updated
+        // here and correct which monitor ID goes to which location.
         bool update = false;
-        
+
         // Loop through every monitor.
         for (int i = 0; i < _windows.Length; i++)
         {
             // Ensure the index is correct.
             _windows[i].Window.desktopIndex = i;
-            
+
             // Set the scale.
             _windows[i].Window.scalePer1000Pixel = scalePer1000Pixel;
-            
-            // This is used if we do need to update the monitors, and once one is "set" in place with the correct
-            // matching data, it won't be used again. This is mainly a failsafe and should never actually matter.
+
+            // This is used if we do need to update the monitors, and once one
+            // is "set" in place with the correct matching data, it won't be
+            // used again.
             _windows[i].Set = false;
-            
-            // If the name of the GameObject does not match the monitor its trying to render's name, the monitors are
-            // not in the correct places so flag that they need to be updated.
+
             if (_windows[i].updated)
             {
                 update = true;
@@ -210,21 +230,15 @@ public class VirtualMonitorsManager : MonoBehaviour
         // Update the monitors if they need to be.
         if (update)
         {
-            // Go through all the monitors.
             for (int i = 0; i < _windows.Length; i++)
             {
-                // Find the matching monitor in the cached data we got in Start().
-                // This is done by first doing the failsafe of removing monitors that are not yet set, then getting the
-                // monitor with the matching name.
-                WindowContainer match = _windows.Where(w => !w.Set).OrderByDescending(w => w.name == _data[i].Name).First();
-                
-                // Flag that it was set.
+                WindowContainer match = _windows
+                    .Where(w => !w.Set)
+                    .OrderByDescending(w => w.name == _data[i].Name)
+                    .First();
+
                 match.Set = true;
-                
-                // Link the virtual monitor index.
                 match.Data = i;
-                
-                // Match the names so it should not fail the needing update check above next time.
                 match.Window.gameObject.name = match.name;
             }
         }
@@ -232,26 +246,70 @@ public class VirtualMonitorsManager : MonoBehaviour
         // Convert the Unity scale to pixels.
         float scale = 1000 * scalePer1000Pixel;
 
-        // Get the Unity scale offset from the monitor pixels.
-        float2 offset = new(_offset.x * scalePer1000Pixel, _offset.y * scalePer1000Pixel);
-        
-        // Position every monitor.
+        float2 offset = new(
+            _offset.x * scalePer1000Pixel,
+            _offset.y * scalePer1000Pixel);
+
+        // Position every monitor relative to monitorParent.
         for (int i = 0; i < _windows.Length; i++)
         {
-            // Get the X and Y positions.
-            float x = (_data[_windows[i].Data].X * scalePer1000Pixel - offset.x) / scale;
-            float y = -(_data[_windows[i].Data].Y * scalePer1000Pixel - offset.y) / scale;
-            
-            // Check that the window object from the library we are using is set as a failsafe.
+            float x =
+                (_data[_windows[i].Data].X * scalePer1000Pixel - offset.x)
+                / scale;
+
+            float y =
+                -(_data[_windows[i].Data].Y * scalePer1000Pixel - offset.y)
+                / scale;
+
             if (_windows[i].Window.window != null)
             {
-                x /= _windows[i].Window.window.width / (_windows[i].Window.transform.localScale.x * 1000f);
-                y /= _windows[i].Window.window.height / (_windows[i].Window.transform.localScale.y * 1000f);
+                x /= _windows[i].Window.window.width /
+                     (_windows[i].Window.transform.localScale.x * 1000f);
+
+                y /= _windows[i].Window.window.height /
+                     (_windows[i].Window.transform.localScale.y * 1000f);
             }
-            
-            // Position the monitor in the Unity scene.
-            _windows[i].Window.transform.position = new(x, y + height + _cameraHeight, 0 + distance);
+
+            // Position relative to monitorParent.
+            _windows[i].Window.transform.localPosition =
+                new Vector3(x, y, 0);
         }
+    }
+
+    private int GetRoiLayer()
+    {
+        if (roiLayer.value == 0)
+        {
+            Debug.LogError(
+                "Für VirtualMonitorsManager wurde kein ROI-Layer ausgewählt.",
+                this);
+
+            return 0;
+        }
+
+        // LayerMask kann mehrere Layer enthalten. Für GameObject.layer
+        // benötigen wir aber genau einen Layer.
+        int layer = 0;
+
+        for (int i = 0; i < 32; i++)
+        {
+            if ((roiLayer.value & (1 << i)) == 0)
+                continue;
+
+            if (layer != 0)
+            {
+                Debug.LogWarning(
+                    "Für VirtualMonitorsManager sollten im ROI-Layer " +
+                    "nur ein einziger Layer ausgewählt sein.",
+                    this);
+
+                break;
+            }
+
+            layer = i;
+        }
+
+        return layer;
     }
 
     /// <summary>
@@ -277,18 +335,18 @@ public class VirtualMonitorsManager : MonoBehaviour
         /// <summary>
         /// The name of the monitor that this is displaying.
         /// </summary>
-        public string name => Window == null || Window.window == null ? null : Window.window.title;
+        public string name =>
+            Window == null || Window.window == null
+                ? null
+                : Window.window.title;
 
         /// <summary>
-        /// If the saved name (name of the GameObject) does not match the current monitor name that is rendering,
-        /// an update has occured that needs to be reassigned for.
+        /// If the saved name does not match the current monitor name.
         /// </summary>
-        public bool updated => Window != null && name != Window.gameObject.name;
+        public bool updated =>
+            Window != null &&
+            name != Window.gameObject.name;
 
-        /// <summary>
-        /// Constructor to assign the monitor displaying component.
-        /// </summary>
-        /// <param name="window">The monitor displaying component.</param>
         public WindowContainer(UwcWindowTexture window)
         {
             Window = window;
@@ -296,31 +354,14 @@ public class VirtualMonitorsManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Helper class to store the cached display data from WindowsDisplayAPI.
+    /// Helper class to store cached display data from WindowsDisplayAPI.
     /// </summary>
     private class DisplayData
     {
-        /// <summary>
-        /// The name of the monitor.
-        /// </summary>
         public readonly string Name;
-
-        /// <summary>
-        /// The X center of the monitor in pixels in relation to the main monitor.
-        /// </summary>
         public readonly int X;
-
-        /// <summary>
-        /// The Y center of the monitor in pixels in relation to the main monitor.
-        /// </summary>
         public readonly int Y;
 
-        /// <summary>
-        /// Constructor to store the data.
-        /// </summary>
-        /// <param name="name">The name of the monitor.</param>
-        /// <param name="x">The X center of the monitor in pixels in relation to the main monitor.</param>
-        /// <param name="y">The Y center of the monitor in pixels in relation to the main monitor.</param>
         public DisplayData(string name, int x, int y)
         {
             Name = name;
