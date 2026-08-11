@@ -1,6 +1,7 @@
-using Assets.UISwap;
+using Assets.Effects; 
 using System.Collections;
 using UnityEngine;
+using static Assets.Effects.FocusEffects;
 
 public class DistractionDetection : MonoBehaviour
 {
@@ -11,23 +12,25 @@ public class DistractionDetection : MonoBehaviour
     public int timeForLongDistractions;
     public int timeForShortDistractions;
 
-    private readonly IFocusEffect focusEffect;
+    private FocusEffect focusEffect;
 
     int shortDistractionCount = 0;
 
-    public DistractionDetection()
+    public void Start()
     {
-        focusEffect = new LinearEffect(this, new UnionEffect(new IFocusEffect[]
-        {
-            new RangedEffect(new BackgroundColorEffect(Color.white), 0.0f, 0.5f, null)
-        }
-        ), effectLength: 10.0f);
+        focusEffect = Union(
+            BackgroundColor(Color.white).AddRange(0.5f, 1.0f, null),
+            Passthrough().Invert(),
+            Vignette(),
+            LogStrength()
+        ).AddLinearTransition(this, duration: 10.0f);
+        focusEffect(0);
     }
 
     public void LooksAtScreen()
     {
         //StopCoroutine(LongDistractions());
-        focusEffect.ApplyEffect(0);
+        focusEffect(0);
     }
 
     public void LooksAway()
@@ -39,7 +42,7 @@ public class DistractionDetection : MonoBehaviour
     IEnumerator LongDistractions()
     {
         yield return new WaitForSecondsRealtime(timeForLongDistractions);
-        focusEffect.ApplyEffect(1);
+        focusEffect(1);
     }
 
     IEnumerator ShortDistractionCounter()
@@ -48,7 +51,7 @@ public class DistractionDetection : MonoBehaviour
         Debug.Log("ShortDistractionCount: " + shortDistractionCount);
         if (shortDistractionCount > (shortDistractionLimit - 1))
         {
-            focusEffect.ApplyEffect(1);
+            focusEffect(1);
         }
         yield return new WaitForSecondsRealtime(timeForShortDistractions);
         shortDistractionCount--;
