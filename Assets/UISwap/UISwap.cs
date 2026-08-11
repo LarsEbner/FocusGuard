@@ -16,7 +16,7 @@ public class UISwap : MonoBehaviour
             Passthrough().Invert(),
             Vignette(),
             LogStrength()
-        ).AddLinearTransition(this, effectLength: 10.0f);
+        ).AddSmoothstepTransition(this, duration: 10.0f);
         focusEffect(0);
     }
 

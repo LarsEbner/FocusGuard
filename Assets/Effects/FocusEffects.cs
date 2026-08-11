@@ -56,9 +56,19 @@ namespace Assets.Effects
             return strength => effect(Mathf.Clamp01(1 - strength));
         }
 
-        public static FocusEffect AddLinearTransition(this FocusEffect effect, MonoBehaviour coroutineTrigger, float effectLength = 5.0f, float tickDuration = 0.04f)
+        public static FocusEffect AddTransition(this FocusEffect effect, MonoBehaviour coroutineTrigger, Func<float, float> transition, float duration = 5.0f)
         {
-            return new LinearEffect(effect, coroutineTrigger, effectLength, tickDuration).ApplyEffect;
+            return new TransitionEffect(effect, coroutineTrigger, transition, duration).ApplyEffect;
+        }
+
+        public static FocusEffect AddLinearTransition(this FocusEffect effect, MonoBehaviour coroutineTrigger, float duration = 5.0f)
+        {
+            return AddTransition(effect, coroutineTrigger, t => t, duration);
+        }
+
+        public static FocusEffect AddSmoothstepTransition(this FocusEffect effect, MonoBehaviour coroutineTrigger, float duration = 5.0f)
+        {
+            return AddTransition(effect, coroutineTrigger, t => t * t * (3 - 2 * t), duration);
         }
 
         public static FocusEffect AddRange(this FocusEffect effect, float? start, float peak, float? end)

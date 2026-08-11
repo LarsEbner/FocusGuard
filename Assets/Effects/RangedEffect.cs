@@ -25,39 +25,19 @@ namespace Assets.Effects
             _effect(mapped);
         }
 
-        private static float ComputeValue(float s, float? start, float peak, float? end)
+        private static float ComputeValue(float strength, float? start, float peak, float? end)
         {
-            if (s <= peak)
+            if (strength < peak)
             {
-                if (!start.HasValue)
-                {
-                    return 1f;
-                }
-                if (s <= start.Value)
-                {
-                    return 0f;
-                }
-                if (Mathf.Approximately(peak, start.Value))
-                {
-                    return 1f;
-                }
-                return Mathf.Clamp01((s - start.Value) / (peak - start.Value));
+                return start.HasValue
+                    ? Mathf.InverseLerp(start.Value, peak, strength)
+                    : 1f;
             }
             else
             {
-                if (!end.HasValue)
-                {
-                    return 1f;
-                }
-                if (s >= end.Value)
-                {
-                    return 0f;
-                }
-                if (Mathf.Approximately(end.Value, peak))
-                {
-                    return 1f;
-                }
-                return Mathf.Clamp01((end.Value - s) / (end.Value - peak));
+                return end.HasValue
+                    ? Mathf.InverseLerp(end.Value, peak, strength)
+                    : 1f;
             }
         }
     }
