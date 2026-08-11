@@ -129,6 +129,8 @@ GameObject:
   m_Component:
   - component: {fileID: 9982071}
   - component: {fileID: 9982070}
+  - component: {fileID: 9982073}
+  - component: {fileID: 9982072}
   m_Layer: 0
   m_Name: Detection
   m_TagString: Untagged
@@ -166,6 +168,43 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9982072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9982069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9373cef563267441b0d636e2376f4c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FocusGuard.Detection.YOLO.YoloObjectDetector
+  modelAsset: {fileID: 5022602860645237092, guid: aafcfe392a027b7429bcef5718fd13c0, type: 3}
+  backendType: 256
+  frameProvider: {fileID: 9982073}
+  roomPresenceAnalyzer: {fileID: 0}
+  confidenceThreshold: 0.45
+  intersectionOverUnionThreshold: 0.45
+  inferenceIntervalSeconds: 0.5
+  logDetectionResults: 1
+--- !u!114 &9982073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9982069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3266c65f198bd748a8c5acef8a7ed31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FocusGuard.Detection.FrameSources.WebcamFrameProvider
+  preferredDeviceName: 
+  useFirstAvailableDevice: 1
+  requestedWidth: 1280
+  requestedHeight: 720
+  requestedFramesPerSecond: 30
 --- !u!1 &14521251
 GameObject:
   m_ObjectHideFlags: 0
