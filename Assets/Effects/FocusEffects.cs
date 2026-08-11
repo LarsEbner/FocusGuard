@@ -1,4 +1,5 @@
 ﻿using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
@@ -24,6 +25,11 @@ namespace Assets.Effects
         public static FocusEffect LogStrength()
         {
             return strength => Debug.Log("Focus effect strength: " + strength);
+        }
+
+        public static FocusEffect DebugText(TMP_Text text)
+        {
+            return strength => text.text = $"{strength * 100f:F2}%";
         }
 
         public static FocusEffect Passthrough()

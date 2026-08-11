@@ -1,11 +1,12 @@
 using Assets.Effects;
+using TMPro;
 using UnityEngine;
 using static Assets.Effects.FocusEffects;
 
 public class UISwap : MonoBehaviour
 {
-    public GameObject Screen;
-    public GameObject GazeTrigger;
+    [SerializeField]
+    public TMP_Text _debugText;
 
     private FocusEffect focusEffect;
 
@@ -15,7 +16,7 @@ public class UISwap : MonoBehaviour
             BackgroundColor(Color.white).AddRange(0.5f, 1.0f, null),
             Passthrough().Invert(),
             Vignette(),
-            LogStrength()
+            DebugText(_debugText)
         ).AddSmoothstepTransition(this, duration: 10.0f);
         focusEffect(0);
     }
