@@ -9,12 +9,12 @@ using Display = WindowsDisplayAPI.Display;
 /// Control the creation and placement of virtual monitors.
 /// </summary>
 [RequireComponent(typeof(UwcManager))]
-public class Manager : MonoBehaviour
+public class VirtualMonitorsManager : MonoBehaviour
 {
     /// <summary>
     /// There should only be one manager.
     /// </summary>
-    private static Manager _manager;
+    private static VirtualMonitorsManager _manager;
 
     /// <summary>
     /// The prefab of the monitors.
