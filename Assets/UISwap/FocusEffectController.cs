@@ -61,11 +61,11 @@ public class FocusEffectController : MonoBehaviour
         }
     }
 
-    public void SetEffect(float value)
+    public void SetEffect(float strength)
     {
-        value = Mathf.Clamp01(value);
-        CurrentEffect = value;
-        transitionEffect.ApplyEffectImmediately(value);
+        strength = Mathf.Clamp01(strength);
+        CurrentEffect = strength;
+        transitionEffect.ApplyEffectImmediately(strength);
     }
 
     public void LooksAtROI()
