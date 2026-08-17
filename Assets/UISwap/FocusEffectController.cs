@@ -40,6 +40,7 @@ public class FocusEffectController : MonoBehaviour
             BackgroundColor(Color.white).AddRange(0.5f, 1.0f, null),
             Passthrough().Invert(),
             Vignette(),
+            Blur(),
             DebugText(_debugText)
         ).AddSmoothstepTransition(this, duration: 10.0f);
 

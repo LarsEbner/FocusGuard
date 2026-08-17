@@ -42,9 +42,9 @@ namespace Assets.Effects
             return new VolumeEffect<T>(effect).ApplyEffect;
         }
 
-        public static FocusEffect Blur(float sharpAperture = 2.5f, float maxBlurAperture = 0f)
+        public static FocusEffect Blur(float sharpFocalLength = 25.0f, float blurFocalLength = 100.0f)
         {
-            return Volume<DepthOfField>((depthOfField, strength) => depthOfField.focusDistance.Override(Mathf.Lerp(sharpAperture, maxBlurAperture, strength)));
+            return Volume<DepthOfField>((depthOfField, strength) => depthOfField.focalLength.Override(Mathf.Lerp(sharpFocalLength, blurFocalLength, strength)));
         }
 
         public static FocusEffect Union(params FocusEffect[] effects)
