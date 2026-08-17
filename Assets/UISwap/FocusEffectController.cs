@@ -12,18 +12,36 @@ public class FocusEffectController : MonoBehaviour
 
     public float CurrentEffect { get; private set; }
 
-    public bool AutoUpdate { get; set; } = true;
+    public bool AutoUpdate
+    {
+        get => autoUpdate;
+        set
+        {
+            if (autoUpdate == value)
+                return;
 
-    private FocusEffect focusEffect;
+            autoUpdate = value;
+
+            if (!autoUpdate)
+            {
+                transitionEffect?.StopTransition();
+            }
+        }
+    }
+
+    [SerializeField]
+    private bool autoUpdate = true;
+
+    private TransitionEffect transitionEffect;
 
     public void Start()
     {
-        focusEffect = Union(
+        transitionEffect = Union(
             BackgroundColor(Color.white).AddRange(0.5f, 1.0f, null),
             Passthrough().Invert(),
             Vignette(),
             DebugText(_debugText)
-        );
+        ).AddSmoothstepTransition(this, duration: 10.0f);
 
         IsLookingAtROI = false;
         SetEffect(0.0f);
@@ -31,23 +49,22 @@ public class FocusEffectController : MonoBehaviour
 
     private void Update()
     {
-        if (!AutoUpdate)
-            return;
+        if (!AutoUpdate) return;
 
         float effect = IsLookingAtROI ? 0.0f : 1.0f;
 
         if (!Mathf.Approximately(CurrentEffect, effect))
         {
-            SetEffect(effect);
+            CurrentEffect = effect;
+            transitionEffect.ApplyEffect(effect);
         }
     }
 
     public void SetEffect(float value)
     {
         value = Mathf.Clamp01(value);
-
         CurrentEffect = value;
-        focusEffect(value);
+        transitionEffect.ApplyEffectImmediately(value);
     }
 
     public void LooksAtROI()

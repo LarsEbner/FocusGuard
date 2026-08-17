@@ -23,7 +23,7 @@ public class DistractionDetection : MonoBehaviour
             Passthrough().Invert(),
             Vignette(),
             LogStrength()
-        ).AddLinearTransition(this, duration: 10.0f);
+        );
         focusEffect(0);
     }
 

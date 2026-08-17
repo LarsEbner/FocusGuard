@@ -2527,6 +2527,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UISwap
   _debugText: {fileID: 1127803503}
+  autoUpdate: 1
 --- !u!1 &934807447
 GameObject:
   m_ObjectHideFlags: 0
@@ -4585,6 +4586,8 @@ MonoBehaviour:
     Script: {fileID: 2137709457}
   - Name: Disable Effect Update
     Script: {fileID: 2137709458}
+  - Name: Control Effect Strength
+    Script: {fileID: 2137709459}
 --- !u!114 &2137709454
 MonoBehaviour:
   m_ObjectHideFlags: 0

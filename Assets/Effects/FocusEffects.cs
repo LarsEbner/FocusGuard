@@ -6,7 +6,7 @@ using UnityEngine.Rendering.Universal;
 
 namespace Assets.Effects
 {
-    internal static class FocusEffects
+    public static class FocusEffects
     {
         /// <summary>
         /// Applies the focus effect according to a given strength.
@@ -62,17 +62,17 @@ namespace Assets.Effects
             return strength => effect(Mathf.Clamp01(1 - strength));
         }
 
-        public static FocusEffect AddTransition(this FocusEffect effect, MonoBehaviour coroutineTrigger, Func<float, float> transition, float duration = 5.0f)
+        public static TransitionEffect AddTransition(this FocusEffect effect, MonoBehaviour coroutineTrigger, Func<float, float> transition, float duration = 5.0f)
         {
-            return new TransitionEffect(effect, coroutineTrigger, transition, duration).ApplyEffect;
+            return new TransitionEffect(effect, coroutineTrigger, transition, duration);
         }
 
-        public static FocusEffect AddLinearTransition(this FocusEffect effect, MonoBehaviour coroutineTrigger, float duration = 5.0f)
+        public static TransitionEffect AddLinearTransition(this FocusEffect effect, MonoBehaviour coroutineTrigger, float duration = 5.0f)
         {
             return AddTransition(effect, coroutineTrigger, t => t, duration);
         }
 
-        public static FocusEffect AddSmoothstepTransition(this FocusEffect effect, MonoBehaviour coroutineTrigger, float duration = 5.0f)
+        public static TransitionEffect AddSmoothstepTransition(this FocusEffect effect, MonoBehaviour coroutineTrigger, float duration = 5.0f)
         {
             return AddTransition(effect, coroutineTrigger, t => t * t * (3 - 2 * t), duration);
         }
