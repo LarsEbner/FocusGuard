@@ -2489,7 +2489,7 @@ GameObject:
   - component: {fileID: 868886409}
   - component: {fileID: 868886410}
   m_Layer: 5
-  m_Name: 'Script: UISwap'
+  m_Name: 'Script: FocusEffectController'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4237,8 +4237,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 868886410}
-        m_TargetAssemblyTypeName: UISwap, Assembly-CSharp
-        m_MethodName: LooksAtScreen
+        m_TargetAssemblyTypeName: FocusEffectController, Assembly-CSharp
+        m_MethodName: LooksAtROI
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4540,6 +4540,8 @@ GameObject:
   - component: {fileID: 2137709455}
   - component: {fileID: 2137709456}
   - component: {fileID: 2137709457}
+  - component: {fileID: 2137709458}
+  - component: {fileID: 2137709459}
   m_Layer: 0
   m_Name: 'Script: DebugController'
   m_TagString: Untagged
@@ -4581,6 +4583,8 @@ MonoBehaviour:
     Script: {fileID: 2137709456}
   - Name: Show Effect Strength
     Script: {fileID: 2137709457}
+  - Name: Disable Effect Update
+    Script: {fileID: 2137709458}
 --- !u!114 &2137709454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4641,6 +4645,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Assets.Debugging.ToggleGameObject
   _targets:
   - {fileID: 43527999}
+--- !u!114 &2137709458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137709451}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1e67615ff73b3743a649b0332206df0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Assets.Debugging.DisableEffectUpdate
+  _controller: {fileID: 868886410}
+--- !u!114 &2137709459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137709451}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 749053576f47c1c47a6ef688875dcc84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ControllerTiltEffect
+  controller: {fileID: 480366779}
+  focusEffectController: {fileID: 868886410}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
