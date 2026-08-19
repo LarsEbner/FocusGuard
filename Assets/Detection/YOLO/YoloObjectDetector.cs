@@ -2,30 +2,32 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Unity.InferenceEngine;
-using FocusGuard.Detection.Analysis;
 using FocusGuard.Detection.FrameSources;
 
 namespace FocusGuard.Detection.YOLO
 {
     /// <summary>
-    /// Führt die lokale Objekterkennung mit YOLOv8n aus und übermittelt
-    /// ausschließlich die für FocusGuard relevanten Erkennungsinformationen
-    /// an den <see cref="RoomPresenceAnalyzer"/>.
+    /// Führt die lokale Objekterkennung mit YOLOv8n aus und stellt
+    /// sämtliche erkannten Objekte als strukturiertes DetectionResult bereit.
     /// </summary>
     /// <remarks>
-    /// Die Komponente wertet die COCO-Klassen Person, Katze und Hund aus.
-    /// Räumliche Informationen werden ausschließlich intern verwendet, um
-    /// überlappende Mehrfacherkennungen desselben Objekts zu entfernen.
+    /// Die Komponente verarbeitet das aktuelle Bild eines
+    /// <see cref="WebcamFrameProvider"/> mit einem YOLOv8n-Modell.
     ///
-    /// Nach außen werden nur folgende Informationen übermittelt:
+    /// Anders als die frühere Implementierung werden nicht nur einzelne
+    /// für FocusGuard ausgewählte Klassen betrachtet. Stattdessen werden
+    /// alle 80 Klassen des COCO-Datensatzes ausgewertet.
     ///
-    /// - Anzahl erkannter Personen,
-    /// - Vorhandensein mindestens eines Hundes,
-    /// - Vorhandensein mindestens einer Katze.
+    /// Das Ergebnis enthält pro erkanntem Objekt:
+    /// - Klassen-ID,
+    /// - Klassenname,
+    /// - Konfidenzwert,
+    /// - Position,
+    /// - Breite,
+    /// - Höhe.
     ///
-    /// Die Bildquelle ist von der Erkennungslogik getrennt. Dadurch kann der
-    /// WebcamFrameProvider später durch einen anderen Provider ersetzt werden,
-    /// ohne die fachliche Auswertung oder Ablenkungslogik umzuschreiben.
+    /// Stark überlappende Mehrfacherkennungen desselben Objekts werden
+    /// mittels Non-Maximum Suppression entfernt.
     /// </remarks>
     public sealed class YoloObjectDetector : MonoBehaviour
     {
@@ -33,16 +35,100 @@ namespace FocusGuard.Detection.YOLO
         private const int ModelInputHeight = 640;
         private const int ModelInputChannels = 3;
 
-        // YOLOv8n wurde mit dem COCO-Datensatz trainiert.
         private const int CocoClassCount = 80;
-        private const int PersonClassId = 0;
-        private const int CatClassId = 15;
-        private const int DogClassId = 16;
 
-        // Erwartete Form des verwendeten YOLOv8n-Ausgangstensors:
+        // YOLOv8n-Ausgabe:
         // Batch × Attribute × Kandidaten = 1 × 84 × 8400.
         private const int ExpectedAttributeCount = 84;
         private const int ExpectedCandidateCount = 8400;
+
+        /// <summary>
+        /// Namen der 80 COCO-Klassen in der vom YOLOv8-Modell
+        /// verwendeten Reihenfolge.
+        /// </summary>
+        private static readonly string[] CocoClassNames =
+        {
+            "person",
+            "bicycle",
+            "car",
+            "motorcycle",
+            "airplane",
+            "bus",
+            "train",
+            "truck",
+            "boat",
+            "traffic light",
+            "fire hydrant",
+            "stop sign",
+            "parking meter",
+            "bench",
+            "bird",
+            "cat",
+            "dog",
+            "horse",
+            "sheep",
+            "cow",
+            "elephant",
+            "bear",
+            "zebra",
+            "giraffe",
+            "backpack",
+            "umbrella",
+            "handbag",
+            "tie",
+            "suitcase",
+            "frisbee",
+            "skis",
+            "snowboard",
+            "sports ball",
+            "kite",
+            "baseball bat",
+            "baseball glove",
+            "skateboard",
+            "surfboard",
+            "tennis racket",
+            "bottle",
+            "wine glass",
+            "cup",
+            "fork",
+            "knife",
+            "spoon",
+            "bowl",
+            "banana",
+            "apple",
+            "sandwich",
+            "orange",
+            "broccoli",
+            "carrot",
+            "hot dog",
+            "pizza",
+            "donut",
+            "cake",
+            "chair",
+            "couch",
+            "potted plant",
+            "bed",
+            "dining table",
+            "toilet",
+            "tv",
+            "laptop",
+            "mouse",
+            "remote",
+            "keyboard",
+            "cell phone",
+            "microwave",
+            "oven",
+            "toaster",
+            "sink",
+            "refrigerator",
+            "book",
+            "clock",
+            "vase",
+            "scissors",
+            "teddy bear",
+            "hair drier",
+            "toothbrush"
+        };
 
         [Header("Modell")]
 
@@ -51,35 +137,29 @@ namespace FocusGuard.Detection.YOLO
         private ModelAsset modelAsset;
 
         [Tooltip(
-            "Backend für die Modellausführung. GPUCompute eignet sich " +
-            "für den ersten Test im Editor.")]
+            "Backend, auf dem das neuronale Netz ausgeführt wird.")]
         [SerializeField]
         private BackendType backendType = BackendType.GPUCompute;
 
-        [Header("Datenfluss")]
-
-        [Tooltip("Webcam-Provider, der den aktuellen Kameraframe liefert.")]
-        [SerializeField]
-        private WebcamFrameProvider frameProvider;
+        [Header("Bildquelle")]
 
         [Tooltip(
-            "Analyzer, an den das zusammengefasste Erkennungsergebnis " +
-            "übermittelt wird.")]
+            "Webcam-Provider, der den aktuellen Kameraframe bereitstellt.")]
         [SerializeField]
-        private RoomPresenceAnalyzer roomPresenceAnalyzer;
+        private WebcamFrameProvider frameProvider;
 
         [Header("Erkennungsschwellen")]
 
         [Tooltip(
-            "Minimale Klassenkonfidenz, ab der ein YOLO-Kandidat " +
+            "Minimale Klassenkonfidenz, ab der eine Erkennung " +
             "berücksichtigt wird.")]
         [SerializeField]
         [Range(0.01f, 1f)]
         private float confidenceThreshold = 0.45f;
 
         [Tooltip(
-            "Maximal erlaubte Rechtecküberlappung für die " +
-            "Non-Maximum Suppression.")]
+            "Maximal erlaubte Überlappung zweier Erkennungen derselben " +
+            "Klasse bei der Non-Maximum Suppression.")]
         [SerializeField]
         [Range(0.01f, 1f)]
         private float intersectionOverUnionThreshold = 0.45f;
@@ -87,17 +167,29 @@ namespace FocusGuard.Detection.YOLO
         [Header("Ausführungssteuerung")]
 
         [Tooltip(
-            "Zeitlicher Mindestabstand zwischen zwei Inferenzen. " +
-            "Ein größerer Wert reduziert die Rechenlast.")]
+            "Zeitlicher Mindestabstand zwischen zwei Inferenzen in Sekunden.")]
         [SerializeField]
         [Min(0.05f)]
         private float inferenceIntervalSeconds = 0.5f;
 
         [Tooltip(
-            "Gibt jedes zusammengefasste Erkennungsergebnis in der " +
-            "Unity-Console aus.")]
+            "Gibt die erkannten Objekte zusätzlich in der Unity-Console aus.")]
         [SerializeField]
         private bool logDetectionResults = true;
+
+        /// <summary>
+        /// Wird nach jeder erfolgreich ausgewerteten Inferenz ausgelöst.
+        /// </summary>
+        /// <remarks>
+        /// Andere Komponenten können dieses Ereignis abonnieren und erhalten
+        /// dadurch die vollständige Liste der aktuell erkannten Objekte.
+        /// </remarks>
+        public event Action<DetectionResult> DetectionsUpdated;
+
+        /// <summary>
+        /// Enthält das Ergebnis der zuletzt abgeschlossenen Inferenz.
+        /// </summary>
+        public DetectionResult LatestResult { get; private set; }
 
         private Model runtimeModel;
         private Worker worker;
@@ -126,6 +218,8 @@ namespace FocusGuard.Detection.YOLO
                 return;
             }
 
+            // Während die GPU-Ausgabe auf die CPU übertragen wird,
+            // wird keine weitere Inferenz gestartet.
             if (readbackPending)
             {
                 ProcessCompletedReadback();
@@ -141,7 +235,7 @@ namespace FocusGuard.Detection.YOLO
         }
 
         /// <summary>
-        /// Prüft, ob alle im Inspector benötigten Referenzen vorhanden sind.
+        /// Prüft die im Inspector benötigte Konfiguration.
         /// </summary>
         private bool ValidateConfiguration()
         {
@@ -166,23 +260,11 @@ namespace FocusGuard.Detection.YOLO
                 return false;
             }
 
-            if (roomPresenceAnalyzer == null)
-            {
-                Debug.LogError(
-                    "YoloObjectDetector: Es wurde kein RoomPresenceAnalyzer " +
-                    "zugewiesen.",
-                    this
-                );
-
-                return false;
-            }
-
             return true;
         }
 
         /// <summary>
-        /// Lädt das ONNX-Modell und erstellt die von Sentis benötigten
-        /// Laufzeitressourcen.
+        /// Lädt das ONNX-Modell und initialisiert den Sentis-Worker.
         /// </summary>
         private void InitializeInferenceEngine()
         {
@@ -215,8 +297,8 @@ namespace FocusGuard.Detection.YOLO
             catch (Exception exception)
             {
                 Debug.LogError(
-                    "YoloObjectDetector: Die Initialisierung ist " +
-                    $"fehlgeschlagen. Ursache: {exception.Message}",
+                    "YoloObjectDetector: Initialisierung fehlgeschlagen. " +
+                    $"Ursache: {exception.Message}",
                     this
                 );
 
@@ -226,7 +308,7 @@ namespace FocusGuard.Detection.YOLO
         }
 
         /// <summary>
-        /// Prüft, ob eine neue Inferenz gestartet werden darf.
+        /// Prüft, ob eine neue Inferenz ausgeführt werden kann.
         /// </summary>
         private bool CanStartInference()
         {
@@ -241,8 +323,8 @@ namespace FocusGuard.Detection.YOLO
         }
 
         /// <summary>
-        /// Überführt den aktuellen Kameraframe in einen Tensor und startet
-        /// die asynchrone Modellausführung.
+        /// Konvertiert den aktuellen Kameraframe in einen Tensor und
+        /// startet die Inferenz.
         /// </summary>
         private void StartInference()
         {
@@ -274,7 +356,7 @@ namespace FocusGuard.Detection.YOLO
                 {
                     Debug.LogError(
                         "YoloObjectDetector: Unerwartete Ausgabeform. " +
-                        $"Erwartet wurde (1, 84, 8400), erhalten wurde " +
+                        $"Erwartet: (1, 84, 8400), erhalten: " +
                         $"{pendingOutputTensor.shape}.",
                         this
                     );
@@ -283,8 +365,7 @@ namespace FocusGuard.Detection.YOLO
                     return;
                 }
 
-                // Die GPU-zu-CPU-Übertragung wird angefordert, ohne den
-                // Hauptthread unmittelbar zu blockieren.
+                // Die GPU-Ausgabe wird asynchron zur CPU übertragen.
                 pendingOutputTensor.ReadbackRequest();
                 readbackPending = true;
 
@@ -296,7 +377,7 @@ namespace FocusGuard.Detection.YOLO
             catch (Exception exception)
             {
                 Debug.LogError(
-                    "YoloObjectDetector: Die Inferenz konnte nicht gestartet " +
+                    "YoloObjectDetector: Inferenz konnte nicht gestartet " +
                     $"werden. Ursache: {exception.Message}",
                     this
                 );
@@ -307,8 +388,8 @@ namespace FocusGuard.Detection.YOLO
         }
 
         /// <summary>
-        /// Prüft, ob die angeforderte GPU-zu-CPU-Übertragung abgeschlossen ist,
-        /// und verarbeitet anschließend die YOLO-Ausgabe.
+        /// Verarbeitet die Ausgabe, sobald die GPU-zu-CPU-Übertragung
+        /// abgeschlossen wurde.
         /// </summary>
         private void ProcessCompletedReadback()
         {
@@ -328,15 +409,15 @@ namespace FocusGuard.Detection.YOLO
                 float[] outputData =
                     pendingOutputTensor.DownloadToArray();
 
-                DetectionSummary summary =
+                DetectionResult result =
                     DecodeOutput(outputData);
 
-                SubmitResult(summary);
+                PublishResult(result);
             }
             catch (Exception exception)
             {
                 Debug.LogError(
-                    "YoloObjectDetector: Die Modellausgabe konnte nicht " +
+                    "YoloObjectDetector: Modellausgabe konnte nicht " +
                     $"ausgewertet werden. Ursache: {exception.Message}",
                     this
                 );
@@ -349,18 +430,12 @@ namespace FocusGuard.Detection.YOLO
         }
 
         /// <summary>
-        /// Dekodiert den Tensor der Form (1, 84, 8400).
+        /// Dekodiert die YOLOv8-Ausgabe und erzeugt eine Liste sämtlicher
+        /// erkannten Objekte oberhalb des Konfidenzschwellwertes.
         /// </summary>
-        /// <remarks>
-        /// Die ersten vier Attribute jedes Kandidaten enthalten Mittelpunkt,
-        /// Breite und Höhe. Die übrigen 80 Attribute enthalten die
-        /// Klassenkonfidenzen des COCO-Datensatzes.
-        ///
-        /// Es werden nur Person, Katze und Hund berücksichtigt.
-        /// </remarks>
-        private DetectionSummary DecodeOutput(float[] outputData)
+        private DetectionResult DecodeOutput(float[] outputData)
         {
-            List<Candidate> relevantCandidates =
+            List<Candidate> candidates =
                 new List<Candidate>();
 
             for (
@@ -371,16 +446,12 @@ namespace FocusGuard.Detection.YOLO
                 int bestClassId = -1;
                 float bestConfidence = 0f;
 
+                // Alle 80 COCO-Klassen werden ausgewertet.
                 for (
                     int classId = 0;
                     classId < CocoClassCount;
                     classId++)
                 {
-                    if (!IsRelevantClass(classId))
-                    {
-                        continue;
-                    }
-
                     float confidence = ReadOutputValue(
                         outputData,
                         attributeIndex: 4 + classId,
@@ -431,7 +502,7 @@ namespace FocusGuard.Detection.YOLO
                     height
                 );
 
-                relevantCandidates.Add(
+                candidates.Add(
                     new Candidate(
                         bestClassId,
                         bestConfidence,
@@ -441,35 +512,46 @@ namespace FocusGuard.Detection.YOLO
             }
 
             List<Candidate> filteredCandidates =
-                ApplyNonMaximumSuppression(relevantCandidates);
+                ApplyNonMaximumSuppression(candidates);
 
-            int personCount = 0;
-            bool dogDetected = false;
-            bool catDetected = false;
+            List<DetectionResult.DetectedObject> detectedObjects =
+                new List<DetectionResult.DetectedObject>(
+                    filteredCandidates.Count
+                );
 
             foreach (Candidate candidate in filteredCandidates)
             {
-                switch (candidate.ClassId)
-                {
-                    case PersonClassId:
-                        personCount++;
-                        break;
+                string className =
+                    GetClassName(candidate.ClassId);
 
-                    case CatClassId:
-                        catDetected = true;
-                        break;
-
-                    case DogClassId:
-                        dogDetected = true;
-                        break;
-                }
+                detectedObjects.Add(
+                    new DetectionResult.DetectedObject(
+                        candidate.ClassId,
+                        className,
+                        candidate.Confidence,
+                        candidate.Rectangle.x,
+                        candidate.Rectangle.y,
+                        candidate.Rectangle.width,
+                        candidate.Rectangle.height
+                    )
+                );
             }
 
-            return new DetectionSummary(
-                personCount,
-                dogDetected,
-                catDetected
-            );
+            return new DetectionResult(detectedObjects);
+        }
+
+        /// <summary>
+        /// Gibt den lesbaren COCO-Klassennamen zu einer Klassen-ID zurück.
+        /// </summary>
+        private static string GetClassName(int classId)
+        {
+            if (classId < 0 ||
+                classId >= CocoClassNames.Length)
+            {
+                return $"unknown_{classId}";
+            }
+
+            return CocoClassNames[classId];
         }
 
         /// <summary>
@@ -488,13 +570,12 @@ namespace FocusGuard.Detection.YOLO
         }
 
         /// <summary>
-        /// Entfernt stark überlappende Erkennungen derselben Klasse.
+        /// Entfernt überlappende Mehrfacherkennungen derselben Klasse.
         /// </summary>
         /// <remarks>
-        /// Ohne diesen Schritt könnte YOLO ein Objekt über mehrere
-        /// Kandidaten erfassen und eine einzelne Person mehrfach zählen.
-        /// Die Rechtecke werden ausschließlich innerhalb dieser Methode
-        /// verwendet und nicht an andere Anwendungskomponenten weitergegeben.
+        /// YOLO kann für ein physisches Objekt mehrere ähnliche Kandidaten
+        /// erzeugen. Die Non-Maximum Suppression behält jeweils die
+        /// Erkennung mit der höchsten Konfidenz.
         /// </remarks>
         private List<Candidate> ApplyNonMaximumSuppression(
             List<Candidate> candidates)
@@ -513,15 +594,18 @@ namespace FocusGuard.Detection.YOLO
 
                 foreach (Candidate acceptedCandidate in selected)
                 {
+                    // Nur Erkennungen derselben Klasse werden gegenseitig
+                    // unterdrückt.
                     if (candidate.ClassId != acceptedCandidate.ClassId)
                     {
                         continue;
                     }
 
-                    float overlap = CalculateIntersectionOverUnion(
-                        candidate.Rectangle,
-                        acceptedCandidate.Rectangle
-                    );
+                    float overlap =
+                        CalculateIntersectionOverUnion(
+                            candidate.Rectangle,
+                            acceptedCandidate.Rectangle
+                        );
 
                     if (overlap >= intersectionOverUnionThreshold)
                     {
@@ -540,8 +624,7 @@ namespace FocusGuard.Detection.YOLO
         }
 
         /// <summary>
-        /// Berechnet das Verhältnis zwischen Schnittfläche und Vereinigungs-
-        /// fläche zweier Rechtecke.
+        /// Berechnet die Intersection over Union zweier Rechtecke.
         /// </summary>
         private static float CalculateIntersectionOverUnion(
             Rect first,
@@ -560,10 +643,16 @@ namespace FocusGuard.Detection.YOLO
                 Mathf.Min(first.yMax, second.yMax);
 
             float intersectionWidth =
-                Mathf.Max(0f, intersectionRight - intersectionLeft);
+                Mathf.Max(
+                    0f,
+                    intersectionRight - intersectionLeft
+                );
 
             float intersectionHeight =
-                Mathf.Max(0f, intersectionBottom - intersectionTop);
+                Mathf.Max(
+                    0f,
+                    intersectionBottom - intersectionTop
+                );
 
             float intersectionArea =
                 intersectionWidth * intersectionHeight;
@@ -588,46 +677,71 @@ namespace FocusGuard.Detection.YOLO
         }
 
         /// <summary>
-        /// Übermittelt das zusammengefasste Ergebnis an die fachliche
-        /// Raumanalyse.
+        /// Speichert das aktuelle Ergebnis und informiert interessierte
+        /// Anwendungskomponenten über die neuen Erkennungen.
         /// </summary>
-        private void SubmitResult(DetectionSummary summary)
+        private void PublishResult(DetectionResult result)
+{
+    LatestResult = result;
+
+    DetectionsUpdated?.Invoke(result);
+
+    if (!logDetectionResults)
+    {
+        return;
+    }
+
+    if (result.Objects.Count == 0)
+    {
+        Debug.Log(
+            "YOLO: Keine Objekte erkannt.",
+            this
+        );
+
+        return;
+    }
+
+    System.Text.StringBuilder output =
+        new System.Text.StringBuilder();
+
+    output.Append(
+        $"YOLO: {result.Objects.Count} Objekt(e) erkannt: "
+    );
+
+    for (int index = 0; index < result.Objects.Count; index++)
+    {
+        DetectionResult.DetectedObject obj =
+            result.Objects[index];
+
+        output.Append(
+            $"[{index + 1}: " +
+            $"{obj.ClassName}, " +
+            $"Conf={obj.Confidence:F2}, " +
+            $"X={obj.X:F1}, " +
+            $"Y={obj.Y:F1}, " +
+            $"W={obj.Width:F1}, " +
+            $"H={obj.Height:F1}]"
+        );
+
+        if (index < result.Objects.Count - 1)
         {
-            RoomDetectionState state = new RoomDetectionState(
-                summary.PersonCount,
-                summary.DogDetected,
-                summary.CatDetected
-            );
-
-            roomPresenceAnalyzer.Submit(state);
-
-            if (!logDetectionResults)
-            {
-                return;
-            }
-
-            Debug.Log(
-                $"YoloObjectDetector: Personen={summary.PersonCount}, " +
-                $"Hund={summary.DogDetected}, " +
-                $"Katze={summary.CatDetected}.",
-                this
-            );
+            output.Append(" | ");
         }
+    }
+
+    Debug.Log(
+        output.ToString(),
+        this
+    );
+}
+        
 
         /// <summary>
-        /// Prüft, ob eine COCO-Klasse für FocusGuard relevant ist.
+        /// Prüft, ob der Modellausgang der für dieses YOLOv8n-Modell
+        /// erwarteten Form entspricht.
         /// </summary>
-        private static bool IsRelevantClass(int classId)
-        {
-            return classId == PersonClassId ||
-                   classId == CatClassId ||
-                   classId == DogClassId;
-        }
-
-        /// <summary>
-        /// Prüft die erwartete YOLOv8n-Ausgabeform.
-        /// </summary>
-        private static bool HasExpectedOutputShape(TensorShape shape)
+        private static bool HasExpectedOutputShape(
+            TensorShape shape)
         {
             return shape.rank == 3 &&
                    shape[0] == 1 &&
@@ -652,13 +766,15 @@ namespace FocusGuard.Detection.YOLO
         }
 
         /// <summary>
-        /// Interne Repräsentation eines relevanten YOLO-Kandidaten.
-        /// Sie verlässt die Detector-Komponente nicht.
+        /// Interne Repräsentation eines noch nicht abschließend
+        /// gefilterten YOLO-Kandidaten.
         /// </summary>
         private readonly struct Candidate
         {
             public int ClassId { get; }
+
             public float Confidence { get; }
+
             public Rect Rectangle { get; }
 
             public Candidate(
@@ -669,26 +785,6 @@ namespace FocusGuard.Detection.YOLO
                 ClassId = classId;
                 Confidence = confidence;
                 Rectangle = rectangle;
-            }
-        }
-
-        /// <summary>
-        /// Zusammengefasstes Resultat einer einzelnen Inferenz.
-        /// </summary>
-        private readonly struct DetectionSummary
-        {
-            public int PersonCount { get; }
-            public bool DogDetected { get; }
-            public bool CatDetected { get; }
-
-            public DetectionSummary(
-                int personCount,
-                bool dogDetected,
-                bool catDetected)
-            {
-                PersonCount = Mathf.Max(0, personCount);
-                DogDetected = dogDetected;
-                CatDetected = catDetected;
             }
         }
     }

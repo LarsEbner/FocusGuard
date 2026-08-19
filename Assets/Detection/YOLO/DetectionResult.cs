@@ -1,42 +1,95 @@
+using System.Collections.Generic;
+
 namespace FocusGuard.Detection.YOLO
 {
     /// <summary>
-    /// Enthält ausschließlich die für FocusGuard relevanten Ergebnisse
-    /// einer einzelnen Objekterkennung.
+    /// Repräsentiert das Ergebnis einer einzelnen YOLO-Inferenz.
     /// </summary>
     /// <remarks>
-    /// Räumliche Informationen wie Bounding-Box-Koordinaten werden bewusst
-    /// nicht gespeichert, da die Anwendung lediglich wissen muss, welche
-    /// relevanten Objektklassen im Kamerabild vorhanden sind.
+    /// Enthält alle erkannten Objekte inklusive Klasse,
+    /// Konfidenz und Position im Bild.
     /// </remarks>
     public readonly struct DetectionResult
     {
         /// <summary>
-        /// Anzahl der im aktuellen Bild erkannten Personen.
+        /// Alle im aktuellen Bild erkannten Objekte.
         /// </summary>
-        public int PersonCount { get; }
+        public IReadOnlyList<DetectedObject> Objects { get; }
 
         /// <summary>
-        /// Gibt an, ob mindestens ein Hund erkannt wurde.
+        /// Erstellt ein neues Erkennungsergebnis.
         /// </summary>
-        public bool DogDetected { get; }
-
-        /// <summary>
-        /// Gibt an, ob mindestens eine Katze erkannt wurde.
-        /// </summary>
-        public bool CatDetected { get; }
-
-        /// <summary>
-        /// Erstellt ein neues zusammengefasstes Erkennungsergebnis.
-        /// </summary>
-        public DetectionResult(
-            int personCount,
-            bool dogDetected,
-            bool catDetected)
+        public DetectionResult(IReadOnlyList<DetectedObject> objects)
         {
-            PersonCount = personCount < 0 ? 0 : personCount;
-            DogDetected = dogDetected;
-            CatDetected = catDetected;
+            Objects = objects ?? new List<DetectedObject>();
+        }
+
+        /// <summary>
+        /// Beschreibt ein einzelnes von YOLO erkanntes Objekt.
+        /// </summary>
+        public readonly struct DetectedObject
+        {
+            /// <summary>
+            /// Numerische Klassen-ID des Objekts.
+            /// </summary>
+            public int ClassId { get; }
+
+            /// <summary>
+            /// Name der erkannten Objektklasse.
+            /// </summary>
+            public string ClassName { get; }
+
+            /// <summary>
+            /// Konfidenz der Erkennung zwischen 0 und 1.
+            /// </summary>
+            public float Confidence { get; }
+
+            /// <summary>
+            /// X-Koordinate der Bounding Box.
+            /// </summary>
+            public float X { get; }
+
+            /// <summary>
+            /// Y-Koordinate der Bounding Box.
+            /// </summary>
+            public float Y { get; }
+
+            /// <summary>
+            /// Breite der Bounding Box.
+            /// </summary>
+            public float Width { get; }
+
+            /// <summary>
+            /// Höhe der Bounding Box.
+            /// </summary>
+            public float Height { get; }
+
+            public DetectedObject(
+                int classId,
+                string className,
+                float confidence,
+                float x,
+                float y,
+                float width,
+                float height)
+            {
+                ClassId = classId;
+                ClassName = className;
+                Confidence = confidence;
+                X = x;
+                Y = y;
+                Width = width;
+                Height = height;
+            }
+
+            public override string ToString()
+            {
+                return
+                    $"{ClassName} | " +
+                    $"Confidence={Confidence:F2} | " +
+                    $"X={X:F1}, Y={Y:F1}, " +
+                    $"W={Width:F1}, H={Height:F1}";
+            }
         }
     }
 }
