@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &9982071
 Transform:
   m_ObjectHideFlags: 0
@@ -170,7 +170,6 @@ MonoBehaviour:
   modelAsset: {fileID: 5022602860645237092, guid: aafcfe392a027b7429bcef5718fd13c0, type: 3}
   backendType: 256
   frameProvider: {fileID: 9982073}
-  roomPresenceAnalyzer: {fileID: 9982076}
   confidenceThreshold: 0.45
   intersectionOverUnionThreshold: 0.45
   inferenceIntervalSeconds: 0.5
@@ -220,7 +219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cf3b0f04e64fe34f81cc576262b05c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FocusGuard.Detection.Integration.DetectionBridge
-  roomPresenceAnalyzer: {fileID: 9982076}
+  yoloObjectDetector: {fileID: 0}
 --- !u!114 &9982076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4651,12 +4650,12 @@ GameObject:
   - component: {fileID: 452092347}
   - component: {fileID: 452092348}
   m_Layer: 0
-  m_Name: 'Script: DistractionDetection'
+  m_Name: 'Script: Detector'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &452092347
 Transform:
   m_ObjectHideFlags: 0
@@ -4684,11 +4683,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a154e2a482a121147be539c1f9ec08ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DistractionDetection
-  Screen: {fileID: 776454413}
-  GazeTrigger: {fileID: 0}
-  shortDistractionLimit: 2
+  RightGaze: {fileID: 863371476}
+  LeftGaze: {fileID: 1409620015}
+  maxDistance: 5
+  minDistance: 0
+  maxTimeDiff: 1
+  saccListTimeLimit: 60
+  threshold: 0.9
+  shortDistractionLimit: 3
+  minTimeForShortDistractions: 5
+  shortTimeLimit: 1
   timeForLongDistractions: 10
-  timeForShortDistractions: 3
+  distListTimeLimit: 60
 --- !u!1001 &453153831
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9836,7 +9842,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &868886409
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20118,11 +20124,35 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 452092348}
+        m_TargetAssemblyTypeName: Detector, Assembly-CSharp
+        m_MethodName: LooksAtScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _onGazeExit:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 868886410}
         m_TargetAssemblyTypeName: UISwap, Assembly-CSharp
+        m_MethodName: LooksAway
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 452092348}
+        m_TargetAssemblyTypeName: Detector, Assembly-CSharp
         m_MethodName: LooksAway
         m_Mode: 1
         m_Arguments:
