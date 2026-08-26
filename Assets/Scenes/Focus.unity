@@ -8731,7 +8731,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &777062378
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18554,7 +18554,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1706987665
 Transform:
   m_ObjectHideFlags: 0
@@ -18590,18 +18590,19 @@ MonoBehaviour:
   - {fileID: 2090992231}
   - {fileID: 863371476}
   - {fileID: 2001062046}
+  - {fileID: 986170474}
+  - {fileID: 1379922649}
   scriptsToToggleOff:
   - {fileID: 1490675835}
   - {fileID: 1943838060}
   - {fileID: 2074328113}
   - {fileID: 2090992233}
   - {fileID: 2001062048}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1379922651}
   objectsToToggleOn:
   - {fileID: 1764056618}
-  - {fileID: 0}
   - {fileID: 791027578}
+  - {fileID: 776454413}
   scriptsToToggleOn: []
 --- !u!1001 &1710019101
 PrefabInstance:

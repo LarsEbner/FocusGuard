@@ -1,76 +1,85 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
-using FocusGuard.Detection.Analysis;
+using FocusGuard.Detection.YOLO;
 
 namespace FocusGuard.Detection.Integration
 {
     /// <summary>
-    /// Verbindet die Objekterkennung mit den Komponenten der
-    /// FocusGuard-Anwendung.
-    ///
-    /// Die Klasse besitzt bewusst keine Kenntnis über das verwendete
-    /// KI-Modell. Sie reagiert ausschließlich auf bestätigte
-    /// Ablenkungsereignisse des RoomPresenceAnalyzer.
+    /// Verbindet den YOLO-Objektdetektor mit anderen Komponenten
+    /// der FocusGuard-Anwendung.
     /// </summary>
+    /// <remarks>
+    /// Die Bridge enthält keine eigene Erkennungslogik.
+    /// Sie übernimmt lediglich die vom <see cref="YoloObjectDetector"/>
+    /// erzeugte Liste erkannter Objekte und stellt diese anderen
+    /// Anwendungskomponenten über ein Ereignis zur Verfügung.
+    ///
+    /// Dadurch bleibt die Objekterkennung von der nachgelagerten
+    /// Anwendungslogik entkoppelt.
+    /// </remarks>
     public sealed class DetectionBridge : MonoBehaviour
     {
-        [Header("Analysis")]
+        [Header("Objekterkennung")]
 
+        [Tooltip(
+            "YOLO-Detektor, dessen Erkennungsergebnisse weitergegeben werden.")]
         [SerializeField]
-        private RoomPresenceAnalyzer roomPresenceAnalyzer;
+        private YoloObjectDetector yoloObjectDetector;
+
+        /// <summary>
+        /// Wird nach jeder erfolgreichen Objekterkennung ausgelöst.
+        /// </summary>
+        /// <remarks>
+        /// Das Ereignis enthält die vollständige Liste aller aktuell
+        /// erkannten Objekte inklusive Klasse, Konfidenz und Koordinaten.
+        /// </remarks>
+        public event Action<
+            IReadOnlyList<DetectionResult.DetectedObject>>
+            ObjectsDetected;
 
         private void OnEnable()
         {
-            if (roomPresenceAnalyzer == null)
+            if (yoloObjectDetector == null)
             {
                 Debug.LogError(
-                    "DetectionBridge: Es wurde kein RoomPresenceAnalyzer zugewiesen.",
-                    this);
+                    "DetectionBridge: Es wurde kein YoloObjectDetector " +
+                    "zugewiesen.",
+                    this
+                );
 
                 return;
             }
 
-            roomPresenceAnalyzer.DistractionStarted += HandleDistractionStarted;
-            roomPresenceAnalyzer.DistractionCleared += HandleDistractionCleared;
+            yoloObjectDetector.DetectionsUpdated +=
+                HandleDetectionsUpdated;
         }
 
         private void OnDisable()
         {
-            if (roomPresenceAnalyzer == null)
+            if (yoloObjectDetector == null)
             {
                 return;
             }
 
-            roomPresenceAnalyzer.DistractionStarted -= HandleDistractionStarted;
-            roomPresenceAnalyzer.DistractionCleared -= HandleDistractionCleared;
+            yoloObjectDetector.DetectionsUpdated -=
+                HandleDetectionsUpdated;
         }
 
         /// <summary>
-        /// Reagiert auf eine bestätigte Ablenkung.
+        /// Empfängt ein neues Erkennungsergebnis und gibt die darin
+        /// enthaltene Objektliste unverändert weiter.
         /// </summary>
-        private void HandleDistractionStarted(
-            RoomDetectionState state,
-            DistractionReason reason)
+        private void HandleDetectionsUpdated(
+            DetectionResult result)
         {
+            ObjectsDetected?.Invoke(result.Objects);
+
             Debug.Log(
-                $"DetectionBridge: Ablenkung erkannt. Ursache: {reason}",
-                this);
-
-            // TODO:
-            // Hier wird im nächsten Schritt das bestehende
-            // VR-/UISwap-System angesprochen.
-        }
-
-        /// <summary>
-        /// Reagiert darauf, dass keine Ablenkung mehr vorliegt.
-        /// </summary>
-        private void HandleDistractionCleared()
-        {
-            Debug.Log(
-                "DetectionBridge: Keine Ablenkung mehr aktiv.",
-                this);
-
-            // TODO:
-            // Hier wird später die Meldung wieder ausgeblendet.
+                $"DetectionBridge: {result.Objects.Count} Objekt(e) " +
+                "an nachgelagerte Komponenten weitergegeben.",
+                this
+            );
         }
     }
 }
