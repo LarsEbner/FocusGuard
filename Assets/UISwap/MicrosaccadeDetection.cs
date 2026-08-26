@@ -28,6 +28,7 @@ public class MicrosaccadeDetection : MonoBehaviour
     private readonly List<Microsaccade> saccadeItems = new List<Microsaccade>();
     private AutoDeletingList<Microsaccade> saccades;
 
+    public IEnumerable<Microsaccade> Saccades => saccades;
 
     private float lastRightX, lastRightY;
     private float lastLeftX, lastLeftY;

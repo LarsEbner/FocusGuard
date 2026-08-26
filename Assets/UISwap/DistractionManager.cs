@@ -84,6 +84,7 @@ public class DistractionManager : MonoBehaviour
 
         wasDistracted = IsDistracted;
 
+
         if (IsDistracted)
         {
             focusEffectController.LooksAway();
@@ -129,14 +130,13 @@ public class DistractionManager : MonoBehaviour
 
     private bool IsMicrosaccadeAnomaly(IEnumerable<Microsaccade> saccades)
     {
-        Microsaccade first = saccades.FirstOrDefault();
-        if (first == null) return false;
+        if (saccades.Count() == 0) return false;
 
         Microsaccade lastValid = saccades.LastOrDefault(s => s.Valid);
 
         float elapsedSinceValid = lastValid != null
             ? Time.time - lastValid.Timestamp
-            : Time.time - first.Timestamp; // noch nie eine gültige Sakkade gemessen
+            : Time.time - saccades.First().Timestamp; // noch nie eine gültige Sakkade gemessen
 
         if (logRuleEvaluation)
         {
