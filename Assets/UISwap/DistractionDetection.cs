@@ -1,13 +1,23 @@
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using UnityEngine;
 
 public class DistractionDetection : MonoBehaviour
 {
-    private readonly List<Distraction> distractions = new List<Distraction>();
+    [Tooltip("Wie lange (in Sekunden) abgeschlossene Distractions in der Liste behalten werden, bevor sie automatisch entfernt werden. Sollte mindestens so groß sein wie das Zeitfenster für 'wiederholtes kurzes Wegschauen' im DistractionManager.")]
+    [SerializeField] private float distractionRetentionSeconds = 60f;
 
-    public IReadOnlyList<Distraction> Distractions => distractions;
+    private readonly List<Distraction> distractionItems = new List<Distraction>();
+    private AutoDeletingList<Distraction> distractions;
+
+    public IEnumerable<Distraction> Distractions => distractions;
+
+    private void Awake()
+    {
+        distractions = new AutoDeletingList<Distraction>(
+            distractionItems,
+            d => !d.IsOngoing && Time.time - d.LookAwayTime > distractionRetentionSeconds);
+    }
 
     public void LooksAway()
     {
@@ -18,6 +28,4 @@ public class DistractionDetection : MonoBehaviour
     {
         distractions.LastOrDefault(d => d.IsOngoing)?.MarkLookedAt(Time.time);
     }
-
-
 }

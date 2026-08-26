@@ -1035,12 +1035,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DistractionManager
   distractionDetection: {fileID: 452092348}
+  microsaccadeDetection: {fileID: 137221565}
   focusEffectController: {fileID: 868886410}
   distractionThreshold: 5
   distractionCountThreshold: 3
   distractionCountWindow: 5
   shortDistractionEffectHoldSeconds: 5
-  logRuleEvaluation: 0
+  microsaccadeAnomalyThreshold: 100
+  logRuleEvaluation: 1
 --- !u!1001 &109710887
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1495,6 +1497,55 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6641307924939840349, guid: ea6ee2536b9054444925f737cda04948, type: 3}
   m_PrefabInstance: {fileID: 5834606447965469425}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &137221564
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 137221566}
+  - component: {fileID: 137221565}
+  m_Layer: 0
+  m_Name: 'Script: MicrosaccadeDetection'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &137221565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137221564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dec14bd19c43e47b98a71b103c3b97e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MicrosaccadeDetection
+  rightGaze: {fileID: 863371477}
+  leftGaze: {fileID: 1409620016}
+  minSaccadeDistance: 0.05
+  maxSaccadeDistance: 2
+  saccadeRetentionSeconds: 30
+--- !u!4 &137221566
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137221564}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.44707, y: -13.4676, z: 4.91533}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 985550723}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &138585006
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4734,6 +4785,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a154e2a482a121147be539c1f9ec08ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DistractionDetection
+  distractionRetentionSeconds: 60
 --- !u!1001 &453153831
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11444,6 +11496,7 @@ Transform:
   - {fileID: 868886409}
   - {fileID: 452092347}
   - {fileID: 1948547655}
+  - {fileID: 137221566}
   - {fileID: 101152525}
   - {fileID: 2137709452}
   m_Father: {fileID: 0}

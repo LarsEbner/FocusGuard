@@ -1,10 +1,12 @@
 using System.Collections.Generic;
 using System.Linq;
+using Assets.EyeTracking;
 using UnityEngine;
 
 public class DistractionManager : MonoBehaviour
 {
     [SerializeField] private DistractionDetection distractionDetection;
+    [SerializeField] private MicrosaccadeDetection microsaccadeDetection;
     [SerializeField] private FocusEffectController focusEffectController;
 
     [Header("Durchgehendes Wegschauen")]
@@ -21,10 +23,14 @@ public class DistractionManager : MonoBehaviour
     [Tooltip("Wie lange (in Sekunden) der Effekt nach einer erkannten kurzen Ablenkung noch aktiv bleibt, auch wenn man sofort wieder hinschaut.")]
     [SerializeField] private float shortDistractionEffectHoldSeconds = 3f;
 
+    [Header("Mikrosakkaden-Erkennung")]
+    [Tooltip("Zeit in Sekunden ohne eine gültige Mikrosakkade, ab der dies zusätzlich als Ablenkung gewertet wird.")]
+    [SerializeField] private float microsaccadeAnomalyThreshold = 5f;
+
     [Header("Debug")]
     [SerializeField] private bool logRuleEvaluation = false;
 
-    private int lastKnownDistractionCount = 0;
+    private Distraction lastLoggedDistraction;
     private bool? wasDistracted = null;
     private float effectHoldUntil = -1f;
 
@@ -32,28 +38,34 @@ public class DistractionManager : MonoBehaviour
 
     private void Update()
     {
-        IReadOnlyList<Distraction> distractions = distractionDetection.Distractions;
+        IEnumerable<Distraction> distractions = distractionDetection.Distractions;
+        IEnumerable<Microsaccade> saccades = microsaccadeDetection.Saccades;
 
         CheckForNewDistraction(distractions);
-        EvaluateDistraction(distractions);
+        EvaluateDistraction(distractions, saccades);
         UpdateFocusEffect();
     }
 
-    private void CheckForNewDistraction(IReadOnlyList<Distraction> distractions)
+    /// <summary>
+    /// Loggt eine neu hinzugekommene Distraction. Vergleicht dazu die
+    /// Referenz der letzten Distraction (nicht den Count), damit das
+    /// Entfernen alter Einträge in DistractionDetection dies nicht stört.
+    /// </summary>
+    private void CheckForNewDistraction(IEnumerable<Distraction> distractions)
     {
-        int currentCount = distractions.Count;
+        Distraction newest = distractions.LastOrDefault();
 
-        if (currentCount > lastKnownDistractionCount)
+        if (newest != null && newest != lastLoggedDistraction)
         {
-            Distraction newest = distractions[currentCount - 1];
-            lastKnownDistractionCount = currentCount;
+            lastLoggedDistraction = newest;
         }
     }
 
-    private void EvaluateDistraction(IReadOnlyList<Distraction> distractions)
+    private void EvaluateDistraction(IEnumerable<Distraction> distractions, IEnumerable<Microsaccade> saccades)
     {
         bool sustained = IsSustainedLookAway(distractions);
         bool repeatedNow = IsRepeatedLookAwayThresholdExceeded(distractions);
+        bool microsaccadeAnomaly = IsMicrosaccadeAnomaly(saccades);
 
         // Sobald die kurze-Ablenkung-Regel triggert, den Hold-Timer (neu) setzen
         if (repeatedNow)
@@ -63,7 +75,7 @@ public class DistractionManager : MonoBehaviour
 
         bool holdActive = Time.time <= effectHoldUntil;
 
-        IsDistracted = sustained || holdActive;
+        IsDistracted = sustained || holdActive || microsaccadeAnomaly;
     }
 
     private void UpdateFocusEffect()
@@ -71,7 +83,6 @@ public class DistractionManager : MonoBehaviour
         if (IsDistracted == wasDistracted) return;
 
         wasDistracted = IsDistracted;
-        
 
         if (IsDistracted)
         {
@@ -83,7 +94,7 @@ public class DistractionManager : MonoBehaviour
         }
     }
 
-    private bool IsSustainedLookAway(IReadOnlyList<Distraction> distractions)
+    private bool IsSustainedLookAway(IEnumerable<Distraction> distractions)
     {
         Distraction latest = distractions.LastOrDefault();
         if (latest == null || !latest.IsOngoing) return false;
@@ -103,7 +114,7 @@ public class DistractionManager : MonoBehaviour
         return d.Duration ?? (Time.time - d.LookAwayTime);
     }
 
-    private bool IsRepeatedLookAwayThresholdExceeded(IReadOnlyList<Distraction> distractions)
+    private bool IsRepeatedLookAwayThresholdExceeded(IEnumerable<Distraction> distractions)
     {
         float windowStart = Time.time - distractionCountWindow;
         int count = distractions.Count(d => d.LookAwayTime >= windowStart);
@@ -114,5 +125,24 @@ public class DistractionManager : MonoBehaviour
         }
 
         return count >= distractionCountThreshold;
+    }
+
+    private bool IsMicrosaccadeAnomaly(IEnumerable<Microsaccade> saccades)
+    {
+        Microsaccade first = saccades.FirstOrDefault();
+        if (first == null) return false;
+
+        Microsaccade lastValid = saccades.LastOrDefault(s => s.Valid);
+
+        float elapsedSinceValid = lastValid != null
+            ? Time.time - lastValid.Timestamp
+            : Time.time - first.Timestamp; // noch nie eine gültige Sakkade gemessen
+
+        if (logRuleEvaluation)
+        {
+            Debug.Log($"[DistractionManager] Mikrosakkaden-Check: seit letzter gültiger Sakkade={elapsedSinceValid:F2}s / threshold={microsaccadeAnomalyThreshold}s");
+        }
+
+        return elapsedSinceValid >= microsaccadeAnomalyThreshold;
     }
 }
