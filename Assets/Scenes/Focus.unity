@@ -170,7 +170,6 @@ MonoBehaviour:
   modelAsset: {fileID: 5022602860645237092, guid: aafcfe392a027b7429bcef5718fd13c0, type: 3}
   backendType: 256
   frameProvider: {fileID: 9982073}
-  roomPresenceAnalyzer: {fileID: 9982076}
   confidenceThreshold: 0.45
   intersectionOverUnionThreshold: 0.45
   inferenceIntervalSeconds: 0.5
@@ -220,7 +219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cf3b0f04e64fe34f81cc576262b05c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FocusGuard.Detection.Integration.DetectionBridge
-  roomPresenceAnalyzer: {fileID: 9982076}
+  yoloObjectDetector: {fileID: 0}
 --- !u!114 &9982076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -991,6 +990,57 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6519894241379486527, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
   m_PrefabInstance: {fileID: 100046561}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &101152524
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 101152525}
+  - component: {fileID: 101152526}
+  m_Layer: 0
+  m_Name: 'Script: DistractionManager'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &101152525
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101152524}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.44707, y: -13.4676, z: 4.91533}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 985550723}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &101152526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101152524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4da23c31064484d8bb587e0fc19f7daa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DistractionManager
+  distractionDetection: {fileID: 452092348}
+  focusEffectController: {fileID: 868886410}
+  distractionThreshold: 5
+  distractionCountThreshold: 3
+  distractionCountWindow: 5
+  shortDistractionEffectHoldSeconds: 5
+  logRuleEvaluation: 0
 --- !u!1001 &109710887
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4656,7 +4706,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &452092347
 Transform:
   m_ObjectHideFlags: 0
@@ -4684,11 +4734,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a154e2a482a121147be539c1f9ec08ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DistractionDetection
-  Screen: {fileID: 776454413}
-  GazeTrigger: {fileID: 0}
-  shortDistractionLimit: 2
-  timeForLongDistractions: 10
-  timeForShortDistractions: 3
 --- !u!1001 &453153831
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11399,6 +11444,7 @@ Transform:
   - {fileID: 868886409}
   - {fileID: 452092347}
   - {fileID: 1948547655}
+  - {fileID: 101152525}
   - {fileID: 2137709452}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -20106,9 +20152,9 @@ MonoBehaviour:
   _onGazeEnter:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 868886410}
-        m_TargetAssemblyTypeName: FocusEffectController, Assembly-CSharp
-        m_MethodName: LooksAtROI
+      - m_Target: {fileID: 452092348}
+        m_TargetAssemblyTypeName: DistractionDetection, Assembly-CSharp
+        m_MethodName: LooksAtScreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -20121,8 +20167,8 @@ MonoBehaviour:
   _onGazeExit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 868886410}
-        m_TargetAssemblyTypeName: UISwap, Assembly-CSharp
+      - m_Target: {fileID: 452092348}
+        m_TargetAssemblyTypeName: DistractionDetection, Assembly-CSharp
         m_MethodName: LooksAway
         m_Mode: 1
         m_Arguments:

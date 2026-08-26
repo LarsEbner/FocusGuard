@@ -36,6 +36,7 @@ public class FocusEffectController : MonoBehaviour
 
     public void Start()
     {
+        
         transitionEffect = Union(
             BackgroundColor(Color.white).AddRange(0.5f, 1.0f, null),
             Passthrough().Invert(),
@@ -46,6 +47,7 @@ public class FocusEffectController : MonoBehaviour
 
         IsLookingAtROI = false;
         SetEffect(0.0f);
+        
     }
 
     private void Update()

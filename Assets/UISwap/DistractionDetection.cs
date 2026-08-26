@@ -1,60 +1,23 @@
-using Assets.Effects; 
-using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using UnityEngine;
-using static Assets.Effects.FocusEffects;
 
 public class DistractionDetection : MonoBehaviour
 {
-    public GameObject Screen;
-    public GameObject GazeTrigger;
+    private readonly List<Distraction> distractions = new List<Distraction>();
 
-    public int shortDistractionLimit;
-    public int timeForLongDistractions;
-    public int timeForShortDistractions;
+    public IReadOnlyList<Distraction> Distractions => distractions;
 
-    private FocusEffect focusEffect;
-
-    int shortDistractionCount = 0;
-
-    public void Start()
+    public void LooksAway()
     {
-        focusEffect = Union(
-            BackgroundColor(Color.white).AddRange(0.5f, 1.0f, null),
-            Passthrough().Invert(),
-            Vignette(),
-            LogStrength()
-        );
-        focusEffect(0);
+        distractions.Add(new Distraction(Time.time));
     }
 
     public void LooksAtScreen()
     {
-        //StopCoroutine(LongDistractions());
-        focusEffect(0);
+        distractions.LastOrDefault(d => d.IsOngoing)?.MarkLookedAt(Time.time);
     }
 
-    public void LooksAway()
-    {
-        //StartCoroutine(LongDistractions());
-        StartCoroutine(ShortDistractionCounter());
-    }
 
-    IEnumerator LongDistractions()
-    {
-        yield return new WaitForSecondsRealtime(timeForLongDistractions);
-        focusEffect(1);
-    }
-
-    IEnumerator ShortDistractionCounter()
-    {
-        shortDistractionCount++;
-        Debug.Log("ShortDistractionCount: " + shortDistractionCount);
-        if (shortDistractionCount > (shortDistractionLimit - 1))
-        {
-            focusEffect(1);
-        }
-        yield return new WaitForSecondsRealtime(timeForShortDistractions);
-        shortDistractionCount--;
-        Debug.Log("ShortDistractionCount: " + shortDistractionCount);
-    }
 }
