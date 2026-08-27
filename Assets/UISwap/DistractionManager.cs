@@ -7,6 +7,7 @@ public class DistractionManager : MonoBehaviour
 {
     [SerializeField] private DistractionDetection distractionDetection;
     [SerializeField] private MicrosaccadeDetection microsaccadeDetection;
+    [SerializeField] private PupilDilation pupilDilation;
     [SerializeField] private FocusEffectController focusEffectController;
 
     [Header("Durchgehendes Wegschauen")]
@@ -27,6 +28,14 @@ public class DistractionManager : MonoBehaviour
     [Tooltip("Zeit in Sekunden ohne eine gültige Mikrosakkade, ab der dies zusätzlich als Ablenkung gewertet wird.")]
     [SerializeField] private float microsaccadeAnomalyThreshold = 5f;
 
+    [Header("Pupillen-Erkennung")]
+    [Tooltip("Pupillen Größe in mm, die als normal angesehen wird.")]
+    [SerializeField] private float normalPupilSize = 4f;
+
+    [Tooltip("Pupillen Größen Änderung in mm, die als Indiz für Focus gewertet wird.")]
+    [SerializeField]
+    private float focusedDilation = 0.2f;
+
     [Header("Debug")]
     [SerializeField] private bool logRuleEvaluation = false;
 
@@ -40,9 +49,10 @@ public class DistractionManager : MonoBehaviour
     {
         IEnumerable<Distraction> distractions = distractionDetection.Distractions;
         IEnumerable<Microsaccade> saccades = microsaccadeDetection.Saccades;
+        IEnumerable<PupilSize> pupilSizes = pupilDilation.PupilSizes;
 
         CheckForNewDistraction(distractions);
-        EvaluateDistraction(distractions, saccades);
+        EvaluateDistraction(distractions, saccades, pupilSizes);
         UpdateFocusEffect();
     }
 
@@ -61,11 +71,12 @@ public class DistractionManager : MonoBehaviour
         }
     }
 
-    private void EvaluateDistraction(IEnumerable<Distraction> distractions, IEnumerable<Microsaccade> saccades)
+    private void EvaluateDistraction(IEnumerable<Distraction> distractions, IEnumerable<Microsaccade> saccades, IEnumerable<PupilSize> pupilSizes)
     {
         bool sustained = IsSustainedLookAway(distractions);
         bool repeatedNow = IsRepeatedLookAwayThresholdExceeded(distractions);
         bool microsaccadeAnomaly = IsMicrosaccadeAnomaly(saccades);
+        bool PupilFocus = PupilsDilated(pupilSizes); // wo hin?
 
         // Sobald die kurze-Ablenkung-Regel triggert, den Hold-Timer (neu) setzen
         if (repeatedNow)
@@ -144,5 +155,22 @@ public class DistractionManager : MonoBehaviour
         }
 
         return elapsedSinceValid >= microsaccadeAnomalyThreshold;
+    }
+
+    private bool PupilsDilated(IEnumerable<PupilSize> pupilSizes)
+    {
+        if (pupilSizes.Count() == 0) return false;
+
+        float sumOfAllEyes = 0;
+        int amountChecked = 0;
+
+        foreach (PupilSize pupilSize in pupilSizes)
+        {
+            sumOfAllEyes += pupilSize.RightSize + pupilSize.LeftSize;
+            amountChecked++;
+        }
+        float averagePupilSize = sumOfAllEyes / amountChecked;
+
+        return averagePupilSize >= (normalPupilSize + focusedDilation);
     }
 }
