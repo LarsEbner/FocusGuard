@@ -25,6 +25,9 @@ public class MicrosaccadeDetection : MonoBehaviour
     [Tooltip("Wie lange (in Sekunden) einzelne Messungen in der Liste behalten werden, bevor sie automatisch entfernt werden.")]
     [SerializeField] private float saccadeRetentionSeconds = 30f;
 
+    [Tooltip("Wie viel Prozent (0 bis 1) der Saccaden als valid gewertet werden müssen damit Microsaccaden vorhanden sind.")]
+    [SerializeField] private double saccadeThreshold = 0.9;
+
     private readonly List<Microsaccade> saccadeItems = new List<Microsaccade>();
     private AutoDeletingList<Microsaccade> saccades;
 
@@ -82,5 +85,19 @@ public class MicrosaccadeDetection : MonoBehaviour
         bool leftOk = rotationLeft < maxSaccadeDistance && rotationLeft > minSaccadeDistance;
 
         saccades.Add(new Microsaccade(rightOk && leftOk, Time.time));
+    }
+
+    public bool MicroSaccDetected()
+    {
+        int amountValid = 0;
+        foreach (Microsaccade microsaccade in saccades)
+        {
+            if(microsaccade.Valid)
+            {
+                amountValid++;
+            }
+        }
+        int count = saccades.Count();
+        return (amountValid / count) >= saccadeThreshold;
     }
 }

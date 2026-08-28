@@ -51,6 +51,7 @@ public class PupilDilation : MonoBehaviour
             XrVector2f leftPupilPosition = leftPupil.pupilPosition;
         }
 
+        //Debug.Log($"Pupil Size Right: " + rightPupilDiameter + " Pupil Size Left: " + leftPupilDiameter);
         pupilSizes.Add(new PupilSize(rightPupilDiameter, leftPupilDiameter, Time.time));
     }
 }

@@ -47,6 +47,11 @@ public class AutoDeletingList<T> : IEnumerable<T>
         return items.GetEnumerator();
     }
 
+    public int Count()
+    {
+        return items.Count;
+    }
+
     IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 
     private void RemoveOutdated()

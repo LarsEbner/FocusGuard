@@ -10,22 +10,26 @@ public class DistractionDetection : MonoBehaviour
     private readonly List<Distraction> distractionItems = new List<Distraction>();
     private AutoDeletingList<Distraction> distractions;
 
+    public bool looksAtScreen = false;
+
     public IEnumerable<Distraction> Distractions => distractions;
 
     private void Awake()
     {
         distractions = new AutoDeletingList<Distraction>(
             distractionItems,
-            d => !d.IsOngoing && Time.time - d.LookAwayTime > distractionRetentionSeconds);
+            d => !d.IsOngoing && Time.time - d.LookAtTime > distractionRetentionSeconds);
     }
 
     public void LooksAway()
     {
+        looksAtScreen = false;
         distractions.Add(new Distraction(Time.time));
     }
 
     public void LooksAtScreen()
     {
+        looksAtScreen = true;
         distractions.LastOrDefault(d => d.IsOngoing)?.MarkLookedAt(Time.time);
     }
 }

@@ -44,6 +44,7 @@ public class DistractionManager : MonoBehaviour
     private float effectHoldUntil = -1f;
 
     public bool IsDistracted { get; private set; }
+    public bool IsFocused { get; private set; }
 
     private void Update()
     {
@@ -76,17 +77,21 @@ public class DistractionManager : MonoBehaviour
         bool sustained = IsSustainedLookAway(distractions);
         bool repeatedNow = IsRepeatedLookAwayThresholdExceeded(distractions);
         bool microsaccadeAnomaly = IsMicrosaccadeAnomaly(saccades);
-        bool PupilFocus = PupilsDilated(pupilSizes); // wo hin?
+        bool atScreen = distractionDetection.looksAtScreen;
+        bool longScreenTime = distractions.Count() == 0;
+        bool microSaccadesPresent = microsaccadeDetection.MicroSaccDetected();
+        bool PupilFocus = PupilsDilated(pupilSizes);
 
         // Sobald die kurze-Ablenkung-Regel triggert, den Hold-Timer (neu) setzen
-        if (repeatedNow)
+        if (repeatedNow || sustained)
         {
             effectHoldUntil = Time.time + shortDistractionEffectHoldSeconds;
         }
 
         bool holdActive = Time.time <= effectHoldUntil;
 
-        IsDistracted = sustained || holdActive || microsaccadeAnomaly;
+        IsDistracted = sustained || holdActive; //|| microsaccadeAnomaly
+        IsFocused = atScreen && longScreenTime && microSaccadesPresent && PupilFocus;
     }
 
     private void UpdateFocusEffect()
@@ -162,13 +167,13 @@ public class DistractionManager : MonoBehaviour
         if (pupilSizes.Count() == 0) return false;
 
         float sumOfAllEyes = 0;
-        int amountChecked = 0;
 
         foreach (PupilSize pupilSize in pupilSizes)
         {
             sumOfAllEyes += pupilSize.RightSize + pupilSize.LeftSize;
-            amountChecked++;
         }
+
+        int amountChecked = pupilSizes.Count() * 2;
         float averagePupilSize = sumOfAllEyes / amountChecked;
 
         return averagePupilSize >= (normalPupilSize + focusedDilation);
