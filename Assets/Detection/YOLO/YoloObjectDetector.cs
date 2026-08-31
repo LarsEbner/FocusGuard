@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.InferenceEngine;
 using FocusGuard.Detection.FrameSources;
+using Assets.Detection.YOLO;
 
 namespace FocusGuard.Detection.YOLO
 {
@@ -29,94 +30,6 @@ namespace FocusGuard.Detection.YOLO
         // Batch × Attribute × Kandidaten = 1 × 84 × 8400.
         private const int ExpectedAttributeCount = 84;
         private const int ExpectedCandidateCount = 8400;
-
-        /// <summary>
-        /// COCO-Klassen in der von YOLOv8 verwendeten Reihenfolge.
-        /// Der numerische Enum-Wert entspricht direkt der COCO-Klassen-ID.
-        /// </summary>
-        public enum CocoClass
-        {
-            Person = 0,
-            Bicycle = 1,
-            Car = 2,
-            Motorcycle = 3,
-            Airplane = 4,
-            Bus = 5,
-            Train = 6,
-            Truck = 7,
-            Boat = 8,
-            TrafficLight = 9,
-            FireHydrant = 10,
-            StopSign = 11,
-            ParkingMeter = 12,
-            Bench = 13,
-            Bird = 14,
-            Cat = 15,
-            Dog = 16,
-            Horse = 17,
-            Sheep = 18,
-            Cow = 19,
-            Elephant = 20,
-            Bear = 21,
-            Zebra = 22,
-            Giraffe = 23,
-            Backpack = 24,
-            Umbrella = 25,
-            Handbag = 26,
-            Tie = 27,
-            Suitcase = 28,
-            Frisbee = 29,
-            Skis = 30,
-            Snowboard = 31,
-            SportsBall = 32,
-            Kite = 33,
-            BaseballBat = 34,
-            BaseballGlove = 35,
-            Skateboard = 36,
-            Surfboard = 37,
-            TennisRacket = 38,
-            Bottle = 39,
-            WineGlass = 40,
-            Cup = 41,
-            Fork = 42,
-            Knife = 43,
-            Spoon = 44,
-            Bowl = 45,
-            Banana = 46,
-            Apple = 47,
-            Sandwich = 48,
-            Orange = 49,
-            Broccoli = 50,
-            Carrot = 51,
-            HotDog = 52,
-            Pizza = 53,
-            Donut = 54,
-            Cake = 55,
-            Chair = 56,
-            Couch = 57,
-            PottedPlant = 58,
-            Bed = 59,
-            DiningTable = 60,
-            Toilet = 61,
-            Tv = 62,
-            Laptop = 63,
-            Mouse = 64,
-            Remote = 65,
-            Keyboard = 66,
-            CellPhone = 67,
-            Microwave = 68,
-            Oven = 69,
-            Toaster = 70,
-            Sink = 71,
-            Refrigerator = 72,
-            Book = 73,
-            Clock = 74,
-            Vase = 75,
-            Scissors = 76,
-            TeddyBear = 77,
-            HairDrier = 78,
-            Toothbrush = 79
-        }
 
         [Header("Modell")]
 
@@ -146,8 +59,9 @@ namespace FocusGuard.Detection.YOLO
             "Objektklassen, die erkannt werden sollen, wenn " +
             "'Detect All Classes' deaktiviert ist.")]
         [SerializeField]
-        private List<CocoClass> enabledClasses =
-            new List<CocoClass>();
+        private List<CocoClass> _enabledClasses = new();
+
+        public List<CocoClass> EnabledClasses { get => _enabledClasses; set { _enabledClasses = value; } }
 
         [Header("Erkennungsschwellen")]
 
@@ -471,19 +385,14 @@ namespace FocusGuard.Detection.YOLO
                         rectangle));
             }
 
-            List<Candidate> filteredCandidates =
-                ApplyNonMaximumSuppression(candidates);
-
-            List<DetectionResult.DetectedObject> objects =
-                new List<DetectionResult.DetectedObject>(
-                    filteredCandidates.Count);
+            List<Candidate> filteredCandidates = ApplyNonMaximumSuppression(candidates);
+            List<DetectionResult.DetectedObject> objects = new(filteredCandidates.Count);
 
             foreach (Candidate candidate in filteredCandidates)
             {
                 objects.Add(
                     new DetectionResult.DetectedObject(
-                        candidate.ClassId,
-                        GetClassName(candidate.ClassId),
+                        (CocoClass)candidate.ClassId,
                         candidate.Confidence,
                         candidate.Rectangle.x,
                         candidate.Rectangle.y,
@@ -504,8 +413,8 @@ namespace FocusGuard.Detection.YOLO
                 return true;
             }
 
-            if (enabledClasses == null ||
-                enabledClasses.Count == 0)
+            if (EnabledClasses == null ||
+                EnabledClasses.Count == 0)
             {
                 return false;
             }
@@ -513,19 +422,7 @@ namespace FocusGuard.Detection.YOLO
             CocoClass targetClass =
                 (CocoClass)classId;
 
-            return enabledClasses.Contains(targetClass);
-        }
-
-        private static string GetClassName(
-            int classId)
-        {
-            if (classId < 0 ||
-                classId >= CocoClassCount)
-            {
-                return $"unknown_{classId}";
-            }
-
-            return ((CocoClass)classId).ToString();
+            return EnabledClasses.Contains(targetClass);
         }
 
         private static float ReadOutputValue(

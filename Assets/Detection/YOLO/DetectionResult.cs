@@ -1,3 +1,4 @@
+using Assets.Detection.YOLO;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -35,12 +36,7 @@ namespace FocusGuard.Detection.YOLO
             /// <summary>
             /// Numerische Klassen-ID des Objekts.
             /// </summary>
-            public int ClassId;
-
-            /// <summary>
-            /// Name der erkannten Objektklasse.
-            /// </summary>
-            public string ClassName;
+            public CocoClass ClassId;
 
             /// <summary>
             /// Konfidenz der Erkennung zwischen 0 und 1.
@@ -68,8 +64,7 @@ namespace FocusGuard.Detection.YOLO
             public float Height;
 
             public DetectedObject(
-                int classId,
-                string className,
+                CocoClass classId,
                 float confidence,
                 float x,
                 float y,
@@ -77,7 +72,6 @@ namespace FocusGuard.Detection.YOLO
                 float height)
             {
                 ClassId = classId;
-                ClassName = className;
                 Confidence = confidence;
                 X = x;
                 Y = y;
@@ -88,7 +82,7 @@ namespace FocusGuard.Detection.YOLO
             public override string ToString()
             {
                 return
-                    $"{ClassName} | " +
+                    $"{ClassId} | " +
                     $"Confidence={Confidence:F2} | " +
                     $"X={X:F1}, Y={Y:F1}, " +
                     $"W={Width:F1}, H={Height:F1}";

@@ -128,8 +128,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9982071}
-  - component: {fileID: 9982076}
-  - component: {fileID: 9982075}
   - component: {fileID: 9982073}
   - component: {fileID: 9982074}
   - component: {fileID: 9982072}
@@ -170,8 +168,8 @@ MonoBehaviour:
   modelAsset: {fileID: 5022602860645237092, guid: aafcfe392a027b7429bcef5718fd13c0, type: 3}
   backendType: 256
   frameProvider: {fileID: 9982073}
-  detectAllClasses: 1
-  enabledClasses: 
+  detectAllClasses: 0
+  _enabledClasses: 
   confidenceThreshold: 0.45
   intersectionOverUnionThreshold: 0.45
   inferenceIntervalSeconds: 0.5
@@ -209,33 +207,6 @@ MonoBehaviour:
   backendType: 256
   frameProvider: {fileID: 9982073}
   inferenceIntervalSeconds: 1
---- !u!114 &9982075
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9982069}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cf3b0f04e64fe34f81cc576262b05c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FocusGuard.Detection.Integration.DetectionBridge
-  yoloObjectDetector: {fileID: 0}
---- !u!114 &9982076
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9982069}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e863c834e9c3e6245b223bc7505f5ce5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FocusGuard.Detection.Analysis.RoomPresenceAnalyzer
-  activationDelaySeconds: 1.5
-  clearDelaySeconds: 3
 --- !u!1 &14521251
 GameObject:
   m_ObjectHideFlags: 0
@@ -11732,16 +11703,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ObjectDetectionController
   detector: {fileID: 9982072}
   additionalObjects:
-  - ClassId: 0
-    ClassName: test
+  - ClassId: 1
     Confidence: 0
     X: 700
     Y: 100
     Width: 250
     Height: 500
   typeColors:
-  - type: person
-    color: {r: 0, g: 1, b: 0.9773574, a: 1}
+  - type: 0
+    color: {r: 0, g: 1, b: 1, a: 1}
   defaultColor: {r: 0, g: 1, b: 0, a: 1}
   imageRectangleOverlay: {fileID: 1017039637}
   webcamPointVisualizer: {fileID: 245556665}

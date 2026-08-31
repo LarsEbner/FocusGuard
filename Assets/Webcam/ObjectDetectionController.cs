@@ -1,4 +1,5 @@
-﻿using FocusGuard.Detection.YOLO;
+﻿using Assets.Detection.YOLO;
+using FocusGuard.Detection.YOLO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,27 +9,11 @@ using static FocusGuard.Detection.YOLO.DetectionResult;
 public class ObjectDetectionController : MonoBehaviour
 {
     [Serializable]
-    private class Detection
-    {
-        public string type;
-
-        [Range(0f, 1f)]
-        public float confidence;
-
-        public float x;
-        public float y;
-        public float width;
-        public float height;
-    }
-
-
-    [Serializable]
     private class TypeColor
     {
-        public string type;
-        public Color color = Color.white;
+        public CocoClass type;
+        public Color color;
     }
-
 
     [Header("Detection")]
 
@@ -38,11 +23,11 @@ public class ObjectDetectionController : MonoBehaviour
     [SerializeField]
     private List<DetectedObject> additionalObjects;
 
-
     [Header("Colors")]
-
     [SerializeField]
-    private List<TypeColor> typeColors = new List<TypeColor>();
+    private List<TypeColor> typeColors = new();
+
+    private Dictionary<CocoClass, Color> colorDictionary;
 
     [SerializeField]
     private Color defaultColor = Color.green;
@@ -59,8 +44,17 @@ public class ObjectDetectionController : MonoBehaviour
     [SerializeField]
     private ProjectedRectangleCylinderVisualizer projectedRectangleCylinderVisualizer;
 
+    private void Awake()
+    {
+        colorDictionary = typeColors.ToDictionary(
+            entry => entry.type,
+            entry => entry.color
+        );
+    }
+
     private void Start()
     {
+        detector.EnabledClasses = colorDictionary.Keys.ToList();
         detector.ProcessDetectionResult += UpdateVisualizations;
     }
 
@@ -97,7 +91,7 @@ public class ObjectDetectionController : MonoBehaviour
                     y = obj.Y,
                     width = obj.Width,
                     height = obj.Height,
-                    color = GetColor(obj.ClassName)
+                    color = GetColor(obj.ClassId),
                 }
             );
         }
@@ -162,7 +156,7 @@ public class ObjectDetectionController : MonoBehaviour
             pointGroups.Add(
                 new WebcamPointVisualizer.PointGroup
                 {
-                    color = GetColor(obj.ClassName),
+                    color = GetColor(obj.ClassId),
                     points = points
                 }
             );
@@ -198,21 +192,8 @@ public class ObjectDetectionController : MonoBehaviour
         projectedRectangleCylinderVisualizer.Rectangles = rectangles;
     }
 
-
-    private Color GetColor(string type)
+    private Color GetColor(CocoClass classId)
     {
-        foreach (TypeColor typeColor in typeColors)
-        {
-            if (string.Equals(
-                    typeColor.type,
-                    type,
-                    StringComparison.OrdinalIgnoreCase))
-            {
-                return typeColor.color;
-            }
-        }
-
-
-        return defaultColor;
+        return colorDictionary.GetValueOrDefault(classId, defaultColor);
     }
 }
