@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.UISwap
+namespace Assets.Transform
 {
     internal sealed class OrbitTransform : MonoBehaviour
     {
@@ -22,7 +22,7 @@ namespace Assets.UISwap
         public float Height => _height;
         public float Tilt => _tilt;
 
-        private Transform TargetTransform =>
+        private UnityEngine.Transform TargetTransform =>
             (_target != null ? _target : gameObject).transform;
 
         private void Awake()

@@ -7,7 +7,7 @@ namespace Assets.UISwap
 {
     internal class CreateProjectedPassthrough : MonoBehaviour
     {
-        [SerializeField] private Transform Camera;
+        [SerializeField] private UnityEngine.Transform Camera;
 
         private XrPassthroughHTC passthrough;
         private Mesh UsingMesh;
