@@ -148,12 +148,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9982069}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 367, y: 184.16667, z: 0}
+  m_LocalRotation: {x: -0, y: 0.8923496, z: -0, w: 0.45134497}
+  m_LocalPosition: {x: -216.65952, y: 183.35767, z: -295.4669}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 972354962}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &9982072
 MonoBehaviour:
@@ -162,7 +162,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9982069}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d9373cef563267441b0d636e2376f4c1, type: 3}
   m_Name: 
@@ -170,7 +170,8 @@ MonoBehaviour:
   modelAsset: {fileID: 5022602860645237092, guid: aafcfe392a027b7429bcef5718fd13c0, type: 3}
   backendType: 256
   frameProvider: {fileID: 9982073}
-  roomPresenceAnalyzer: {fileID: 9982076}
+  detectAllClasses: 1
+  enabledClasses: 
   confidenceThreshold: 0.45
   intersectionOverUnionThreshold: 0.45
   inferenceIntervalSeconds: 0.5
@@ -220,7 +221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cf3b0f04e64fe34f81cc576262b05c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FocusGuard.Detection.Integration.DetectionBridge
-  roomPresenceAnalyzer: {fileID: 9982076}
+  yoloObjectDetector: {fileID: 0}
 --- !u!114 &9982076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3816,6 +3817,148 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6519894241379486527, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
   m_PrefabInstance: {fileID: 319700697}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &320712714
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 320712715}
+  - component: {fileID: 320712719}
+  - component: {fileID: 320712718}
+  - component: {fileID: 320712717}
+  - component: {fileID: 320712716}
+  - component: {fileID: 320712720}
+  m_Layer: 0
+  m_Name: Passthrough Template
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &320712715
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320712714}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1183584402}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &320712716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320712714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51f54f6c52cd9714d8e80656b47e4e07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Assets.UISwap.CreateProjectedPassthrough
+  Camera: {fileID: 727003672}
+--- !u!136 &320712717
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320712714}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5000001
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!23 &320712718
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320712714}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 3984d7d7975cd2e46a62b62ca5430db7, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &320712719
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320712714}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &320712720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320712714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8df01367d468a3148bffc531a4fe85c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Assets.UISwap.ROISelfRegister
+  _roiGazeInteraction: {fileID: 1948547656}
 --- !u!1001 &328951143
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11569,6 +11712,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 9982071}
   - {fileID: 107722826}
   - {fileID: 1970209382}
   - {fileID: 245556664}
@@ -11586,20 +11730,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db8d7632fd418e94cad59311a3ce3961, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectDetectionController
-  minimumConfidence: 0.5
-  detections:
-  - type: person
-    confidence: 0.714
-    x: 1000
-    y: 100
-    width: 200
-    height: 500
+  detector: {fileID: 9982072}
+  additionalObjects:
+  - ClassId: 0
+    ClassName: test
+    Confidence: 0
+    X: 700
+    Y: 100
+    Width: 250
+    Height: 500
   typeColors:
   - type: person
     color: {r: 0, g: 1, b: 0.9773574, a: 1}
   defaultColor: {r: 0, g: 1, b: 0, a: 1}
   imageRectangleOverlay: {fileID: 1017039637}
   webcamPointVisualizer: {fileID: 245556665}
+  projectedRectangleCylinderVisualizer: {fileID: 1183584401}
 --- !u!1001 &979312590
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11774,9 +11920,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51f54f6c52cd9714d8e80656b47e4e07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Assets.UISwap.CreateProjectedPassthrough
-  UsingMesh: {fileID: -5495902117074765545, guid: b8999f011beb73b45bb2fbf9312fb1de, type: 3}
-  Trans: {fileID: 986170479}
-  Cam: {fileID: 85422583}
+  Camera: {fileID: 727003672}
 --- !u!65 &986170476
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12261,7 +12405,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1017039631
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12359,7 +12503,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1017039630}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a7ca7853671a624d988396502864312, type: 3}
   m_Name: 
@@ -13233,6 +13377,58 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1191162403514636830, guid: 42e592d0d8ac51642ac9483ebedd9e82, type: 3}
   m_PrefabInstance: {fileID: 1180082778}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1183584400
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1183584402}
+  - component: {fileID: 1183584401}
+  m_Layer: 0
+  m_Name: Detected Objects Passthrough
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1183584401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183584400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 921cc5222faf64043a5b6b03156e3bc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectedRectangleCylinderVisualizer
+  webcamCamera: {fileID: 1970209385}
+  webcamWidth: 1080
+  webcamHeight: 720
+  groundY: -0.025
+  cylinderTemplate: {fileID: 320712714}
+  cylinderParent: {fileID: 1183584402}
+  rectangles: []
+--- !u!4 &1183584402
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183584400}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.765, y: 0.806, z: -1.286}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 320712715}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1186827232
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15072,9 +15268,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Manager
   windowPrefab: {fileID: 114000013686570872, guid: 2f55dbed71ab1a849aebe5c717f1de9d, type: 3}
   monitorParent: {fileID: 711123752}
-  roiLayer:
-    serializedVersion: 2
-    m_Bits: 8
   roiGazeInteraction: {fileID: 1948547656}
   scalePer1000Pixel: 1
 --- !u!114 &1379922651
@@ -18554,7 +18747,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1706987665
 Transform:
   m_ObjectHideFlags: 0
@@ -20767,7 +20960,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee4477a5d1f6e4e4091cc1bf7f7d2b57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Assets.UISwap.ROIGazeInteraction
-  _roiLayer:
+  RoiLayer:
     serializedVersion: 2
     m_Bits: 8
   _gazeInteractionLayer:
@@ -20821,7 +21014,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1960966096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20834,9 +21027,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51f54f6c52cd9714d8e80656b47e4e07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Assets.UISwap.CreateProjectedPassthrough
-  UsingMesh: {fileID: -5495902117074765545, guid: b8999f011beb73b45bb2fbf9312fb1de, type: 3}
-  Trans: {fileID: 1960966100}
-  Cam: {fileID: 85422583}
+  Camera: {fileID: 0}
 --- !u!65 &1960966097
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20989,13 +21180,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1970209381}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.038161177, y: -0.14172871, z: -0.015520599, w: 0.98904794}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 972354962}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -4.582, y: -16.264, z: -1.143}
 --- !u!114 &1970209383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22814,7 +23005,7 @@ MonoBehaviour:
     Script: {fileID: 2137709456}
   - Name: Show Effect Strength
     Script: {fileID: 2137709457}
-  - Name: Disable Effect Update
+  - Name: Freeze Effect Strength
     Script: {fileID: 2137709458}
   - Name: Control Effect Strength
     Script: {fileID: 2137709459}
@@ -22844,7 +23035,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2137709451}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4c5c085f6ffc7df409204f5c9482f30e, type: 3}
   m_Name: 
@@ -22890,7 +23081,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2137709451}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1e67615ff73b3743a649b0332206df0, type: 3}
   m_Name: 
@@ -25812,9 +26003,9 @@ SceneRoots:
   - {fileID: 1592633081}
   - {fileID: 248981171}
   - {fileID: 1706987665}
-  - {fileID: 9982071}
   - {fileID: 1379922652}
   - {fileID: 986170479}
   - {fileID: 1232505262}
   - {fileID: 972354962}
   - {fileID: 1960966100}
+  - {fileID: 1183584402}

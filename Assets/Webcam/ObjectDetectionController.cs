@@ -1,6 +1,9 @@
-﻿using System;
+﻿using FocusGuard.Detection.YOLO;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using static FocusGuard.Detection.YOLO.DetectionResult;
 
 public class ObjectDetectionController : MonoBehaviour
 {
@@ -29,25 +32,20 @@ public class ObjectDetectionController : MonoBehaviour
 
     [Header("Detection")]
 
-    [Tooltip("Erkennungen mit einer geringeren Confidence werden ignoriert.")]
-    [Range(0f, 1f)]
     [SerializeField]
-    private float minimumConfidence = 0.5f;
+    private YoloObjectDetector detector;
 
     [SerializeField]
-    private List<Detection> detections =
-        new List<Detection>();
+    private List<DetectedObject> additionalObjects;
 
 
     [Header("Colors")]
 
     [SerializeField]
-    private List<TypeColor> typeColors =
-        new List<TypeColor>();
+    private List<TypeColor> typeColors = new List<TypeColor>();
 
     [SerializeField]
-    private Color defaultColor =
-        Color.green;
+    private Color defaultColor = Color.green;
 
 
     [Header("Output")]
@@ -58,66 +56,48 @@ public class ObjectDetectionController : MonoBehaviour
     [SerializeField]
     private WebcamPointVisualizer webcamPointVisualizer;
 
-
-    // ========================================================================
-    // Unity
-    // ========================================================================
+    [SerializeField]
+    private ProjectedRectangleCylinderVisualizer projectedRectangleCylinderVisualizer;
 
     private void Start()
     {
-        UpdateVisualizations();
+        detector.ProcessDetectionResult += UpdateVisualizations;
     }
 
 
-    private void Update()
+    private void UpdateVisualizations(object sender, DetectionResult result)
     {
-        UpdateVisualizations();
+        List<DetectedObject> objects = new();
+
+        if (result.Objects != null) objects.AddRange(result.Objects);
+        if (additionalObjects != null) objects.AddRange(additionalObjects);
+
+
+        UpdateImageRectangleOverlay(objects);
+        UpdateWebcamPointVisualizer(objects);
+        UpdateProjectedRectangleCylinders(objects);
     }
 
 
-    // ========================================================================
-    // Update visualizations
-    // ========================================================================
-
-    private void UpdateVisualizations()
-    {
-        UpdateImageRectangleOverlay();
-
-        UpdateWebcamPointVisualizer();
-    }
-
-
-    // ========================================================================
-    // Image Rectangle Overlay
-    // ========================================================================
-
-    private void UpdateImageRectangleOverlay()
+    private void UpdateImageRectangleOverlay(List<DetectedObject> objects)
     {
         if (imageRectangleOverlay == null)
             return;
 
 
-        List<ImageRectangleOverlay.RectangleDefinition> rectangles =
-            new List<ImageRectangleOverlay.RectangleDefinition>();
+        List<ImageRectangleOverlay.RectangleDefinition> rectangles = new();
 
 
-        foreach (Detection detection in detections)
+        foreach (DetectedObject obj in objects)
         {
-            if (detection.confidence <
-                minimumConfidence)
-            {
-                continue;
-            }
-
-
             rectangles.Add(
                 new ImageRectangleOverlay.RectangleDefinition
                 {
-                    x = detection.x,
-                    y = detection.y,
-                    width = detection.width,
-                    height = detection.height,
-                    color = GetColor(detection.type)
+                    x = obj.X,
+                    y = obj.Y,
+                    width = obj.Width,
+                    height = obj.Height,
+                    color = GetColor(obj.ClassName)
                 }
             );
         }
@@ -127,11 +107,7 @@ public class ObjectDetectionController : MonoBehaviour
     }
 
 
-    // ========================================================================
-    // Webcam Point Visualizer
-    // ========================================================================
-
-    private void UpdateWebcamPointVisualizer()
+    private void UpdateWebcamPointVisualizer(List<DetectedObject> objects)
     {
         if (webcamPointVisualizer == null)
             return;
@@ -140,56 +116,11 @@ public class ObjectDetectionController : MonoBehaviour
         List<WebcamPointVisualizer.PointGroup> pointGroups = new();
 
 
-        foreach (Detection detection in detections)
+        foreach (DetectedObject obj in objects)
         {
-            if (detection.confidence <
-                minimumConfidence)
-            {
-                continue;
-            }
-
-
-            float left =
-                detection.x;
-
-            float right =
-                detection.x +
-                detection.width;
-
-            /*
-             * Die Detection beschreibt eine Bounding Box.
-             *
-             * x/y = obere linke Ecke
-             *
-             * Für die Projektion benötigen wir aber den
-             * Boden-Referenzpunkt der beiden unteren Ecken.
-             *
-             * Deshalb wird die untere Bildposition
-             * aus y + height berechnet.
-             */
-
-            float bottom =
-                detection.y +
-                detection.height;
-
-
-            /*
-             * Reihenfolge:
-             *
-             * 0 = Top Left
-             * 1 = Top Right
-             * 2 = Bottom Right
-             * 3 = Bottom Left
-             *
-             *
-             * Die oberen Punkte verwenden als
-             * Referenzpunkt jeweils den unteren
-             * Punkt derselben Seite.
-             *
-             * Die height der Detection beschreibt,
-             * wie weit der tatsächliche Punkt über
-             * diesem Referenzpunkt liegt.
-             */
+            float left = obj.X;
+            float right = obj.X + obj.Width;
+            float bottom = obj.Y + obj.Height;
 
             List<WebcamPointVisualizer.Point> points =
                 new List<WebcamPointVisualizer.Point>
@@ -199,7 +130,7 @@ public class ObjectDetectionController : MonoBehaviour
                     {
                         x = left,
                         y = bottom,
-                        height = detection.height
+                        height = obj.Height
                     },
 
                     // Top Right
@@ -207,7 +138,7 @@ public class ObjectDetectionController : MonoBehaviour
                     {
                         x = right,
                         y = bottom,
-                        height = detection.height
+                        height = obj.Height
                     },
 
                     // Bottom Right
@@ -231,7 +162,7 @@ public class ObjectDetectionController : MonoBehaviour
             pointGroups.Add(
                 new WebcamPointVisualizer.PointGroup
                 {
-                    color = GetColor(detection.type),
+                    color = GetColor(obj.ClassName),
                     points = points
                 }
             );
@@ -241,10 +172,32 @@ public class ObjectDetectionController : MonoBehaviour
         webcamPointVisualizer.PointGroups = pointGroups;
     }
 
+    private void UpdateProjectedRectangleCylinders(List<DetectedObject> objects)
+    {
+        if (projectedRectangleCylinderVisualizer == null)
+            return;
 
-    // ========================================================================
-    // Get color
-    // ========================================================================
+
+        List<ProjectedRectangleCylinderVisualizer.Rectangle> rectangles = new();
+
+
+        foreach (DetectedObject obj in objects)
+        {
+            rectangles.Add(
+                new ProjectedRectangleCylinderVisualizer.Rectangle
+                {
+                    x = obj.X,
+                    y = obj.Y,
+                    width = obj.Width,
+                    height = obj.Height
+                }
+            );
+        }
+
+
+        projectedRectangleCylinderVisualizer.Rectangles = rectangles;
+    }
+
 
     private Color GetColor(string type)
     {

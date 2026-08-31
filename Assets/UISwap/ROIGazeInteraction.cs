@@ -9,7 +9,7 @@ namespace Assets.UISwap
     internal sealed class ROIGazeInteraction : MonoBehaviour
     {
         [SerializeField]
-        private LayerMask _roiLayer;
+        public LayerMask RoiLayer;
 
         [SerializeField]
         private InteractionLayerMask _gazeInteractionLayer;
@@ -30,9 +30,7 @@ namespace Assets.UISwap
 
         private void RegisterExistingObjects()
         {
-            var colliders = FindObjectsByType<Collider>(
-                FindObjectsInactive.Include,
-                FindObjectsSortMode.None);
+            var colliders = FindObjectsByType<Collider>(FindObjectsInactive.Include, FindObjectsSortMode.None);
 
             foreach (var collider in colliders)
             {
@@ -67,7 +65,7 @@ namespace Assets.UISwap
 
         private bool IsInRoiLayer(GameObject gameObject)
         {
-            return (_roiLayer.value & (1 << gameObject.layer)) != 0;
+            return (RoiLayer.value & (1 << gameObject.layer)) != 0;
         }
 
         private void OnHoverEntered(HoverEnterEventArgs args)

@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace FocusGuard.Detection.YOLO
 {
@@ -27,42 +29,43 @@ namespace FocusGuard.Detection.YOLO
         /// <summary>
         /// Beschreibt ein einzelnes von YOLO erkanntes Objekt.
         /// </summary>
-        public readonly struct DetectedObject
+        [Serializable]
+        public struct DetectedObject
         {
             /// <summary>
             /// Numerische Klassen-ID des Objekts.
             /// </summary>
-            public int ClassId { get; }
+            public int ClassId;
 
             /// <summary>
             /// Name der erkannten Objektklasse.
             /// </summary>
-            public string ClassName { get; }
+            public string ClassName;
 
             /// <summary>
             /// Konfidenz der Erkennung zwischen 0 und 1.
             /// </summary>
-            public float Confidence { get; }
+            public float Confidence;
 
             /// <summary>
             /// X-Koordinate der Bounding Box.
             /// </summary>
-            public float X { get; }
+            public float X;
 
             /// <summary>
             /// Y-Koordinate der Bounding Box.
             /// </summary>
-            public float Y { get; }
+            public float Y;
 
             /// <summary>
             /// Breite der Bounding Box.
             /// </summary>
-            public float Width { get; }
+            public float Width;
 
             /// <summary>
             /// Höhe der Bounding Box.
             /// </summary>
-            public float Height { get; }
+            public float Height;
 
             public DetectedObject(
                 int classId,

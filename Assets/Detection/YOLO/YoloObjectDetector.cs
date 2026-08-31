@@ -186,6 +186,9 @@ namespace FocusGuard.Detection.YOLO
         /// </summary>
         public DetectionResult LatestResult { get; private set; }
 
+        public delegate void ProcessDetectionResultEventHandler(object sender, DetectionResult result);
+        public event ProcessDetectionResultEventHandler ProcessDetectionResult;
+
         private Model runtimeModel;
         private Worker worker;
         private Tensor<float> inputTensor;
@@ -212,18 +215,15 @@ namespace FocusGuard.Detection.YOLO
             {
                 return;
             }
-
             if (readbackPending)
             {
                 ProcessCompletedReadback();
                 return;
             }
-
             if (!CanStartInference())
             {
                 return;
             }
-
             StartInference();
         }
 
@@ -371,10 +371,8 @@ namespace FocusGuard.Detection.YOLO
                 float[] outputData =
                     pendingOutputTensor.DownloadToArray();
 
-                DetectionResult result =
-                    DecodeOutput(outputData);
-
-                PublishResult(result);
+                DetectionResult result = DecodeOutput(outputData);
+                ProcessDetectionResult?.Invoke(this, result);
             }
             catch (Exception exception)
             {
@@ -461,9 +459,9 @@ namespace FocusGuard.Detection.YOLO
                         candidateIndex);
 
                 Rect rectangle = new Rect(
-                    centerX - width * 0.5f,
+                    centerX * 2 - width,
                     centerY - height * 0.5f,
-                    width,
+                    width * 2,
                     height);
 
                 candidates.Add(
@@ -646,63 +644,6 @@ namespace FocusGuard.Detection.YOLO
             }
 
             return intersectionArea / unionArea;
-        }
-
-        private void PublishResult(
-            DetectionResult result)
-        {
-            LatestResult = result;
-
-            DetectionsUpdated?.Invoke(result);
-
-            if (!logDetectionResults)
-            {
-                return;
-            }
-
-            if (result.Objects.Count == 0)
-            {
-                Debug.Log(
-                    "YOLO: Keine Objekte erkannt.",
-                    this);
-
-                return;
-            }
-
-            System.Text.StringBuilder output =
-                new System.Text.StringBuilder();
-
-            output.Append(
-                $"YOLO: {result.Objects.Count} Objekt(e) erkannt: ");
-
-            for (
-                int index = 0;
-                index < result.Objects.Count;
-                index++)
-            {
-                DetectionResult.DetectedObject obj =
-                    result.Objects[index];
-
-                output.Append(
-                    $"[{index + 1}: " +
-                    $"{obj.ClassName}, " +
-                    $"Conf={obj.Confidence:F2}, " +
-                    $"X={obj.X:F1}, " +
-                    $"Y={obj.Y:F1}, " +
-                    $"W={obj.Width:F1}, " +
-                    $"H={obj.Height:F1}]");
-
-                if (
-                    index <
-                    result.Objects.Count - 1)
-                {
-                    output.Append(" | ");
-                }
-            }
-
-            Debug.Log(
-                output.ToString(),
-                this);
         }
 
         private static bool HasExpectedOutputShape(

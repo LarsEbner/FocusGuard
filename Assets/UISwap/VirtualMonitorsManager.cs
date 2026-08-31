@@ -1,7 +1,7 @@
+using Assets.UISwap;
 using System.Linq;
 using Unity.Mathematics;
 using UnityEngine;
-using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using uWindowCapture;
 using Display = WindowsDisplayAPI.Display;
 
@@ -32,18 +32,11 @@ public class VirtualMonitorsManager : MonoBehaviour
     private Transform monitorParent;
 
     /// <summary>
-    /// Unity layer assigned to the virtual monitors.
-    /// </summary>
-    [Tooltip("Unity layer assigned to the virtual monitors.")]
-    [SerializeField]
-    private LayerMask roiLayer;
-
-    /// <summary>
     /// Handles registration of the monitors for gaze interaction.
     /// </summary>
     [Tooltip("ROIGazeInteraction used to register the virtual monitors.")]
     [SerializeField]
-    private Assets.UISwap.ROIGazeInteraction roiGazeInteraction;
+    private ROIGazeInteraction roiGazeInteraction;
 
     /// <summary>
     /// The scale per 1000 pixels to size for Unity units.
@@ -137,9 +130,6 @@ public class VirtualMonitorsManager : MonoBehaviour
             // Create the monitor as a child of the configured parent.
             var monitor = Instantiate(windowPrefab, monitorParent);
 
-            // Assign the ROI layer.
-            monitor.gameObject.layer = GetRoiLayer();
-
             _windows[i] = new WindowContainer(monitor)
             {
                 Window =
@@ -170,7 +160,8 @@ public class VirtualMonitorsManager : MonoBehaviour
             collider.convex = true;
 
             // Register the monitor with the gaze interaction system.
-            roiGazeInteraction.Register(collider);
+            var selfRegister = monitor.gameObject.AddComponent<ROISelfRegister>();
+            selfRegister.RoiGazeInteraction = roiGazeInteraction;
 
             // See if this is any min or max value.
             if (_data[i].X < minX)
@@ -274,42 +265,6 @@ public class VirtualMonitorsManager : MonoBehaviour
             _windows[i].Window.transform.localPosition =
                 new Vector3(x, y, 0);
         }
-    }
-
-    private int GetRoiLayer()
-    {
-        if (roiLayer.value == 0)
-        {
-            Debug.LogError(
-                "Für VirtualMonitorsManager wurde kein ROI-Layer ausgewählt.",
-                this);
-
-            return 0;
-        }
-
-        // LayerMask kann mehrere Layer enthalten. Für GameObject.layer
-        // benötigen wir aber genau einen Layer.
-        int layer = 0;
-
-        for (int i = 0; i < 32; i++)
-        {
-            if ((roiLayer.value & (1 << i)) == 0)
-                continue;
-
-            if (layer != 0)
-            {
-                Debug.LogWarning(
-                    "Für VirtualMonitorsManager sollten im ROI-Layer " +
-                    "nur ein einziger Layer ausgewählt sein.",
-                    this);
-
-                break;
-            }
-
-            layer = i;
-        }
-
-        return layer;
     }
 
     /// <summary>

@@ -1,40 +1,99 @@
 ﻿using UnityEngine;
 using VIVE.OpenXR.CompositionLayer;
 using VIVE.OpenXR.Passthrough;
-using VIVE.OpenXR.Samples;
-using static VIVE.OpenXR.Toolkits.BodyTracking.RuntimeDependency.Rdp.Tracker;
 using XrPassthroughHTC = VIVE.OpenXR.Passthrough.XrPassthroughHTC;
 
 namespace Assets.UISwap
 {
     internal class CreateProjectedPassthrough : MonoBehaviour
     {
-        [SerializeField] Mesh UsingMesh;
-        [SerializeField] Transform Trans;
-        [SerializeField] Transform Cam;
-        XrPassthroughHTC passthrough;
+        [SerializeField] private Transform Camera;
 
-        void Start()
+        private XrPassthroughHTC passthrough;
+        private Mesh UsingMesh;
+
+        private void Start()
         {
-            PassthroughAPI.CreateProjectedPassthrough(out passthrough, LayerType.Underlay);
-            int[] indices = new int[UsingMesh.triangles.Length];
-            for (int i = 0; i < UsingMesh.triangles.Length; i++)
-            {
-                indices[i] = UsingMesh.triangles[i];
-            }
+            CreatePassthrough();
+        }
 
-            PassthroughAPI.SetProjectedPassthroughMesh(passthrough, UsingMesh.vertices, UsingMesh.triangles);
+        private void Update()
+        {
             ApplyTransformation();
         }
 
-        void Update()
+        private void CreatePassthrough()
         {
+            if (!TryGetComponent<MeshFilter>(out var meshFilter))
+            {
+                Debug.LogError(
+                    "Kein MeshFilter auf diesem GameObject gefunden.",
+                    this
+                );
+                return;
+            }
+
+            UsingMesh = meshFilter.sharedMesh;
+
+            if (UsingMesh == null || Camera == null)
+            {
+                Debug.LogError(
+                    "Mesh oder Camera fehlt.",
+                    this
+                );
+                return;
+            }
+
+            PassthroughAPI.CreateProjectedPassthrough(
+                out passthrough,
+                LayerType.Underlay
+            );
+
+            if (passthrough == null)
+            {
+                Debug.LogError(
+                    "Passthrough konnte nicht erstellt werden.",
+                    this
+                );
+                return;
+            }
+
+            PassthroughAPI.SetProjectedPassthroughMesh(
+                passthrough,
+                UsingMesh.vertices,
+                UsingMesh.triangles
+            );
+
             ApplyTransformation();
         }
 
         private void ApplyTransformation()
         {
-            PassthroughAPI.SetProjectedPassthroughMeshTransform(passthrough, ProjectedPassthroughSpaceType.Worldlock, Cam.InverseTransformPoint(Trans.position), Quaternion.Inverse(Cam.transform.rotation) * Trans.rotation, Trans.lossyScale);
+            if (passthrough == null)
+                return;
+
+            PassthroughAPI.SetProjectedPassthroughMeshTransform(
+                passthrough,
+                ProjectedPassthroughSpaceType.Worldlock,
+                transform.position,
+                transform.rotation,
+                transform.lossyScale
+            );
         }
+
+        private void OnDestroy()
+        {
+            if (passthrough == null)
+                return;
+
+            VivePassthrough vivePassthrough = UnityEngine.XR.OpenXR.OpenXRSettings.Instance.GetFeature<VivePassthrough>();
+            if (vivePassthrough.XrSessionCreated && !vivePassthrough.XrSessionEnding)
+            {
+                PassthroughAPI.DestroyPassthrough(passthrough);
+            }
+
+            passthrough = default;
+        }
+
     }
 }
