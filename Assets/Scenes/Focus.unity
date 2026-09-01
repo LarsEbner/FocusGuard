@@ -6546,6 +6546,9 @@ GameObject:
   - component: {fileID: 597910091}
   - component: {fileID: 597910093}
   - component: {fileID: 597910094}
+  - component: {fileID: 597910095}
+  - component: {fileID: 597910097}
+  - component: {fileID: 597910096}
   m_Layer: 0
   m_Name: 'Script: ThumbstickInputController'
   m_TagString: Untagged
@@ -6581,6 +6584,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Assets.Transform.ThumbstickInputController
   _controllers:
+  - {fileID: 597910096}
+  - {fileID: 597910097}
+  - {fileID: 597910095}
   - {fileID: 597910094}
   - {fileID: 597910093}
   _leftThumbstick: {fileID: -60998027439631388, guid: c348712bda248c246b8c49b3db54643f, type: 3}
@@ -6620,6 +6626,57 @@ MonoBehaviour:
   _zSpeed: 1
   _rotationSpeed: 1
   _ySpeed: 1
+--- !u!114 &597910095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597910089}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8de0f79bd88f7a4d8f7c820f83f27c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Assets.Transform.AxisTransformController
+  _axis: {fileID: 986170480}
+  _xSpeed: 0.25
+  _zSpeed: 0.25
+  _rotationSpeed: 0.5
+  _ySpeed: 0.25
+--- !u!114 &597910096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597910089}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8de0f79bd88f7a4d8f7c820f83f27c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Assets.Transform.AxisTransformController
+  _axis: {fileID: 1232505263}
+  _xSpeed: 0.25
+  _zSpeed: 0.25
+  _rotationSpeed: 0.5
+  _ySpeed: 0.25
+--- !u!114 &597910097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597910089}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8de0f79bd88f7a4d8f7c820f83f27c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Assets.Transform.AxisTransformController
+  _axis: {fileID: 972354964}
+  _xSpeed: 0.25
+  _zSpeed: 0.25
+  _rotationSpeed: 0.5
+  _ySpeed: 0.25
 --- !u!1001 &601127096
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11697,6 +11754,7 @@ GameObject:
   m_Component:
   - component: {fileID: 972354962}
   - component: {fileID: 972354963}
+  - component: {fileID: 972354964}
   m_Layer: 0
   m_Name: Webcam
   m_TagString: Untagged
@@ -11712,8 +11770,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 972354961}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.8923496, z: 0, w: 0.45134497}
-  m_LocalPosition: {x: 0.61, y: 0.809, z: -0.564}
+  m_LocalRotation: {x: 0, y: -0.88294756, z: 0, w: 0.4694716}
+  m_LocalPosition: {x: 0.575, y: 0.79, z: -0.48}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11722,7 +11780,7 @@ Transform:
   - {fileID: 1970209382}
   - {fileID: 245556664}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: -126.34, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -124, z: 0}
 --- !u!114 &972354963
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11744,6 +11802,24 @@ MonoBehaviour:
   imageRectangleOverlay: {fileID: 1017039637}
   webcamPointVisualizer: {fileID: 245556665}
   projectedRectangleCylinderVisualizer: {fileID: 1183584401}
+--- !u!114 &972354964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 972354961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b706f648ef299ac40b3c06142db169d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Assets.Transform.AxisTransform
+  _target: {fileID: 972354961}
+  _allowX: 1
+  _allowY: 1
+  _allowZ: 1
+  _rotationAxis: 1
+  _rotationRange: 360
 --- !u!1001 &979312590
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11900,6 +11976,7 @@ GameObject:
   - component: {fileID: 986170477}
   - component: {fileID: 986170476}
   - component: {fileID: 986170475}
+  - component: {fileID: 986170480}
   m_Layer: 3
   m_Name: Keyboard
   m_TagString: Untagged
@@ -12007,12 +12084,30 @@ Transform:
   m_GameObject: {fileID: 986170474}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.705, z: 0.3}
+  m_LocalPosition: {x: 0, y: 0.7, z: 0.35}
   m_LocalScale: {x: 0.6, y: 0.01, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &986170480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986170474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b706f648ef299ac40b3c06142db169d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Assets.Transform.AxisTransform
+  _target: {fileID: 986170474}
+  _allowX: 1
+  _allowY: 1
+  _allowZ: 1
+  _rotationAxis: 1
+  _rotationRange: 360
 --- !u!1001 &986544822
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13957,6 +14052,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1232505262}
+  - component: {fileID: 1232505263}
   m_Layer: 0
   m_Name: Calibration Objects
   m_TagString: Untagged
@@ -13973,7 +14069,7 @@ Transform:
   m_GameObject: {fileID: 1232505261}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -2.873, y: -0.025, z: -2.33}
+  m_LocalPosition: {x: -3, y: -0.075, z: -2.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -13982,6 +14078,24 @@ Transform:
   - {fileID: 998859169}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &1232505263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232505261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b706f648ef299ac40b3c06142db169d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Assets.Transform.AxisTransform
+  _target: {fileID: 1232505261}
+  _allowX: 1
+  _allowY: 1
+  _allowZ: 1
+  _rotationAxis: 1
+  _rotationRange: 360
 --- !u!1001 &1243068718
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15787,14 +15901,14 @@ MonoBehaviour:
   microsaccadeDetection: {fileID: 0}
   pupilDilation: {fileID: 0}
   focusEffectController: {fileID: 868886410}
-  distractionThreshold: 10
+  distractionThreshold: 60
   distractionCountThreshold: 5
   distractionCountWindow: 3
   focusRecoveryDuration: 15
   microsaccadeAnomalyThreshold: 5
   normalPupilSize: 4
   focusedDilation: 0.2
-  logRuleEvaluation: 1
+  logRuleEvaluation: 0
 --- !u!1 &1431113926
 GameObject:
   m_ObjectHideFlags: 0
@@ -23035,7 +23149,6 @@ GameObject:
   - component: {fileID: 2137709459}
   - component: {fileID: 2137709461}
   - component: {fileID: 2137709460}
-  - component: {fileID: 2137709462}
   m_Layer: 0
   m_Name: 'Script: DebugController'
   m_TagString: Untagged
@@ -23086,7 +23199,13 @@ MonoBehaviour:
   - Name: Show Environment
     Script: {fileID: 2137709460}
   - Name: Alternative Movement
-    Script: {fileID: 2137709462}
+    Script: {fileID: 597910094}
+  - Name: Move Keyboard
+    Script: {fileID: 597910095}
+  - Name: Move Webcam
+    Script: {fileID: 597910097}
+  - Name: Move Calibration Objects
+    Script: {fileID: 597910096}
 --- !u!114 &2137709454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23208,20 +23327,6 @@ MonoBehaviour:
   _disableObjects:
   - {fileID: 1183584400}
   _disableScripts: []
---- !u!114 &2137709462
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2137709451}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d4fa990b8797e940b5593adc98249ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Assets.Debugging.ToggleScript
-  _targets:
-  - {fileID: 597910094}
 --- !u!1001 &37232615538455128
 PrefabInstance:
   m_ObjectHideFlags: 0
