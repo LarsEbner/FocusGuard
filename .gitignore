@@ -114,6 +114,7 @@ FocusGuard_BurstDebugInformation_DoNotShip/
 
 # Code Editor files
 .vscode
+.DS_Store
 
 # Lokale Projektarchive
 *.zip

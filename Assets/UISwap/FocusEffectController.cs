@@ -8,9 +8,9 @@ public class FocusEffectController : MonoBehaviour
     [SerializeField]
     public TMP_Text _debugText;
 
-    public bool IsLookingAtROI { get; private set; }
+    public float EffectStrength { get; set; } = 0;
 
-    public float CurrentEffect { get; private set; }
+    public float CurrentEffect { get; private set; } = 0;
 
     public bool AutoUpdate
     {
@@ -44,38 +44,25 @@ public class FocusEffectController : MonoBehaviour
             DebugText(_debugText)
         ).AddSmoothstepTransition(this, duration: 10.0f);
 
-        IsLookingAtROI = false;
-        SetEffect(0.0f);
+        ApplyEffectImmediately(0.0f);
+        
     }
 
     private void Update()
     {
         if (!AutoUpdate) return;
-
-        float effect = IsLookingAtROI ? 0.0f : 1.0f;
-
-        if (!Mathf.Approximately(CurrentEffect, effect))
+        if (!Mathf.Approximately(CurrentEffect, EffectStrength))
         {
-            CurrentEffect = effect;
-            transitionEffect.ApplyEffect(effect);
+            CurrentEffect = EffectStrength;
+            transitionEffect.ApplyEffect(EffectStrength);
         }
     }
 
-    public void SetEffect(float strength)
+    public void ApplyEffectImmediately(float strength)
     {
         strength = Mathf.Clamp01(strength);
         CurrentEffect = strength;
         transitionEffect.ApplyEffectImmediately(strength);
-    }
-
-    public void LooksAtROI()
-    {
-        IsLookingAtROI = true;
-    }
-
-    public void LooksAway()
-    {
-        IsLookingAtROI = false;
     }
 
     public void SetAutoUpdate(bool enabled)

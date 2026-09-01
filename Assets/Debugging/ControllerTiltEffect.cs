@@ -62,6 +62,6 @@ public class ControllerTiltEffect : MonoBehaviour
             effect = angle < 135.0f ? 0.0f : 1.0f;
         }
 
-        focusEffectController.SetEffect(effect);
+        focusEffectController.ApplyEffectImmediately(effect);
     }
 }

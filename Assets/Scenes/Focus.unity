@@ -5033,55 +5033,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6519894241379486527, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
   m_PrefabInstance: {fileID: 433045768}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &452092346
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 452092347}
-  - component: {fileID: 452092348}
-  m_Layer: 0
-  m_Name: 'Script: DistractionDetection'
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &452092347
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 452092346}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 985550723}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &452092348
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 452092346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a154e2a482a121147be539c1f9ec08ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DistractionDetection
-  Screen: {fileID: 776454413}
-  GazeTrigger: {fileID: 0}
-  shortDistractionLimit: 2
-  timeForLongDistractions: 10
-  timeForShortDistractions: 3
 --- !u!1001 &453153831
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6630,7 +6581,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Assets.Transform.ThumbstickInputController
   _controllers:
-  - {fileID: 0}
+  - {fileID: 597910094}
   - {fileID: 597910093}
   _leftThumbstick: {fileID: -60998027439631388, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   _rightThumbstick: {fileID: -8666952849799569744, guid: c348712bda248c246b8c49b3db54643f, type: 3}
@@ -11930,10 +11881,10 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 868886409}
-  - {fileID: 452092347}
   - {fileID: 1948547655}
   - {fileID: 2137709452}
   - {fileID: 597910090}
+  - {fileID: 1425269357}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &986170474
@@ -15773,6 +15724,77 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5498440255439395030, guid: 923105df2b731224682c9cf389b99787, type: 3}
   m_PrefabInstance: {fileID: 1417874197}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1425269356
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1425269357}
+  - component: {fileID: 1425269359}
+  - component: {fileID: 1425269358}
+  m_Layer: 0
+  m_Name: 'Script: DistractionManager'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1425269357
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425269356}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 985550723}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1425269358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425269356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a154e2a482a121147be539c1f9ec08ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DistractionDetection
+  distractionRetentionSeconds: 60
+  looksAtScreen: 0
+--- !u!114 &1425269359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425269356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4da23c31064484d8bb587e0fc19f7daa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DistractionManager
+  distractionDetection: {fileID: 1425269358}
+  microsaccadeDetection: {fileID: 0}
+  pupilDilation: {fileID: 0}
+  focusEffectController: {fileID: 868886410}
+  distractionThreshold: 10
+  distractionCountThreshold: 5
+  distractionCountWindow: 3
+  focusRecoveryDuration: 15
+  microsaccadeAnomalyThreshold: 5
+  normalPupilSize: 4
+  focusedDilation: 0.2
+  logRuleEvaluation: 1
 --- !u!1 &1431113926
 GameObject:
   m_ObjectHideFlags: 0
@@ -21016,9 +21038,9 @@ MonoBehaviour:
   _onGazeEnter:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 868886410}
-        m_TargetAssemblyTypeName: FocusEffectController, Assembly-CSharp
-        m_MethodName: LooksAtROI
+      - m_Target: {fileID: 1425269358}
+        m_TargetAssemblyTypeName: DistractionDetection, Assembly-CSharp
+        m_MethodName: LooksAtScreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -21031,8 +21053,8 @@ MonoBehaviour:
   _onGazeExit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 868886410}
-        m_TargetAssemblyTypeName: UISwap, Assembly-CSharp
+      - m_Target: {fileID: 1425269358}
+        m_TargetAssemblyTypeName: DistractionDetection, Assembly-CSharp
         m_MethodName: LooksAway
         m_Mode: 1
         m_Arguments:

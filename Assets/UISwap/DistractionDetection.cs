@@ -1,60 +1,38 @@
-using Assets.Effects; 
-using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
-using static Assets.Effects.FocusEffects;
 
 public class DistractionDetection : MonoBehaviour
 {
-    public GameObject Screen;
-    public GameObject GazeTrigger;
+    [Tooltip("Wie lange (in Sekunden) abgeschlossene Distractions in der Liste behalten werden, bevor sie automatisch entfernt werden. Sollte mindestens so groß sein wie das Zeitfenster für 'wiederholtes kurzes Wegschauen' im DistractionManager.")]
+    [SerializeField] private float distractionRetentionSeconds = 60f;
 
-    public int shortDistractionLimit;
-    public int timeForLongDistractions;
-    public int timeForShortDistractions;
+    private AutoDeletingList<Distraction> distractions;
 
-    private FocusEffect focusEffect;
+    public bool looksAtScreen = false;
 
-    int shortDistractionCount = 0;
+    public IEnumerable<Distraction> Distractions => distractions;
 
-    public void Start()
+    private void Awake()
     {
-        focusEffect = Union(
-            BackgroundColor(Color.white).AddRange(0.5f, 1.0f, null),
-            Passthrough().Invert(),
-            Vignette(),
-            LogStrength()
-        );
-        focusEffect(0);
+        distractions = new AutoDeletingList<Distraction>(new List<Distraction>(),
+            d => !d.IsOngoing && Time.time - d.LookAtTime > GetDistractionRetentionSeconds());
     }
 
-    public void LooksAtScreen()
+    private float GetDistractionRetentionSeconds()
     {
-        //StopCoroutine(LongDistractions());
-        focusEffect(0);
+        return distractionRetentionSeconds;
     }
 
     public void LooksAway()
     {
-        //StartCoroutine(LongDistractions());
-        StartCoroutine(ShortDistractionCounter());
+        looksAtScreen = false;
+        distractions.Add(new Distraction(Time.time));
     }
 
-    IEnumerator LongDistractions()
+    public void LooksAtScreen()
     {
-        yield return new WaitForSecondsRealtime(timeForLongDistractions);
-        focusEffect(1);
-    }
-
-    IEnumerator ShortDistractionCounter()
-    {
-        shortDistractionCount++;
-        Debug.Log("ShortDistractionCount: " + shortDistractionCount);
-        if (shortDistractionCount > (shortDistractionLimit - 1))
-        {
-            focusEffect(1);
-        }
-        yield return new WaitForSecondsRealtime(timeForShortDistractions);
-        shortDistractionCount--;
-        Debug.Log("ShortDistractionCount: " + shortDistractionCount);
+        looksAtScreen = true;
+        distractions.LastOrDefault(d => d.IsOngoing)?.MarkLookedAt(Time.time);
     }
 }
