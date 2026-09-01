@@ -6593,6 +6593,8 @@ GameObject:
   m_Component:
   - component: {fileID: 597910090}
   - component: {fileID: 597910091}
+  - component: {fileID: 597910093}
+  - component: {fileID: 597910092}
   m_Layer: 0
   m_Name: 'Script: ThumbstickInputController'
   m_TagString: Untagged
@@ -6627,10 +6629,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4b04041d8d8b1745831272ea85feafa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Assets.Transform.ThumbstickInputController
-  _controller: {fileID: 711123754}
+  _controller: {fileID: 597910092}
   _leftThumbstick: {fileID: -60998027439631388, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   _rightThumbstick: {fileID: -8666952849799569744, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   _axisDominanceFactor: 2
+--- !u!114 &597910092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597910089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8de0f79bd88f7a4d8f7c820f83f27c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Assets.Transform.AxisTransformController
+  _axis: {fileID: 711123754}
+  _xSpeed: 1
+  _zSpeed: 1
+  _rotationSpeed: 1
+  _ySpeed: 1
+--- !u!114 &597910093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597910089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f9fd0cb59b5c8e4e924084eff36c8b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Assets.Transform.OrbitTransformController
+  _orbit: {fileID: 711123753}
+  _angleSpeed: 0.5
+  _distanceSpeed: 1
+  _heightSpeed: 1
+  _tiltSpeed: 1
 --- !u!1001 &601127096
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7879,7 +7915,7 @@ Transform:
   m_GameObject: {fileID: 711123751}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5, z: 2}
+  m_LocalPosition: {x: 0, y: 2, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7909,14 +7945,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 711123751}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f9fd0cb59b5c8e4e924084eff36c8b6, type: 3}
+  m_Script: {fileID: 11500000, guid: b706f648ef299ac40b3c06142db169d5, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Assets.Transform.OrbitTransformController
-  _orbit: {fileID: 711123753}
-  _angleSpeed: 0.5
-  _distanceSpeed: 1
-  _heightSpeed: 1
-  _tiltSpeed: 1
+  m_EditorClassIdentifier: Assembly-CSharp::Assets.Transform.AxisTransform
+  _target: {fileID: 711123751}
+  _allowX: 1
+  _allowY: 1
+  _allowZ: 1
+  _rotationAxis: 0
+  _rotationRange: 90
 --- !u!1001 &719485998
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22979,6 +23016,7 @@ GameObject:
   - component: {fileID: 2137709458}
   - component: {fileID: 2137709459}
   - component: {fileID: 2137709460}
+  - component: {fileID: 2137709461}
   m_Layer: 0
   m_Name: 'Script: DebugController'
   m_TagString: Untagged
@@ -23024,6 +23062,8 @@ MonoBehaviour:
     Script: {fileID: 2137709458}
   - Name: Control Effect Strength
     Script: {fileID: 2137709459}
+  - Name: Show Detection Passthroughs
+    Script: {fileID: 2137709461}
   - Name: Show Environment
     Script: {fileID: 2137709460}
 --- !u!114 &2137709454
@@ -23130,6 +23170,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Assets.Debugging.ToggleGameObject
   _targets:
   - {fileID: 658318969}
+--- !u!114 &2137709461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137709451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c5c085f6ffc7df409204f5c9482f30e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Assets.Debugging.ToggleGameObject
+  _targets:
+  - {fileID: 1183584400}
 --- !u!1001 &37232615538455128
 PrefabInstance:
   m_ObjectHideFlags: 0
