@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Assets.EyeTracking;
 using UnityEngine;
@@ -27,6 +28,7 @@ public class MicrosaccadeDetection : MonoBehaviour
 
     [Tooltip("Wie viel Prozent (0 bis 1) der Saccaden als valid gewertet werden müssen damit Microsaccaden vorhanden sind.")]
     [SerializeField] private double saccadeThreshold = 0.9;
+    public event Action<bool, float> OnSaccadeMeasured;
 
     private readonly List<Microsaccade> saccadeItems = new List<Microsaccade>();
     private AutoDeletingList<Microsaccade> saccades;
@@ -84,7 +86,9 @@ public class MicrosaccadeDetection : MonoBehaviour
         bool rightOk = rotationRight < maxSaccadeDistance && rotationRight > minSaccadeDistance;
         bool leftOk = rotationLeft < maxSaccadeDistance && rotationLeft > minSaccadeDistance;
 
-        saccades.Add(new Microsaccade(rightOk && leftOk, Time.time));
+        bool valid = rightOk && leftOk;
+        saccades.Add(new Microsaccade(valid, Time.time));
+        OnSaccadeMeasured?.Invoke(valid, Time.time);
     }
 
     public bool MicroSaccDetected()
@@ -98,6 +102,7 @@ public class MicrosaccadeDetection : MonoBehaviour
             }
         }
         int count = saccades.Count();
-        return (amountValid / count) >= saccadeThreshold;
+        return ((double)amountValid / 1) >= saccadeThreshold; //hier habe ich count mit 1 ausgetauscht, weil sonst bei TestOnPc immer 
+        //error weil man durch 0 teilen würde. Grüße Samuel 
     }
 }

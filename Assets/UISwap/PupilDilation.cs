@@ -10,6 +10,8 @@ public class PupilDilation : MonoBehaviour
 {
     [Tooltip("Wie lange (in Sekunden) einzelne Messungen in der Liste behalten werden, bevor sie automatisch entfernt werden.")]
     [SerializeField] private float PupilSizeRetentionSeconds = 30f;
+    [SerializeField] private MeasurementLogger measurementLogger;
+    
 
     float rightPupilDiameter;
     float leftPupilDiameter;
@@ -17,6 +19,7 @@ public class PupilDilation : MonoBehaviour
     private readonly List<PupilSize> pupilSizeItems = new List<PupilSize>();
     private AutoDeletingList<PupilSize> pupilSizes;
     public IEnumerable<PupilSize> PupilSizes => pupilSizes;
+    public event Action<float, float, float> OnPupilMeasured;
 
     private void Awake()
     {
@@ -53,5 +56,6 @@ public class PupilDilation : MonoBehaviour
 
         //Debug.Log($"Pupil Size Right: " + rightPupilDiameter + " Pupil Size Left: " + leftPupilDiameter);
         pupilSizes.Add(new PupilSize(rightPupilDiameter, leftPupilDiameter, Time.time));
+        OnPupilMeasured?.Invoke(rightPupilDiameter, leftPupilDiameter, Time.time);
     }
 }

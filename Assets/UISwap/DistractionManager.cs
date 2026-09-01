@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Assets.EyeTracking;
@@ -42,6 +43,10 @@ public class DistractionManager : MonoBehaviour
     private Distraction lastLoggedDistraction;
     private bool? wasDistracted = null;
     private float effectHoldUntil = -1f;
+    public event Action<float, float?> OnSustainedDistraction; 
+    public event Action<float, int, float> OnRepeatedDistraction;
+    private bool sustainedLoggedActive = false;
+    private bool repeatedLoggedActive = false;
 
     public bool IsDistracted { get; private set; }
     public bool IsFocused { get; private set; }
@@ -76,6 +81,20 @@ public class DistractionManager : MonoBehaviour
     {
         bool sustained = IsSustainedLookAway(distractions);
         bool repeatedNow = IsRepeatedLookAwayThresholdExceeded(distractions);
+        if (sustained && !sustainedLoggedActive)
+        {
+            Distraction latest = distractions.LastOrDefault();
+            OnSustainedDistraction?.Invoke(Time.time, latest != null ? GetElapsed(latest) : (float?)null);
+        }
+        sustainedLoggedActive = sustained;
+
+        if (repeatedNow && !repeatedLoggedActive)
+        {
+            float windowStart = Time.time - distractionCountWindow;
+            int count = distractions.Count(d => d.LookAwayTime >= windowStart);
+            OnRepeatedDistraction?.Invoke(Time.time, count, distractionCountWindow);
+        }
+        repeatedLoggedActive = repeatedNow;
         bool microsaccadeAnomaly = IsMicrosaccadeAnomaly(saccades);
         bool atScreen = distractionDetection.looksAtScreen;
         bool longScreenTime = distractions.Count() == 0;

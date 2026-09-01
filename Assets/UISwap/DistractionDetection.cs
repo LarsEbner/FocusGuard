@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -13,6 +14,7 @@ public class DistractionDetection : MonoBehaviour
     public bool looksAtScreen = false;
 
     public IEnumerable<Distraction> Distractions => distractions;
+    public event Action<float, float, float> OnLookAwayEnded;
 
     private void Awake()
     {
@@ -28,8 +30,13 @@ public class DistractionDetection : MonoBehaviour
     }
 
     public void LooksAtScreen()
+{
+    looksAtScreen = true;
+    Distraction ongoing = distractions.LastOrDefault(d => d.IsOngoing);
+    if (ongoing != null)
     {
-        looksAtScreen = true;
-        distractions.LastOrDefault(d => d.IsOngoing)?.MarkLookedAt(Time.time);
+        ongoing.MarkLookedAt(Time.time);
+        OnLookAwayEnded?.Invoke(ongoing.LookAwayTime, ongoing.LookAtTime.Value, ongoing.Duration.Value);
     }
+}
 }
