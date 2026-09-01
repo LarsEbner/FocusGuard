@@ -7915,7 +7915,7 @@ Transform:
   m_GameObject: {fileID: 711123751}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 2}
+  m_LocalPosition: {x: 0, y: 1.5, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -18824,10 +18824,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1706987664}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 664f92bfe42a14bb893223c3921c2f56, type: 3}
+  m_Script: {fileID: 11500000, guid: 86316f2774b87c743a7b13b0efc6a32d, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ToggleManager
-  objectsToToggleOff:
+  m_EditorClassIdentifier: Assembly-CSharp::Assets.Debugging.ToggleTarget
+  _enableObjects:
+  - {fileID: 1764056618}
+  - {fileID: 791027578}
+  - {fileID: 776454413}
+  _enableScripts: []
+  _disableObjects:
   - {fileID: 1490675833}
   - {fileID: 1943838058}
   - {fileID: 1409620015}
@@ -18837,18 +18842,13 @@ MonoBehaviour:
   - {fileID: 2001062046}
   - {fileID: 986170474}
   - {fileID: 1379922649}
-  scriptsToToggleOff:
+  _disableScripts:
   - {fileID: 1490675835}
   - {fileID: 1943838060}
   - {fileID: 2074328113}
   - {fileID: 2090992233}
   - {fileID: 2001062048}
   - {fileID: 1379922651}
-  objectsToToggleOn:
-  - {fileID: 1764056618}
-  - {fileID: 791027578}
-  - {fileID: 776454413}
-  scriptsToToggleOn: []
 --- !u!1001 &1710019101
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23015,8 +23015,8 @@ GameObject:
   - component: {fileID: 2137709457}
   - component: {fileID: 2137709458}
   - component: {fileID: 2137709459}
-  - component: {fileID: 2137709460}
   - component: {fileID: 2137709461}
+  - component: {fileID: 2137709460}
   m_Layer: 0
   m_Name: 'Script: DebugController'
   m_TagString: Untagged
@@ -23062,7 +23062,7 @@ MonoBehaviour:
     Script: {fileID: 2137709458}
   - Name: Control Effect Strength
     Script: {fileID: 2137709459}
-  - Name: Show Detection Passthroughs
+  - Name: Hide Detection Passthroughs
     Script: {fileID: 2137709461}
   - Name: Show Environment
     Script: {fileID: 2137709460}
@@ -23177,13 +23177,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2137709451}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c5c085f6ffc7df409204f5c9482f30e, type: 3}
+  m_Script: {fileID: 11500000, guid: 86316f2774b87c743a7b13b0efc6a32d, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Assets.Debugging.ToggleGameObject
-  _targets:
+  m_EditorClassIdentifier: Assembly-CSharp::Assets.Debugging.ToggleTarget
+  _enableObjects: []
+  _enableScripts: []
+  _disableObjects:
   - {fileID: 1183584400}
+  _disableScripts: []
 --- !u!1001 &37232615538455128
 PrefabInstance:
   m_ObjectHideFlags: 0

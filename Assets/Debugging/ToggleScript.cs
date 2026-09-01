@@ -2,16 +2,16 @@
 
 namespace Assets.Debugging
 {
-    internal sealed class ToggleGameObject : ToggleTargetController
+    internal sealed class ToggleScript : ToggleTargetController
     {
         [SerializeField]
-        private GameObject[] _targets;
+        private MonoBehaviour[] _targets;
 
         protected override GameObject[] EnableObjects =>
-            _targets;
+            System.Array.Empty<GameObject>();
 
         protected override MonoBehaviour[] EnableScripts =>
-            System.Array.Empty<MonoBehaviour>();
+            _targets;
 
         protected override GameObject[] DisableObjects =>
             System.Array.Empty<GameObject>();
