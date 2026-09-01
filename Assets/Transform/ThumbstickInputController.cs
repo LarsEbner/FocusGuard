@@ -6,10 +6,10 @@ namespace Assets.Transform
 {
     internal sealed class ThumbstickInputController : MonoBehaviour
     {
-        [Header("Controller")]
+        [Header("Controllers")]
 
         [SerializeField]
-        private TransformController _controller;
+        private TransformController[] _controllers;
 
         [Header("Input")]
 
@@ -23,12 +23,6 @@ namespace Assets.Transform
 
         [SerializeField]
         private float _axisDominanceFactor = 2f;
-
-        public TransformController Controller
-        {
-            get => _controller;
-            set => _controller = value;
-        }
 
         private void OnEnable()
         {
@@ -44,14 +38,30 @@ namespace Assets.Transform
 
         private void Update()
         {
-            if (Controller != null)
-            {
-                UpdateThumbstick(_leftThumbstick, Controller.OnLeftThumbstickHorizontal, Controller.OnLeftThumbstickVertical);
-                UpdateThumbstick(_rightThumbstick, Controller.OnRightThumbstickHorizontal, Controller.OnRightThumbstickVertical);
-            }
+            var controller = FindActiveController();
+
+            if (controller == null)
+                return;
+
+            UpdateThumbstick(_leftThumbstick, controller.OnLeftThumbstickHorizontal, controller.OnLeftThumbstickVertical);
+            UpdateThumbstick(_rightThumbstick, controller.OnRightThumbstickHorizontal, controller.OnRightThumbstickVertical);
         }
 
-        private void UpdateThumbstick(InputActionReference thumbstick, Action<float> onHorizontal, Action<float> onVertical)
+        private TransformController FindActiveController()
+        {
+            foreach (var controller in _controllers)
+            {
+                if (controller != null && controller.isActiveAndEnabled)
+                    return controller;
+            }
+
+            return null;
+        }
+
+        private void UpdateThumbstick(
+            InputActionReference thumbstick,
+            Action<float> onHorizontal,
+            Action<float> onVertical)
         {
             var input = thumbstick.action.ReadValue<Vector2>();
 
@@ -64,7 +74,6 @@ namespace Assets.Transform
             if (!Dominates(input.x, input.y))
                 onVertical?.Invoke(input.y);
         }
-
 
         private bool Dominates(float value, float other)
         {

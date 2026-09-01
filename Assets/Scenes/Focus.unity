@@ -6594,7 +6594,7 @@ GameObject:
   - component: {fileID: 597910090}
   - component: {fileID: 597910091}
   - component: {fileID: 597910093}
-  - component: {fileID: 597910092}
+  - component: {fileID: 597910094}
   m_Layer: 0
   m_Name: 'Script: ThumbstickInputController'
   m_TagString: Untagged
@@ -6629,27 +6629,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4b04041d8d8b1745831272ea85feafa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Assets.Transform.ThumbstickInputController
-  _controller: {fileID: 597910092}
+  _controllers:
+  - {fileID: 0}
+  - {fileID: 597910093}
   _leftThumbstick: {fileID: -60998027439631388, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   _rightThumbstick: {fileID: -8666952849799569744, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   _axisDominanceFactor: 2
---- !u!114 &597910092
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 597910089}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8de0f79bd88f7a4d8f7c820f83f27c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Assets.Transform.AxisTransformController
-  _axis: {fileID: 711123754}
-  _xSpeed: 1
-  _zSpeed: 1
-  _rotationSpeed: 1
-  _ySpeed: 1
 --- !u!114 &597910093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6667,6 +6652,23 @@ MonoBehaviour:
   _distanceSpeed: 1
   _heightSpeed: 1
   _tiltSpeed: 1
+--- !u!114 &597910094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597910089}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8de0f79bd88f7a4d8f7c820f83f27c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Assets.Transform.AxisTransformController
+  _axis: {fileID: 711123754}
+  _xSpeed: 1
+  _zSpeed: 1
+  _rotationSpeed: 1
+  _ySpeed: 1
 --- !u!1001 &601127096
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11783,13 +11785,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectDetectionController
   detector: {fileID: 9982072}
-  additionalObjects:
-  - ClassId: 1
-    Confidence: 0
-    X: 700
-    Y: 100
-    Width: 250
-    Height: 500
+  additionalObjects: []
   typeColors:
   - type: 0
     color: {r: 0, g: 1, b: 1, a: 1}
@@ -23017,6 +23013,7 @@ GameObject:
   - component: {fileID: 2137709459}
   - component: {fileID: 2137709461}
   - component: {fileID: 2137709460}
+  - component: {fileID: 2137709462}
   m_Layer: 0
   m_Name: 'Script: DebugController'
   m_TagString: Untagged
@@ -23066,6 +23063,8 @@ MonoBehaviour:
     Script: {fileID: 2137709461}
   - Name: Show Environment
     Script: {fileID: 2137709460}
+  - Name: Alternative Movement
+    Script: {fileID: 2137709462}
 --- !u!114 &2137709454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23187,6 +23186,20 @@ MonoBehaviour:
   _disableObjects:
   - {fileID: 1183584400}
   _disableScripts: []
+--- !u!114 &2137709462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137709451}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d4fa990b8797e940b5593adc98249ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Assets.Debugging.ToggleScript
+  _targets:
+  - {fileID: 597910094}
 --- !u!1001 &37232615538455128
 PrefabInstance:
   m_ObjectHideFlags: 0
