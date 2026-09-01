@@ -131,6 +131,8 @@ GameObject:
   - component: {fileID: 9982073}
   - component: {fileID: 9982074}
   - component: {fileID: 9982072}
+  - component: {fileID: 9982076}
+  - component: {fileID: 9982075}
   m_Layer: 0
   m_Name: Detection
   m_TagString: Untagged
@@ -207,6 +209,57 @@ MonoBehaviour:
   backendType: 256
   frameProvider: {fileID: 9982073}
   inferenceIntervalSeconds: 1
+--- !u!114 &9982075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9982069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7d2ca5e12d187f4d9fecbc4dc796a59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FocusGuard.Detection.FrameSources.VideoFrameProvider
+  outputTexture: {fileID: 8400000, guid: 4ee787f36d3173c4290b625c685b94b0, type: 2}
+  playAutomatically: 1
+  loop: 1
+--- !u!328 &9982076
+VideoPlayer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9982069}
+  m_Enabled: 1
+  m_VideoClip: {fileID: 32900000, guid: 5712afe74ae886949a32756b52ac8ed7, type: 3}
+  m_TargetCameraAlpha: 1
+  m_TargetCamera3DLayout: 0
+  m_TargetCamera: {fileID: 0}
+  m_TargetTexture: {fileID: 0}
+  m_TimeReference: 0
+  m_TargetMaterialRenderer: {fileID: 0}
+  m_TargetMaterialProperty: <noninit>
+  m_RenderMode: 2
+  m_AspectRatio: 2
+  m_DataSource: 0
+  m_TimeUpdateMode: 2
+  m_PlaybackSpeed: 6.38
+  m_AudioOutputMode: 2
+  m_TargetAudioSources:
+  - {fileID: 0}
+  m_DirectAudioVolumes:
+  - 1
+  m_Url: 
+  m_EnabledAudioTracks: 01
+  m_DirectAudioMutes: 00
+  m_ControlledAudioTrackCount: 1
+  m_PlayOnAwake: 1
+  m_SkipOnDrop: 1
+  m_Looping: 1
+  m_WaitForFirstFrame: 1
+  m_FrameReadyEventEnabled: 0
+  m_VideoShaders: []
 --- !u!1 &14521251
 GameObject:
   m_ObjectHideFlags: 0
@@ -2808,7 +2861,7 @@ MonoBehaviour:
   webcamCamera: {fileID: 1970209385}
   webcamWidth: 1280
   webcamHeight: 720
-  groundY: -0.025
+  groundY: -0.06836964
   pointGroups: []
   sphereRadius: 0.05
   lineWidth: 0.02
@@ -4719,6 +4772,66 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2498683846381613753, guid: 14c1a3a773d3e6f489f2f4feca95956e, type: 3}
   m_PrefabInstance: {fileID: 409931274}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &416268546
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 416268547}
+  - component: {fileID: 416268549}
+  - component: {fileID: 416268548}
+  m_Layer: 0
+  m_Name: HandtuchrolleCalibrationPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &416268547
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 416268546}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 798743887}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &416268548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 416268546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec10d24f4a89c6a4fa357224afa96cdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SaveableTransform
+  _saveId: handtuchrolle-calibration-point
+--- !u!114 &416268549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 416268546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21e9f4d3a94ca864492b260d80820a8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Assets.Webcam.WebcamCalibrationPoint
+  _color: {r: 1, g: 0, b: 0, a: 1}
+  _calibrationObject: {fileID: 160636740}
 --- !u!1001 &416836753
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6549,6 +6662,9 @@ GameObject:
   - component: {fileID: 597910095}
   - component: {fileID: 597910097}
   - component: {fileID: 597910096}
+  - component: {fileID: 597910100}
+  - component: {fileID: 597910099}
+  - component: {fileID: 597910098}
   m_Layer: 0
   m_Name: 'Script: ThumbstickInputController'
   m_TagString: Untagged
@@ -6584,6 +6700,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Assets.Transform.ThumbstickInputController
   _controllers:
+  - {fileID: 597910098}
+  - {fileID: 597910099}
+  - {fileID: 597910100}
   - {fileID: 597910096}
   - {fileID: 597910097}
   - {fileID: 597910095}
@@ -6677,6 +6796,48 @@ MonoBehaviour:
   _zSpeed: 0.25
   _rotationSpeed: 0.5
   _ySpeed: 0.25
+--- !u!114 &597910098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597910089}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d5fcecc552a034499d65f44f1ba158a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Assets.Transform.CalibrationPointTransformController
+  _calibrationPoint: {fileID: 2129534080}
+  _movementSpeed: 25
+--- !u!114 &597910099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597910089}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d5fcecc552a034499d65f44f1ba158a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Assets.Transform.CalibrationPointTransformController
+  _calibrationPoint: {fileID: 1666257822}
+  _movementSpeed: 25
+--- !u!114 &597910100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597910089}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d5fcecc552a034499d65f44f1ba158a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Assets.Transform.CalibrationPointTransformController
+  _calibrationPoint: {fileID: 416268549}
+  _movementSpeed: 25
 --- !u!1001 &601127096
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9439,6 +9600,40 @@ MonoBehaviour:
   m_GazeAssistanceDistanceScaling: 0
   m_ClampGazeAssistanceDistanceScaling: 0
   m_GazeAssistanceDistanceScalingClampValue: 1
+--- !u!1 &798743886
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 798743887}
+  m_Layer: 0
+  m_Name: CalibrationPoints
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &798743887
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 798743886}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.04828, y: -0, z: -0.56112}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 416268547}
+  - {fileID: 1666257820}
+  - {fileID: 2129534082}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &801694264
 GameObject:
   m_ObjectHideFlags: 0
@@ -11242,6 +11437,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 970276628115447798, guid: 274d73eb7e0acc74c884c03f84fa724a, type: 3}
   m_PrefabInstance: {fileID: 929790312}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &932875409
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 932875410}
+  - component: {fileID: 932875411}
+  m_Layer: 0
+  m_Name: Webcam Rotation Calibration
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &932875410
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 932875409}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 972354962}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &932875411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 932875409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d78ffae78ea961248b9bfdd49620cbc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Assets.Webcam.WebcamRotationCalibration
+  _webcam: {fileID: 1970209385}
+  _webcamWidth: 1280
+  _webcamHeight: 720
+  _groundY: -0.06836964
+  _calibrationPoints: []
+  _enabled: 1
+  _iterationsPerFrame: 5
+  _initialStepSize: 1
+  _minimumStepSize: 0.001
+  _minimumImprovement: 0.0001
+  _currentError: 0
+  _currentStepSize: 0
+  _currentRotation: {x: 0, y: 0, z: 0}
 --- !u!1 &934807447
 GameObject:
   m_ObjectHideFlags: 0
@@ -11755,6 +12007,7 @@ GameObject:
   - component: {fileID: 972354962}
   - component: {fileID: 972354963}
   - component: {fileID: 972354964}
+  - component: {fileID: 972354965}
   m_Layer: 0
   m_Name: Webcam
   m_TagString: Untagged
@@ -11779,6 +12032,7 @@ Transform:
   - {fileID: 107722826}
   - {fileID: 1970209382}
   - {fileID: 245556664}
+  - {fileID: 932875410}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -124, z: 0}
 --- !u!114 &972354963
@@ -11795,6 +12049,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ObjectDetectionController
   detector: {fileID: 9982072}
   additionalObjects: []
+  calibrationPoints:
+  - {fileID: 2129534080}
+  - {fileID: 416268549}
+  - {fileID: 1666257822}
   typeColors:
   - type: 0
     color: {r: 0, g: 1, b: 1, a: 1}
@@ -11802,6 +12060,7 @@ MonoBehaviour:
   imageRectangleOverlay: {fileID: 1017039637}
   webcamPointVisualizer: {fileID: 245556665}
   projectedRectangleCylinderVisualizer: {fileID: 1183584401}
+  webcamRotationCalibration: {fileID: 932875411}
 --- !u!114 &972354964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11820,6 +12079,19 @@ MonoBehaviour:
   _allowZ: 1
   _rotationAxis: 1
   _rotationRange: 360
+--- !u!114 &972354965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 972354961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec10d24f4a89c6a4fa357224afa96cdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SaveableTransform
+  _saveId: webcam-outer-object
 --- !u!1001 &979312590
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11977,6 +12249,7 @@ GameObject:
   - component: {fileID: 986170476}
   - component: {fileID: 986170475}
   - component: {fileID: 986170480}
+  - component: {fileID: 986170481}
   m_Layer: 3
   m_Name: Keyboard
   m_TagString: Untagged
@@ -12084,7 +12357,7 @@ Transform:
   m_GameObject: {fileID: 986170474}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.7, z: 0.35}
+  m_LocalPosition: {x: 0, y: 1.244, z: 0.35}
   m_LocalScale: {x: 0.6, y: 0.01, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12108,6 +12381,19 @@ MonoBehaviour:
   _allowZ: 1
   _rotationAxis: 1
   _rotationRange: 360
+--- !u!114 &986170481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986170474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec10d24f4a89c6a4fa357224afa96cdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SaveableTransform
+  _saveId: keyboard
 --- !u!1001 &986544822
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14053,6 +14339,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1232505262}
   - component: {fileID: 1232505263}
+  - component: {fileID: 1232505264}
   m_Layer: 0
   m_Name: Calibration Objects
   m_TagString: Untagged
@@ -14068,7 +14355,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1232505261}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3, y: -0.075, z: -2.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -14077,7 +14364,7 @@ Transform:
   - {fileID: 1901818466}
   - {fileID: 998859169}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1232505263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14096,6 +14383,19 @@ MonoBehaviour:
   _allowZ: 1
   _rotationAxis: 1
   _rotationRange: 360
+--- !u!114 &1232505264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232505261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec10d24f4a89c6a4fa357224afa96cdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SaveableTransform
+  _saveId: calibration-objects
 --- !u!1001 &1243068718
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18473,6 +18773,66 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 706618271248512831, guid: a1e0bacb14a760841bc72f24ddc9607e, type: 3}
   m_PrefabInstance: {fileID: 1661453896}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1666257819
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1666257820}
+  - component: {fileID: 1666257822}
+  - component: {fileID: 1666257821}
+  m_Layer: 0
+  m_Name: WasserflascheCalibrationPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1666257820
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1666257819}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 798743887}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1666257821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1666257819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec10d24f4a89c6a4fa357224afa96cdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SaveableTransform
+  _saveId: wasserflasche-calibration-point
+--- !u!114 &1666257822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1666257819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21e9f4d3a94ca864492b260d80820a8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Assets.Webcam.WebcamCalibrationPoint
+  _color: {r: 0, g: 0, b: 1, a: 1}
+  _calibrationObject: {fileID: 1901818465}
 --- !u!1001 &1669751151
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21349,6 +21709,7 @@ GameObject:
   - component: {fileID: 1970209385}
   - component: {fileID: 1970209384}
   - component: {fileID: 1970209383}
+  - component: {fileID: 1970209386}
   m_Layer: 0
   m_Name: Webcam Camera
   m_TagString: Untagged
@@ -21474,6 +21835,19 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &1970209386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1970209381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec10d24f4a89c6a4fa357224afa96cdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SaveableTransform
+  _saveId: webcam-camera-object
 --- !u!1001 &1974645681
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23003,6 +23377,66 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!1 &2129534079
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2129534082}
+  - component: {fileID: 2129534080}
+  - component: {fileID: 2129534081}
+  m_Layer: 0
+  m_Name: DesinfektionsmittelCalibrationPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2129534080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129534079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21e9f4d3a94ca864492b260d80820a8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Assets.Webcam.WebcamCalibrationPoint
+  _color: {r: 0, g: 1, b: 0, a: 1}
+  _calibrationObject: {fileID: 998859168}
+--- !u!114 &2129534081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129534079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec10d24f4a89c6a4fa357224afa96cdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SaveableTransform
+  _saveId: desinfektionsmittel-calibration-point
+--- !u!4 &2129534082
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129534079}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 798743887}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2131469306
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23149,6 +23583,7 @@ GameObject:
   - component: {fileID: 2137709459}
   - component: {fileID: 2137709461}
   - component: {fileID: 2137709460}
+  - component: {fileID: 2137709462}
   m_Layer: 0
   m_Name: 'Script: DebugController'
   m_TagString: Untagged
@@ -23206,6 +23641,14 @@ MonoBehaviour:
     Script: {fileID: 597910097}
   - Name: Move Calibration Objects
     Script: {fileID: 597910096}
+  - Name: Move Towel Roll
+    Script: {fileID: 597910100}
+  - Name: Move Water Bottle
+    Script: {fileID: 597910099}
+  - Name: Move Disinfectant
+    Script: {fileID: 597910098}
+  - Name: Optimize Webcam Rotation
+    Script: {fileID: 2137709462}
 --- !u!114 &2137709454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23230,7 +23673,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2137709451}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4c5c085f6ffc7df409204f5c9482f30e, type: 3}
   m_Name: 
@@ -23276,7 +23719,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2137709451}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1e67615ff73b3743a649b0332206df0, type: 3}
   m_Name: 
@@ -23317,7 +23760,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2137709451}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 86316f2774b87c743a7b13b0efc6a32d, type: 3}
   m_Name: 
@@ -23327,6 +23770,20 @@ MonoBehaviour:
   _disableObjects:
   - {fileID: 1183584400}
   _disableScripts: []
+--- !u!114 &2137709462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137709451}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c5c085f6ffc7df409204f5c9482f30e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Assets.Debugging.ToggleGameObject
+  _targets:
+  - {fileID: 932875409}
 --- !u!1001 &37232615538455128
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26218,6 +26675,7 @@ SceneRoots:
   - {fileID: 1379922652}
   - {fileID: 986170479}
   - {fileID: 1232505262}
+  - {fileID: 798743887}
   - {fileID: 972354962}
   - {fileID: 1960966100}
   - {fileID: 1183584402}

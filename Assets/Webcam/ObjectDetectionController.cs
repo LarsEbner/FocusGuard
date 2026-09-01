@@ -1,4 +1,5 @@
 ﻿using Assets.Detection.YOLO;
+using Assets.Webcam;
 using FocusGuard.Detection.YOLO;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,9 @@ public class ObjectDetectionController : MonoBehaviour
     [SerializeField]
     private List<DetectedObject> additionalObjects;
 
+    [SerializeField]
+    private List<WebcamCalibrationPoint> calibrationPoints;
+
     [Header("Colors")]
     [SerializeField]
     private List<TypeColor> typeColors = new();
@@ -44,6 +48,9 @@ public class ObjectDetectionController : MonoBehaviour
     [SerializeField]
     private ProjectedRectangleCylinderVisualizer projectedRectangleCylinderVisualizer;
 
+    [SerializeField]
+    private WebcamRotationCalibration webcamRotationCalibration;
+
     private void Awake()
     {
         colorDictionary = typeColors.ToDictionary(
@@ -56,6 +63,7 @@ public class ObjectDetectionController : MonoBehaviour
     {
         detector.EnabledClasses = colorDictionary.Keys.ToList();
         detector.ProcessDetectionResult += UpdateVisualizations;
+        webcamRotationCalibration.CalibrationPoints = calibrationPoints;
     }
 
 
@@ -67,13 +75,13 @@ public class ObjectDetectionController : MonoBehaviour
         if (additionalObjects != null) objects.AddRange(additionalObjects);
 
 
-        UpdateImageRectangleOverlay(objects);
-        UpdateWebcamPointVisualizer(objects);
+        UpdateImageRectangleOverlay(objects, calibrationPoints);
+        UpdateWebcamPointVisualizer(objects, calibrationPoints);
         UpdateProjectedRectangleCylinders(objects);
     }
 
 
-    private void UpdateImageRectangleOverlay(List<DetectedObject> objects)
+    private void UpdateImageRectangleOverlay(List<DetectedObject> objects, List<WebcamCalibrationPoint> calibrationPoints)
     {
         if (imageRectangleOverlay == null)
             return;
@@ -96,12 +104,26 @@ public class ObjectDetectionController : MonoBehaviour
             );
         }
 
+        foreach (WebcamCalibrationPoint point in calibrationPoints)
+        {
+            rectangles.Add(
+                new ImageRectangleOverlay.RectangleDefinition
+                {
+                    x = point.X - 3,
+                    y = point.Y - 3,
+                    width = 7,
+                    height = 7,
+                    color = point.Color,
+                }
+            );
+        }
+
 
         imageRectangleOverlay.Rectangles = rectangles.ToArray();
     }
 
 
-    private void UpdateWebcamPointVisualizer(List<DetectedObject> objects)
+    private void UpdateWebcamPointVisualizer(List<DetectedObject> objects, List<WebcamCalibrationPoint> calibrationPoints)
     {
         if (webcamPointVisualizer == null)
             return;
@@ -162,6 +184,24 @@ public class ObjectDetectionController : MonoBehaviour
             );
         }
 
+        foreach (WebcamCalibrationPoint calibrationPoint in calibrationPoints)
+        {
+            pointGroups.Add(
+                new WebcamPointVisualizer.PointGroup
+                {
+                    color = calibrationPoint.Color,
+                    points =
+                        new List<WebcamPointVisualizer.Point>
+                        {
+                        new WebcamPointVisualizer.Point
+                        {
+                            x = calibrationPoint.X,
+                            y = calibrationPoint.Y,
+                            height = 0f
+                        }
+                        }
+                });
+        }
 
         webcamPointVisualizer.PointGroups = pointGroups;
     }
