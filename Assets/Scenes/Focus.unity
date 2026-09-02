@@ -234,7 +234,6 @@ MonoBehaviour:
   confidenceThreshold: 0.45
   intersectionOverUnionThreshold: 0.45
   inferenceIntervalSeconds: 0.5
-  logDetectionResults: 1
 --- !u!114 &9982073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2900,8 +2899,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WebcamPointVisualizer
   webcamCamera: {fileID: 1970209385}
   _frameProvider: {fileID: 0}
-  groundY: -0.06836964
   pointGroups: []
+  _calibrationPoints: []
   sphereRadius: 0.05
   lineWidth: 0.02
   shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
@@ -6774,7 +6773,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 597910089}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d8de0f79bd88f7a4d8f7c820f83f27c1, type: 3}
   m_Name: 
@@ -13763,7 +13762,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ProjectedRectangleCylinderVisualizer
   webcamCamera: {fileID: 1970209385}
   _frameProvider: {fileID: 0}
-  groundY: -0.025
+  _calibrationPoints: []
   cylinderTemplate: {fileID: 320712714}
   cylinderParent: {fileID: 1183584402}
   rectangles: []
@@ -16123,6 +16122,8 @@ GameObject:
   - component: {fileID: 1425269357}
   - component: {fileID: 1425269359}
   - component: {fileID: 1425269358}
+  - component: {fileID: 1425269361}
+  - component: {fileID: 1425269360}
   m_Layer: 0
   m_Name: 'Script: DistractionManager'
   m_TagString: Untagged
@@ -16157,7 +16158,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a154e2a482a121147be539c1f9ec08ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DistractionDetection
-  distractionRetentionSeconds: 60
   looksAtScreen: 0
 --- !u!114 &1425269359
 MonoBehaviour:
@@ -16175,14 +16175,48 @@ MonoBehaviour:
   microsaccadeDetection: {fileID: 0}
   pupilDilation: {fileID: 0}
   focusEffectController: {fileID: 868886410}
-  distractionThreshold: 60
+  distractionThreshold: 10
   distractionCountThreshold: 5
   distractionCountWindow: 3
   focusRecoveryDuration: 15
   microsaccadeAnomalyThreshold: 5
   normalPupilSize: 4
   focusedDilation: 0.2
-  logRuleEvaluation: 0
+  distractionRetentionSeconds: 60
+  microsaccadeRetentionSeconds: 10
+  pupilSizeRetentionSeconds: 10
+  logRuleEvaluation: 1
+  _distractionsItems: []
+  microsaccadeItems: []
+  pupilSizeItems: []
+--- !u!114 &1425269360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425269356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d1f2702778649241959f0eac32167a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PupilDilation
+--- !u!114 &1425269361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425269356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dec14bd19c43e47b98a71b103c3b97e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MicrosaccadeDetection
+  rightGaze: {fileID: 863371477}
+  leftGaze: {fileID: 1409620016}
+  minSaccadeDistance: 0.05
+  maxSaccadeDistance: 2
 --- !u!1 &1431113926
 GameObject:
   m_ObjectHideFlags: 0
@@ -23524,7 +23558,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2137709451}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4c5c085f6ffc7df409204f5c9482f30e, type: 3}
   m_Name: 
@@ -23541,7 +23575,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2137709451}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4c5c085f6ffc7df409204f5c9482f30e, type: 3}
   m_Name: 
@@ -23556,7 +23590,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2137709451}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4c5c085f6ffc7df409204f5c9482f30e, type: 3}
   m_Name: 
@@ -23570,7 +23604,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2137709451}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1e67615ff73b3743a649b0332206df0, type: 3}
   m_Name: 
@@ -23611,7 +23645,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2137709451}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 86316f2774b87c743a7b13b0efc6a32d, type: 3}
   m_Name: 
@@ -23642,7 +23676,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2137709451}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7ae0db1a8ac3aed48ac942d41139d5e7, type: 3}
   m_Name: 

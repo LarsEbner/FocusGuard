@@ -1,5 +1,8 @@
+using System;
+
 namespace Assets.EyeTracking
 {
+    [Serializable]
     public class PupilSize
     {
         public float RightSize { get; }

@@ -1,53 +1,57 @@
-using System.Collections.Generic;
+using System;
 using Assets.EyeTracking;
 using UnityEngine;
 
 /// <summary>
-/// Misst pro Frame die Rotationsänderung von rechtem und linkem Auge und
-/// führt eine Liste aller gemessenen Mikrosakkaden (gültig/ungültig +
-/// Zeitpunkt). Enthält keine Ablenkungs-Logik – das übernimmt
-/// DistractionManager anhand der hier bereitgestellten Liste.
+/// Misst pro Frame die Rotationsänderung von rechtem und linkem Auge
+/// und klassifiziert diese als gültige oder ungültige Mikrosakkade.
+///
+/// Die Klasse enthält keine Speicherung der Messungen und keine
+/// Ablenkungs-Logik. Jede Messung wird über ein Event bereitgestellt.
 /// </summary>
 public class MicrosaccadeDetection : MonoBehaviour
 {
     [Tooltip("Transform des rechten Auges (z. B. aus dem Eye-Tracking-Rig), für die Sakkaden-Berechnung.")]
-    [SerializeField] private Transform rightGaze;
+    [SerializeField]
+    private Transform rightGaze;
 
     [Tooltip("Transform des linken Auges (z. B. aus dem Eye-Tracking-Rig), für die Sakkaden-Berechnung.")]
-    [SerializeField] private Transform leftGaze;
+    [SerializeField]
+    private Transform leftGaze;
 
     [Tooltip("Minimale Rotationsänderung (Grad) pro Frame, ab der eine Bewegung als Mikrosakkade zählt (filtert Rauschen/Stillstand).")]
-    [SerializeField] private float minSaccadeDistance = 0.05f;
+    [SerializeField]
+    private float minSaccadeDistance = 0.05f;
 
     [Tooltip("Maximale Rotationsänderung (Grad) pro Frame, bis zu der eine Bewegung noch als Mikrosakkade zählt (filtert große Saccaden/Blinks).")]
-    [SerializeField] private float maxSaccadeDistance = 2.0f;
+    [SerializeField]
+    private float maxSaccadeDistance = 2.0f;
 
-    [Tooltip("Wie lange (in Sekunden) einzelne Messungen in der Liste behalten werden, bevor sie automatisch entfernt werden.")]
-    [SerializeField] private float saccadeRetentionSeconds = 30f;
 
-    [Tooltip("Wie viel Prozent (0 bis 1) der Saccaden als valid gewertet werden müssen damit Microsaccaden vorhanden sind.")]
-    [SerializeField] private double saccadeThreshold = 0.9;
+    /// <summary>
+    /// Wird bei jeder vollständigen Mikrosakkadenmessung ausgelöst.
+    /// </summary>
+    public event Action<Microsaccade> MicrosaccadeMeasured;
 
-    private readonly List<Microsaccade> saccadeItems = new List<Microsaccade>();
-    private AutoDeletingList<Microsaccade> saccades;
 
-    public IEnumerable<Microsaccade> Saccades => saccades;
+    private float lastRightX;
+    private float lastRightY;
 
-    private float lastRightX, lastRightY;
-    private float lastLeftX, lastLeftY;
+    private float lastLeftX;
+    private float lastLeftY;
+
     private bool hasPreviousSample;
 
-    private void Awake()
-    {
-        saccades = new AutoDeletingList<Microsaccade>(saccadeItems, m => Time.time - m.Timestamp > saccadeRetentionSeconds);
-    }
 
     private void Update()
     {
-        if (rightGaze == null || leftGaze == null) return;
-
+        if (rightGaze == null || leftGaze == null)
+        {
+            return;
+        }
         RecordSaccade();
     }
+
 
     private void RecordSaccade()
     {
@@ -55,6 +59,7 @@ public class MicrosaccadeDetection : MonoBehaviour
         float currentRightY = rightGaze.eulerAngles.y;
         float currentLeftX = leftGaze.eulerAngles.x;
         float currentLeftY = leftGaze.eulerAngles.y;
+
 
         if (!hasPreviousSample)
         {
@@ -67,6 +72,7 @@ public class MicrosaccadeDetection : MonoBehaviour
             hasPreviousSample = true;
             return;
         }
+
 
         float rxDifference = Mathf.Abs(Mathf.Abs(lastRightX) - Mathf.Abs(currentRightX));
         float ryDifference = Mathf.Abs(Mathf.Abs(lastRightY) - Mathf.Abs(currentRightY));
@@ -83,21 +89,12 @@ public class MicrosaccadeDetection : MonoBehaviour
 
         bool rightOk = rotationRight < maxSaccadeDistance && rotationRight > minSaccadeDistance;
         bool leftOk = rotationLeft < maxSaccadeDistance && rotationLeft > minSaccadeDistance;
+        bool valid = rightOk && leftOk;
 
-        saccades.Add(new Microsaccade(rightOk && leftOk, Time.time));
-    }
+        Microsaccade microsaccade = new Microsaccade(valid, Time.time,
+                currentRightX, currentRightY, currentLeftX, currentLeftY,
+                rotationRight, rotationLeft);
 
-    public bool MicroSaccDetected()
-    {
-        int amountValid = 0;
-        foreach (Microsaccade microsaccade in saccades)
-        {
-            if(microsaccade.Valid)
-            {
-                amountValid++;
-            }
-        }
-        int count = saccades.Count();
-        return (amountValid / count) >= saccadeThreshold;
+        MicrosaccadeMeasured?.Invoke(microsaccade);
     }
 }

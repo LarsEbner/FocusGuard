@@ -1,7 +1,7 @@
+using NUnit.Framework.Interfaces;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
 /// <summary>
 /// Liste, die veraltete Einträge automatisch entfernt, sobald über sie
@@ -15,17 +15,18 @@ using UnityEngine;
 /// beim Aufräumen nur vom Anfang der Liste her geprüft wird: sobald
 /// canRemove für einen Eintrag false liefert, wird abgebrochen.
 /// </remarks>
-public class AutoDeletingList<T> : IEnumerable<T>
+public class AutoDeletingList<T> : ICollection<T>
 {
-    private readonly List<T> items;
+    private readonly ICollection<T> items;
     private readonly Func<T, bool> canRemove;
+
 
     /// <param name="canRemove">
     /// Entscheidet pro Eintrag, ob er entfernt werden darf (z. B. weil er
     /// alt genug ist, oder eine Distraction längst abgeschlossen ist).
     /// Standard: immer entfernbar.
     /// </param>
-    public AutoDeletingList(List<T> items, Func<T, bool> canRemove = null)
+    public AutoDeletingList(ICollection<T> items, Func<T, bool> canRemove = null)
     {
         this.items = items;
         this.canRemove = canRemove ?? (_ => true);
@@ -36,10 +37,15 @@ public class AutoDeletingList<T> : IEnumerable<T>
         items.Add(item);
     }
 
+    public bool IsReadOnly => items.IsReadOnly;
+
+    public int Count => items.Count;
+
     /// <summary>
-    /// Entfernt zuerst vom Anfang der Liste alle Einträge, für die
-    /// canRemove true liefert, und liefert dann einen Enumerator über
-    /// die verbleibenden Einträge.
+    /// Entfernt beim Erzeugen des Enumerators alle Einträge,
+    /// für die canRemove true liefert.
+    ///
+    /// Die Collection muss dabei keine bestimmte Reihenfolge besitzen.
     /// </summary>
     public IEnumerator<T> GetEnumerator()
     {
@@ -47,20 +53,48 @@ public class AutoDeletingList<T> : IEnumerable<T>
         return items.GetEnumerator();
     }
 
-    public int Count()
+
+    IEnumerator IEnumerable.GetEnumerator()
     {
-        return items.Count;
+        return GetEnumerator();
     }
 
-    IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 
     private void RemoveOutdated()
     {
-        // Nur vom Anfang her prüfen: sobald ein Eintrag nicht entfernt
-        // werden darf, abbrechen – alles danach ist chronologisch jünger.
-        while (items.Count > 0 && canRemove(items[0]))
+        List<T> itemsToRemove = new();
+
+        foreach (T item in items)
         {
-            items.RemoveAt(0);
+            if (canRemove(item))
+            {
+                itemsToRemove.Add(item);
+            }
         }
+
+        foreach (T item in itemsToRemove)
+        {
+            items.Remove(item);
+        }
+    }
+
+    public void Clear()
+    {
+        items.Clear();
+    }
+
+    public bool Contains(T item)
+    {
+        return items.Contains(item);
+    }
+
+    public void CopyTo(T[] array, int arrayIndex)
+    {
+        items.CopyTo(array, arrayIndex);
+    }
+
+    public bool Remove(T item)
+    {
+        return items.Remove(item);
     }
 }

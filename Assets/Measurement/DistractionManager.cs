@@ -38,29 +38,128 @@ public class DistractionManager : MonoBehaviour
     [SerializeField]
     private float focusedDilation = 0.2f;
 
+    [Header("Aufbewahrung")]
+    [Tooltip("Wie lange Distraction-Ereignisse aufbewahrt werden.")]
+    [SerializeField]
+    private float distractionRetentionSeconds = 60f;
+
+    [Tooltip("Wie lange Mikrosakkaden-Messungen aufbewahrt werden.")]
+    [SerializeField]
+    private float microsaccadeRetentionSeconds = 10f;
+
+    [Tooltip("Wie lange Pupillenmessungen aufbewahrt werden.")]
+    [SerializeField]
+    private float pupilSizeRetentionSeconds = 10f;
+
     [Header("Debug")]
     [SerializeField] private bool logRuleEvaluation = false;
 
+
+    private ICollection<Distraction> distractionItems = new SortedSet<Distraction>();
+    private ICollection<Distraction> distractions;
+
+    // Zusätzliche Liste, die im Inspektor angezeigt werden kann
+    [SerializeField]
+    private List<Distraction> _distractionsItems = new();
+
+    [SerializeField]
+    private List<Microsaccade> microsaccadeItems = new();
+    private ICollection<Microsaccade> microsaccades;
+
+    [SerializeField]
+    private List<PupilSize> pupilSizeItems = new();
+    private ICollection<PupilSize> pupilSizes;
+
+
     private float? focusStartedAt = float.NegativeInfinity;
+
+
+    private void Awake()
+    {
+        distractions = new AutoDeletingList<Distraction>(distractionItems, d => !d.IsOngoing && Time.time - d.LookAtTime > distractionRetentionSeconds);
+        microsaccades = new AutoDeletingList<Microsaccade>(microsaccadeItems, m => Time.time - m.Timestamp > microsaccadeRetentionSeconds);
+        pupilSizes = new AutoDeletingList<PupilSize>(pupilSizeItems, m => Time.time - m.Timestamp > pupilSizeRetentionSeconds);
+
+        if (distractionDetection != null)
+        {
+            distractionDetection.DistractionUpdated += HandleDistractionChanged;
+        }
+
+        if (microsaccadeDetection != null)
+        {
+            microsaccadeDetection.MicrosaccadeMeasured += HandleMicrosaccadeMeasured;
+        }
+
+        if (pupilDilation != null)
+        {
+            pupilDilation.PupilSizeMeasured += HandlePupilSizeMeasured;
+        }
+    }
+
+
+    private void OnDestroy()
+    {
+        if (distractionDetection != null)
+        {
+            distractionDetection.DistractionUpdated -= HandleDistractionChanged;
+        }
+
+        if (microsaccadeDetection != null)
+        {
+            microsaccadeDetection.MicrosaccadeMeasured -= HandleMicrosaccadeMeasured;
+        }
+
+        if (pupilDilation != null)
+        {
+            pupilDilation.PupilSizeMeasured -= HandlePupilSizeMeasured;
+        }
+    }
+
+
+    private void HandleDistractionChanged(Distraction distraction)
+    {
+        if (distraction == null) return;
+        distractions.Add(distraction);
+    }
+
+
+    private void HandleMicrosaccadeMeasured(Microsaccade microsaccade)
+    {
+        if (microsaccade == null) return;
+        microsaccades.Add(microsaccade);
+    }
+
+
+    private void HandlePupilSizeMeasured(PupilSize pupilSize)
+    {
+        if (pupilSize == null) return;
+        pupilSizes.Add(pupilSize);
+    }
+
 
     private void Update()
     {
-        IEnumerable<Distraction> distractions = distractionDetection != null ? distractionDetection.Distractions : new List<Distraction>().AsEnumerable();
-        IEnumerable<Microsaccade> saccades = microsaccadeDetection != null ? microsaccadeDetection.Saccades : new List<Microsaccade>().AsEnumerable();
-        IEnumerable<PupilSize> pupilSizes = pupilDilation != null ? pupilDilation.PupilSizes : new List<PupilSize>().AsEnumerable();
-
         bool looksAway = distractions.Count() > 0 && distractions.Last().IsOngoing;
         bool distracted = EvaluateDistraction(distractions);
         bool focused = EvaluateFocus(distracted);
+
         UpdateFocusEffect(focused, looksAway);
     }
+
 
     private bool EvaluateDistraction(IEnumerable<Distraction> distractions)
     {
         bool sustained = IsSustainedLookAway(distractions);
         bool repeatedNow = IsRepeatedLookAwayThresholdExceeded(distractions);
-        return sustained || repeatedNow;
+        bool microsaccadeAnomaly = IsMicrosaccadeAnomaly(microsaccades);
+        bool pupilsDilated = PupilsDilated(pupilSizes);
+
+        // Wird in Liste konvertiert, die im Inspektor angezeigt werden kann
+        _distractionsItems = distractions.ToList();
+
+        return sustained || repeatedNow;//|| microsaccadeAnomaly || pupilsDilated;
     }
+
 
     private bool EvaluateFocus(bool distracted)
     {
@@ -75,19 +174,17 @@ public class DistractionManager : MonoBehaviour
 
         if (logRuleEvaluation)
         {
-            Debug.Log(
-                $"[DistractionManager] " +
-                $"Focus-Check: " +
-                $"{focusDuration:F2}s / " +
-                $"{focusRecoveryDuration:F2}s " +
-                $"[{focused}]");
+            Debug.Log($"[DistractionManager] Focus-Check: {focusDuration:F2}s / {focusRecoveryDuration:F2}s [{focused}]");
         }
 
-        return focusDuration >= focusRecoveryDuration;
+        return focused;
     }
+
 
     private void UpdateFocusEffect(bool focused, bool looksAway)
     {
+        if (focusEffectController == null) return;
+
         if (focused && !looksAway)
         {
             focusEffectController.EffectStrength = 0.0f;
@@ -98,10 +195,15 @@ public class DistractionManager : MonoBehaviour
         }
     }
 
+
     private bool IsSustainedLookAway(IEnumerable<Distraction> distractions)
     {
         Distraction latest = distractions.LastOrDefault();
-        if (latest == null || !latest.IsOngoing) return false;
+
+        if (latest == null || !latest.IsOngoing)
+        {
+            return false;
+        }
 
         float elapsed = GetElapsed(latest);
 
@@ -113,10 +215,12 @@ public class DistractionManager : MonoBehaviour
         return elapsed >= distractionThreshold;
     }
 
+
     private float GetElapsed(Distraction d)
     {
         return d.Duration ?? (Time.time - d.LookAwayTime);
     }
+
 
     private bool IsRepeatedLookAwayThresholdExceeded(IEnumerable<Distraction> distractions)
     {
@@ -131,15 +235,15 @@ public class DistractionManager : MonoBehaviour
         return count >= distractionCountThreshold;
     }
 
+
     private bool IsMicrosaccadeAnomaly(IEnumerable<Microsaccade> saccades)
     {
         if (saccades.Count() == 0) return false;
 
         Microsaccade lastValid = saccades.LastOrDefault(s => s.Valid);
 
-        float elapsedSinceValid = lastValid != null
-            ? Time.time - lastValid.Timestamp
-            : Time.time - saccades.First().Timestamp; // noch nie eine gültige Sakkade gemessen
+        float elapsedSinceValid = lastValid != null ? Time.time - lastValid.Timestamp : Time.time - saccades.First().Timestamp;
+        // noch nie eine gültige Sakkade gemessen
 
         if (logRuleEvaluation)
         {
@@ -149,10 +253,10 @@ public class DistractionManager : MonoBehaviour
         return elapsedSinceValid >= microsaccadeAnomalyThreshold;
     }
 
+
     private bool PupilsDilated(IEnumerable<PupilSize> pupilSizes)
     {
         if (pupilSizes.Count() == 0) return false;
-
         float sumOfAllEyes = 0;
 
         foreach (PupilSize pupilSize in pupilSizes)
@@ -162,7 +266,6 @@ public class DistractionManager : MonoBehaviour
 
         int amountChecked = pupilSizes.Count() * 2;
         float averagePupilSize = sumOfAllEyes / amountChecked;
-
         return averagePupilSize >= (normalPupilSize + focusedDilation);
     }
 }

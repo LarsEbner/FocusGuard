@@ -1,6 +1,7 @@
-using UnityEngine;
+using System;
 
-public class Distraction
+[Serializable]
+public class Distraction : IComparable<Distraction>
 {
     public float LookAwayTime { get; }
     public float? LookAtTime { get; private set; }
@@ -17,5 +18,13 @@ public class Distraction
     public void MarkLookedAt(float lookAtTime)
     {
         LookAtTime = lookAtTime;
+    }
+
+    public int CompareTo(Distraction other)
+    {
+        if (other == null)
+            return 1;
+
+        return LookAwayTime.CompareTo(other.LookAwayTime);
     }
 }
