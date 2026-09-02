@@ -1,8 +1,9 @@
-﻿using System;
+﻿using FocusGuard.Detection.FrameSources;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WebcamPointVisualizer : MonoBehaviour
+public class WebcamPointVisualizer : MonoBehaviour, IFrameProviderConsumer
 {
     [Serializable]
     public class PointGroup
@@ -25,10 +26,9 @@ public class WebcamPointVisualizer : MonoBehaviour
     private Camera webcamCamera;
 
     [SerializeField]
-    private int webcamWidth = 1920;
+    private FrameProvider _frameProvider;
 
-    [SerializeField]
-    private int webcamHeight = 1080;
+    public FrameProvider FrameProvider { get => _frameProvider; set => _frameProvider = value; }
 
     [SerializeField]
     private float groundY = 0f;
@@ -61,15 +61,11 @@ public class WebcamPointVisualizer : MonoBehaviour
     [SerializeField]
     private bool autoUpdate = true;
 
-    private WebcamPointProjector pointProjector;
     private readonly List<List<GameObject>> sphereObjects = new List<List<GameObject>>();
     private readonly List<LineRenderer> lineObjects = new List<LineRenderer>();
 
     private void Start()
     {
-        pointProjector =
-            new WebcamPointProjector(webcamCamera, webcamWidth, webcamHeight, groundY);
-
         CreateVisuals();
         UpdateVisuals();
     }
@@ -133,8 +129,8 @@ public class WebcamPointVisualizer : MonoBehaviour
 
     private void UpdateVisuals()
     {
-        if (pointProjector == null) return;
         if (pointGroups == null) return;
+        var pointProjector = new WebcamPointProjector(webcamCamera, _frameProvider, groundY);
 
 
         /*

@@ -12,19 +12,19 @@ namespace FocusGuard.Detection.FrameSources
     /// Sie visualisiert den Kamerastream, ohne selbst Einfluss auf die
     /// Objekterkennung oder die Ablenkungslogik zu nehmen.
     /// </remarks>
-    public sealed class FrameProviderDebugView : MonoBehaviour
+    public sealed class FrameProviderDebugView : MonoBehaviour, IFrameProviderConsumer
     {
         [Header("Bildquelle")]
 
-        [Tooltip(
-            "Webcam-Provider, dessen aktueller Frame angezeigt werden soll.")]
+        [Tooltip("Webcam-Provider, dessen aktueller Frame angezeigt werden soll.")]
         [SerializeField]
-        private WebcamFrameProvider frameProvider;
+        private FrameProvider frameProvider;
+
+        public FrameProvider FrameProvider { get => frameProvider; set => frameProvider = value; }
 
         [Header("Darstellung")]
 
-        [Tooltip(
-            "RawImage-Komponente, in der der aktuelle Kameraframe angezeigt wird.")]
+        [Tooltip("RawImage-Komponente, in der der aktuelle Kameraframe angezeigt wird.")]
         [SerializeField]
         private RawImage targetImage;
 

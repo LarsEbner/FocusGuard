@@ -16,7 +16,7 @@ namespace FocusGuard.Detection.FrameSources
     /// Später kann diese Implementierung durch einen Netzwerk- oder
     /// Passthrough-Kamera-Provider ersetzt werden.
     /// </remarks>
-    public sealed class WebcamFrameProvider : MonoBehaviour, IFrameProvider
+    public sealed class WebcamFrameProvider : FrameProvider
     {
         [Header("Kameraauswahl")]
 
@@ -50,7 +50,7 @@ namespace FocusGuard.Detection.FrameSources
         private bool initializationCompleted;
 
         /// <inheritdoc />
-        public bool IsReady =>
+        public override bool IsReady =>
             initializationCompleted &&
             webcamTexture != null &&
             webcamTexture.isPlaying &&
@@ -58,10 +58,10 @@ namespace FocusGuard.Detection.FrameSources
             webcamTexture.height > 16;
 
         /// <inheritdoc />
-        public Texture CurrentFrame => webcamTexture;
+        public override Texture CurrentFrame => webcamTexture;
 
         /// <inheritdoc />
-        public bool HasNewFrame =>
+        public override bool HasNewFrame =>
             IsReady && webcamTexture.didUpdateThisFrame;
 
         /// <summary>
@@ -201,7 +201,7 @@ namespace FocusGuard.Detection.FrameSources
         }
 
         /// <inheritdoc />
-        public void MarkFrameConsumed()
+        public override void MarkFrameConsumed()
         {
             // WebCamTexture verwaltet didUpdateThisFrame selbst.
             // Daher ist kein manuelles Zurücksetzen erforderlich.

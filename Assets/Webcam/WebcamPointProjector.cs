@@ -1,17 +1,18 @@
-﻿using UnityEngine;
+﻿using FocusGuard.Detection.FrameSources;
+using UnityEngine;
 
 public class WebcamPointProjector
 {
     private readonly Camera camera;
-    private readonly int imageWidth;
-    private readonly int imageHeight;
+
+    private readonly FrameProvider frameProvider;
+
     private readonly float groundY;
 
-    public WebcamPointProjector(Camera camera, int imageWidth, int imageHeight, float groundY)
+    public WebcamPointProjector(Camera camera, FrameProvider frameProvider, float groundY)
     {
         this.camera = camera;
-        this.imageWidth = imageWidth;
-        this.imageHeight = imageHeight;
+        this.frameProvider = frameProvider;
         this.groundY = groundY;
     }
 
@@ -226,7 +227,7 @@ public class WebcamPointProjector
 
     private float ImageYToScreenY(float imageY)
     {
-        return imageHeight - imageY;
+        return frameProvider.Height - imageY;
     }
 
     private float ScreenYToNdcY(float screenY)

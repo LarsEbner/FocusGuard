@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using FocusGuard.Detection.FrameSources;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Assets.Webcam
@@ -17,7 +18,7 @@ namespace Assets.Webcam
     /// The calibration target is the center of each object in X/Z,
     /// projected onto the common ground plane.
     /// </summary>
-    internal sealed class WebcamRotationCalibration : MonoBehaviour
+    internal sealed class WebcamRotationCalibration : MonoBehaviour, IFrameProviderConsumer
     {
         [Header("Camera")]
 
@@ -25,10 +26,9 @@ namespace Assets.Webcam
         private Camera _webcam;
 
         [SerializeField]
-        private int _webcamWidth = 1920;
+        private FrameProvider _frameProvider;
 
-        [SerializeField]
-        private int _webcamHeight = 1080;
+        public FrameProvider FrameProvider { get => _frameProvider; set => _frameProvider = value; }
 
 
         [Header("Calibration Points")]
@@ -192,8 +192,7 @@ namespace Assets.Webcam
             _projector =
                 new WebcamPointProjector(
                     _webcam,
-                    _webcamWidth,
-                    _webcamHeight,
+                    _frameProvider,
                     _groundY
                 );
         }

@@ -119,6 +119,66 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &9732483
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9732484}
+  - component: {fileID: 9732485}
+  m_Layer: 0
+  m_Name: 'Script: ObjectDetectionController'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9732484
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9732483}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 985550723}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9732485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9732483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db8d7632fd418e94cad59311a3ce3961, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObjectDetectionController
+  _frameProvider: {fileID: 9982073}
+  detector: {fileID: 9982072}
+  additionalObjects: []
+  calibrationPoints:
+  - {fileID: 2129534080}
+  - {fileID: 416268549}
+  - {fileID: 1666257822}
+  typeColors:
+  - type: 0
+    color: {r: 0, g: 1, b: 1, a: 1}
+  defaultColor: {r: 0, g: 1, b: 0, a: 1}
+  frameProviderDebugView: {fileID: 1017039632}
+  imageRectangleOverlay: {fileID: 1017039637}
+  webcamPointVisualizer: {fileID: 245556665}
+  projectedRectangleCylinderVisualizer: {fileID: 1183584401}
+  webcamRotationCalibration: {fileID: 932875411}
 --- !u!1 &9982069
 GameObject:
   m_ObjectHideFlags: 0
@@ -129,8 +189,9 @@ GameObject:
   m_Component:
   - component: {fileID: 9982071}
   - component: {fileID: 9982073}
-  - component: {fileID: 9982074}
   - component: {fileID: 9982072}
+  - component: {fileID: 9982075}
+  - component: {fileID: 9982074}
   m_Layer: 0
   m_Name: Detection
   m_TagString: Untagged
@@ -167,7 +228,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FocusGuard.Detection.YOLO.YoloObjectDetector
   modelAsset: {fileID: 5022602860645237092, guid: aafcfe392a027b7429bcef5718fd13c0, type: 3}
   backendType: 256
-  frameProvider: {fileID: 9982073}
+  frameProvider: {fileID: 0}
   detectAllClasses: 0
   _enabledClasses: 
   confidenceThreshold: 0.45
@@ -188,8 +249,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FocusGuard.Detection.FrameSources.WebcamFrameProvider
   preferredDeviceName: 
   useFirstAvailableDevice: 1
-  requestedWidth: 1280
-  requestedHeight: 720
+  requestedWidth: 1920
+  requestedHeight: 1080
   requestedFramesPerSecond: 30
 --- !u!114 &9982074
 MonoBehaviour:
@@ -198,15 +259,47 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9982069}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23ffddda18063714aa0ddde1481416b4, type: 3}
+  m_Script: {fileID: 11500000, guid: d7d2ca5e12d187f4d9fecbc4dc796a59, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FocusGuard.Detection.YOLO.YoloModelTest
-  modelAsset: {fileID: 5022602860645237092, guid: aafcfe392a027b7429bcef5718fd13c0, type: 3}
-  backendType: 256
-  frameProvider: {fileID: 9982073}
-  inferenceIntervalSeconds: 1
+  m_EditorClassIdentifier: Assembly-CSharp::FocusGuard.Detection.FrameSources.VideoFrameProvider
+--- !u!328 &9982075
+VideoPlayer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9982069}
+  m_Enabled: 1
+  m_VideoClip: {fileID: 32900000, guid: 5712afe74ae886949a32756b52ac8ed7, type: 3}
+  m_TargetCameraAlpha: 1
+  m_TargetCamera3DLayout: 0
+  m_TargetCamera: {fileID: 0}
+  m_TargetTexture: {fileID: 8400000, guid: 51178fd4f61734f44a00bf81faa2ba07, type: 2}
+  m_TimeReference: 0
+  m_TargetMaterialRenderer: {fileID: 0}
+  m_TargetMaterialProperty: <noninit>
+  m_RenderMode: 2
+  m_AspectRatio: 2
+  m_DataSource: 0
+  m_TimeUpdateMode: 2
+  m_PlaybackSpeed: 1
+  m_AudioOutputMode: 2
+  m_TargetAudioSources:
+  - {fileID: 0}
+  m_DirectAudioVolumes:
+  - 1
+  m_Url: 
+  m_EnabledAudioTracks: 01
+  m_DirectAudioMutes: 00
+  m_ControlledAudioTrackCount: 1
+  m_PlayOnAwake: 1
+  m_SkipOnDrop: 1
+  m_Looping: 1
+  m_WaitForFirstFrame: 1
+  m_FrameReadyEventEnabled: 0
+  m_VideoShaders: []
 --- !u!1 &14521251
 GameObject:
   m_ObjectHideFlags: 0
@@ -2806,8 +2899,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WebcamPointVisualizer
   webcamCamera: {fileID: 1970209385}
-  webcamWidth: 1280
-  webcamHeight: 720
+  _frameProvider: {fileID: 0}
   groundY: -0.06836964
   pointGroups: []
   sphereRadius: 0.05
@@ -11429,15 +11521,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Assets.Webcam.WebcamRotationCalibration
   _webcam: {fileID: 1970209385}
-  _webcamWidth: 1280
-  _webcamHeight: 720
-  _groundY: -0.06836964
+  _frameProvider: {fileID: 0}
   _calibrationPoints: []
   _enabled: 1
   _iterationsPerFrame: 5
   _initialStepSize: 1
   _minimumStepSize: 0.001
   _minimumImprovement: 0.0001
+  _groundY: -0.06836964
   _currentError: 0
   _currentStepSize: 0
   _currentRotation: {x: 0, y: 0, z: 0}
@@ -11952,7 +12043,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 972354962}
-  - component: {fileID: 972354963}
   - component: {fileID: 972354964}
   - component: {fileID: 972354965}
   m_Layer: 0
@@ -11982,32 +12072,6 @@ Transform:
   - {fileID: 932875410}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -124, z: 0}
---- !u!114 &972354963
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 972354961}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db8d7632fd418e94cad59311a3ce3961, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ObjectDetectionController
-  detector: {fileID: 9982072}
-  additionalObjects: []
-  calibrationPoints:
-  - {fileID: 2129534080}
-  - {fileID: 416268549}
-  - {fileID: 1666257822}
-  typeColors:
-  - type: 0
-    color: {r: 0, g: 1, b: 1, a: 1}
-  defaultColor: {r: 0, g: 1, b: 0, a: 1}
-  imageRectangleOverlay: {fileID: 1017039637}
-  webcamPointVisualizer: {fileID: 245556665}
-  projectedRectangleCylinderVisualizer: {fileID: 1183584401}
-  webcamRotationCalibration: {fileID: 932875411}
 --- !u!114 &972354964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12180,6 +12244,7 @@ Transform:
   - {fileID: 2137709452}
   - {fileID: 597910090}
   - {fileID: 1425269357}
+  - {fileID: 9732484}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &986170474
@@ -12725,6 +12790,7 @@ GameObject:
   - component: {fileID: 1017039632}
   - component: {fileID: 1017039635}
   - component: {fileID: 1017039637}
+  - component: {fileID: 1017039638}
   m_Layer: 3
   m_Name: Camera Image
   m_TagString: Untagged
@@ -12763,7 +12829,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebda24ba3be4b9845b955bf67e42f58d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FocusGuard.Detection.FrameSources.FrameProviderDebugView
-  frameProvider: {fileID: 9982073}
+  frameProvider: {fileID: 0}
   targetImage: {fileID: 1017039633}
 --- !u!114 &1017039633
 MonoBehaviour:
@@ -12837,6 +12903,19 @@ MonoBehaviour:
   image: {fileID: 1017039633}
   rectangles: []
   autoUpdate: 0
+--- !u!114 &1017039638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1017039630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e99058fb4474f1346bf02ba228f3f79b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RawImageAspectRatioFitter
+  rawImage: {fileID: 1017039633}
 --- !u!1001 &1019933255
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13683,8 +13762,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ProjectedRectangleCylinderVisualizer
   webcamCamera: {fileID: 1970209385}
-  webcamWidth: 1080
-  webcamHeight: 720
+  _frameProvider: {fileID: 0}
   groundY: -0.025
   cylinderTemplate: {fileID: 320712714}
   cylinderParent: {fileID: 1183584402}
@@ -23479,6 +23557,7 @@ GameObject:
   - component: {fileID: 2137709459}
   - component: {fileID: 2137709461}
   - component: {fileID: 2137709460}
+  - component: {fileID: 2137709463}
   - component: {fileID: 2137709462}
   m_Layer: 0
   m_Name: 'Script: DebugController'
@@ -23531,6 +23610,8 @@ MonoBehaviour:
     Script: {fileID: 2137709460}
   - Name: Alternative Movement
     Script: {fileID: 597910094}
+  - Name: Play Video
+    Script: {fileID: 2137709463}
   - Name: Move Keyboard
     Script: {fileID: 597910095}
   - Name: Move Webcam
@@ -23680,6 +23761,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Assets.Debugging.ToggleGameObject
   _targets:
   - {fileID: 932875409}
+--- !u!114 &2137709463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137709451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ae0db1a8ac3aed48ac942d41139d5e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FocusGuard.Debugging.ChangeFrameProvider
+  _controller: {fileID: 9732485}
+  _frameProvider: {fileID: 9982074}
 --- !u!1001 &37232615538455128
 PrefabInstance:
   m_ObjectHideFlags: 0

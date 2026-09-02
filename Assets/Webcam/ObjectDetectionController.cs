@@ -1,5 +1,6 @@
 ﻿using Assets.Detection.YOLO;
 using Assets.Webcam;
+using FocusGuard.Detection.FrameSources;
 using FocusGuard.Detection.YOLO;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Linq;
 using UnityEngine;
 using static FocusGuard.Detection.YOLO.DetectionResult;
 
-public class ObjectDetectionController : MonoBehaviour
+public class ObjectDetectionController : MonoBehaviour, IFrameProviderConsumer
 {
     [Serializable]
     private class TypeColor
@@ -17,6 +18,15 @@ public class ObjectDetectionController : MonoBehaviour
     }
 
     [Header("Detection")]
+
+    [SerializeField]
+    private FrameProvider _frameProvider;
+
+    public FrameProvider FrameProvider { get => _frameProvider; set {
+            _frameProvider = value;
+            UpdateFrameProviderReferences();
+        }
+    }
 
     [SerializeField]
     private YoloObjectDetector detector;
@@ -40,6 +50,9 @@ public class ObjectDetectionController : MonoBehaviour
     [Header("Output")]
 
     [SerializeField]
+    private FrameProviderDebugView frameProviderDebugView;
+
+    [SerializeField]
     private ImageRectangleOverlay imageRectangleOverlay;
 
     [SerializeField]
@@ -57,6 +70,8 @@ public class ObjectDetectionController : MonoBehaviour
             entry => entry.type,
             entry => entry.color
         );
+
+        UpdateFrameProviderReferences();
     }
 
     private void Start()
@@ -235,5 +250,21 @@ public class ObjectDetectionController : MonoBehaviour
     private Color GetColor(CocoClass classId)
     {
         return colorDictionary.GetValueOrDefault(classId, defaultColor);
+    }
+
+    private void UpdateFrameProviderReferences()
+    {
+        var consumers = new IFrameProviderConsumer[]
+        {
+            detector, projectedRectangleCylinderVisualizer, webcamPointVisualizer, webcamRotationCalibration, frameProviderDebugView
+        };
+
+        foreach (var consumer in consumers)
+        {
+            if (consumer != null)
+            {
+                consumer.FrameProvider = _frameProvider;
+            }
+        }
     }
 }

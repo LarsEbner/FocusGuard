@@ -1,9 +1,10 @@
 ﻿using Assets.UISwap;
+using FocusGuard.Detection.FrameSources;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectedRectangleCylinderVisualizer : MonoBehaviour
+public class ProjectedRectangleCylinderVisualizer : MonoBehaviour, IFrameProviderConsumer
 {
     [Serializable]
     public class Rectangle
@@ -21,10 +22,9 @@ public class ProjectedRectangleCylinderVisualizer : MonoBehaviour
     private Camera webcamCamera;
 
     [SerializeField]
-    private int webcamWidth = 1920;
+    private FrameProvider _frameProvider;
 
-    [SerializeField]
-    private int webcamHeight = 1080;
+    public FrameProvider FrameProvider { get => _frameProvider; set => _frameProvider = value; }
 
     [SerializeField]
     private float groundY = 0f;
@@ -57,27 +57,11 @@ public class ProjectedRectangleCylinderVisualizer : MonoBehaviour
         }
     }
 
-
-    private WebcamPointProjector pointProjector;
-
     private readonly List<GameObject> cylinderObjects = new();
 
 
     private void Start()
     {
-        if (webcamCamera == null)
-            return;
-
-        if (cylinderTemplate == null)
-            return;
-
-        pointProjector = new WebcamPointProjector(
-            webcamCamera,
-            webcamWidth,
-            webcamHeight,
-            groundY
-        );
-
         UpdateVisuals();
     }
 
@@ -90,10 +74,7 @@ public class ProjectedRectangleCylinderVisualizer : MonoBehaviour
 
     private void UpdateVisuals()
     {
-        if (pointProjector == null)
-            return;
-
-        if (cylinderTemplate == null)
+        if (webcamCamera == null || cylinderTemplate == null || _frameProvider == null)
             return;
 
         rectangles ??= new List<Rectangle>();
@@ -223,6 +204,8 @@ public class ProjectedRectangleCylinderVisualizer : MonoBehaviour
         Rectangle rectangle,
         int index)
     {
+        var pointProjector = new WebcamPointProjector(webcamCamera, _frameProvider, groundY);
+
         // ------------------------------------------------------------
         // Punkte des Rechtecks im Webcam-Bild
         // ------------------------------------------------------------
@@ -280,7 +263,7 @@ public class ProjectedRectangleCylinderVisualizer : MonoBehaviour
                 bottomLeft,
                 bottomRight
             );
-
+        
 
         if (diameter <= 0.0001f)
         {

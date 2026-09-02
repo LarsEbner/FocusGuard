@@ -4,6 +4,7 @@ using UnityEngine;
 using Unity.InferenceEngine;
 using FocusGuard.Detection.FrameSources;
 using Assets.Detection.YOLO;
+using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 
 namespace FocusGuard.Detection.YOLO
 {
@@ -18,7 +19,7 @@ namespace FocusGuard.Detection.YOLO
     /// bereitgestellt und enthält Klasse, Konfidenz sowie die Position
     /// jedes erkannten Objekts.
     /// </remarks>
-    public sealed class YoloObjectDetector : MonoBehaviour
+    public sealed class YoloObjectDetector : MonoBehaviour, IFrameProviderConsumer
     {
         private const int ModelInputWidth = 640;
         private const int ModelInputHeight = 640;
@@ -31,6 +32,7 @@ namespace FocusGuard.Detection.YOLO
         private const int ExpectedAttributeCount = 84;
         private const int ExpectedCandidateCount = 8400;
 
+
         [Header("Modell")]
 
         [Tooltip("Das von Unity importierte YOLOv8n-ONNX-Modell.")]
@@ -41,54 +43,109 @@ namespace FocusGuard.Detection.YOLO
         [SerializeField]
         private BackendType backendType = BackendType.GPUCompute;
 
+
         [Header("Bildquelle")]
 
         [Tooltip(
-            "Webcam-Provider, der den aktuellen Kameraframe bereitstellt.")]
+            "FrameProvider, der den aktuellen Kameraframe bereitstellt. " +
+            "Kann auch zur Laufzeit geändert werden."
+        )]
         [SerializeField]
-        private WebcamFrameProvider frameProvider;
+        private FrameProvider frameProvider;
+
+        /// <summary>
+        /// Der aktuell verwendete FrameProvider.
+        ///
+        /// Der Provider kann zur Laufzeit geändert werden.
+        /// Die YOLO-Inferenz-Engine selbst muss dafür nicht
+        /// neu initialisiert werden.
+        /// </summary>
+        public FrameProvider FrameProvider
+        {
+            get => frameProvider;
+            set
+            {
+                if (frameProvider == value)
+                    return;
+
+                frameProvider = value;
+
+                /*
+                 * Ein möglicherweise noch ausstehender Readback
+                 * gehört zum vorherigen FrameProvider.
+                 *
+                 * Die eigentliche Tensor-Inferenz ist davon unabhängig,
+                 * daher müssen Worker und Modell nicht neu erstellt werden.
+                 */
+                if (readbackPending)
+                {
+                    pendingOutputTensor = null;
+                    readbackPending = false;
+                }
+
+                /*
+                 * Nach einem Provider-Wechsel darf sofort wieder
+                 * ein Frame des neuen Providers verarbeitet werden.
+                 */
+                nextInferenceTime = 0f;
+            }
+        }
+
 
         [Header("Objektfilter")]
 
         [Tooltip(
-            "Wenn aktiviert, werden alle 80 COCO-Klassen berücksichtigt.")]
+            "Wenn aktiviert, werden alle 80 COCO-Klassen berücksichtigt."
+        )]
         [SerializeField]
         private bool detectAllClasses = true;
 
         [Tooltip(
             "Objektklassen, die erkannt werden sollen, wenn " +
-            "'Detect All Classes' deaktiviert ist.")]
+            "'Detect All Classes' deaktiviert ist."
+        )]
         [SerializeField]
         private List<CocoClass> _enabledClasses = new();
 
-        public List<CocoClass> EnabledClasses { get => _enabledClasses; set { _enabledClasses = value; } }
+        public List<CocoClass> EnabledClasses
+        {
+            get => _enabledClasses;
+            set => _enabledClasses = value;
+        }
+
 
         [Header("Erkennungsschwellen")]
 
         [Tooltip(
-            "Minimale Konfidenz, ab der eine Erkennung berücksichtigt wird.")]
+            "Minimale Konfidenz, ab der eine Erkennung berücksichtigt wird."
+        )]
         [SerializeField]
         [Range(0.01f, 1f)]
         private float confidenceThreshold = 0.45f;
 
         [Tooltip(
-            "Überlappungsschwelle für die Non-Maximum Suppression.")]
+            "Überlappungsschwelle für die Non-Maximum Suppression."
+        )]
         [SerializeField]
         [Range(0.01f, 1f)]
         private float intersectionOverUnionThreshold = 0.45f;
 
+
         [Header("Ausführungssteuerung")]
 
         [Tooltip(
-            "Minimaler zeitlicher Abstand zwischen zwei Inferenzen.")]
+            "Minimaler zeitlicher Abstand zwischen zwei Inferenzen."
+        )]
         [SerializeField]
         [Min(0.05f)]
         private float inferenceIntervalSeconds = 0.5f;
 
         [Tooltip(
-            "Gibt die aktuell erkannten Objekte in der Console aus.")]
+            "Gibt die aktuell erkannten Objekte in der Console aus."
+        )]
         [SerializeField]
         private bool logDetectionResults = true;
+
 
         /// <summary>
         /// Wird nach jeder abgeschlossenen Inferenz ausgelöst.
@@ -100,8 +157,12 @@ namespace FocusGuard.Detection.YOLO
         /// </summary>
         public DetectionResult LatestResult { get; private set; }
 
-        public delegate void ProcessDetectionResultEventHandler(object sender, DetectionResult result);
+        public delegate void ProcessDetectionResultEventHandler(
+            object sender,
+            DetectionResult result);
+
         public event ProcessDetectionResultEventHandler ProcessDetectionResult;
+
 
         private Model runtimeModel;
         private Worker worker;
@@ -112,9 +173,17 @@ namespace FocusGuard.Detection.YOLO
         private bool initializationSucceeded;
         private bool readbackPending;
 
+
         private void Awake()
         {
-            if (!ValidateConfiguration())
+            /*
+             * Der FrameProvider ist keine Voraussetzung für die
+             * Initialisierung der YOLO-Engine.
+             *
+             * Der Provider kann beispielsweise erst später vom
+             * DistractionManager gesetzt werden.
+             */
+            if (!ValidateModelConfiguration())
             {
                 enabled = false;
                 return;
@@ -123,25 +192,37 @@ namespace FocusGuard.Detection.YOLO
             InitializeInferenceEngine();
         }
 
+
         private void Update()
         {
             if (!initializationSucceeded)
             {
                 return;
             }
+
             if (readbackPending)
             {
                 ProcessCompletedReadback();
                 return;
             }
+
             if (!CanStartInference())
             {
                 return;
             }
+
             StartInference();
         }
 
-        private bool ValidateConfiguration()
+
+        /// <summary>
+        /// Prüft die Konfiguration, die für die Initialisierung
+        /// der YOLO-Engine erforderlich ist.
+        ///
+        /// Der FrameProvider wird bewusst nicht geprüft, da er
+        /// zur Laufzeit gesetzt oder geändert werden kann.
+        /// </summary>
+        private bool ValidateModelConfiguration()
         {
             if (modelAsset == null)
             {
@@ -152,34 +233,29 @@ namespace FocusGuard.Detection.YOLO
                 return false;
             }
 
-            if (frameProvider == null)
-            {
-                Debug.LogError(
-                    "YoloObjectDetector: Kein WebcamFrameProvider zugewiesen.",
-                    this);
-
-                return false;
-            }
-
             return true;
         }
+
 
         private void InitializeInferenceEngine()
         {
             try
             {
-                runtimeModel = ModelLoader.Load(modelAsset);
+                runtimeModel =
+                    ModelLoader.Load(modelAsset);
 
-                worker = new Worker(
-                    runtimeModel,
-                    backendType);
+                worker =
+                    new Worker(
+                        runtimeModel,
+                        backendType);
 
-                inputTensor = new Tensor<float>(
-                    new TensorShape(
-                        1,
-                        ModelInputChannels,
-                        ModelInputHeight,
-                        ModelInputWidth));
+                inputTensor =
+                    new Tensor<float>(
+                        new TensorShape(
+                            1,
+                            ModelInputChannels,
+                            ModelInputHeight,
+                            ModelInputWidth));
 
                 initializationSucceeded = true;
 
@@ -199,8 +275,18 @@ namespace FocusGuard.Detection.YOLO
             }
         }
 
+
         private bool CanStartInference()
         {
+            /*
+             * Der Provider kann jederzeit noch nicht vorhanden sein.
+             * Das ist kein Initialisierungsfehler.
+             */
+            if (frameProvider == null)
+            {
+                return false;
+            }
+
             if (!frameProvider.IsReady ||
                 !frameProvider.HasNewFrame ||
                 frameProvider.CurrentFrame == null)
@@ -211,8 +297,19 @@ namespace FocusGuard.Detection.YOLO
             return Time.unscaledTime >= nextInferenceTime;
         }
 
+
         private void StartInference()
         {
+            /*
+             * Der Provider könnte theoretisch zwischen
+             * CanStartInference() und StartInference() entfernt
+             * worden sein.
+             */
+            if (frameProvider == null)
+            {
+                return;
+            }
+
             try
             {
                 TextureConverter.ToTensor(
@@ -267,6 +364,7 @@ namespace FocusGuard.Detection.YOLO
             }
         }
 
+
         private void ProcessCompletedReadback()
         {
             if (pendingOutputTensor == null)
@@ -285,8 +383,16 @@ namespace FocusGuard.Detection.YOLO
                 float[] outputData =
                     pendingOutputTensor.DownloadToArray();
 
-                DetectionResult result = DecodeOutput(outputData);
-                ProcessDetectionResult?.Invoke(this, result);
+                DetectionResult result =
+                    DecodeOutput(outputData);
+
+                LatestResult =
+                    result;
+
+                DetectionsUpdated?.Invoke(result);
+                ProcessDetectionResult?.Invoke(
+                    this,
+                    result);
             }
             catch (Exception exception)
             {
@@ -301,6 +407,7 @@ namespace FocusGuard.Detection.YOLO
                 readbackPending = false;
             }
         }
+
 
         /// <summary>
         /// Dekodiert die YOLO-Ausgabe.
@@ -370,13 +477,17 @@ namespace FocusGuard.Detection.YOLO
                     ReadOutputValue(
                         outputData,
                         3,
-                        candidateIndex);
+                candidateIndex);
 
-                Rect rectangle = new Rect(
-                    centerX * 2 - width,
-                    centerY - height * 0.5f,
-                    width * 2,
-                    height);
+                float scaleX = ((float)frameProvider.Width) / ModelInputWidth;
+                float scaleY = ((float)frameProvider.Height) / ModelInputHeight;
+
+                Rect rectangle =
+                    new Rect(
+                        centerX * scaleX - width * scaleX * 0.5f,
+                        centerY * scaleY - height * scaleY * 0.5f,
+                        width * scaleX,
+                        height * scaleY);
 
                 candidates.Add(
                     new Candidate(
@@ -385,8 +496,12 @@ namespace FocusGuard.Detection.YOLO
                         rectangle));
             }
 
-            List<Candidate> filteredCandidates = ApplyNonMaximumSuppression(candidates);
-            List<DetectionResult.DetectedObject> objects = new(filteredCandidates.Count);
+            List<Candidate> filteredCandidates =
+                ApplyNonMaximumSuppression(
+                    candidates);
+
+            List<DetectionResult.DetectedObject> objects =
+                new(filteredCandidates.Count);
 
             foreach (Candidate candidate in filteredCandidates)
             {
@@ -402,6 +517,7 @@ namespace FocusGuard.Detection.YOLO
 
             return new DetectionResult(objects);
         }
+
 
         /// <summary>
         /// Prüft, ob die Klasse im Inspector ausgewählt wurde.
@@ -425,6 +541,7 @@ namespace FocusGuard.Detection.YOLO
             return EnabledClasses.Contains(targetClass);
         }
 
+
         private static float ReadOutputValue(
             float[] outputData,
             int attributeIndex,
@@ -435,6 +552,7 @@ namespace FocusGuard.Detection.YOLO
                 ExpectedCandidateCount +
                 candidateIndex];
         }
+
 
         private List<Candidate> ApplyNonMaximumSuppression(
             List<Candidate> candidates)
@@ -484,6 +602,7 @@ namespace FocusGuard.Detection.YOLO
 
             return selected;
         }
+
 
         private static float CalculateIntersectionOverUnion(
             Rect first,
@@ -543,6 +662,7 @@ namespace FocusGuard.Detection.YOLO
             return intersectionArea / unionArea;
         }
 
+
         private static bool HasExpectedOutputShape(
             TensorShape shape)
         {
@@ -551,6 +671,7 @@ namespace FocusGuard.Detection.YOLO
                    shape[1] == ExpectedAttributeCount &&
                    shape[2] == ExpectedCandidateCount;
         }
+
 
         private void OnDestroy()
         {
@@ -564,6 +685,7 @@ namespace FocusGuard.Detection.YOLO
             readbackPending = false;
             initializationSucceeded = false;
         }
+
 
         private readonly struct Candidate
         {
