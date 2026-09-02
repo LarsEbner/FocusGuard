@@ -131,8 +131,6 @@ GameObject:
   - component: {fileID: 9982073}
   - component: {fileID: 9982074}
   - component: {fileID: 9982072}
-  - component: {fileID: 9982076}
-  - component: {fileID: 9982075}
   m_Layer: 0
   m_Name: Detection
   m_TagString: Untagged
@@ -209,57 +207,6 @@ MonoBehaviour:
   backendType: 256
   frameProvider: {fileID: 9982073}
   inferenceIntervalSeconds: 1
---- !u!114 &9982075
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9982069}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7d2ca5e12d187f4d9fecbc4dc796a59, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FocusGuard.Detection.FrameSources.VideoFrameProvider
-  outputTexture: {fileID: 8400000, guid: 4ee787f36d3173c4290b625c685b94b0, type: 2}
-  playAutomatically: 1
-  loop: 1
---- !u!328 &9982076
-VideoPlayer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9982069}
-  m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 5712afe74ae886949a32756b52ac8ed7, type: 3}
-  m_TargetCameraAlpha: 1
-  m_TargetCamera3DLayout: 0
-  m_TargetCamera: {fileID: 0}
-  m_TargetTexture: {fileID: 0}
-  m_TimeReference: 0
-  m_TargetMaterialRenderer: {fileID: 0}
-  m_TargetMaterialProperty: <noninit>
-  m_RenderMode: 2
-  m_AspectRatio: 2
-  m_DataSource: 0
-  m_TimeUpdateMode: 2
-  m_PlaybackSpeed: 6.38
-  m_AudioOutputMode: 2
-  m_TargetAudioSources:
-  - {fileID: 0}
-  m_DirectAudioVolumes:
-  - 1
-  m_Url: 
-  m_EnabledAudioTracks: 01
-  m_DirectAudioMutes: 00
-  m_ControlledAudioTrackCount: 1
-  m_PlayOnAwake: 1
-  m_SkipOnDrop: 1
-  m_Looping: 1
-  m_WaitForFirstFrame: 1
-  m_FrameReadyEventEnabled: 0
-  m_VideoShaders: []
 --- !u!1 &14521251
 GameObject:
   m_ObjectHideFlags: 0
@@ -12777,7 +12724,6 @@ GameObject:
   - component: {fileID: 1017039633}
   - component: {fileID: 1017039632}
   - component: {fileID: 1017039635}
-  - component: {fileID: 1017039636}
   - component: {fileID: 1017039637}
   m_Layer: 3
   m_Name: Camera Image
@@ -12876,56 +12822,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1017039636
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1017039630}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a7ca7853671a624d988396502864312, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::WebcamCalibration
-  webcamDisplay: {fileID: 1017039633}
-  webcamWidth: 1280
-  webcamHeight: 720
-  calibrationCamera: {fileID: 1970209385}
-  horizontalFov: 90
-  groundY: -0.025
-  references:
-  - objectTransform: {fileID: 160636741}
-    imageX: 0.581
-    imageY: 0.716
-  - objectTransform: {fileID: 1901818466}
-    imageX: 0.529
-    imageY: 0.748
-  - objectTransform: {fileID: 998859169}
-    imageX: 0.671
-    imageY: 0.748
-  autoCalibrate: 1
-  initialStepSize: 1
-  minimumStepSize: 0.001
-  iterationsPerFrame: 5
-  targetErrorPixels: 0.5
-  optimizeRoll: 1
-  currentErrorPixels: 0
-  currentStepSize: 0
-  currentCameraEulerAngles: {x: 0, y: 0, z: 0}
-  x: 0.708
-  y: 0.435
-  width: 0.093
-  height: 0.366
-  maximumOutlineHeight: 10
-  passthroughCube: {fileID: 1960966095}
-  updatePassthroughCube: 1
-  passthroughOffset: 0
-  rectangleColor: {r: 0, g: 1, b: 0, a: 1}
-  rectangleThickness: 4
-  imagePointSize: 20
-  worldPointSize: 0.12
-  calibrationPointColor: {r: 1, g: 0, b: 0.26892662, a: 1}
 --- !u!114 &1017039637
 MonoBehaviour:
   m_ObjectHideFlags: 0

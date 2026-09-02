@@ -10,7 +10,12 @@ namespace Assets.Webcam
     /// Each WebcamCalibrationPoint provides an image-space position.
     /// Its CalibrationObject provides the corresponding known world position.
     ///
-    /// All calibration objects are assumed to lie on the ground plane.
+    /// All calibration objects are assumed to stand on the same ground
+    /// plane. The ground height is calculated from the average bottom
+    /// height of all valid calibration objects.
+    ///
+    /// The calibration target is the center of each object in X/Z,
+    /// projected onto the common ground plane.
     /// </summary>
     internal sealed class WebcamRotationCalibration : MonoBehaviour
     {
@@ -25,16 +30,18 @@ namespace Assets.Webcam
         [SerializeField]
         private int _webcamHeight = 1080;
 
-        [SerializeField]
-        private float _groundY = 0f;
-
 
         [Header("Calibration Points")]
 
         [SerializeField]
         private List<WebcamCalibrationPoint> _calibrationPoints = new();
 
-        public List<WebcamCalibrationPoint> CalibrationPoints { get => _calibrationPoints; set => _calibrationPoints = value; }
+        public List<WebcamCalibrationPoint> CalibrationPoints
+        {
+            get => _calibrationPoints;
+            set => _calibrationPoints = value;
+        }
+
 
         [Header("Optimization")]
 
@@ -64,6 +71,10 @@ namespace Assets.Webcam
 
         [Header("Debug")]
 
+        [Tooltip("Calculated average ground height.")]
+        [SerializeField]
+        private float _groundY;
+
         [SerializeField]
         private float _currentError;
 
@@ -79,14 +90,29 @@ namespace Assets.Webcam
 
         private void Awake()
         {
-            _projector = new WebcamPointProjector(
-                _webcam,
-                _webcamWidth,
-                _webcamHeight,
-                _groundY
-            );
+            UpdateGroundHeight();
 
-            _currentStepSize = _initialStepSize;
+            ResetOptimization();
+        }
+
+
+        private void OnEnable()
+        {
+            /*
+             * Das gesamte GameObject wird als Trigger für einen
+             * neuen Optimierungslauf verwendet.
+             *
+             * Die aktuelle Kamerarotation bleibt unverändert.
+             *
+             * Die Bodenhöhe wird aus den aktuellen Bodenpositionen
+             * der Kalibrierungsobjekte neu berechnet.
+             *
+             * Die Optimierung startet anschließend wieder mit
+             * der initialen Schrittweite.
+             */
+            UpdateGroundHeight();
+
+            ResetOptimization();
         }
 
 
@@ -103,13 +129,165 @@ namespace Assets.Webcam
                 Optimize();
             }
 
-            _currentRotation = _webcam.transform.eulerAngles;
+            _currentRotation =
+                _webcam.transform.eulerAngles;
+        }
+
+
+        /// <summary>
+        /// Calculates the average ground height from the bottom
+        /// of all valid calibration objects.
+        ///
+        /// For cylindrical calibration objects, transform.position
+        /// normally represents the center of the cylinder. Therefore
+        /// transform.position.y must not be used as the ground height.
+        /// </summary>
+        private void UpdateGroundHeight()
+        {
+            if (_webcam == null)
+                return;
+
+            if (_calibrationPoints == null ||
+                _calibrationPoints.Count == 0)
+            {
+                return;
+            }
+
+
+            float ySum = 0f;
+            int count = 0;
+
+
+            foreach (WebcamCalibrationPoint point
+                     in _calibrationPoints)
+            {
+                if (point == null)
+                    continue;
+
+                if (point.CalibrationObject == null)
+                    continue;
+
+
+                if (!TryGetGroundY(
+                        point.CalibrationObject,
+                        out float objectGroundY))
+                {
+                    continue;
+                }
+
+
+                ySum += objectGroundY;
+                count++;
+            }
+
+
+            if (count == 0)
+                return;
+
+
+            _groundY =
+                ySum / count;
+
+
+            _projector =
+                new WebcamPointProjector(
+                    _webcam,
+                    _webcamWidth,
+                    _webcamHeight,
+                    _groundY
+                );
+        }
+
+
+        /// <summary>
+        /// Gets the bottom-most world-space Y position of the
+        /// calibration object.
+        ///
+        /// The collider is preferred because it represents the
+        /// physical geometry used by the scene.
+        /// If no collider exists, the renderer bounds are used.
+        /// </summary>
+        private bool TryGetGroundY(
+            GameObject calibrationObject,
+            out float groundY)
+        {
+            groundY = 0f;
+
+
+            if (calibrationObject == null)
+                return false;
+
+
+            Collider collider =
+                calibrationObject.GetComponentInChildren<Collider>();
+
+
+            if (collider != null)
+            {
+                groundY =
+                    collider.bounds.min.y;
+
+                return true;
+            }
+
+
+            Renderer renderer =
+                calibrationObject.GetComponentInChildren<Renderer>();
+
+
+            if (renderer != null)
+            {
+                groundY =
+                    renderer.bounds.min.y;
+
+                return true;
+            }
+
+
+            /*
+             * Fallback:
+             *
+             * Wenn das Objekt weder Collider noch Renderer besitzt,
+             * verwenden wir die Transform-Höhe.
+             */
+            groundY =
+                calibrationObject.transform.position.y;
+
+            return true;
+        }
+
+
+        /// <summary>
+        /// Resets the optimization state without changing
+        /// the current camera rotation.
+        /// </summary>
+        private void ResetOptimization()
+        {
+            _currentStepSize =
+                _initialStepSize;
+
+            _currentError =
+                0f;
+
+            if (_webcam != null)
+            {
+                _currentRotation =
+                    _webcam.transform.eulerAngles;
+            }
+            else
+            {
+                _currentRotation =
+                    Vector3.zero;
+            }
         }
 
 
         private bool IsValid()
         {
             if (_webcam == null)
+                return false;
+
+            if (_projector == null)
                 return false;
 
             if (_calibrationPoints == null ||
@@ -135,9 +313,11 @@ namespace Assets.Webcam
 
         private void Optimize()
         {
-            float currentError = CalculateError();
+            float currentError =
+                CalculateError();
 
-            _currentError = currentError;
+            _currentError =
+                currentError;
 
             if (!float.IsFinite(currentError))
                 return;
@@ -209,8 +389,9 @@ namespace Assets.Webcam
                  * Kein sinnvoller Fortschritt:
                  *
                  * Wir halbieren die Schrittweite.
+                 *
+                 * Die Kamerarotation bleibt dabei unverändert.
                  */
-
                 cameraTransform.rotation =
                     originalRotation;
 
@@ -291,8 +472,12 @@ namespace Assets.Webcam
 
 
         /// <summary>
-        /// Calculates the mean squared world-space distance between
-        /// projected calibration points and their known world positions.
+        /// Calculates the mean squared X/Z distance between
+        /// projected calibration points and their known ground
+        /// positions.
+        ///
+        /// The target position is the center of the calibration
+        /// object in X/Z, projected onto the calculated ground plane.
         /// </summary>
         private float CalculateError()
         {
@@ -326,12 +511,23 @@ namespace Assets.Webcam
 
 
                 /*
-                 * Das CalibrationObject definiert die
-                 * tatsächlich bekannte Position.
+                 * Der Transform-Mittelpunkt des Zylinders
+                 * definiert dessen X/Z-Position.
                  *
-                 * Da die Objekte auf dem Boden stehen,
-                 * ignorieren wir dessen Y-Koordinate
-                 * und verwenden explizit groundY.
+                 * Für Y verwenden wir die gemeinsame Bodenhöhe.
+                 *
+                 * Damit ist der Zielpunkt:
+                 *
+                 *      Mittelpunkt des Zylinders
+                 *               ↓
+                 *        ┌───────────┐
+                 *        │     ●     │
+                 *        │     │     │
+                 *        └─────┼─────┘
+                 *              ↓
+                 *        groundY / Boden
+                 *
+                 * X und Z bleiben vom CalibrationObject erhalten.
                  */
 
                 Vector3 target =
@@ -349,7 +545,7 @@ namespace Assets.Webcam
                 /*
                  * Nur die X/Z-Abweichung ist relevant.
                  *
-                 * Beide Punkte liegen auf groundY.
+                 * Beide Punkte liegen auf _groundY.
                  */
 
                 float error =
