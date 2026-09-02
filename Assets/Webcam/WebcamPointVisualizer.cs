@@ -1,9 +1,10 @@
-﻿using FocusGuard.Detection.FrameSources;
+﻿using Assets.Webcam;
+using FocusGuard.Detection.FrameSources;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WebcamPointVisualizer : MonoBehaviour, IFrameProviderConsumer
+internal sealed class WebcamPointVisualizer : MonoBehaviour, IFrameProviderConsumer, ICalibrationPointConsumer
 {
     [Serializable]
     public class PointGroup
@@ -30,10 +31,6 @@ public class WebcamPointVisualizer : MonoBehaviour, IFrameProviderConsumer
 
     public FrameProvider FrameProvider { get => _frameProvider; set => _frameProvider = value; }
 
-    [SerializeField]
-    private float groundY = 0f;
-
-
     [Header("Points")]
     [SerializeField]
     private List<PointGroup> pointGroups = new List<PointGroup>();
@@ -47,6 +44,11 @@ public class WebcamPointVisualizer : MonoBehaviour, IFrameProviderConsumer
             UpdateVisuals();
         }
     }
+
+    [SerializeField]
+    private List<WebcamCalibrationPoint> _calibrationPoints;
+
+    public List<WebcamCalibrationPoint> CalibrationPoints { get => _calibrationPoints; set => _calibrationPoints = value; }
 
     [Header("Visuals")]
     [SerializeField]
@@ -130,6 +132,7 @@ public class WebcamPointVisualizer : MonoBehaviour, IFrameProviderConsumer
     private void UpdateVisuals()
     {
         if (pointGroups == null) return;
+        var groundY = ICalibrationPointConsumer.CalculateGroundY(_calibrationPoints);
         var pointProjector = new WebcamPointProjector(webcamCamera, _frameProvider, groundY);
 
 

@@ -137,14 +137,7 @@ namespace FocusGuard.Detection.YOLO
             "Minimaler zeitlicher Abstand zwischen zwei Inferenzen."
         )]
         [SerializeField]
-        [Min(0.05f)]
         private float inferenceIntervalSeconds = 0.5f;
-
-        [Tooltip(
-            "Gibt die aktuell erkannten Objekte in der Console aus."
-        )]
-        [SerializeField]
-        private bool logDetectionResults = true;
 
 
         /// <summary>

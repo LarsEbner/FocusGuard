@@ -1,5 +1,6 @@
 ﻿using FocusGuard.Detection.FrameSources;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Assets.Webcam
@@ -18,7 +19,7 @@ namespace Assets.Webcam
     /// The calibration target is the center of each object in X/Z,
     /// projected onto the common ground plane.
     /// </summary>
-    internal sealed class WebcamRotationCalibration : MonoBehaviour, IFrameProviderConsumer
+    internal sealed class WebcamRotationCalibration : MonoBehaviour, IFrameProviderConsumer, ICalibrationPointConsumer
     {
         [Header("Camera")]
 
@@ -28,7 +29,19 @@ namespace Assets.Webcam
         [SerializeField]
         private FrameProvider _frameProvider;
 
-        public FrameProvider FrameProvider { get => _frameProvider; set => _frameProvider = value; }
+        public FrameProvider FrameProvider
+        {
+            get => _frameProvider;
+            set
+            {
+                if (_frameProvider == value)
+                    return;
+
+                _frameProvider = value;
+
+                UpdateGroundHeight();
+            }
+        }
 
 
         [Header("Calibration Points")]
@@ -39,7 +52,13 @@ namespace Assets.Webcam
         public List<WebcamCalibrationPoint> CalibrationPoints
         {
             get => _calibrationPoints;
-            set => _calibrationPoints = value;
+            set
+            {
+                _calibrationPoints =
+                    value ?? new List<WebcamCalibrationPoint>();
+
+                UpdateGroundHeight();
+            }
         }
 
 
@@ -135,124 +154,14 @@ namespace Assets.Webcam
 
 
         /// <summary>
-        /// Calculates the average ground height from the bottom
-        /// of all valid calibration objects.
-        ///
-        /// For cylindrical calibration objects, transform.position
-        /// normally represents the center of the cylinder. Therefore
-        /// transform.position.y must not be used as the ground height.
+        /// Calculates the average ground height from all
+        /// calibration objects.
         /// </summary>
         private void UpdateGroundHeight()
         {
-            if (_webcam == null)
-                return;
-
-            if (_calibrationPoints == null ||
-                _calibrationPoints.Count == 0)
-            {
-                return;
-            }
-
-
-            float ySum = 0f;
-            int count = 0;
-
-
-            foreach (WebcamCalibrationPoint point
-                     in _calibrationPoints)
-            {
-                if (point == null)
-                    continue;
-
-                if (point.CalibrationObject == null)
-                    continue;
-
-
-                if (!TryGetGroundY(
-                        point.CalibrationObject,
-                        out float objectGroundY))
-                {
-                    continue;
-                }
-
-
-                ySum += objectGroundY;
-                count++;
-            }
-
-
-            if (count == 0)
-                return;
-
-
-            _groundY =
-                ySum / count;
-
-
-            _projector =
-                new WebcamPointProjector(
-                    _webcam,
-                    _frameProvider,
-                    _groundY
-                );
-        }
-
-
-        /// <summary>
-        /// Gets the bottom-most world-space Y position of the
-        /// calibration object.
-        ///
-        /// The collider is preferred because it represents the
-        /// physical geometry used by the scene.
-        /// If no collider exists, the renderer bounds are used.
-        /// </summary>
-        private bool TryGetGroundY(
-            GameObject calibrationObject,
-            out float groundY)
-        {
-            groundY = 0f;
-
-
-            if (calibrationObject == null)
-                return false;
-
-
-            Collider collider =
-                calibrationObject.GetComponentInChildren<Collider>();
-
-
-            if (collider != null)
-            {
-                groundY =
-                    collider.bounds.min.y;
-
-                return true;
-            }
-
-
-            Renderer renderer =
-                calibrationObject.GetComponentInChildren<Renderer>();
-
-
-            if (renderer != null)
-            {
-                groundY =
-                    renderer.bounds.min.y;
-
-                return true;
-            }
-
-
-            /*
-             * Fallback:
-             *
-             * Wenn das Objekt weder Collider noch Renderer besitzt,
-             * verwenden wir die Transform-Höhe.
-             */
-            groundY =
-                calibrationObject.transform.position.y;
-
-            return true;
+            if (_webcam == null) return;
+            _groundY = ICalibrationPointConsumer.CalculateGroundY(_calibrationPoints);
+            _projector = new WebcamPointProjector(_webcam, _frameProvider, _groundY);
         }
 
 
@@ -262,21 +171,16 @@ namespace Assets.Webcam
         /// </summary>
         private void ResetOptimization()
         {
-            _currentStepSize =
-                _initialStepSize;
-
-            _currentError =
-                0f;
+            _currentStepSize = _initialStepSize;
+            _currentError = 0f;
 
             if (_webcam != null)
             {
-                _currentRotation =
-                    _webcam.transform.eulerAngles;
+                _currentRotation = _webcam.transform.eulerAngles;
             }
             else
             {
-                _currentRotation =
-                    Vector3.zero;
+                _currentRotation = Vector3.zero;
             }
         }
 

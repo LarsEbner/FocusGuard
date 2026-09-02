@@ -1,10 +1,11 @@
 ﻿using Assets.UISwap;
+using Assets.Webcam;
 using FocusGuard.Detection.FrameSources;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectedRectangleCylinderVisualizer : MonoBehaviour, IFrameProviderConsumer
+internal sealed class ProjectedRectangleCylinderVisualizer : MonoBehaviour, IFrameProviderConsumer, ICalibrationPointConsumer
 {
     [Serializable]
     public class Rectangle
@@ -27,7 +28,9 @@ public class ProjectedRectangleCylinderVisualizer : MonoBehaviour, IFrameProvide
     public FrameProvider FrameProvider { get => _frameProvider; set => _frameProvider = value; }
 
     [SerializeField]
-    private float groundY = 0f;
+    private List<WebcamCalibrationPoint> _calibrationPoints;
+
+    public List<WebcamCalibrationPoint> CalibrationPoints { get => _calibrationPoints; set => _calibrationPoints = value; }
 
 
     [Header("Cylinder")]
@@ -204,6 +207,7 @@ public class ProjectedRectangleCylinderVisualizer : MonoBehaviour, IFrameProvide
         Rectangle rectangle,
         int index)
     {
+        var groundY = ICalibrationPointConsumer.CalculateGroundY(_calibrationPoints);
         var pointProjector = new WebcamPointProjector(webcamCamera, _frameProvider, groundY);
 
         // ------------------------------------------------------------
@@ -283,38 +287,23 @@ public class ProjectedRectangleCylinderVisualizer : MonoBehaviour, IFrameProvide
         // Höhe
         // ------------------------------------------------------------
 
-        float topY = Mathf.Max(
-            topLeft.y,
-            topRight.y
-        );
-
-        float cylinderHeight =
-            topY - groundY;
-
-        cylinderHeight = Mathf.Max(
-            cylinderHeight,
-            0.0001f
-        );
+        float topY = Mathf.Max(topLeft.y, topRight.y);
+        float cylinderHeight = topY - groundY;
+        cylinderHeight = Mathf.Max(cylinderHeight, 0.0001f);
 
 
         // ------------------------------------------------------------
         // Mittelpunkt der Grundfläche
         // ------------------------------------------------------------
 
-        Vector3 baseCenter =
-            (bottomLeft + bottomRight) * 0.5f;
+        Vector3 baseCenter = (bottomLeft + bottomRight) * 0.5f;
 
 
         // ------------------------------------------------------------
         // Position
         // ------------------------------------------------------------
 
-        cylinder.transform.position =
-            new Vector3(
-                baseCenter.x,
-                groundY + cylinderHeight * 0.5f,
-                baseCenter.z
-            );
+        cylinder.transform.position = new Vector3(baseCenter.x, groundY + cylinderHeight * 0.5f, baseCenter.z);
 
 
         // ------------------------------------------------------------
@@ -326,12 +315,7 @@ public class ProjectedRectangleCylinderVisualizer : MonoBehaviour, IFrameProvide
         // Höhe        = 2
         // ------------------------------------------------------------
 
-        cylinder.transform.localScale =
-            new Vector3(
-                diameter,
-                cylinderHeight * 0.5f,
-                diameter
-            );
+        cylinder.transform.localScale = new Vector3(diameter, cylinderHeight * 0.5f, diameter);
     }
 
 

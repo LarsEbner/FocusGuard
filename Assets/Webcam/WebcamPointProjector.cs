@@ -49,7 +49,7 @@ public class WebcamPointProjector
             return ray.GetPoint(distance);
         }
 
-        Debug.LogWarning("WebcamPointProjector: The camera ray does not intersect the ground plane");
+        Debug.LogWarning($"WebcamPointProjector: The camera ray does not intersect the ground plane (Y={groundY})");
         return Vector3.zero;
     }
 
