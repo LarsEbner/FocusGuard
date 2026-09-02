@@ -4,10 +4,9 @@ using UnityEngine;
 public class WebcamPointProjector
 {
     private readonly Camera camera;
-
     private readonly FrameProvider frameProvider;
-
     private readonly float groundY;
+
 
     public WebcamPointProjector(Camera camera, FrameProvider frameProvider, float groundY)
     {
@@ -16,23 +15,16 @@ public class WebcamPointProjector
         this.groundY = groundY;
     }
 
+
     public Vector3 Project(float x, float y, float height)
     {
-        /*
-         * x und y:
-         *
-         * Pixelkoordinaten im Webcam-Bild.
-         *
-         * Ursprung:
-         *
-         * (0, 0) = oben links
-         *
-         * height:
-         *
-         * Anzahl Pixel, die der tatsächliche Punkt
-         * oberhalb des Referenzpunktes liegt.
-         */
-        
+        if (frameProvider == null || frameProvider.CurrentFrame == null)
+        {
+            Debug.LogWarning("WebcamPointProjector: No valid frame available.");
+            return Vector3.zero;
+        }
+        UpdateCameraAspect();
+
         Vector3 groundPoint = ProjectPixelToGround(x, y);
 
         if (Mathf.Approximately(height, 0f))
@@ -46,10 +38,10 @@ public class WebcamPointProjector
         }
     }
 
+
     private Vector3 ProjectPixelToGround(float x, float y)
     {
         Ray ray = CreateCameraRay(x, y);
-
         Plane groundPlane = new(Vector3.up, new Vector3(0f, groundY, 0f));
 
         if (groundPlane.Raycast(ray, out float distance))
@@ -60,11 +52,6 @@ public class WebcamPointProjector
         Debug.LogWarning("WebcamPointProjector: The camera ray does not intersect the ground plane");
         return Vector3.zero;
     }
-
-
-    // ========================================================================
-    // Find vertical world point
-    // ========================================================================
 
     private Vector3 FindVerticalWorldPoint(Vector3 groundPoint, float imageY)
     {
@@ -87,8 +74,7 @@ public class WebcamPointProjector
         // Ziel-Y in Normalized Device Coordinates
         // ------------------------------------------------------------
 
-        float targetScreenY = ImageYToScreenY(imageY);
-        float targetNdcY = ScreenYToNdcY(targetScreenY);
+        float targetNdcY = ImageYToNdcY(imageY);
 
 
         // ------------------------------------------------------------
@@ -115,7 +101,6 @@ public class WebcamPointProjector
 
         Vector4 groundCamera = viewMatrix * new Vector4(groundPoint.x, groundPoint.y, groundPoint.z, 1f);
         Vector4 verticalCamera = viewMatrix * new Vector4(0f, 1f, 0f, 0f);
-
 
         /*
          * Die Projection Matrix liefert:
@@ -147,14 +132,12 @@ public class WebcamPointProjector
 
         Vector4 groundClip = projectionMatrix * groundCamera;
 
-
         // ------------------------------------------------------------
         // Veränderung der Clip-Koordinaten
         // pro Einheit vertikaler Weltbewegung
         // ------------------------------------------------------------
 
         Vector4 verticalClip = projectionMatrix * verticalCamera;
-
 
         /*
          *:
@@ -170,24 +153,16 @@ public class WebcamPointProjector
          * )
          */
 
-
         float numerator = targetNdcY * groundClip.w - groundClip.y;
         float denominator = verticalClip.y - targetNdcY * verticalClip.w;
-
 
         // ------------------------------------------------------------
         // Sonderfall: Keine eindeutige Lösung
         // ------------------------------------------------------------
 
-        if (Mathf.Abs(denominator) <
-            0.000001f)
+        if (Mathf.Abs(denominator) < 0.000001f)
         {
-            Debug.LogWarning(
-                "WebcamPointProjector: " +
-                "The requested image position cannot be reached " +
-                "by moving vertically above the ground point."
-            );
-
+            Debug.LogWarning("WebcamPointProjector: The requested image position cannot be reached by moving vertically above the ground point.");
             return groundPoint;
         }
 
@@ -197,55 +172,87 @@ public class WebcamPointProjector
         // ------------------------------------------------------------
 
         float worldHeight = numerator / denominator;
-
-
-        /*
-         * Der gesuchte Punkt muss oberhalb des
-         * Referenzpunktes liegen.
-         *
-         * Falls height > 0 übergeben wurde, erwarten
-         * wir deshalb worldHeight >= 0.
-         */
-
-        if (worldHeight < 0f)
-        {
-            Debug.LogWarning(
-                "WebcamPointProjector: " +
-                "Calculated world height is negative."
-            );
-        }
-
-
         return groundPoint + Vector3.up * worldHeight;
     }
 
-
     private Ray CreateCameraRay(float x, float y)
     {
-        return camera.ScreenPointToRay(new Vector3(x, ImageYToScreenY(y), 0f));
-    }
+        int width = frameProvider.Width;
+        int height = frameProvider.Height;
 
-    private float ImageYToScreenY(float imageY)
-    {
-        return frameProvider.Height - imageY;
-    }
+        if (width <= 0 || height <= 0)
+        {
+            return new Ray(camera.transform.position, camera.transform.forward);
+        }
 
-    private float ScreenYToNdcY(float screenY)
-    {
-        Rect pixelRect = camera.pixelRect;
 
         /*
-         * Screen coordinates liegen relativ zum
-         * gesamten Unity-Display.
+         * Die Bildkoordinaten werden direkt auf
+         * Unity Viewport-Koordinaten abgebildet.
          *
-         * Die Projection Matrix erwartet dagegen
-         * Normalized Device Coordinates:
+         * Webcam-Bild:
          *
-         *     -1 = unten
-         *      1 = oben
+         *     (0,0) ----------------> X
+         *       |
+         *       |
+         *       v
+         *       Y
+         *
+         * Unity Viewport:
+         *
+         *     (0,1) ----------------> X
+         *       |
+         *       |
+         *       v
+         *     (0,0)
          */
 
-        float normalizedY = (screenY - pixelRect.y) / pixelRect.height;
-        return normalizedY * 2f - 1f;
+
+        float viewportX = x / width;
+        float viewportY = 1f - y / height;
+
+        return camera.ViewportPointToRay(new Vector3(viewportX, viewportY, 0f));
+    }
+
+
+    private float ImageYToNdcY(float imageY)
+    {
+        int height = frameProvider.Height;
+
+        if (height <= 0)
+        {
+            return 0f;
+        }
+
+
+        /*
+         * Image:
+         *
+         *     y = 0       -> oben
+         *     y = height  -> unten
+         *
+         * NDC:
+         *
+         *     +1 -> oben
+         *      0 -> Mitte
+         *     -1 -> unten
+         */
+
+        return 1f - 2f * (imageY / height);
+    }
+
+
+    private void UpdateCameraAspect()
+    {
+        int width = frameProvider.Width;
+        int height = frameProvider.Height;
+
+
+        if (width <= 0 || height <= 0)
+        {
+            return;
+        }
+
+        camera.aspect = (float)width / height;
     }
 }
