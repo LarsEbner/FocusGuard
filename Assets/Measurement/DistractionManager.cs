@@ -255,17 +255,24 @@ public class DistractionManager : MonoBehaviour
     {
         if (eyeSamples.Count() == 0) return false;
 
-        EyeSample lastValid = eyeSamples.LastOrDefault(s => s.MicrosaccadeCandidate ?? false);
-
-        float elapsedSinceValid = lastValid.MicrosaccadeCandidate == true ? Time.time - lastValid.Timestamp : Time.time - eyeSamples.First().Timestamp;
-        // noch nie eine gültige Sakkade gemessen
-
-        if (logRuleEvaluation)
+        try
         {
-            Debug.Log($"[DistractionManager] Mikrosakkaden-Check: seit letzter gültiger Sakkade={elapsedSinceValid:F2}s / threshold={microsaccadeAnomalyThreshold}s");
-        }
+            EyeSample lastValid = eyeSamples.LastOrDefault(s => s.MicrosaccadeCandidate ?? false);
 
-        return elapsedSinceValid >= microsaccadeAnomalyThreshold;
+            float elapsedSinceValid = lastValid.MicrosaccadeCandidate == true ? Time.time - lastValid.Timestamp : Time.time - eyeSamples.First().Timestamp;
+            // noch nie eine gültige Sakkade gemessen
+
+            if (logRuleEvaluation)
+            {
+                Debug.Log($"[DistractionManager] Mikrosakkaden-Check: seit letzter gültiger Sakkade={elapsedSinceValid:F2}s / threshold={microsaccadeAnomalyThreshold}s");
+            }
+
+            return elapsedSinceValid >= microsaccadeAnomalyThreshold;
+        }
+        catch
+        {
+            return false;
+        }
     }
 
 

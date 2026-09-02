@@ -6773,7 +6773,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 597910089}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d8de0f79bd88f7a4d8f7c820f83f27c1, type: 3}
   m_Name: 
@@ -16187,7 +16187,6 @@ MonoBehaviour:
   pupilSizeRetentionSeconds: 0
   logRuleEvaluation: 0
   _distractionsItems: []
-  microsaccadeItems: []
   pupilSizeItems: []
 --- !u!114 &1425269360
 MonoBehaviour:
@@ -16215,8 +16214,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MicrosaccadeDetection
   rightGaze: {fileID: 863371477}
   leftGaze: {fileID: 1409620016}
+  headReference: {fileID: 727003672}
   lambda: 6
   minimumDurationSamples: 3
+  velocityWindowSamples: 450
 --- !u!1 &1431113926
 GameObject:
   m_ObjectHideFlags: 0
@@ -23693,7 +23694,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2137709451}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 10940b17d2333e646a952e1e8acd24d9, type: 3}
   m_Name: 
