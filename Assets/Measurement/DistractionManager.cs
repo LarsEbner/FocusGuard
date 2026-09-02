@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Assets.EyeTracking;
+using Assets.Measurement;
 using UnityEngine;
 
 public class DistractionManager : MonoBehaviour
@@ -63,8 +64,8 @@ public class DistractionManager : MonoBehaviour
     private List<Distraction> _distractionsItems = new();
 
     [SerializeField]
-    private List<Microsaccade> microsaccadeItems = new();
-    private ICollection<Microsaccade> microsaccades;
+    private List<EyeSample> eyeSampleItems = new();
+    private ICollection<EyeSample> eyeSamples;
 
     [SerializeField]
     private List<PupilSize> pupilSizeItems = new();
@@ -77,7 +78,7 @@ public class DistractionManager : MonoBehaviour
     private void Awake()
     {
         distractions = new AutoDeletingList<Distraction>(distractionItems, d => !d.IsOngoing && Time.time - d.LookAtTime > distractionRetentionSeconds);
-        microsaccades = new AutoDeletingList<Microsaccade>(microsaccadeItems, m => Time.time - m.Timestamp > microsaccadeRetentionSeconds);
+        eyeSamples = new AutoDeletingList<EyeSample>(eyeSampleItems, m => Time.time - m.Timestamp > microsaccadeRetentionSeconds);
         pupilSizes = new AutoDeletingList<PupilSize>(pupilSizeItems, m => Time.time - m.Timestamp > pupilSizeRetentionSeconds);
 
         if (distractionDetection != null)
@@ -87,7 +88,7 @@ public class DistractionManager : MonoBehaviour
 
         if (microsaccadeDetection != null)
         {
-            microsaccadeDetection.MicrosaccadeMeasured += HandleMicrosaccadeMeasured;
+            microsaccadeDetection.EyeSampleMeasured += HandleEyeSampleMeasured;
         }
 
         if (pupilDilation != null)
@@ -106,7 +107,7 @@ public class DistractionManager : MonoBehaviour
 
         if (microsaccadeDetection != null)
         {
-            microsaccadeDetection.MicrosaccadeMeasured -= HandleMicrosaccadeMeasured;
+            microsaccadeDetection.EyeSampleMeasured -= HandleEyeSampleMeasured;
         }
 
         if (pupilDilation != null)
@@ -123,10 +124,9 @@ public class DistractionManager : MonoBehaviour
     }
 
 
-    private void HandleMicrosaccadeMeasured(Microsaccade microsaccade)
+    private void HandleEyeSampleMeasured(EyeSample eyeSample)
     {
-        if (microsaccade == null) return;
-        microsaccades.Add(microsaccade);
+        eyeSamples.Add(eyeSample);
     }
 
 
@@ -166,7 +166,7 @@ public class DistractionManager : MonoBehaviour
     {
         bool sustained = IsSustainedLookAway(distractions);
         bool repeatedNow = IsRepeatedLookAwayThresholdExceeded(distractions);
-        bool microsaccadeAnomaly = IsMicrosaccadeAnomaly(microsaccades);
+        bool microsaccadeAnomaly = IsMicrosaccadeAnomaly(eyeSamples);
         bool pupilsDilated = PupilsDilated(pupilSizes);
 
         // Wird in Liste konvertiert, die im Inspektor angezeigt werden kann
@@ -251,13 +251,13 @@ public class DistractionManager : MonoBehaviour
     }
 
 
-    private bool IsMicrosaccadeAnomaly(IEnumerable<Microsaccade> saccades)
+    private bool IsMicrosaccadeAnomaly(IEnumerable<EyeSample> eyeSamples)
     {
-        if (saccades.Count() == 0) return false;
+        if (eyeSamples.Count() == 0) return false;
 
-        Microsaccade lastValid = saccades.LastOrDefault(s => s.Valid);
+        EyeSample lastValid = eyeSamples.LastOrDefault(s => s.MicrosaccadeCandidate ?? false);
 
-        float elapsedSinceValid = lastValid != null ? Time.time - lastValid.Timestamp : Time.time - saccades.First().Timestamp;
+        float elapsedSinceValid = lastValid.MicrosaccadeCandidate == true ? Time.time - lastValid.Timestamp : Time.time - eyeSamples.First().Timestamp;
         // noch nie eine gültige Sakkade gemessen
 
         if (logRuleEvaluation)

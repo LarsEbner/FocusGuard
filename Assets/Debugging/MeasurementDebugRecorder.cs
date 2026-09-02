@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using Assets.EyeTracking;
+using Assets.Measurement;
 using UnityEngine;
 
 namespace Assets.Debugging
@@ -16,104 +18,87 @@ namespace Assets.Debugging
         [SerializeField]
         private DistractionDetection _distractionDetection;
 
-
-        private CsvStreamWriter<PupilSize> pupilWriter;
-        private CsvStreamWriter<Microsaccade> microsaccadeWriter;
-        private CsvStreamWriter<Distraction> distractionWriter;
-
+        private readonly List<IDisposable> registrations = new();
 
         private void OnEnable()
         {
             string directory = GetMeasurementDirectory();
-            Debug.LogWarning("Starting measurements in " + directory);
             string timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss");
 
-            pupilWriter = new CsvStreamWriter<PupilSize>(Path.Combine(directory, $"{timestamp}_PupilDilation.csv"),
-                    ("Timestamp", m => m.Timestamp),
-                    ("RightSize", m => m.RightSize),
-                    ("LeftSize", m => m.LeftSize)
-                );
+            Register<PupilSize>(
+                _pupilDilation,
+                x => _pupilDilation.PupilSizeMeasured += x,
+                x => _pupilDilation.PupilSizeMeasured -= x,
+                Path.Combine(directory, $"{timestamp}_PupilDilation.csv"),
+                ("Timestamp", m => m.Timestamp),
+                ("RightSize", m => m.RightSize),
+                ("LeftSize", m => m.LeftSize)
+            );
 
-            microsaccadeWriter = new CsvStreamWriter<Microsaccade>(Path.Combine(directory,$"{timestamp}_Microsaccades.csv"),
-                    ("Timestamp", m => m.Timestamp),
-                    ("Valid", m => m.Valid),
-                    ("RightX", m => m.RightX),
-                    ("RightY", m => m.RightY),
-                    ("LeftX", m => m.LeftX),
-                    ("LeftY", m => m.LeftY),
-                    ("RotationRight", m => m.RotationRight),
-                    ("RotationLeft", m => m.RotationLeft)
-                );
+            Register<EyeSample>(
+                _microsaccadeDetection,
+                x => _microsaccadeDetection.EyeSampleMeasured += x,
+                x => _microsaccadeDetection.EyeSampleMeasured -= x,
+                Path.Combine(directory, $"{timestamp}_EyeSamples.csv"),
+                ("Timestamp", m => m.Timestamp),
+                ("PositionRightHorizontal", m => m.PositionRight.x),
+                ("PositionRightVertical", m => m.PositionRight.y),
+                ("PositionLeftHorizontal", m => m.PositionLeft.x),
+                ("PositionLeftVertical", m => m.PositionLeft.y),
+                ("VelocityRightHorizontal", m => m.VelocityRight?.x),
+                ("VelocityRightVertical", m => m.VelocityRight?.y),
+                ("VelocityLeftHorizontal", m => m.VelocityLeft?.x),
+                ("VelocityLeftVertical", m => m.VelocityLeft?.y),
+                ("DeviationRightHorizontal", m => m.VelocityDeviationRight?.x),
+                ("DeviationRightVertical", m => m.VelocityDeviationRight?.y),
+                ("DeviationLeftHorizontal", m => m.VelocityDeviationLeft?.x),
+                ("DeviationVelocityLeftVertical", m => m.VelocityDeviationLeft?.y),
+                ("ThresholdRightHorizontal", m => m.VelocityThresholdRight?.x),
+                ("ThresholdRightVertical", m => m.VelocityThresholdRight?.y),
+                ("ThresholdLeftHorizontal", m => m.VelocityThresholdLeft?.x),
+                ("ThresholdVelocityLeftVertical", m => m.VelocityThresholdLeft?.y),
+                ("CandidateRight", m => m.MicrosaccadeCandidateRight),
+                ("CandidateLeft", m => m.MicrosaccadeCandidateLeft),
+                ("Candidate", m => m.MicrosaccadeCandidate)
+            );
 
-
-            distractionWriter = new CsvStreamWriter<Distraction>(Path.Combine(directory, $"{timestamp}_Distractions.csv"),
-                    ("LookAwayTime", m => m.LookAwayTime),
-                    ("LookAtTime", m => m.LookAtTime),
-                    ("Duration", m => m.Duration),
-                    ("IsOngoing", m => m.IsOngoing)
-                );
-
-
-            if (_pupilDilation != null)
-            {
-                _pupilDilation.PupilSizeMeasured += HandlePupilSize;
-            }
-
-            if (_microsaccadeDetection != null)
-            {
-                _microsaccadeDetection.MicrosaccadeMeasured += HandleMicrosaccade;
-            }
-
-            if (_distractionDetection != null)
-            {
-                _distractionDetection.DistractionUpdated += HandleDistraction;
-            }
+            Register<Distraction>(
+                _distractionDetection,
+                x => _distractionDetection.DistractionUpdated += x,
+                x => _distractionDetection.DistractionUpdated -= x,
+                Path.Combine(directory, $"{timestamp}_Distractions.csv"),
+                ("LookAwayTime", m => m.LookAwayTime),
+                ("LookAtTime", m => m.LookAtTime),
+                ("Duration", m => m.Duration),
+                ("IsOngoing", m => m.IsOngoing)
+            );
         }
 
 
-        private void HandlePupilSize(PupilSize measurement)
+        private void Register<T>(MonoBehaviour source, Action<Action<T>> subscribe, Action<Action<T>> unsubscribe, string path,
+            params (string Name, Func<T, object> Accessor)[] fields)
         {
-            pupilWriter?.Write(measurement);
-        }
+            if (source == null)
+            {
+                return;
+            }
 
+            CsvStreamWriter<T> writer = new CsvStreamWriter<T>(path, fields);
+            Action<T> handler = measurement => writer.Write(measurement);
+            subscribe(handler);
 
-        private void HandleMicrosaccade(Microsaccade measurement)
-        {
-            microsaccadeWriter?.Write(measurement);
-        }
-
-
-        private void HandleDistraction(Distraction measurement)
-        {
-            distractionWriter?.Write(measurement);
+            registrations.Add(new EventRegistration<T>(writer, handler, unsubscribe));
         }
 
 
         private void OnDisable()
         {
-            if (_pupilDilation != null)
+            foreach (IDisposable registration in registrations)
             {
-                _pupilDilation.PupilSizeMeasured -= HandlePupilSize;
+                registration.Dispose();
             }
 
-            if (_microsaccadeDetection != null)
-            {
-                _microsaccadeDetection.MicrosaccadeMeasured -= HandleMicrosaccade;
-            }
-
-            if (_distractionDetection != null)
-            {
-                _distractionDetection.DistractionUpdated -= HandleDistraction;
-            }
-
-            pupilWriter?.Dispose();
-            pupilWriter = null;
-
-            microsaccadeWriter?.Dispose();
-            microsaccadeWriter = null;
-
-            distractionWriter?.Dispose();
-            distractionWriter = null;
+            registrations.Clear();
         }
 
 
@@ -124,6 +109,27 @@ namespace Assets.Debugging
 
             Directory.CreateDirectory(measurementDirectory);
             return measurementDirectory;
+        }
+
+
+        private sealed class EventRegistration<T> : IDisposable
+        {
+            private readonly CsvStreamWriter<T> writer;
+            private readonly Action<T> handler;
+            private readonly Action<Action<T>> unsubscribe;
+
+            public EventRegistration(CsvStreamWriter<T> writer, Action<T> handler, Action<Action<T>> unsubscribe)
+            {
+                this.writer = writer;
+                this.handler = handler;
+                this.unsubscribe = unsubscribe;
+            }
+
+            public void Dispose()
+            {
+                unsubscribe(handler);
+                writer.Dispose();
+            }
         }
     }
 }
