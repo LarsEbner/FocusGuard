@@ -11,9 +11,6 @@ public class PupilDilation : MonoBehaviour
     /// </summary>
     public event Action<PupilSize> PupilSizeMeasured;
 
-    private float rightPupilDiameter;
-    private float leftPupilDiameter;
-
     private void Update()
     {
         RecordPupilSize();
@@ -22,21 +19,15 @@ public class PupilDilation : MonoBehaviour
     private void RecordPupilSize()
     {
         XR_HTC_eye_tracker.Interop.GetEyePupilData(out XrSingleEyePupilDataHTC[] out_pupils);
-
         XrSingleEyePupilDataHTC rightPupil = out_pupils[(int)XrEyePositionHTC.XR_EYE_POSITION_RIGHT_HTC];
-        if (rightPupil.isDiameterValid)
-        {
-            rightPupilDiameter = rightPupil.pupilDiameter;
-        }
-
         XrSingleEyePupilDataHTC leftPupil = out_pupils[(int)XrEyePositionHTC.XR_EYE_POSITION_LEFT_HTC];
-        if (leftPupil.isDiameterValid)
+
+        var measurement = new PupilSize(rightPupil.pupilDiameter, leftPupil.pupilDiameter, Time.time);
+
+        if (rightPupil.isDiameterValid && leftPupil.isDiameterValid)
         {
-            leftPupilDiameter = leftPupil.pupilDiameter;
+            PupilSizeMeasured?.Invoke(measurement);
         }
-
-
-        var measurement = new PupilSize(rightPupilDiameter, leftPupilDiameter, Time.time);
-        PupilSizeMeasured?.Invoke(measurement);
     }
+
 }

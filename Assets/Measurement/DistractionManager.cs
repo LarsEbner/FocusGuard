@@ -139,13 +139,28 @@ public class DistractionManager : MonoBehaviour
 
     private void Update()
     {
-        bool looksAway = distractions.Count() > 0 && distractions.Last().IsOngoing;
+        bool looksAway = EvaluateLooksAway(distractions);
         bool distracted = EvaluateDistraction(distractions);
         bool focused = EvaluateFocus(distracted);
 
         UpdateFocusEffect(focused, looksAway);
     }
 
+    private bool EvaluateLooksAway(IEnumerable<Distraction> distractions)
+    {
+        if (distractions.Count() > 0)
+        {
+            try
+            {
+                return distractions.Last().IsOngoing;
+            }
+            catch
+            {
+                // This is just in case all distractions are removed from the iterator.
+            }
+        }
+        return false;
+    }
 
     private bool EvaluateDistraction(IEnumerable<Distraction> distractions)
     {

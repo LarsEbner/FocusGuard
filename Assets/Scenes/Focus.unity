@@ -16172,20 +16172,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DistractionManager
   distractionDetection: {fileID: 1425269358}
-  microsaccadeDetection: {fileID: 0}
-  pupilDilation: {fileID: 0}
+  microsaccadeDetection: {fileID: 1425269361}
+  pupilDilation: {fileID: 1425269360}
   focusEffectController: {fileID: 868886410}
   distractionThreshold: 10
   distractionCountThreshold: 5
   distractionCountWindow: 3
-  focusRecoveryDuration: 15
+  focusRecoveryDuration: 60
   microsaccadeAnomalyThreshold: 5
   normalPupilSize: 4
   focusedDilation: 0.2
   distractionRetentionSeconds: 60
-  microsaccadeRetentionSeconds: 10
-  pupilSizeRetentionSeconds: 10
-  logRuleEvaluation: 1
+  microsaccadeRetentionSeconds: 0
+  pupilSizeRetentionSeconds: 0
+  logRuleEvaluation: 0
   _distractionsItems: []
   microsaccadeItems: []
   pupilSizeItems: []
@@ -23466,6 +23466,7 @@ GameObject:
   - component: {fileID: 2137709461}
   - component: {fileID: 2137709460}
   - component: {fileID: 2137709463}
+  - component: {fileID: 2137709464}
   - component: {fileID: 2137709462}
   m_Layer: 0
   m_Name: 'Script: DebugController'
@@ -23520,6 +23521,8 @@ MonoBehaviour:
     Script: {fileID: 597910094}
   - Name: Play Video
     Script: {fileID: 2137709463}
+  - Name: Record Measurements
+    Script: {fileID: 2137709462}
   - Name: Move Keyboard
     Script: {fileID: 597910095}
   - Name: Move Webcam
@@ -23575,7 +23578,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2137709451}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4c5c085f6ffc7df409204f5c9482f30e, type: 3}
   m_Name: 
@@ -23590,7 +23593,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2137709451}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4c5c085f6ffc7df409204f5c9482f30e, type: 3}
   m_Name: 
@@ -23683,6 +23686,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FocusGuard.Debugging.ChangeFrameProvider
   _controller: {fileID: 9732485}
   _frameProvider: {fileID: 9982074}
+--- !u!114 &2137709464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137709451}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10940b17d2333e646a952e1e8acd24d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Assets.Debugging.MeasurementDebugRecorder
+  _pupilDilation: {fileID: 1425269360}
+  _microsaccadeDetection: {fileID: 1425269361}
+  _distractionDetection: {fileID: 1425269358}
 --- !u!1001 &37232615538455128
 PrefabInstance:
   m_ObjectHideFlags: 0
